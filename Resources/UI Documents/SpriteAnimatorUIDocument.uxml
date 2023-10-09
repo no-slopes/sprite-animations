@@ -1,0 +1,36 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Plugins/No%20Slopes/Sprite%20Animations/Resources/Styles/SpriteAnimatorStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#SpriteAnimatorStyles" />
+    <ui:VisualElement name="header" style="flex-grow: 0; height: 50px; flex-shrink: 0; flex-direction: row; justify-content: flex-start; align-items: center; align-self: auto; width: 100%;">
+        <uie:ObjectField label="Sprite Animator" name="animator-selector-field" type="SpriteAnimations.SpriteAnimator, SpriteAnimations" allow-scene-objects="true" style="flex-grow: 1; width: 70%; align-items: center; flex-basis: auto; justify-content: flex-start; flex-direction: row; height: 40px; background-color: rgba(255, 255, 255, 0); color: rgb(243, 243, 243);" />
+        <ui:Button text="From Selection" parse-escape-sequences="true" display-tooltip-when-elided="true" name="from-selection-button" class="primary" style="flex-grow: 1; height: 30px; width: 25%; flex-basis: auto; justify-content: center; color: rgb(255, 255, 255);" />
+    </ui:VisualElement>
+    <ui:VisualElement name="body" style="flex-grow: 1;">
+        <ui:VisualElement name="no-animator-container" style="flex-grow: 1; height: 100px; width: 100%; background-color: rgb(12, 0, 2); flex-basis: auto; flex-shrink: 1; flex-wrap: nowrap; justify-content: center; align-self: auto; align-items: stretch; -unity-background-scale-mode: stretch-to-fill; display: none;">
+            <ui:Label tabindex="-1" text="Select an SpriteAnimator..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="no-animator-selected-text" style="flex-grow: 1; -unity-text-align: middle-center; color: rgb(255, 255, 255); font-size: 16px; height: 100px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="selected-animator-container" style="flex-grow: 1; height: 100px; width: 100%; background-color: rgb(12, 0, 2); flex-basis: auto; flex-shrink: 1; flex-wrap: nowrap; justify-content: flex-start; align-self: auto; align-items: flex-start; -unity-background-scale-mode: stretch-to-fill; flex-direction: row;">
+            <ui:VisualElement name="left-sidebar" style="flex-grow: 0; flex-direction: column; height: 100%; max-width: 250px; min-width: 150px; flex-shrink: 0; background-color: rgb(29, 0, 0);">
+                <ui:Label tabindex="-1" text="Animations" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-font-style: bold; font-size: 16px;" />
+                <ui:VisualElement name="animations-list-header" class="buttons-container" style="flex-grow: 0; height: 100px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-basis: 50px; width: 250px; flex-direction: row-reverse;">
+                    <ui:Button text="Create" parse-escape-sequences="true" display-tooltip-when-elided="true" name="create-animation-button" class="primary" style="font-size: 14px; color: rgb(253, 253, 253); height: 25px; text-overflow: clip; width: 70px;" />
+                </ui:VisualElement>
+                <ui:ListView focusable="true" name="animations-list" virtualization-method="FixedHeight" style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-grow: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="content" style="flex-grow: 1; height: 100%; width: auto; flex-basis: auto; align-items: stretch; justify-content: flex-start; min-width: auto;">
+                <ui:VisualElement name="content-header" style="height: auto; min-width: auto; align-items: flex-start; justify-content: center; flex-direction: column; flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; max-height: 120px; border-bottom-color: rgb(118, 118, 118); border-bottom-width: 1px;">
+                    <ui:VisualElement name="animation-object-field-container" style="flex-direction: row; width: 100%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-grow: 1;">
+                        <uie:ObjectField label="Animation" name="animation-field" type="SpriteAnimations.SpriteAnimation, SpriteAnimations" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; min-height: 24px; width: auto; align-items: center; flex-grow: 1; -unity-text-align: middle-left; flex-shrink: 1;" />
+                        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="Destroys the animation asset" text="Delete Animation" name="delete-animation-button" class="danger" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="animation-name-field-container" style="flex-direction: row; width: 100%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                        <ui:TextField picking-mode="Ignore" label="Name" name="animation-name-field" style="color: rgb(255, 255, 255); -unity-text-align: middle-left; width: 100%; min-height: 24px; font-size: 16px; align-items: center;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="fps-slider-container" style="width: 100%; flex-grow: 0; flex-direction: column; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                        <ui:SliderInt picking-mode="Ignore" value="0" high-value="60" name="fps-slider" show-input-field="true" direction="Horizontal" inverted="false" label="FPS:" style="color: rgb(255, 255, 255); align-items: center; min-height: 24px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="content-body" style="flex-grow: 1; height: auto; padding-top: 10px; padding-right: 5px; padding-bottom: 10px; padding-left: 5px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

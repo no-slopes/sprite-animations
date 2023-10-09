@@ -1,0 +1,28 @@
+{
+    "name": "com.no-slopes.sprite-animations",
+    "version": "1.0.0-alpha",
+    "displayName": "Sprite Animations",
+    "description": "A solution for animating sprite sheets in Unity.",
+    "author": {
+        "name": "No Slopes",
+        "email": "no-slopes@gmail.com",
+        "url": "http://githbub.com/no-slopes"
+    },
+    "keywords": [
+        "2D",
+        "sprite",
+        "sprites",
+        "sheet",
+        "character",
+        "characters",
+        "animations",
+        "sprite renderer",
+        "image",
+        "images",
+        "platformer",
+        "top",
+        "down",
+        "top down",
+        "top-down"
+    ]
+}

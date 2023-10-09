@@ -1,0 +1,5 @@
+.material-icon {
+    font-size: var(--material-symbol-size);
+    -unity-font-style: normal;
+    -unity-font-definition: url('../Fonts/MaterialIcons-Regular SDF.asset');
+}
