@@ -1,5 +1,5 @@
 <p align="right">
-  Leia em <a href="README.md"> English </a>
+  Read in <a href="README.md"> English </a>
 </p>
 
 <!-- <p align="center">
