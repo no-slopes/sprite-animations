@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using System.Linq;
 using SpriteAnimations.Performers;
-using Sirenix.OdinInspector;
 
 #if UNITY_EDITOR
 using SpriteAnimations.Editor;
@@ -23,7 +22,6 @@ namespace SpriteAnimations
         #endregion
 
 #if UNITY_EDITOR
-        [Button]
         public void OpenAnimatorWindow()
         {
             SpriteAnimatorEditorWindow.OpenEditorWindow(this);

@@ -1,11 +1,3 @@
-# Changelog - 07/07/2022
+# Changelog - 10/09/2023
 
-## 1.0.1-alpha
-
-###### Interface request method names
-
-- No longer prefixing "requesting actions" with "Send". They are now "JumpRequest", "SlideRequest" and "MovementDirectionUpdate"
-
-###### Documented Components:
-
-- Some documented components had broken doc links
+## 1.0.0-alpha
