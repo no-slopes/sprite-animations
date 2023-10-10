@@ -37,8 +37,11 @@ namespace SpriteAnimations.Editor
 
         public FramesListElement()
         {
+            style.flexGrow = 1;
+
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/FramesList");
             _template = tree.Instantiate();
+            _template.style.flexGrow = 1;
 
             _scrollView = _template.Q<ScrollView>("scroll-view");
             _scrollViewContentContainer = _scrollView.Q<VisualElement>("unity-content-container");

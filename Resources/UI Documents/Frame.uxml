@@ -11,21 +11,21 @@
                 <uie:ObjectField name="sprite-field" type="UnityEngine.Sprite, UnityEngine.CoreModule" style="color: rgb(255, 255, 255); width: auto; height: 100%; flex-grow: 1; flex-direction: column; align-items: center; justify-content: center; flex-wrap: nowrap;" />
             </ui:VisualElement>
             <ui:VisualElement name="id-field-container" style="flex-grow: 1; flex-direction: row; align-items: center; width: 100%; height: 30px;">
-                <ui:Label tabindex="-1" text="Id:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="sa-label" style="color: rgb(255, 255, 255); min-width: 50px;" />
+                <ui:Label tabindex="-1" text="Id:" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="Used to register actions to be performed ehen the SpriteAnimationPerfomer plays this frame" class="sa-label" style="color: rgb(255, 255, 255); min-width: 50px;" />
                 <ui:TextField picking-mode="Ignore" name="id-field" style="color: rgb(255, 255, 255); width: auto; height: 100%; flex-grow: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="arrows-container" style="flex-grow: 0; height: 50px; width: 50px; align-items: center; justify-content: center;">
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="up-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-                <SpriteAnimations.Editor.MaterialIcon icon="arrow_upward" class="material-icon" style="-unity-text-align: middle-center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: center; align-items: center; height: 25px; width: 25px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="up-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(233, 233, 233);">
+                <ui:VisualElement name="up-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/Navigation Up&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41);" />
             </ui:Button>
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="down-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-                <SpriteAnimations.Editor.MaterialIcon icon="arrow_downward" class="material-icon" style="-unity-text-align: middle-center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: center; align-items: center; height: 25px; width: 25px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="down-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(233, 233, 233);">
+                <ui:VisualElement name="down-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/Navigation Down&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41); background-color: rgba(0, 0, 0, 0);" />
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement name="delete-button-container" style="flex-grow: 0; height: 50px; width: 50px; align-items: center; justify-content: center;">
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="delete-button" class="danger" style="height: 50px; width: 50px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-                <SpriteAnimations.Editor.MaterialIcon icon="delete" class="material-icon" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: center; align-items: center;" />
+                <ui:VisualElement name="trash-can-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/trash-can&apos;); height: 20px; width: 20px; flex-shrink: 0;" />
             </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>

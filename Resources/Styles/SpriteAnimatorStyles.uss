@@ -46,6 +46,7 @@
     font-size: 14px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
+    -unity-text-align: middle-left;
 }
 
 .dropping {
@@ -64,12 +65,6 @@
     padding-right: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
-}
-
-.material-icon {
-    font-size: var(--material-symbol-size);
-    -unity-font-style: normal;
-    -unity-font-definition: url('project://database/Assets/Plugins/No%20Slopes/Sprite%20Animations/Resources/Fonts/MaterialIcons-Regular%20SDF.asset?fileID=11400000&guid=309e73ab12bd6f24785e1f8edc0b72fa&type=2#MaterialIcons-Regular SDF');
 }
 
 .danger {

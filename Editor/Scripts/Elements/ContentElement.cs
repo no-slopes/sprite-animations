@@ -45,8 +45,11 @@ namespace SpriteAnimations.Editor
 
         public ContentElement()
         {
+            style.flexGrow = 1;
+
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Content");
             _template = tree.Instantiate();
+            _template.style.flexGrow = 1;
 
             _viewsFactory = new SpriteAnimationViewFactory(this);
 

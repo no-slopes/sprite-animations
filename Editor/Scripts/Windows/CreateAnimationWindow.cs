@@ -55,6 +55,11 @@ namespace SpriteAnimations.Editor
             rootVisualElement.Add(template);
         }
 
+        void OnLostFocus()
+        {
+            Close();
+        }
+
         #endregion
 
         #region Creating

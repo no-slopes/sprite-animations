@@ -27,9 +27,11 @@ namespace SpriteAnimations.Editor
 
         public SimpleSpriteAnimationView(ContentElement contentElement) : base(contentElement)
         {
+            style.flexGrow = 1;
 
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationViewSimple");
             _template = tree.Instantiate();
+            _template.style.flexGrow = 1;
 
             _loopableField = _template.Q<Toggle>("loopable-field");
             _loopableField.RegisterValueChangedCallback(OnLoopableValueChanges);

@@ -38,6 +38,7 @@ namespace SpriteAnimations.Editor
         public CycleElement(ContentElement contentElement)
         {
             style.flexDirection = FlexDirection.Row;
+            style.flexGrow = 1;
 
             _contentElement = contentElement;
 

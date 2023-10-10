@@ -13,6 +13,6 @@
                 <ui:SliderInt picking-mode="Ignore" value="0" high-value="60" name="fps-slider" show-input-field="true" direction="Horizontal" inverted="false" label="FPS:" style="color: rgb(255, 255, 255); align-items: center; min-height: 24px;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="content-body" style="flex-grow: 1; height: auto; padding-top: 10px; padding-right: 5px; padding-bottom: 10px; padding-left: 5px;" />
+        <ui:VisualElement name="content-body" style="flex-grow: 1; height: 100%; padding-top: 10px; padding-right: 5px; padding-bottom: 10px; padding-left: 5px;" />
     </ui:VisualElement>
 </ui:UXML>

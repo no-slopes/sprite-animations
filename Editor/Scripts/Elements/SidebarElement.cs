@@ -63,6 +63,7 @@ namespace SpriteAnimations.Editor
 
         public void Dismiss()
         {
+            DismissCreationWindow();
             _animations.Clear();
             _animationsListView.Clear();
         }
@@ -84,14 +85,14 @@ namespace SpriteAnimations.Editor
 
         private void SelectAnimation(SpriteAnimation animation)
         {
+            DismissCreationWindow();
             _currentAnimation = animation;
             AnimationSelected?.Invoke(animation);
         }
 
         private void OnAnimationCreated(SpriteAnimation animation)
         {
-            _createAnimationWindow?.Close();
-            _createAnimationWindow = null;
+            DismissCreationWindow();
 
             _animations.Add(animation);
             _animationsListView.Rebuild();
@@ -108,6 +109,12 @@ namespace SpriteAnimations.Editor
             SelectAnimation(_animations[indexes[0]]);
         }
 
+        private void DismissCreationWindow()
+        {
+            _createAnimationWindow?.Close();
+            _createAnimationWindow = null;
+        }
+
 
         #endregion
 
@@ -119,6 +126,8 @@ namespace SpriteAnimations.Editor
         {
             if (_createAnimationWindow != null) return;
             _createAnimationWindow = CreateAnimationWindow.OpenEditorWindow();
+            Vector2 mousePos = GUIUtility.GUIToScreenPoint(Event.current.mousePosition);
+            _createAnimationWindow.position = new Rect(mousePos.x, mousePos.y, _createAnimationWindow.position.width, _createAnimationWindow.position.height);
             _createAnimationWindow.AnimationCreated += OnAnimationCreated;
         }
 

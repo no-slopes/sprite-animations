@@ -1,11 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" sae="SpriteAnimations.Editor" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/Plugins/No%20Slopes/Sprite%20Animations/Resources/Styles/SpriteAnimatorStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#SpriteAnimatorStyles" />
-    <ui:VisualElement name="container" style="flex-grow: 1;">
-        <ui:VisualElement name="top-bar" class="buttons-container" style="flex-grow: 0; height: 40px; flex-direction: row; align-items: center;">
+    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/SpriteAnimatorStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#SpriteAnimatorStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 1; background-color: rgba(29, 0, 0, 0);">
+        <ui:VisualElement name="top-bar" class="buttons-container" style="flex-grow: 0; height: 50px; flex-direction: row; align-items: center; background-color: rgba(55, 0, 0, 0);">
             <ui:VisualElement name="expander" style="flex-grow: 1;" />
             <ui:Button text="Add Frame" parse-escape-sequences="true" display-tooltip-when-elided="true" name="add-button" tooltip="Creates a new frame for the cycle" class="primary" />
-            <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="clear-button" tooltip="Creates a new frame for the cycle" class="danger" />
+            <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="clear-button" tooltip="Removes all the frames" class="danger" />
         </ui:VisualElement>
-        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="scroll-view" style="flex-grow: 1; max-height: 400px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-wrap: wrap; overflow: hidden; min-height: 250px;" />
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="scroll-view" style="flex-grow: 1; max-height: none; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-wrap: wrap; overflow: hidden; min-height: 250px;" />
     </ui:VisualElement>
 </ui:UXML>
