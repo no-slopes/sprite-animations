@@ -5,27 +5,24 @@ using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Editor
 {
-    public class SingleSpriteAnimationView : SpriteAnimationView
+    public class SimpleSpriteAnimationView : SpriteAnimationView
     {
         #region Fields
 
         private VisualElement _root;
         private CycleElement _cycleElement;
-        private SingleSpriteAnimation _singleSpriteAnimation;
+        private SimpleSpriteAnimation _simpleSpriteAnimation;
 
         #endregion
 
         #region Getters
 
-        public override SpriteAnimationType AnimationType => SpriteAnimationType.Single;
+        public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
         public override VisualElement Root
         {
             get
             {
-                if (_root == null)
-                {
-                    _root = GenerateRootElement();
-                }
+                _root ??= GenerateRootElement();
 
                 return _root;
             }
@@ -35,7 +32,7 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SingleSpriteAnimationView(SpriteAnimatorEditorWindow window) : base(window)
+        public SimpleSpriteAnimationView(SpriteAnimatorEditorWindow window) : base(window)
         {
             _cycleElement = new CycleElement(this);
         }
@@ -47,14 +44,14 @@ namespace SpriteAnimations.Editor
         public override void Initialize(SpriteAnimation animation)
         {
             base.Initialize(animation);
-            _singleSpriteAnimation = animation as SingleSpriteAnimation;
-            _cycleElement.Initialize(_singleSpriteAnimation.Cycle);
+            _simpleSpriteAnimation = animation as SimpleSpriteAnimation;
+            _cycleElement.Initialize(_simpleSpriteAnimation.Cycle);
         }
 
         public override void Dismiss()
         {
             base.Dismiss();
-            _singleSpriteAnimation = null;
+            _simpleSpriteAnimation = null;
             _cycleElement.Dismiss();
         }
 

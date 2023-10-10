@@ -29,6 +29,9 @@ namespace SpriteAnimations
 #endif
 
         [SerializeField]
+        protected SpriteRenderer _spriteRenderer;
+
+        [SerializeField]
         protected UpdateMode _updateMode = UpdateMode.Update;
 
         [SerializeField]
@@ -50,22 +53,17 @@ namespace SpriteAnimations
 
         #region Fields
 
-        protected SpriteRenderer _spriteRenderer;
-
         protected SpriteAnimationPerformerFactory _performersFactory;
-        protected SpriteAnimationFrame _currentFrame;
 
         protected SpriteAnimationPerformer _currentPerformer;
-        protected Dictionary<SpriteAnimationFrame, UnityEvent> _frameEvents = new();
+        protected Dictionary<string, SpriteAnimation> _animations;
 
         #endregion
 
-        #region Getters
+        #region Properties
 
         public SpriteAnimation DefaultAnimation => _spriteAnimations.Count > 0 ? _spriteAnimations[0] : null;
         public List<SpriteAnimation> Animations => _spriteAnimations;
-
-        #endregion
 
         protected SpriteAnimatorState _state = SpriteAnimatorState.Stopped;
 
@@ -73,12 +71,13 @@ namespace SpriteAnimations
         public bool Paused => _state == SpriteAnimatorState.Paused;
         public bool Stopped => _state == SpriteAnimatorState.Stopped;
 
+        #endregion
+
         #region Getters
 
         public SpriteAnimatorState State => _state;
 
         public SpriteAnimation CurrentAnimation => _currentAnimation;
-        public SpriteAnimationFrame CurrentFrame => _currentFrame;
 
         public UnityEvent<SpriteAnimation> AnimationChanged => _animationChanged;
         public UnityEvent<SpriteAnimatorState> StateChanged => _stateChanged;
@@ -89,8 +88,18 @@ namespace SpriteAnimations
 
         protected virtual void Awake()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            _performersFactory = new SpriteAnimationPerformerFactory();
+            if (_spriteRenderer == null)
+            {
+                if (!TryGetComponent(out _spriteRenderer))
+                {
+                    Debug.LogError($"Sprite Animator for {gameObject.name} - Sprite Renderer not found.");
+                    return;
+                }
+            }
+
+            _performersFactory = new SpriteAnimationPerformerFactory(_spriteRenderer);
+            _animations = new Dictionary<string, SpriteAnimation>();
+            _spriteAnimations.ForEach(a => _animations.Add(a.AnimationName, a));
         }
 
         protected virtual void Start()
@@ -101,20 +110,23 @@ namespace SpriteAnimations
 
         protected virtual void Update()
         {
-            if (_updateMode.Equals(UpdateMode.Update))
-                EvaluateAndChangeCurrentFrame();
+            if (!Playing || !_updateMode.Equals(UpdateMode.Update)) return;
+            _currentPerformer?.Tick(Time.deltaTime);
         }
 
         protected virtual void LateUpdate()
         {
-            if (_updateMode.Equals(UpdateMode.LateUpdate))
-                EvaluateAndChangeCurrentFrame();
+            if (!Playing || !_updateMode.Equals(UpdateMode.LateUpdate)) return;
+
+            Debug.LogError("LateUpdate");
+            _currentPerformer?.Tick(Time.deltaTime);
         }
 
         protected virtual void FixedUpdate()
         {
-            if (_updateMode.Equals(UpdateMode.FixedUpdate))
-                EvaluateAndChangeCurrentFrame();
+            if (!Playing || !_updateMode.Equals(UpdateMode.FixedUpdate)) return;
+            Debug.LogError("FixedUpdate");
+            _currentPerformer?.Tick(Time.deltaTime);
         }
 
         #endregion
@@ -139,9 +151,15 @@ namespace SpriteAnimations
         /// animator in orther to be found.
         /// </summary>
         /// <param name="name"></param>
-        public SpriteAnimationPerformer Play(string animationName)
+        public SpriteAnimationPerformer Play(string name)
         {
-            return Play(GetAnimationByName(animationName));
+            if (!TryeGetAnimationByName(name, out var animation))
+            {
+                Debug.LogError($"Sprite Animator for {gameObject.name} - "
+                + $"animation {name} not found");
+                return null;
+            }
+            return Play(animation);
         }
 
         /// <summary>
@@ -194,7 +212,7 @@ namespace SpriteAnimations
             _stateChanged.Invoke(_state);
             _currentPerformer?.StopAnimation(); // Stop current animation.
             _currentAnimation = null;
-            _currentFrame = null;
+            _currentPerformer = null;
         }
 
         /// <summary>
@@ -206,7 +224,7 @@ namespace SpriteAnimations
         {
             _currentPerformer?.StopAnimation(); // Stop current animation.
 
-            _currentPerformer = _performersFactory.GetPerformer(_currentAnimation); // Sets the current handler to the given animation.
+            _currentPerformer = _performersFactory.GetPerformer(animation); // Sets the current handler to the given animation.
             _currentAnimation = animation; // current animation is now the given animation.
             _currentPerformer.StartAnimation(_currentAnimation); // Starts the given animation.
 
@@ -217,39 +235,35 @@ namespace SpriteAnimations
 
         #region Handling Animation
 
-        /// <summary>
-        /// Returns an animation wich was registered to the animator based on given name.
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
         public SpriteAnimation GetAnimationByName(string name)
         {
-            return _spriteAnimations.FirstOrDefault(a => a.name == name);
+            if (!TryeGetAnimationByName(name, out var animation))
+            {
+                return null;
+            }
+
+            return animation;
         }
 
-        /// <summary>
-        /// This should be called every LateUpdate to evaluate the current animation and change the sprite.
-        /// </summary>
-        protected void EvaluateAndChangeCurrentFrame()
+        public bool TryeGetAnimationByName(string name, out SpriteAnimation animation)
         {
-            if (!Playing) return;
-
-            SpriteAnimationFrame frame = _currentPerformer.EvaluateFrame(Time.deltaTime);
-
-            if (!Playing || frame == null || frame == _currentFrame) return;
-
-            _spriteRenderer.sprite = frame.Sprite;
-
-            _currentFrame = frame;
+            return _animations.TryGetValue(name, out animation);
         }
 
         #endregion
 
         #region Evaluations
 
+        /// <summary>
+        /// Calculates the duration of the current animation.
+        /// Depending on the type of animation this can have serious perfomance impacts
+        /// as it has to evaluate all frames of all the animation cycles.
+        /// </summary>
+        /// <returns>The duration of the current animation.</returns>
         public float CalculateCurrentAnimationDuration()
         {
             if (_currentAnimation == null) return 0;
+
             return _currentAnimation.CalculateDuration();
         }
 

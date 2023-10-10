@@ -17,5 +17,10 @@ namespace SpriteAnimations
 
         public List<SpriteAnimationFrame> Frames => _frames;
         public int FrameCount => _frames.Count;
+
+        public float CalculateDuration(float fps)
+        {
+            return _frames.Count * 1 / fps;
+        }
     }
 }

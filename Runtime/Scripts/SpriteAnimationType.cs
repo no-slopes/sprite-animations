@@ -3,7 +3,7 @@ namespace SpriteAnimations
 {
     public enum SpriteAnimationType
     {
-        Single,
+        Simple,
         Windrose
     }
 }

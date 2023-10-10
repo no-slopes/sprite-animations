@@ -10,17 +10,14 @@ namespace SpriteAnimations.Performers
 
         #region Fields
 
+        protected SpriteRenderer _spriteRenderer;
+
         protected SpriteAnimation _currentAnimation;
 
         /// <summary>
         /// List of frames used by the current cycle  
         /// </summary>
         protected SpriteAnimationCycle _currentCycle = new();
-
-        /// <summary>
-        /// List of frames used by the current cycle  
-        /// </summary>
-        protected SpriteAnimationCycleType _currentCycleType = SpriteAnimationCycleType.Core;
 
         /// <summary>
         /// Used when running an animation
@@ -32,41 +29,22 @@ namespace SpriteAnimations.Performers
         /// </summary>
         protected SpriteAnimationFrame _currentFrame;
 
+        protected float _currentCycleDuration = 0.0f;
+
         /// <summary>
         /// If the animation has reached its end and should stop playing
         /// </summary>
         protected bool _animationEnded = false;
 
         protected Dictionary<int, UnityAction> _frameIndexActions = new();
-        protected Dictionary<string, UnityAction> _frameNameActions = new();
-        protected Dictionary<SpriteAnimationCycleType, UnityAction> _cycleTypeEndActions = new();
+        protected Dictionary<string, UnityAction> _frameIdActions = new();
         protected UnityAction _onEndAction;
 
         #endregion       
 
         #region Properties  
 
-        /// <summary>
-        /// The duration in seconds a frame should display while in that animation
-        /// </summary>
-        protected float FrameDuration => _currentAnimation != null ? 1f / _currentAnimation.FPS : 0f;
-
-        /// <summary>
-        /// The duration of the current animation's cycle in seconds
-        /// </summary>
-        protected float CurrentCycleDuration => FrameDuration * _currentCycle.FrameCount;
-
-        /// <summary>
-        /// The index of the current frame in the current cycle.
-        /// This is calculated based on the total amount of frames the current cycle has and the current elapsed time for 
-        /// the that cycle.
-        /// </summary>
-        protected int CurrentFrameIndex => Mathf.FloorToInt(_currentCycleElapsedTime * _currentCycle.FrameCount / CurrentCycleDuration);
-
-        /// <summary>
-        /// If the animation has frames to be played
-        /// </summary>
-        protected bool HasCurrentFrames => _currentCycle != null && _currentCycle.FrameCount > 0;
+        public SpriteRenderer SpriteRenderer { get => _spriteRenderer; set => _spriteRenderer = value; }
 
         #endregion
 
@@ -74,6 +52,7 @@ namespace SpriteAnimations.Performers
 
         public abstract SpriteAnimationType AnimationType { get; }
         public SpriteAnimationCycle CurrentCycle => _currentCycle;
+        public SpriteAnimationFrame CurrentFrame => _currentFrame;
 
         #endregion
 
@@ -87,9 +66,13 @@ namespace SpriteAnimations.Performers
         public virtual void StopAnimation()
         {
             _frameIndexActions.Clear();
-            _frameNameActions.Clear();
-            _cycleTypeEndActions.Clear();
+            _frameIdActions.Clear();
             _onEndAction = null;
+        }
+
+        public virtual void Tick(float deltaTime)
+        {
+
         }
 
         /// <summary>
@@ -115,13 +98,6 @@ namespace SpriteAnimations.Performers
 
         #endregion
 
-        #region Abstract Methods
-
-        public abstract SpriteAnimationFrame EvaluateFrame(float deltaTime);
-        protected bool HasCycle { get; }
-
-        #endregion
-
         #region Actions
 
         /// <summary>
@@ -141,25 +117,12 @@ namespace SpriteAnimations.Performers
         /// Adds an action to be performed on a specific frame of the sprite animation.
         /// This overrides previous actions defined for that frame name.
         /// </summary>
-        /// <param name="frameName">The name of the frame.</param>
+        /// <param name="id">The id of the frame.</param>
         /// <param name="action">The action to be performed.</param>
         /// <returns>The updated SpriteAnimationPerformer object.</returns>
-        public SpriteAnimationPerformer OnFrame(string frameName, UnityAction action)
+        public SpriteAnimationPerformer OnFrame(string id, UnityAction action)
         {
-            _frameNameActions[frameName] = action;
-            return this;
-        }
-
-        /// <summary>
-        /// Sets an action to be performed when a sprite animation cycle ends.
-        /// This overrides previous actions defined for that frame cycle ending.
-        /// </summary>
-        /// <param name="cycleType">The type of the animation cycle.</param>
-        /// <param name="action">The action to perform.</param>
-        /// <returns>The SpriteAnimationPerformer instance.</returns>
-        public SpriteAnimationPerformer OnCycleEnd(SpriteAnimationCycleType cycleType, UnityAction action)
-        {
-            _cycleTypeEndActions[cycleType] = action;
+            _frameIdActions[id] = action;
             return this;
         }
 
@@ -173,6 +136,22 @@ namespace SpriteAnimations.Performers
         {
             _onEndAction = action;
             return this;
+        }
+
+        #endregion
+
+        #region Calculations
+
+        /// <summary>
+        /// Calculates the frame index based on the elapsed time, amount of frames, and duration.
+        /// </summary>
+        /// <param name="elapsedTime">The time that has elapsed since the animation started.</param>
+        /// <param name="amountOfFrames">The total number of frames in the animation.</param>
+        /// <param name="duration">The duration of the animation in seconds.</param>
+        /// <returns>The index of the current frame to display.</returns>
+        protected int CalculateFrameIndex(float elapsedTime, int amountOfFrames, float duration)
+        {
+            return Mathf.FloorToInt(elapsedTime * amountOfFrames / duration);
         }
 
         #endregion

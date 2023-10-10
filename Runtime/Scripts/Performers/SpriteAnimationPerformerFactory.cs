@@ -1,11 +1,18 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace SpriteAnimations.Performers
 {
     public class SpriteAnimationPerformerFactory
     {
+        private SpriteRenderer _spriteRenderer;
         private Dictionary<Type, SpriteAnimationPerformer> _handlers = new();
+
+        public SpriteAnimationPerformerFactory(SpriteRenderer spriteRenderer)
+        {
+            _spriteRenderer = spriteRenderer;
+        }
 
         public SpriteAnimationPerformer GetPerformer(SpriteAnimation animation)
         {
@@ -19,11 +26,12 @@ namespace SpriteAnimations.Performers
 
         protected SpriteAnimationPerformer Fabricate(SpriteAnimation animation)
         {
-            SpriteAnimationPerformer handler = Activator.CreateInstance(animation.PerformerType) as SpriteAnimationPerformer;
+            SpriteAnimationPerformer performer = Activator.CreateInstance(animation.PerformerType) as SpriteAnimationPerformer;
+            performer.SpriteRenderer = _spriteRenderer;
 
-            _handlers.Add(animation.PerformerType, handler);
+            _handlers.Add(animation.PerformerType, performer);
 
-            return handler;
+            return performer;
         }
     }
 }

@@ -56,7 +56,7 @@ namespace SpriteAnimations.Editor
         {
             return animationType switch
             {
-                SpriteAnimationType.Single => "[Single]",
+                SpriteAnimationType.Simple => "[Simple]",
                 _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null)
             };
         }

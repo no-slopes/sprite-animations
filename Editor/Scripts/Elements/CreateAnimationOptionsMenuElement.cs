@@ -53,7 +53,7 @@ namespace SpriteAnimations.Editor
             _root.style.visibility = Visibility.Visible;
 
             _nameField.value = "New Animation";
-            _typeField.value = SpriteAnimationType.Single;
+            _typeField.value = SpriteAnimationType.Simple;
 
             _nameField.Focus();
         }
@@ -88,7 +88,7 @@ namespace SpriteAnimations.Editor
 
             SpriteAnimation animation = _typeField.value switch
             {
-                SpriteAnimationType.Single => CreateSingleSpriteAnimation(path, name),
+                SpriteAnimationType.Simple => CreateSingleSpriteAnimation(path, name),
                 _ => throw new ArgumentOutOfRangeException(nameof(_typeField.value), null, null)
             };
 
@@ -97,9 +97,9 @@ namespace SpriteAnimations.Editor
             Hide();
         }
 
-        private SingleSpriteAnimation CreateSingleSpriteAnimation(string path, string name)
+        private SimpleSpriteAnimation CreateSingleSpriteAnimation(string path, string name)
         {
-            SingleSpriteAnimation sriteAnimationAsset = ScriptableObject.CreateInstance<SingleSpriteAnimation>();
+            SimpleSpriteAnimation sriteAnimationAsset = ScriptableObject.CreateInstance<SimpleSpriteAnimation>();
             AssetDatabase.CreateAsset(sriteAnimationAsset, $"{path}/{name}.asset");
             AssetDatabase.SaveAssets();
             return sriteAnimationAsset;

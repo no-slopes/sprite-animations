@@ -9,13 +9,13 @@ namespace SpriteAnimations.Performers
         #region Properties 
 
         protected bool HasCurrentAnimation => _currentAnimation != null;
-        protected SingleSpriteAnimation CurrentSimpleAnimation => _currentAnimation as SingleSpriteAnimation;
+        protected SimpleSpriteAnimation CurrentSimpleAnimation => _currentAnimation as SimpleSpriteAnimation;
 
         #endregion    
 
         #region Getters
 
-        public override SpriteAnimationType AnimationType => SpriteAnimationType.Single;
+        public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
 
         #endregion   
 
@@ -36,7 +36,7 @@ namespace SpriteAnimations.Performers
 
             _animationEnded = false;
             _currentCycle = CurrentSimpleAnimation.Cycle;
-            _currentCycleType = SpriteAnimationCycleType.Core;
+            _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
         }
 
         /// <summary>
@@ -44,8 +44,10 @@ namespace SpriteAnimations.Performers
         /// </summary>
         public override void StopAnimation()
         {
+            base.StopAnimation();
             EndAnimation();
             _currentAnimation = null;
+            _currentCycle = null;
         }
 
         /// <summary>
@@ -54,18 +56,34 @@ namespace SpriteAnimations.Performers
         /// </summary>
         /// <param name="deltaTime"></param>
         /// <returns></returns>
-        public override SpriteAnimationFrame EvaluateFrame(float deltaTime)
+        public override void Tick(float deltaTime)
         {
-            if (_animationEnded) return _currentFrame;
+            if (_animationEnded) return;
 
-            _currentCycleElapsedTime += deltaTime;
+            HandleCycles(deltaTime);
 
-            HandleCycles();
+            if (_animationEnded) return;
 
-            _currentFrame = EvaluateCycleFrame();
+            int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.FrameCount, _currentCycleDuration);
+            SpriteAnimationFrame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
 
+            if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
-            return _currentFrame;
+            // From here it means the new frame will be displayed
+
+            _currentFrame = evaluatedFrame;
+            _spriteRenderer.sprite = _currentFrame.Sprite;
+
+            // Calling frame actions
+            if (_frameIndexActions.TryGetValue(frameIndex, out var byIndexAction))
+            {
+                byIndexAction.Invoke();
+            }
+
+            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
+            {
+                byNameAction.Invoke();
+            }
         }
 
         #endregion
@@ -78,34 +96,14 @@ namespace SpriteAnimations.Performers
         /// It evaluates if the current cycle is over and if so, it changes the cycle.
         /// This also evaluate what is the current frame of the current cycle.
         /// </summary>
-        protected void HandleCycles()
+        protected void HandleCycles(float deltaTime)
         {
-            if (_currentCycleElapsedTime >= CurrentCycleDuration) // means cycle passed last frame
+            _currentCycleElapsedTime += deltaTime;
+
+            if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
             {
                 EndCycle();
             }
-        }
-
-        protected SpriteAnimationFrame EvaluateCycleFrame()
-        {
-            int frameIndex = CurrentFrameIndex;
-            SpriteAnimationFrame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
-
-            if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return _currentFrame;
-
-            // From here it means the new frame will be displayed
-
-            if (_frameIndexActions.TryGetValue(frameIndex, out var byIndexAction))
-            {
-                byIndexAction.Invoke();
-            }
-
-            if (_frameNameActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
-            {
-                byNameAction.Invoke();
-            }
-
-            return evaluatedFrame;
         }
 
         #endregion
@@ -116,10 +114,7 @@ namespace SpriteAnimations.Performers
         /// </summary>
         public void EndCycle()
         {
-            if (_cycleTypeEndActions.TryGetValue(_currentCycleType, out var byTypeAction))
-            {
-                byTypeAction.Invoke();
-            }
+            _onEndAction?.Invoke();
 
             if (HasCurrentAnimation && CurrentSimpleAnimation.IsLoopable)
             {
@@ -146,7 +141,6 @@ namespace SpriteAnimations.Performers
         protected void EndAnimation()
         {
             _animationEnded = true;
-            _onEndAction?.Invoke();
         }
 
     }
