@@ -9,7 +9,9 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private VisualElement _root;
+        private TemplateContainer _template;
+
+        private Toggle _loopableField;
         private CycleElement _cycleElement;
         private SimpleSpriteAnimation _simpleSpriteAnimation;
 
@@ -18,15 +20,6 @@ namespace SpriteAnimations.Editor
         #region Getters
 
         public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
-        public override VisualElement Root
-        {
-            get
-            {
-                _root ??= GenerateRootElement();
-
-                return _root;
-            }
-        }
 
         #endregion
 
@@ -34,7 +27,18 @@ namespace SpriteAnimations.Editor
 
         public SimpleSpriteAnimationView(ContentElement contentElement) : base(contentElement)
         {
+
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationViewSimple");
+            _template = tree.Instantiate();
+
+            _loopableField = _template.Q<Toggle>("loopable-field");
+            _loopableField.RegisterValueChangedCallback(OnLoopableValueChanges);
+
+            VisualElement cycleContainer = _template.Q<VisualElement>("cycle-container");
             _cycleElement = new CycleElement(contentElement);
+            cycleContainer.Add(_cycleElement);
+
+            Add(_template);
         }
 
         #endregion
@@ -45,6 +49,7 @@ namespace SpriteAnimations.Editor
         {
             base.Initialize(animation);
             _simpleSpriteAnimation = animation as SimpleSpriteAnimation;
+            _loopableField.value = _simpleSpriteAnimation.IsLoopable;
             _cycleElement.Initialize(_simpleSpriteAnimation.Cycle);
         }
 
@@ -57,13 +62,11 @@ namespace SpriteAnimations.Editor
 
         #endregion
 
-        #region UI
+        #region Loopable
 
-        private VisualElement GenerateRootElement()
+        private void OnLoopableValueChanges(ChangeEvent<bool> changeEvent)
         {
-            VisualElement root = new();
-            root.Add(_cycleElement);
-            return root;
+            _simpleSpriteAnimation.IsLoopable = changeEvent.newValue;
         }
 
         #endregion

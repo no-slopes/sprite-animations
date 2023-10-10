@@ -55,7 +55,7 @@ namespace SpriteAnimations.Performers
             if (!HasCurrentAnimation) return;
 
             _currentCycleElapsedTime += deltaTime;
-            HandleCycles();
+            EvaluateEnd();
 
             if (!HasCurrentAnimation) return;
 
@@ -63,6 +63,7 @@ namespace SpriteAnimations.Performers
             SpriteAnimationFrame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
+
             // From here it means the new frame will be displayed
 
             _currentFrame = evaluatedFrame;
@@ -87,12 +88,7 @@ namespace SpriteAnimations.Performers
         #region Simple Sprite Animation Logic
 
 
-        /// <summary>
-        /// Handles the animation cycles. 
-        /// It evaluates if the current cycle is over and if so, it changes the cycle.
-        /// This also evaluate what is the current frame of the current cycle.
-        /// </summary>
-        protected void HandleCycles()
+        protected void EvaluateEnd()
         {
             if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
             {
@@ -103,7 +99,7 @@ namespace SpriteAnimations.Performers
         #endregion
 
         /// <summary>
-        /// Ends the current cycle. In case the animation is a loop, it restarts the cycle.
+        /// Ends the current cycle. In case the animation is loopable, it restarts the cycle.
         /// Case the animation is not a loop, it ends the animation.
         /// </summary>
         public void EndCycle()
@@ -137,7 +133,6 @@ namespace SpriteAnimations.Performers
             _currentCycle = null;
             _currentFrame = null;
         }
-
     }
 
 }

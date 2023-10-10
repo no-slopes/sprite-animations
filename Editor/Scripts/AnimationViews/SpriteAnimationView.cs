@@ -7,7 +7,7 @@ using UnityEditor.Playables;
 
 namespace SpriteAnimations.Editor
 {
-    public abstract class SpriteAnimationView
+    public abstract class SpriteAnimationView : VisualElement
     {
         #region Fields
 
@@ -24,7 +24,6 @@ namespace SpriteAnimations.Editor
 
         public SpriteAnimation Animation => _animation;
         public abstract SpriteAnimationType AnimationType { get; }
-        public abstract VisualElement Root { get; }
 
         #endregion
 

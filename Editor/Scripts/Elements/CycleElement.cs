@@ -13,9 +13,6 @@ namespace SpriteAnimations.Editor
         private SpriteAnimationCycle _cycle;
         private ContentElement _contentElement;
 
-        private VisualElement _previewColumnContainer;
-        private VisualElement _framesListColumnContainer;
-
         private AnimationPreviewElement _animationPreviewElement;
         private FramesListElement _framesListElement;
 
@@ -44,45 +41,20 @@ namespace SpriteAnimations.Editor
 
             _contentElement = contentElement;
 
-            _previewColumnContainer = new()
-            {
-                style = {
-                    flexDirection = FlexDirection.Column,
-                    flexGrow = 1,
-                    alignContent = Align.FlexStart,
-                    maxWidth = 210,
-                    paddingTop = 5,
-                    paddingBottom = 5,
-                    paddingLeft = 5,
-                    paddingRight = 5,
-                },
-            };
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Cycle");
+            TemplateContainer template = tree.Instantiate();
+            template.style.flexGrow = 1;
 
+            VisualElement previewContainer = template.Q<VisualElement>("animation-preview-container");
+            previewContainer.AddToClassList("animation-preview");
             _animationPreviewElement = GenerateAnimationPreviewElement(_contentElement);
+            previewContainer.Add(_animationPreviewElement);
 
-            _previewColumnContainer.Add(_animationPreviewElement);
-            _previewColumnContainer.AddToClassList("animation-preview");
-
-            Add(_previewColumnContainer);
-
-            _framesListColumnContainer = new()
-            {
-                style = {
-                    flexDirection = FlexDirection.Column,
-                    flexGrow = 1,
-                    alignContent = Align.FlexStart,
-                    paddingTop = 5,
-                    paddingBottom = 5,
-                    paddingLeft = 5,
-                    paddingRight = 5,
-                    minWidth = 200,
-                }
-            };
-
+            VisualElement framesContainer = template.Q<VisualElement>("frames-container");
             _framesListElement = new FramesListElement();
-            _framesListColumnContainer.Add(_framesListElement);
+            framesContainer.Add(_framesListElement);
 
-            Add(_framesListColumnContainer);
+            Add(template);
         }
 
         #endregion

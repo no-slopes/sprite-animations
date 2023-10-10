@@ -28,7 +28,7 @@ namespace SpriteAnimations
 
         #region Getters
 
-        public bool IsLoopable => _isLoopable;
+        public bool IsLoopable { get => _isLoopable; set => _isLoopable = value; }
         public SpriteAnimationCycle Cycle => _cycle;
 
         public override List<SpriteAnimationFrame> GetAllFrames() => _cycle.Frames;

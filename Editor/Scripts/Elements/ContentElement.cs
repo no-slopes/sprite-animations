@@ -75,7 +75,7 @@ namespace SpriteAnimations.Editor
             _currentView = _viewsFactory.GetView(_currentAnimation.AnimationType);
             _currentView.Initialize(_currentAnimation);
 
-            _animationViewElement.Add(_currentView.Root);
+            _animationViewElement.Add(_currentView);
         }
 
         public void Dismiss()
