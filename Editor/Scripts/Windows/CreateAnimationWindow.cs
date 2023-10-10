@@ -93,9 +93,9 @@ namespace SpriteAnimations.Editor
             AnimationCreated?.Invoke(animation);
         }
 
-        private SimpleSpriteAnimation CreateSingleSpriteAnimation(string path, string name)
+        private SpriteAnimationSimple CreateSingleSpriteAnimation(string path, string name)
         {
-            SimpleSpriteAnimation sriteAnimationAsset = ScriptableObject.CreateInstance<SimpleSpriteAnimation>();
+            SpriteAnimationSimple sriteAnimationAsset = ScriptableObject.CreateInstance<SpriteAnimationSimple>();
             AssetDatabase.CreateAsset(sriteAnimationAsset, $"{path}/{name}.asset");
             return sriteAnimationAsset;
         }

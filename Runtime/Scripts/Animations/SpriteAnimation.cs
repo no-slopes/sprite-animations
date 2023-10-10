@@ -48,22 +48,34 @@ namespace SpriteAnimations
 
         #region Abstratctions
 
-        public abstract List<SpriteAnimationFrame> GetAllFrames();
         public abstract Type PerformerType { get; }
         public abstract SpriteAnimationType AnimationType { get; }
 
         #endregion
 
-        #region Info
+        #region Calculations
 
+        /// <summary>
+        /// Calculates the duration of the animation in seconds.
+        /// </summary>
+        /// <returns>The duration of the animation in seconds.</returns>
         public float CalculateDuration()
         {
-            List<SpriteAnimationFrame> frames = GetAllFrames();
+            // Calculate the number of frames in the animation
+            int frameCount = CalculateFramesCount();
 
-            if (frames.Count <= 0) return 0;
+            // If there are no frames, return 0 duration
+            if (frameCount <= 0) return 0;
 
-            return frames.Count / (float)_fps;
+            // Calculate and return the duration in seconds
+            return frameCount / (float)_fps;
         }
+
+        /// <summary>
+        /// Calculates the total amount of frames in the animation.
+        /// </summary>
+        /// <returns>The count of frames.</returns>
+        public abstract int CalculateFramesCount();
 
         #endregion
 

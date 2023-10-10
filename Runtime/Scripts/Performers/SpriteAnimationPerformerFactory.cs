@@ -6,12 +6,12 @@ namespace SpriteAnimations.Performers
 {
     public class SpriteAnimationPerformerFactory
     {
-        private SpriteRenderer _spriteRenderer;
+        private SpriteAnimator _animator;
         private Dictionary<Type, SpriteAnimationPerformer> _handlers = new();
 
-        public SpriteAnimationPerformerFactory(SpriteRenderer spriteRenderer)
+        public SpriteAnimationPerformerFactory(SpriteAnimator animator)
         {
-            _spriteRenderer = spriteRenderer;
+            _animator = animator;
         }
 
         public SpriteAnimationPerformer GetPerformer(SpriteAnimation animation)
@@ -27,7 +27,7 @@ namespace SpriteAnimations.Performers
         protected SpriteAnimationPerformer Fabricate(SpriteAnimation animation)
         {
             SpriteAnimationPerformer performer = Activator.CreateInstance(animation.PerformerType) as SpriteAnimationPerformer;
-            performer.SpriteRenderer = _spriteRenderer;
+            performer.Animator = _animator;
 
             _handlers.Add(animation.PerformerType, performer);
 

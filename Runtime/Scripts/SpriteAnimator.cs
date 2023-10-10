@@ -76,6 +76,7 @@ namespace SpriteAnimations
         #region Getters
 
         public SpriteAnimatorState State => _state;
+        public SpriteRenderer SpriteRenderer => _spriteRenderer;
 
         public SpriteAnimation CurrentAnimation => _currentAnimation;
 
@@ -92,12 +93,12 @@ namespace SpriteAnimations
             {
                 if (!TryGetComponent(out _spriteRenderer))
                 {
-                    Debug.LogError($"Sprite Animator for {gameObject.name} - Sprite Renderer not found.");
+                    Logger.LogError($"Sprite Renderer not found.", this);
                     return;
                 }
             }
 
-            _performersFactory = new SpriteAnimationPerformerFactory(_spriteRenderer);
+            _performersFactory = new SpriteAnimationPerformerFactory(this);
             _animations = new Dictionary<string, SpriteAnimation>();
             _spriteAnimations.ForEach(a => _animations.Add(a.AnimationName, a));
         }
@@ -117,15 +118,12 @@ namespace SpriteAnimations
         protected virtual void LateUpdate()
         {
             if (!Playing || !_updateMode.Equals(UpdateMode.LateUpdate)) return;
-
-            Debug.LogError("LateUpdate");
             _currentPerformer?.Tick(Time.deltaTime);
         }
 
         protected virtual void FixedUpdate()
         {
             if (!Playing || !_updateMode.Equals(UpdateMode.FixedUpdate)) return;
-            Debug.LogError("FixedUpdate");
             _currentPerformer?.Tick(Time.deltaTime);
         }
 
@@ -155,8 +153,7 @@ namespace SpriteAnimations
         {
             if (!TryeGetAnimationByName(name, out var animation))
             {
-                Debug.LogError($"Sprite Animator for {gameObject.name} - "
-                + $"animation {name} not found");
+                Logger.LogError($"Animation '{name}' found.", this);
                 return null;
             }
             return Play(animation);
@@ -172,7 +169,8 @@ namespace SpriteAnimations
 
             if (animation == null) // If the animation is null, prevent changing.
             {
-                Debug.LogError($"Sprite Animator for {gameObject.name} - Could not evaluate an animation to be played. Check animation passed as parameter and the animation frames.");
+                Logger.LogError($"Could not evaluate an animation to be played."
+                + $"Check animation passed as parameter and the animation frames.", this);
                 return null;
             }
 

@@ -10,14 +10,13 @@ namespace SpriteAnimations.Performers
 
         #region Fields
 
-        protected SpriteRenderer _spriteRenderer;
-
+        protected SpriteAnimator _animator;
         protected SpriteAnimation _currentAnimation;
 
         /// <summary>
         /// List of frames used by the current cycle  
         /// </summary>
-        protected SpriteAnimationCycle _currentCycle = new();
+        protected SpriteAnimationCycle _currentCycle;
 
         /// <summary>
         /// Used when running an animation
@@ -39,7 +38,9 @@ namespace SpriteAnimations.Performers
 
         #region Properties  
 
-        public SpriteRenderer SpriteRenderer { get => _spriteRenderer; set => _spriteRenderer = value; }
+        public SpriteAnimator Animator { get => _animator; set => _animator = value; }
+        protected bool HasCurrentAnimation => _currentAnimation != null;
+        protected bool HasCurrentCycle => _currentCycle != null;
 
         #endregion
 
@@ -78,15 +79,16 @@ namespace SpriteAnimations.Performers
         {
             if (animation == null)
             {
-                Debug.LogError($"Sprite Animations - Trying to set null as current animation.");
+                Logger.LogError($"Trying to set null as current animation.", _animator);
                 return false;
             }
 
-            var allFrames = animation.GetAllFrames();
+            int framesCount = animation.CalculateFramesCount();
 
-            if (allFrames.Count > 0) return true;
+            if (framesCount > 0) return true;
 
-            Debug.LogError($"Sprite animations - Could not evaluate the animation {nameof(animation)} to be played. Did you set animation frames?");
+            Logger.LogError($"Unable play the animation {animation.AnimationName} due to the lack of frames. "
+            + $"Did you set animation frames?", _animator);
 
             return false;
         }

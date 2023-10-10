@@ -13,7 +13,7 @@ namespace SpriteAnimations.Editor
 
         private Toggle _loopableField;
         private CycleElement _cycleElement;
-        private SimpleSpriteAnimation _simpleSpriteAnimation;
+        private SpriteAnimationSimple _simpleSpriteAnimation;
 
         #endregion
 
@@ -50,7 +50,7 @@ namespace SpriteAnimations.Editor
         public override void Initialize(SpriteAnimation animation)
         {
             base.Initialize(animation);
-            _simpleSpriteAnimation = animation as SimpleSpriteAnimation;
+            _simpleSpriteAnimation = animation as SpriteAnimationSimple;
             _loopableField.value = _simpleSpriteAnimation.IsLoopable;
             _cycleElement.Initialize(_simpleSpriteAnimation.Cycle);
         }

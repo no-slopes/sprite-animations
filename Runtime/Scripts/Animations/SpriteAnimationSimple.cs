@@ -6,8 +6,7 @@ using SpriteAnimations.Performers;
 namespace SpriteAnimations
 {
     [CreateAssetMenu(fileName = "Simple Sprite Animation", menuName = "Sprite Animations/Simple Sprite Animation")]
-    [Serializable]
-    public class SimpleSpriteAnimation : SpriteAnimation
+    public class SpriteAnimationSimple : SpriteAnimation
     {
         #region Editor
 
@@ -31,10 +30,18 @@ namespace SpriteAnimations
         public bool IsLoopable { get => _isLoopable; set => _isLoopable = value; }
         public SpriteAnimationCycle Cycle => _cycle;
 
-        public override List<SpriteAnimationFrame> GetAllFrames() => _cycle.Frames;
-        public override Type PerformerType => typeof(SingleSpriteAnimationPerformer);
+        public override Type PerformerType => typeof(SpriteAnimationPerformerSingle);
         public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
 
-        #endregion      
+        #endregion
+
+        #region Calculations
+
+        public override int CalculateFramesCount()
+        {
+            return _cycle.Size;
+        }
+
+        #endregion
     }
 }

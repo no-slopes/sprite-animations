@@ -4,12 +4,11 @@ using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Performers
 {
-    public class SingleSpriteAnimationPerformer : SpriteAnimationPerformer
+    public class SpriteAnimationPerformerSingle : SpriteAnimationPerformer
     {
         #region Properties 
 
-        protected bool HasCurrentAnimation => _currentAnimation != null;
-        protected SimpleSpriteAnimation CurrentSimpleAnimation => _currentAnimation as SimpleSpriteAnimation;
+        protected SpriteAnimationSimple CurrentSimpleAnimation => _currentAnimation as SpriteAnimationSimple;
 
         #endregion    
 
@@ -59,7 +58,7 @@ namespace SpriteAnimations.Performers
 
             if (!HasCurrentAnimation) return;
 
-            int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.FrameCount, _currentCycleDuration);
+            int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
             SpriteAnimationFrame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
@@ -67,7 +66,7 @@ namespace SpriteAnimations.Performers
             // From here it means the new frame will be displayed
 
             _currentFrame = evaluatedFrame;
-            _spriteRenderer.sprite = _currentFrame.Sprite;
+            _animator.SpriteRenderer.sprite = _currentFrame.Sprite;
 
             // Calling frame actions
             if (_frameIndexActions.TryGetValue(frameIndex, out var byIndexAction))
@@ -112,7 +111,6 @@ namespace SpriteAnimations.Performers
             {
                 EndAnimation();
             }
-            _onEndAction?.Invoke();
         }
 
         /// <summary>
@@ -122,6 +120,7 @@ namespace SpriteAnimations.Performers
         {
             _currentCycleElapsedTime = 0f;
             _currentFrame = null;
+            _onEndAction?.Invoke();
         }
 
         /// <summary>
@@ -132,6 +131,7 @@ namespace SpriteAnimations.Performers
             _currentAnimation = null;
             _currentCycle = null;
             _currentFrame = null;
+            _onEndAction?.Invoke();
         }
     }
 
