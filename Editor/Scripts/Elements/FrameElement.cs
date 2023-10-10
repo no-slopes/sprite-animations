@@ -49,7 +49,7 @@ namespace SpriteAnimations.Editor
 
             AddToClassList("animation-cycle");
 
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/FrameUIDocument");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Frame");
             TemplateContainer template = tree.Instantiate();
 
             template.style.height = 60;

@@ -11,7 +11,7 @@ namespace SpriteAnimations.Editor
         #region Fields
 
         private SpriteAnimationCycle _cycle;
-        private SpriteAnimationView _view;
+        private ContentElement _contentElement;
 
         private VisualElement _previewColumnContainer;
         private VisualElement _framesListColumnContainer;
@@ -32,17 +32,17 @@ namespace SpriteAnimations.Editor
             }
         }
 
-        public SpriteAnimationView View => _view;
+        public ContentElement View => _contentElement;
 
         #endregion
 
         #region Constructors
 
-        public CycleElement(SpriteAnimationView view)
+        public CycleElement(ContentElement contentElement)
         {
             style.flexDirection = FlexDirection.Row;
 
-            _view = view;
+            _contentElement = contentElement;
 
             _previewColumnContainer = new()
             {
@@ -58,7 +58,7 @@ namespace SpriteAnimations.Editor
                 },
             };
 
-            _animationPreviewElement = GenerateAnimationPreviewElement(_view);
+            _animationPreviewElement = GenerateAnimationPreviewElement(_contentElement);
 
             _previewColumnContainer.Add(_animationPreviewElement);
             _previewColumnContainer.AddToClassList("animation-preview");
@@ -89,9 +89,9 @@ namespace SpriteAnimations.Editor
 
         #region Animation Preview Element
 
-        private AnimationPreviewElement GenerateAnimationPreviewElement(SpriteAnimationView view)
+        private AnimationPreviewElement GenerateAnimationPreviewElement(ContentElement contentElement)
         {
-            return new(view);
+            return new(contentElement);
         }
 
         #endregion

@@ -11,7 +11,7 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private SpriteAnimationView _view;
+        private ContentElement _contentElement;
 
         private VisualElement _imageContainer;
         private Image _image;
@@ -46,13 +46,13 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public AnimationPreviewElement(SpriteAnimationView view)
+        public AnimationPreviewElement(ContentElement contentElement)
         {
-            _view = view;
+            _contentElement = contentElement;
 
             AddToClassList("animation-cycle");
 
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationPreviewUIDocument");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationPreview");
             TemplateContainer template = tree.Instantiate();
 
             template.style.height = 231;
@@ -100,7 +100,7 @@ namespace SpriteAnimations.Editor
             }
 
             _currentCycleElapsedTime += deltaTime;
-            float frameDuration = _view.Animation != null ? 1f / _view.Animation.FPS : 0f;
+            float frameDuration = _contentElement.CurrentAnimation != null ? 1f / _contentElement.CurrentAnimation.FPS : 0f;
             float duration = _frames.Count * frameDuration;
 
             int frameIndex = Mathf.FloorToInt(_currentCycleElapsedTime * _frames.Count / duration);
@@ -131,7 +131,7 @@ namespace SpriteAnimations.Editor
                 return;
             }
 
-            _view.Tick += OnTick;
+            _contentElement.Tick += OnTick;
             _currentCycleElapsedTime = 0;
             _playing = true;
         }
@@ -141,7 +141,7 @@ namespace SpriteAnimations.Editor
             if (!_playing) return;
 
             _playing = false;
-            _view.Tick -= OnTick;
+            _contentElement.Tick -= OnTick;
             _currentFrame = null;
 
             if (_frames.Count == 0)

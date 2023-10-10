@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
-using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Editor
 {
     public class SpriteAnimationViewFactory
     {
         private Dictionary<SpriteAnimationType, SpriteAnimationView> _views = new();
-        private SpriteAnimatorEditorWindow _spriteAnimatorEditorWindow;
+        private ContentElement _contentElement;
 
-        public SpriteAnimationViewFactory(SpriteAnimatorEditorWindow editorWindow)
+        public SpriteAnimationViewFactory(ContentElement contentElement)
         {
-            _spriteAnimatorEditorWindow = editorWindow;
+            _contentElement = contentElement;
         }
 
         public SpriteAnimationView GetView(SpriteAnimationType animationType)
@@ -28,7 +27,7 @@ namespace SpriteAnimations.Editor
         {
             SpriteAnimationView view = animationType switch
             {
-                SpriteAnimationType.Simple => new SimpleSpriteAnimationView(_spriteAnimatorEditorWindow),
+                SpriteAnimationType.Simple => new SimpleSpriteAnimationView(_contentElement),
                 _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null),
             };
 

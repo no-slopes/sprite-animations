@@ -38,7 +38,7 @@ namespace SpriteAnimations.Editor
 
         public AnimationListItemElement()
         {
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationsListItemUIDocument");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationsListItem");
             TemplateContainer template = tree.Instantiate();
 
             _animationNameText = template.Q<Label>("name-text");

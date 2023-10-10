@@ -37,7 +37,7 @@ namespace SpriteAnimations.Editor
 
         public FramesListElement()
         {
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/FramesListUIDocument");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/FramesList");
             _template = tree.Instantiate();
 
             _scrollView = _template.Q<ScrollView>("scroll-view");

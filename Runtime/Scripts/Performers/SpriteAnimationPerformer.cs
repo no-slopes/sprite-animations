@@ -31,11 +31,6 @@ namespace SpriteAnimations.Performers
 
         protected float _currentCycleDuration = 0.0f;
 
-        /// <summary>
-        /// If the animation has reached its end and should stop playing
-        /// </summary>
-        protected bool _animationEnded = false;
-
         protected Dictionary<int, UnityAction> _frameIndexActions = new();
         protected Dictionary<string, UnityAction> _frameIdActions = new();
         protected UnityAction _onEndAction;

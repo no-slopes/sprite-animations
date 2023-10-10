@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/SpriteAnimatorStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#SpriteAnimatorStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 0; flex-direction: column; height: 100%; flex-shrink: 0; background-color: rgb(29, 0, 0); width: 250px;">
+        <ui:Label tabindex="-1" text="Animations" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-font-style: bold; font-size: 16px;" />
+        <ui:VisualElement name="animations-list-header" class="buttons-container" style="flex-grow: 0; height: 100px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-basis: 50px; width: 250px; flex-direction: row-reverse;">
+            <ui:Button text="Create" parse-escape-sequences="true" display-tooltip-when-elided="true" name="create-animation-button" class="primary" style="font-size: 14px; color: rgb(253, 253, 253); height: 25px; text-overflow: clip; width: 70px;" />
+        </ui:VisualElement>
+        <ui:ListView focusable="true" name="animations-list" virtualization-method="FixedHeight" style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>

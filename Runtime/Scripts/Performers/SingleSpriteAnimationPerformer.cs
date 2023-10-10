@@ -28,13 +28,9 @@ namespace SpriteAnimations.Performers
         {
             base.StartAnimation(animation);
 
-            ValidateAnimation(animation);
-
+            _currentCycleElapsedTime = 0;
             _currentAnimation = animation;
 
-            ResetCycle();
-
-            _animationEnded = false;
             _currentCycle = CurrentSimpleAnimation.Cycle;
             _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
         }
@@ -46,8 +42,6 @@ namespace SpriteAnimations.Performers
         {
             base.StopAnimation();
             EndAnimation();
-            _currentAnimation = null;
-            _currentCycle = null;
         }
 
         /// <summary>
@@ -58,17 +52,17 @@ namespace SpriteAnimations.Performers
         /// <returns></returns>
         public override void Tick(float deltaTime)
         {
-            if (_animationEnded) return;
+            if (!HasCurrentAnimation) return;
 
-            HandleCycles(deltaTime);
+            _currentCycleElapsedTime += deltaTime;
+            HandleCycles();
 
-            if (_animationEnded) return;
+            if (!HasCurrentAnimation) return;
 
             int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.FrameCount, _currentCycleDuration);
             SpriteAnimationFrame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
-
             // From here it means the new frame will be displayed
 
             _currentFrame = evaluatedFrame;
@@ -79,6 +73,8 @@ namespace SpriteAnimations.Performers
             {
                 byIndexAction.Invoke();
             }
+
+            if (string.IsNullOrEmpty(evaluatedFrame.Id)) return;
 
             if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
             {
@@ -96,10 +92,8 @@ namespace SpriteAnimations.Performers
         /// It evaluates if the current cycle is over and if so, it changes the cycle.
         /// This also evaluate what is the current frame of the current cycle.
         /// </summary>
-        protected void HandleCycles(float deltaTime)
+        protected void HandleCycles()
         {
-            _currentCycleElapsedTime += deltaTime;
-
             if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
             {
                 EndCycle();
@@ -114,16 +108,15 @@ namespace SpriteAnimations.Performers
         /// </summary>
         public void EndCycle()
         {
-            _onEndAction?.Invoke();
-
             if (HasCurrentAnimation && CurrentSimpleAnimation.IsLoopable)
             {
                 ResetCycle();
             }
-            else
+            else if (HasCurrentAnimation)
             {
                 EndAnimation();
             }
+            _onEndAction?.Invoke();
         }
 
         /// <summary>
@@ -140,7 +133,9 @@ namespace SpriteAnimations.Performers
         /// </summary>
         protected void EndAnimation()
         {
-            _animationEnded = true;
+            _currentAnimation = null;
+            _currentCycle = null;
+            _currentFrame = null;
         }
 
     }

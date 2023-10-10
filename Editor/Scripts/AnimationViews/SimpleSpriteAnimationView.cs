@@ -32,9 +32,9 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SimpleSpriteAnimationView(SpriteAnimatorEditorWindow window) : base(window)
+        public SimpleSpriteAnimationView(ContentElement contentElement) : base(contentElement)
         {
-            _cycleElement = new CycleElement(this);
+            _cycleElement = new CycleElement(contentElement);
         }
 
         #endregion

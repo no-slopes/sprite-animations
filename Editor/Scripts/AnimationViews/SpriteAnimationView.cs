@@ -7,12 +7,11 @@ using UnityEditor.Playables;
 
 namespace SpriteAnimations.Editor
 {
-    public delegate void TickEvent(float deltaTime);
     public abstract class SpriteAnimationView
     {
         #region Fields
 
-        protected SpriteAnimatorEditorWindow _window;
+        protected ContentElement _contentElement;
         protected SpriteAnimation _animation;
 
         #endregion
@@ -31,9 +30,9 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SpriteAnimationView(SpriteAnimatorEditorWindow window)
+        public SpriteAnimationView(ContentElement contentElement)
         {
-            _window = window;
+            _contentElement = contentElement;
         }
 
         #endregion
@@ -44,11 +43,11 @@ namespace SpriteAnimations.Editor
         {
             _animation = animation;
 
-            _window.FPSSlider.value = _animation.FPS;
-            _window.AnimationNameField.value = _animation.AnimationName;
+            _contentElement.FPSSlider.value = _animation.FPS;
+            _contentElement.AnimationNameField.value = _animation.AnimationName;
 
-            _window.AnimationNameField.RegisterValueChangedCallback(OnAnimationNameChanged);
-            _window.FPSSlider.RegisterValueChangedCallback(OnFPSChange);
+            _contentElement.AnimationNameField.RegisterValueChangedCallback(OnAnimationNameChanged);
+            _contentElement.FPSSlider.RegisterValueChangedCallback(OnFPSChange);
         }
 
         public virtual void Dismiss()
@@ -60,17 +59,8 @@ namespace SpriteAnimations.Editor
             }
 
             _animation = null;
-            _window.AnimationNameField.UnregisterValueChangedCallback(OnAnimationNameChanged);
-            _window.FPSSlider.UnregisterValueChangedCallback(OnFPSChange);
-        }
-
-        #endregion
-
-        #region Tick
-
-        public virtual void PerformTick(float deltaTime)
-        {
-            Tick?.Invoke(deltaTime);
+            _contentElement.AnimationNameField.UnregisterValueChangedCallback(OnAnimationNameChanged);
+            _contentElement.FPSSlider.UnregisterValueChangedCallback(OnFPSChange);
         }
 
         #endregion
@@ -86,12 +76,6 @@ namespace SpriteAnimations.Editor
         {
             _animation.AnimationName = changeEvent.newValue;
         }
-
-        #endregion
-
-        #region Events
-
-        public event TickEvent Tick; // event
 
         #endregion
     }

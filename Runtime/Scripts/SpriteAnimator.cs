@@ -24,7 +24,7 @@ namespace SpriteAnimations
 #if UNITY_EDITOR
         public void OpenAnimatorWindow()
         {
-            SpriteAnimatorEditorWindow.OpenEditorWindow(this);
+            AnimationsManagerWindow.OpenEditorWindow(this);
         }
 #endif
 
