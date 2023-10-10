@@ -76,3 +76,47 @@
     background-color: rgb(34, 118, 97);
     color: rgb(255, 255, 255);
 }
+
+#size-field {
+    width: 90px;
+}
+
+#size-field > Label {
+    width: 40px;
+    max-width: 40px;
+    min-width: 40px;
+}
+
+.windrose-button {
+    background-color: rgb(67, 67, 67);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.windrose-button .arrow-icon {
+    background-image: resource('Icons/arrow-right');
+    width: 30px;
+    height: 30px;
+    rotate: 0;
+}
+
+.badge {
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    -unity-font-style: bold;
+    background-color: rgb(118, 12, 25);
+}
+
+.windrose-button.selected {
+    -unity-background-image-tint-color: rgb(97, 152, 255);
+    background-color: rgb(118, 12, 25);
+}

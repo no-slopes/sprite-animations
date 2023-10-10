@@ -5,7 +5,7 @@ using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Editor
 {
-    public class SimpleSpriteAnimationView : SpriteAnimationView
+    public class SpriteAnimationViewSimple : SpriteAnimationView
     {
         #region Fields
 
@@ -25,7 +25,7 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SimpleSpriteAnimationView(ContentElement contentElement) : base(contentElement)
+        public SpriteAnimationViewSimple(ContentElement contentElement) : base(contentElement)
         {
             style.flexGrow = 1;
 

@@ -12,7 +12,7 @@ namespace SpriteAnimations.Editor
 
         private SpriteAnimationFrame _frame;
 
-        private FramesListElement _owner;
+        private CycleElement _owner;
         private Label _indexLabel;
         private VisualElement _imagePreviewContainer;
         private ObjectField _spriteField;
@@ -42,7 +42,7 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public FrameElement(FramesListElement owner, int index, SpriteAnimationFrame frame)
+        public FrameElement(CycleElement owner, int index, SpriteAnimationFrame frame)
         {
             _owner = owner;
             _frame = frame;
@@ -110,7 +110,7 @@ namespace SpriteAnimations.Editor
 
         private void OnDownRequested()
         {
-            if (_frame.Index == _owner.FramesCount - 1) return;
+            if (_frame.Index == _owner.Size - 1) return;
             _owner.Swap(_frame.Index, _frame.Index + 1);
         }
 
@@ -145,7 +145,7 @@ namespace SpriteAnimations.Editor
 
         public void EvaluateEnabledButtons()
         {
-            _downButton.SetEnabled(Index < _owner.FramesCount - 1);
+            _downButton.SetEnabled(Index < _owner.Size - 1);
             _upButton.SetEnabled(Index > 0);
         }
 

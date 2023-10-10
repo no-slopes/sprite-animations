@@ -86,6 +86,7 @@ namespace SpriteAnimations.Editor
             SpriteAnimation animation = _typeField.value switch
             {
                 SpriteAnimationType.Simple => CreateSingleSpriteAnimation(path, name),
+                SpriteAnimationType.Windrose => CreateWindroseSpriteAnimation(path, name),
                 _ => throw new ArgumentOutOfRangeException(nameof(_typeField.value), null, null)
             };
 
@@ -96,6 +97,13 @@ namespace SpriteAnimations.Editor
         private SpriteAnimationSimple CreateSingleSpriteAnimation(string path, string name)
         {
             SpriteAnimationSimple sriteAnimationAsset = ScriptableObject.CreateInstance<SpriteAnimationSimple>();
+            AssetDatabase.CreateAsset(sriteAnimationAsset, $"{path}/{name}.asset");
+            return sriteAnimationAsset;
+        }
+
+        private SpriteAnimationWindrose CreateWindroseSpriteAnimation(string path, string name)
+        {
+            SpriteAnimationWindrose sriteAnimationAsset = ScriptableObject.CreateInstance<SpriteAnimationWindrose>();
             AssetDatabase.CreateAsset(sriteAnimationAsset, $"{path}/{name}.asset");
             return sriteAnimationAsset;
         }

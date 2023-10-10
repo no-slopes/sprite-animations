@@ -54,11 +54,7 @@ namespace SpriteAnimations.Editor
 
         private string ResolveAnimationTypeLabel(SpriteAnimationType animationType)
         {
-            return animationType switch
-            {
-                SpriteAnimationType.Simple => "[Simple]",
-                _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null)
-            };
+            return $"[{animationType}]";
         }
 
         #endregion

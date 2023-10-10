@@ -1,0 +1,61 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd">
+    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/SpriteAnimatorStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#SpriteAnimatorStyles" />
+    <ui:VisualElement name="container" style="align-items: center;">
+        <ui:VisualElement name="buttons" style="max-width: 200px; flex-grow: 1; width: 225%; justify-content: space-between; align-items: stretch; height: 225px;">
+            <ui:VisualElement name="row1" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="nw-button-container" style="flex-grow: 1; align-items: center; justify-content: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="nw-button" view-data-key="northwest" class="windrose-button">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 225deg;" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="n-button-container" style="flex-grow: 1; align-items: center; justify-content: center; rotate: 270deg;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="n-button" view-data-key="north" class="windrose-button" style="rotate: 0;">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1;" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="ne-button-container" view-data-key="northwest" style="flex-grow: 1; align-items: center; justify-content: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ne-button" view-data-key="north" class="windrose-button" style="rotate: 0;">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 315deg;" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="row2" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="w-button-container" style="flex-grow: 1; align-items: center; justify-content: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="w-button" view-data-key="west" class="windrose-button">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 180deg;" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="expander" style="flex-grow: 1; align-items: center; justify-content: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ne-button" view-data-key="north" class="windrose-button" style="rotate: 0; background-color: rgba(67, 67, 67, 0);">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 315deg; background-color: rgba(0, 0, 0, 0); background-image: none;" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="e-button-container" style="flex-grow: 1; align-items: center; justify-content: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="e-button" view-data-key="east" class="windrose-button selected">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 0;" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="row3" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="sw-button-container" style="flex-grow: 1; align-items: center; justify-content: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="sw-button" view-data-key="southwest" class="windrose-button">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 135deg;" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="s-button-container" style="flex-grow: 1; align-items: center; justify-content: center; rotate: 0;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="s-button" view-data-key="south" class="windrose-button" style="rotate: 0;">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 90deg;" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="se-button-container" style="flex-grow: 1; align-items: center; justify-content: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="se-button" view-data-key="southeast" class="windrose-button" style="rotate: 0;">
+                        <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 45deg;" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="texts" style="flex-grow: 1; justify-content: center; align-items: center; width: 100%;">
+            <ui:Label tabindex="-1" text="East" parse-escape-sequences="true" display-tooltip-when-elided="true" name="current-selection-badge" class="badge" style="-unity-text-align: middle-center; min-width: 125px; font-size: 14px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

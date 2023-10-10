@@ -11,15 +11,15 @@ namespace SpriteAnimations.Editor
     // PointerManipulator.
     public class FramesDropManipulator : PointerManipulator
     {
-        private FramesListElement _framesListElement;
+        private CycleElement _cycleElement;
 
         // The path of the stored asset, or the empty string if there isn't one.
         string assetPath = string.Empty;
 
-        public FramesDropManipulator(FramesListElement framesListElement)
+        public FramesDropManipulator(CycleElement cycleElement)
         {
-            _framesListElement = framesListElement;
-            target = framesListElement.ScrollView;
+            _cycleElement = cycleElement;
+            target = cycleElement.ScrollView;
         }
 
         protected override void RegisterCallbacksOnTarget()
@@ -44,13 +44,13 @@ namespace SpriteAnimations.Editor
         // This method runs if a user brings the pointer over the target while a drag is in progress.
         void OnDragEnter(DragEnterEvent _)
         {
-            _framesListElement.HighlightDropArea();
+            _cycleElement.HighlightDropArea();
         }
 
         // This method runs if a user makes the pointer leave the bounds of the target while a drag is in progress.
         void OnDragLeave(DragLeaveEvent _)
         {
-            _framesListElement.DismissDropArea();
+            _cycleElement.DismissDropArea();
         }
 
         // This method runs every frame while a drag is in progress.
@@ -62,7 +62,7 @@ namespace SpriteAnimations.Editor
         // This method runs when a user drops a dragged object onto the target.
         void OnDragPerform(DragPerformEvent _)
         {
-            _framesListElement.DismissDropArea();
+            _cycleElement.DismissDropArea();
 
             // Set droppedObject and draggedName fields to refer to dragged object.
             Object[] droppedObjects = DragAndDrop.objectReferences;
@@ -78,7 +78,7 @@ namespace SpriteAnimations.Editor
                 return;
             }
 
-            if (_framesListElement.FramesCount > 0)
+            if (_cycleElement.Size > 0)
             {
                 bool confirmed = EditorUtility.DisplayDialog(
                    $"Attention", // title
@@ -101,7 +101,7 @@ namespace SpriteAnimations.Editor
                 Debug.LogError("Dropped object is not a Sprite.");
                 return;
             }
-            _framesListElement.AddFrame(droppedObject as Sprite);
+            _cycleElement.AddFrame(droppedObject as Sprite);
         }
 
         private void SetMultipleFrames(Object[] droppedObjects)
@@ -116,7 +116,7 @@ namespace SpriteAnimations.Editor
                 }
             }
 
-            _framesListElement.SetFrames(sprites);
+            _cycleElement.SetFrames(sprites);
         }
     }
 }
