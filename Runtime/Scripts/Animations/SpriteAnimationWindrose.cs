@@ -63,9 +63,6 @@ namespace SpriteAnimations
         [SerializeField, HideInInspector]
         protected WindroseCycles _cycles = new();
 
-        [SerializeField]
-        protected int _size;
-
         #endregion
 
         #region Getters

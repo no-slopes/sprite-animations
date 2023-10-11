@@ -20,13 +20,6 @@ namespace SpriteAnimations
 
         #endregion
 
-#if UNITY_EDITOR
-        public void OpenAnimatorWindow()
-        {
-            AnimationsManagerWindow.OpenEditorWindow(this);
-        }
-#endif
-
         [SerializeField]
         protected SpriteRenderer _spriteRenderer;
 
@@ -37,12 +30,10 @@ namespace SpriteAnimations
         protected SpriteAnimation _currentAnimation;
 
         [SerializeField]
-        [Space]
         protected List<SpriteAnimation> _spriteAnimations = new();
 
         [SerializeField]
-        [Space]
-        protected bool _playAutomatically = true;
+        protected bool _playOnStart = true;
 
         [SerializeField]
         protected UnityEvent<SpriteAnimation> _animationChanged;
@@ -104,7 +95,7 @@ namespace SpriteAnimations
 
         protected virtual void Start()
         {
-            if (_playAutomatically && DefaultAnimation != null)
+            if (_playOnStart && DefaultAnimation != null)
                 Play(DefaultAnimation);
         }
 
@@ -330,13 +321,6 @@ namespace SpriteAnimations
             Playing = 0,
             Paused = 1,
             Stopped = 2
-        }
-
-        public enum UpdateMode
-        {
-            Update,
-            FixedUpdate,
-            LateUpdate,
         }
 
         #endregion

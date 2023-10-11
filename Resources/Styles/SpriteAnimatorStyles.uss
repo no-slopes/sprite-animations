@@ -1,0 +1,31 @@
+.row {
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.w-100 {
+    justify-content: center;
+    width: 100%;
+}
+
+.unity-base-field > Label {
+    color: rgb(200, 200, 200);
+    -unity-font-style: bold;
+}
+
+.field-row {
+}
+
+.open-button {
+    background-color: rgb(43, 2, 2);
+}
+
+.open-button:hover {
+    background-color: rgb(99, 7, 7);
+}

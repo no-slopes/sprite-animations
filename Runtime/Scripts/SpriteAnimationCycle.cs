@@ -12,7 +12,7 @@ namespace SpriteAnimations
         protected List<SpriteAnimationFrame> _frames;
 
         [SerializeField]
-        protected bool _identifiable;
+        protected bool _identifiable = true;
 
         public bool Identifiable { get => _identifiable; set => _identifiable = value; }
         public List<SpriteAnimationFrame> Frames => _frames;
