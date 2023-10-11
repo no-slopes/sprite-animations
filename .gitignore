@@ -29,6 +29,7 @@
 
 # Visual Studio workspaces
 *.code-workspace
+*.code-workspace.meta
 
 # Gradle cache directory
 .gradle/
