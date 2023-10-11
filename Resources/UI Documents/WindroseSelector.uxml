@@ -14,7 +14,7 @@
                     </ui:Button>
                 </ui:VisualElement>
                 <ui:VisualElement name="ne-button-container" view-data-key="northwest" style="flex-grow: 1; align-items: center; justify-content: center;">
-                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ne-button" view-data-key="north" class="windrose-button" style="rotate: 0;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ne-button" view-data-key="northeast" class="windrose-button" style="rotate: 0;">
                         <ui:VisualElement name="arrow-icon" class="arrow-icon" style="flex-grow: 1; rotate: 315deg;" />
                     </ui:Button>
                 </ui:VisualElement>

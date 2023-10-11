@@ -120,3 +120,13 @@
     -unity-background-image-tint-color: rgb(97, 152, 255);
     background-color: rgb(118, 12, 25);
 }
+
+.frame-container {
+}
+
+.frame-container .id-field-button {
+    flex-grow: 1;
+    height: 100%;
+    max-width: none;
+    min-width: auto;
+}

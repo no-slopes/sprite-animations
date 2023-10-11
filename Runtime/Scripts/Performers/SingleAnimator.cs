@@ -10,8 +10,6 @@ namespace SpriteAnimations.Performers
     {
         #region Fields
 
-        protected Dictionary<string, UnityAction> _frameIdActions = new();
-
         #endregion
 
         #region Properties 
@@ -48,7 +46,6 @@ namespace SpriteAnimations.Performers
         public override void StopAnimation()
         {
             base.StopAnimation();
-            _frameIdActions.Clear();
             EndAnimation();
         }
 
@@ -143,22 +140,6 @@ namespace SpriteAnimations.Performers
             _currentCycle = null;
             _currentFrame = null;
             _onEndAction?.Invoke();
-        }
-
-        #endregion
-
-        #region Actions
-
-        /// <summary>
-        /// Sets an action to be invoked when a specific frame ID is played.
-        /// </summary>
-        /// <param name="id">The frame ID.</param>
-        /// <param name="action">The UnityAction to be invoked.</param>
-        /// <returns>The updated PerformerSingle instance.</returns>
-        public AnimationPerformer OnFrameId(string id, UnityAction action)
-        {
-            _frameIdActions[id] = action;
-            return this;
         }
 
         #endregion
