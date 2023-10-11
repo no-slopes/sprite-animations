@@ -27,7 +27,7 @@ namespace SpriteAnimations.Editor
                 _animationTypeText.text = ResolveAnimationTypeLabel(_animation.AnimationType);
                 _animation.NameChanged += (newName) =>
                 {
-                    _animationNameText.text = !string.IsNullOrEmpty(newName) ? newName : _animation.name;
+                    _animationNameText.text = !string.IsNullOrEmpty(newName) ? newName : $"[Filename] {_animation.name}";
                 };
             }
         }

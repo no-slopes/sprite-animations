@@ -91,6 +91,8 @@ namespace SpriteAnimations.Editor
             };
 
             animation.AnimationName = name;
+            EditorUtility.SetDirty(animation);
+            AssetDatabase.SaveAssetIfDirty(animation);
             AnimationCreated?.Invoke(animation);
         }
 
