@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
-using System.Linq;
 using SpriteAnimations.Performers;
 
 #if UNITY_EDITOR
@@ -146,38 +145,96 @@ namespace SpriteAnimations
 
         /// <summary>
         /// Plays the specified animation by its name. Note that the animation must be registered to the 
-        /// animator in orther to be found.
+        /// animator in order to be found.
         /// </summary>
-        /// <param name="name"></param>
-        public AnimationPerformer Play(string name)
+        /// <typeparam name="TAnimator">The type of the animator.</typeparam>
+        /// <param name="name">The name of the animation to play.</param>
+        /// <returns>The AnimationPerformer instance for the played animation, or null if the animation is not found.</returns>
+        public TAnimator Play<TAnimator>(string name) where TAnimator : AnimationPerformer
         {
-            if (!TryeGetAnimationByName(name, out var animation))
+            // Try to get the animation by name
+            if (!TryGetAnimationByName(name, out var animation))
             {
-                Logger.LogError($"Animation '{name}' found.", this);
+                // Log an error if the animation is not found
+                Logger.LogError($"Animation '{name}' not found.", this);
                 return null;
             }
+
+            // Play the animation
+            return Play<TAnimator>(animation);
+        }
+
+        /// <summary>
+        /// Plays the specified animation by its name. Note that the animation must be registered to the 
+        /// animator in order to be found.
+        /// </summary>
+        /// <param name="name">The name of the animation.</param>
+        /// <returns>The AnimationPerformer instance for the played animation, or null if the animation is not found.</returns>
+        public AnimationPerformer Play(string name)
+        {
+            // Try to get the animation by its name
+            if (!TryGetAnimationByName(name, out var animation))
+            {
+                // Log an error if the animation is not found
+                Logger.LogError($"Animation '{name}' not found.", this);
+                return null;
+            }
+
+            // Play the animation
             return Play(animation);
         }
 
         /// <summary>
-        /// Plays the given animation. Does not require registering.
+        /// Plays the specified animation.
         /// </summary>
-        /// <param name="animation"></param>
-        public AnimationPerformer Play(SpriteAnimation animation)
+        /// <typeparam name="TAnimator">The type of the animation performer.</typeparam>
+        /// <param name="animation">The animation to play.</param>
+        /// <returns>The animation performer.</returns>
+        public TAnimator Play<TAnimator>(SpriteAnimation animation) where TAnimator : AnimationPerformer
         {
-            if (animation == _currentAnimation) return _currentPerformer;
+            // If the animation is already playing, return the existing animation performer.
+            if (animation == _currentAnimation)
+                return _performersFactory.Get<TAnimator>(animation);
 
-            if (animation == null) // If the animation is null, prevent changing.
+            // If the animation is null, return null and log an error.
+            if (animation == null)
             {
-                Logger.LogError($"Could not evaluate an animation to be played."
-                + $"Check animation passed as parameter and the animation frames.", this);
+                Logger.LogError("Could not evaluate an animation to be played. Null given", this);
                 return null;
             }
 
+            // Change the current animation.
             ChangeAnimation(animation);
 
+            // Set the sprite animator state to playing.
             _state = SpriteAnimatorState.Playing;
-            return _currentPerformer;
+
+            // Return the animation performer.
+            return _performersFactory.Get<TAnimator>(animation);
+        }
+
+        /// <summary>
+        /// Plays the given sprite animation.
+        /// </summary>
+        /// <param name="animation">The animation to play.</param>
+        /// <returns>The animation performer.</returns>
+        public AnimationPerformer Play(SpriteAnimation animation)
+        {
+            // If the animation is already playing, return the existing animation performer
+            if (animation == _currentAnimation)
+                return _performersFactory.Get(animation);
+            // If the animation is null, log an error and return null
+            if (animation == null)
+            {
+                Logger.LogError("Could not evaluate an animation to be played. Check animation passed as parameter and the animation frames.", this);
+                return null;
+            }
+            // Change the current animation
+            ChangeAnimation(animation);
+            // Set the state to playing
+            _state = SpriteAnimatorState.Playing;
+            // Return the animation performer for the given animation
+            return _performersFactory.Get(animation);
         }
 
         /// <summary>
@@ -221,7 +278,7 @@ namespace SpriteAnimations
         {
             _currentPerformer?.StopAnimation(); // Stop current animation.
 
-            _currentPerformer = _performersFactory.GetPerformer(animation); // Sets the current handler to the given animation.
+            _currentPerformer = _performersFactory.Get(animation); // Sets the current handler to the given animation.
             _currentAnimation = animation; // current animation is now the given animation.
             _currentPerformer.StartAnimation(_currentAnimation); // Starts the given animation.
 
@@ -234,7 +291,7 @@ namespace SpriteAnimations
 
         public SpriteAnimation GetAnimationByName(string name)
         {
-            if (!TryeGetAnimationByName(name, out var animation))
+            if (!TryGetAnimationByName(name, out var animation))
             {
                 return null;
             }
@@ -242,7 +299,7 @@ namespace SpriteAnimations
             return animation;
         }
 
-        public bool TryeGetAnimationByName(string name, out SpriteAnimation animation)
+        public bool TryGetAnimationByName(string name, out SpriteAnimation animation)
         {
             return _animations.TryGetValue(name, out animation);
         }

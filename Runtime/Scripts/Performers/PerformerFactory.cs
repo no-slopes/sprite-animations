@@ -6,21 +6,32 @@ namespace SpriteAnimations.Performers
     public class PerformerFactory
     {
         private SpriteAnimator _animator;
-        private Dictionary<Type, AnimationPerformer> _handlers = new();
+        private Dictionary<Type, AnimationPerformer> _performer = new();
 
         public PerformerFactory(SpriteAnimator animator)
         {
             _animator = animator;
         }
 
-        public AnimationPerformer GetPerformer(SpriteAnimation animation)
+        public TAnimator Get<TAnimator>(SpriteAnimation animation) where TAnimator : AnimationPerformer
         {
-            if (!_handlers.TryGetValue(animation.PerformerType, out AnimationPerformer handler))
+            if (!_performer.TryGetValue(animation.PerformerType, out AnimationPerformer performer))
             {
-                handler = Fabricate(animation);
+                performer = Fabricate(animation);
             }
 
-            return handler;
+            return performer as TAnimator;
+        }
+
+
+        public AnimationPerformer Get(SpriteAnimation animation)
+        {
+            if (!_performer.TryGetValue(animation.PerformerType, out AnimationPerformer performer))
+            {
+                performer = Fabricate(animation);
+            }
+
+            return performer;
         }
 
         protected AnimationPerformer Fabricate(SpriteAnimation animation)
@@ -28,7 +39,7 @@ namespace SpriteAnimations.Performers
             AnimationPerformer performer = Activator.CreateInstance(animation.PerformerType) as AnimationPerformer;
             performer.Animator = _animator;
 
-            _handlers.Add(animation.PerformerType, performer);
+            _performer.Add(animation.PerformerType, performer);
 
             return performer;
         }
