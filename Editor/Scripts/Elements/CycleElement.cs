@@ -34,8 +34,6 @@ namespace SpriteAnimations.Editor
             }
         }
 
-        public ContentElement View => _contentElement;
-
         #endregion
 
         #region Getters

@@ -1,35 +1,45 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace SpriteAnimations.Performers
 {
     public class PerformerFactory
     {
         private SpriteAnimator _animator;
-        private Dictionary<Type, Performer> _handlers = new();
+        private Dictionary<Type, AnimationPerformer> _performer = new();
 
         public PerformerFactory(SpriteAnimator animator)
         {
             _animator = animator;
         }
 
-        public Performer GetPerformer(SpriteAnimation animation)
+        public TAnimator Get<TAnimator>(SpriteAnimation animation) where TAnimator : AnimationPerformer
         {
-            if (!_handlers.TryGetValue(animation.PerformerType, out Performer handler))
+            if (!_performer.TryGetValue(animation.PerformerType, out AnimationPerformer performer))
             {
-                handler = Fabricate(animation);
+                performer = Fabricate(animation);
             }
 
-            return handler;
+            return performer as TAnimator;
         }
 
-        protected Performer Fabricate(SpriteAnimation animation)
+
+        public AnimationPerformer Get(SpriteAnimation animation)
         {
-            Performer performer = Activator.CreateInstance(animation.PerformerType) as Performer;
+            if (!_performer.TryGetValue(animation.PerformerType, out AnimationPerformer performer))
+            {
+                performer = Fabricate(animation);
+            }
+
+            return performer;
+        }
+
+        protected AnimationPerformer Fabricate(SpriteAnimation animation)
+        {
+            AnimationPerformer performer = Activator.CreateInstance(animation.PerformerType) as AnimationPerformer;
             performer.Animator = _animator;
 
-            _handlers.Add(animation.PerformerType, performer);
+            _performer.Add(animation.PerformerType, performer);
 
             return performer;
         }

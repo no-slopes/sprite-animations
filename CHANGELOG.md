@@ -1,3 +1,5 @@
-# Changelog - 10/09/2023
+# Changelog - 11/10/2023
 
-## 1.0.0-alpha
+## 0.1.0-preview
+
+Ready for comunity testing

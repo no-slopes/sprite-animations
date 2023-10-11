@@ -30,7 +30,7 @@ namespace SpriteAnimations
         public bool IsLoopable { get => _isLoopable; set => _isLoopable = value; }
         public SpriteAnimationCycle Cycle => _cycle;
 
-        public override Type PerformerType => typeof(PerformerSingle);
+        public override Type PerformerType => typeof(SingleAnimator);
         public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
 
         #endregion

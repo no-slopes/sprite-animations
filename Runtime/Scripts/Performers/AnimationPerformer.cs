@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Performers
 {
-    public abstract class Performer
+    public abstract class AnimationPerformer
     {
 
         #region Fields
@@ -31,6 +30,7 @@ namespace SpriteAnimations.Performers
         protected float _currentCycleDuration = 0.0f;
 
         protected Dictionary<int, UnityAction> _frameIndexActions = new();
+        protected Dictionary<string, UnityAction> _frameIdActions = new();
         protected UnityAction _onEndAction;
 
         #endregion       
@@ -61,6 +61,7 @@ namespace SpriteAnimations.Performers
         public virtual void StopAnimation()
         {
             _frameIndexActions.Clear();
+            _frameIdActions.Clear();
             _onEndAction = null;
         }
 
@@ -96,15 +97,26 @@ namespace SpriteAnimations.Performers
         #region Actions
 
         /// <summary>
-        /// Sets an action to be performed on a specific frame index.
-        /// This overrides previous actions defined for that frame index.
+        /// Sets an action to be performed when a specific frame index is played.
         /// </summary>
         /// <param name="frameIndex">The index of the frame.</param>
         /// <param name="action">The action to be performed.</param>
         /// <returns>The SpriteAnimationPerformer instance.</returns>
-        public Performer OnFrame(int frameIndex, UnityAction action)
+        public AnimationPerformer SetOnFrame(int frameIndex, UnityAction action)
         {
             _frameIndexActions[frameIndex] = action;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets an action to be invoked when a specific frame ID is played.
+        /// </summary>
+        /// <param name="id">The frame ID.</param>
+        /// <param name="action">The UnityAction to be invoked.</param>
+        /// <returns>The updated PerformerSingle instance.</returns>
+        public AnimationPerformer SetOnFrame(string id, UnityAction action)
+        {
+            _frameIdActions[id] = action;
             return this;
         }
 
@@ -114,7 +126,7 @@ namespace SpriteAnimations.Performers
         /// </summary>
         /// <param name="action">The UnityAction to be invoked.</param>
         /// <returns>The updated SpriteAnimationPerformer instance.</returns>
-        public Performer OnEnd(UnityAction action)
+        public AnimationPerformer OnEnd(UnityAction action)
         {
             _onEndAction = action;
             return this;

@@ -16,7 +16,12 @@ namespace SpriteAnimations.Editor
         private Label _indexLabel;
         private VisualElement _imagePreviewContainer;
         private ObjectField _spriteField;
+
+        // Id Field
         private TextField _idField;
+        private Button _idEditButton;
+        private Button _idSaveButton;
+
         private Button _upButton;
         private Button _downButton;
         private Button _deleteButton;
@@ -71,6 +76,7 @@ namespace SpriteAnimations.Editor
             _spriteField.RegisterValueChangedCallback(OnSpriteObjectChanged);
 
             _idField = template.Q<TextField>("id-field");
+            _idField.SetEnabled(_owner.Cycle.Identifiable);
             _idField.RegisterValueChangedCallback(OnIdTextChanged);
 
             _upButton = template.Q<Button>("up-button");
