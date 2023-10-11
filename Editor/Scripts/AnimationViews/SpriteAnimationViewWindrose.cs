@@ -29,13 +29,11 @@ namespace SpriteAnimations.Editor
 
         public SpriteAnimationViewWindrose(ContentElement contentElement) : base(contentElement)
         {
-            style.flexGrow = 1;
-
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationViewWindrose");
             _template = tree.Instantiate();
-            _template.style.flexGrow = 1;
 
             VisualElement windroseSelectorContainer = _template.Q<VisualElement>("windrose-selector-container");
+            windroseSelectorContainer.Clear();
             _windroseSelector = new WindroseSelectorElement();
             _windroseSelector.DirectionSelected += OnWindroseDirectionSelected;
             windroseSelectorContainer.Add(_windroseSelector);
@@ -59,6 +57,7 @@ namespace SpriteAnimations.Editor
             base.Initialize(animation);
             _spriteAnimationWindrose = animation as SpriteAnimationWindrose;
             _loopableField.value = _spriteAnimationWindrose.IsLoopable;
+            _windroseSelector.Initialize();
         }
 
         public override void Dismiss()

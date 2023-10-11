@@ -23,9 +23,11 @@ namespace SpriteAnimations.Editor
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/WindroseSelector");
             TemplateContainer template = tree.Instantiate();
 
+            VisualElement buttonsContainer = template.Q("buttons");
+
             _buttons = template.Query<Button>(className: "windrose-button").ToList();
-            _buttons.ForEach(button => button.clicked += () => OnButtonClicked(button));
             ResetButtons();
+            _buttons.ForEach(button => button.clicked += () => OnButtonClicked(button));
 
             _windroseLabel = template.Q<Label>("windrose-label");
 
@@ -44,6 +46,7 @@ namespace SpriteAnimations.Editor
             }
 
             eastButton.AddToClassList("selected");
+            SelectDirection(WindroseDirection.East);
         }
 
         #endregion
@@ -67,6 +70,13 @@ namespace SpriteAnimations.Editor
 
         public event DirectionSelectedEvent DirectionSelected;
 
+
+        private void SelectDirection(WindroseDirection direction)
+        {
+            _windroseLabel.text = direction.ToString();
+            DirectionSelected?.Invoke(direction);
+        }
+
         private void OnButtonClicked(Button button)
         {
             if (!EvaluateWindroseDirection(button.viewDataKey, out WindroseDirection direction))
@@ -77,8 +87,7 @@ namespace SpriteAnimations.Editor
 
             ResetButtons();
             button.AddToClassList("selected");
-            _windroseLabel.text = direction.ToString();
-            DirectionSelected?.Invoke(direction);
+            SelectDirection(direction);
         }
 
         private bool EvaluateWindroseDirection(string windroseString, out WindroseDirection direction)
@@ -105,6 +114,9 @@ namespace SpriteAnimations.Editor
                     return true;
                 case "west":
                     direction = WindroseDirection.West;
+                    return true;
+                case "northwest":
+                    direction = WindroseDirection.NorthWest;
                     return true;
                 default:
                     direction = WindroseDirection.East;

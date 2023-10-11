@@ -97,6 +97,7 @@ namespace SpriteAnimations
 
         #region Subclasses
 
+        [Serializable]
         protected class WindroseCycles : Dictionary<WindroseDirection, SpriteAnimationCycle>, ISerializationCallbackReceiver
         {
             [SerializeField, HideInInspector]
