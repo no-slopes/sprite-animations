@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Performers
 {
-    public abstract class Performer
+    public abstract class AnimationPerformer
     {
 
         #region Fields
@@ -102,7 +101,7 @@ namespace SpriteAnimations.Performers
         /// <param name="frameIndex">The index of the frame.</param>
         /// <param name="action">The action to be performed.</param>
         /// <returns>The SpriteAnimationPerformer instance.</returns>
-        public Performer OnFrame(int frameIndex, UnityAction action)
+        public AnimationPerformer OnFrame(int frameIndex, UnityAction action)
         {
             _frameIndexActions[frameIndex] = action;
             return this;
@@ -114,7 +113,7 @@ namespace SpriteAnimations.Performers
         /// </summary>
         /// <param name="action">The UnityAction to be invoked.</param>
         /// <returns>The updated SpriteAnimationPerformer instance.</returns>
-        public Performer OnEnd(UnityAction action)
+        public AnimationPerformer OnEnd(UnityAction action)
         {
             _onEndAction = action;
             return this;

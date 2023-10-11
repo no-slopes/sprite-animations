@@ -1,22 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using UnityEngine.Events;
-using static SpriteAnimations.SpriteAnimation;
+using static SpriteAnimations.SpriteAnimationWindrose;
 
 namespace SpriteAnimations.Performers
 {
-    public class PerformerSingle : Performer
+    public class WindroseAnimator : AnimationPerformer
     {
         #region Fields
 
-        protected Dictionary<string, UnityAction> _frameIdActions = new();
+        protected int _directionLessTicks = 0;
+        private bool _warnedAboutDirectionLess = false;
+
+        protected WindroseDirection _currentDirection;
+        protected Dictionary<(WindroseDirection, string), UnityAction> _frameIdActions = new();
 
         #endregion
 
         #region Properties 
 
-        protected SpriteAnimationSimple CurrentSimpleAnimation => _currentAnimation as SpriteAnimationSimple;
+        protected SpriteAnimationWindrose CurrentWindroseAnimation => _currentAnimation as SpriteAnimationWindrose;
 
         #endregion    
 
@@ -34,12 +37,34 @@ namespace SpriteAnimations.Performers
         public override void StartAnimation(SpriteAnimation animation)
         {
             base.StartAnimation(animation);
-
+            _directionLessTicks = 0;
+            _warnedAboutDirectionLess = false;
             _currentCycleElapsedTime = 0;
             _currentAnimation = animation;
+        }
 
-            _currentCycle = CurrentSimpleAnimation.Cycle;
+        /// <summary>
+        /// Sets the direction of the animation.
+        /// </summary>
+        /// <param name="direction">The direction to set.</param>
+        /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
+        public WindroseAnimator SetDirection(WindroseDirection direction)
+        {
+            // Try to get the cycle for the specified direction
+            if (!CurrentWindroseAnimation.TryGetCycle(WindroseDirection.East, out _currentCycle))
+            {
+                // Log an error if the cycle does not exist
+                Logger.LogError($"Animation '{_currentAnimation.AnimationName}' does not have a cycle for direction {direction}.", _animator);
+                EndAnimation();
+                return this;
+            }
+
+            // Sets the current direction
+            _currentDirection = direction;
+
+            // Calculate the duration for the current cycle
             _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
+            return this;
         }
 
         /// <summary>
@@ -48,7 +73,6 @@ namespace SpriteAnimations.Performers
         public override void StopAnimation()
         {
             base.StopAnimation();
-            _frameIdActions.Clear();
             EndAnimation();
         }
 
@@ -61,6 +85,8 @@ namespace SpriteAnimations.Performers
         public override void Tick(float deltaTime)
         {
             if (!HasCurrentAnimation) return;
+
+            EvaluateDirectionLessCycle();
 
             _currentCycleElapsedTime += deltaTime;
             EvaluateEnd();
@@ -85,16 +111,29 @@ namespace SpriteAnimations.Performers
 
             if (string.IsNullOrEmpty(evaluatedFrame.Id)) return;
 
-            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
+            if (_frameIdActions.TryGetValue((_currentDirection, evaluatedFrame.Id), out var byNameAction))
             {
                 byNameAction.Invoke();
             }
         }
 
+        private void EvaluateDirectionLessCycle()
+        {
+            if (HasCurrentCycle) return;
+            _directionLessTicks++;
+
+            if (!_warnedAboutDirectionLess && _directionLessTicks > 10)
+            {
+                Logger.LogWarning($"Seems like the animation {_currentAnimation.AnimationName} does not "
+                + "have a direction set. Have you forgotten to call SetDirection?", _animator);
+
+                _warnedAboutDirectionLess = true;
+            }
+        }
+
         #endregion
 
-        #region Simple Sprite Animation Logic
-
+        #region End
 
         protected void EvaluateEnd()
         {
@@ -114,7 +153,7 @@ namespace SpriteAnimations.Performers
         /// </summary>
         public void EndCycle()
         {
-            if (HasCurrentAnimation && CurrentSimpleAnimation.IsLoopable)
+            if (HasCurrentAnimation && CurrentWindroseAnimation.IsLoopable)
             {
                 ResetCycle();
             }
@@ -149,15 +188,9 @@ namespace SpriteAnimations.Performers
 
         #region Actions
 
-        /// <summary>
-        /// Sets an action to be invoked when a specific frame ID is played.
-        /// </summary>
-        /// <param name="id">The frame ID.</param>
-        /// <param name="action">The UnityAction to be invoked.</param>
-        /// <returns>The updated PerformerSingle instance.</returns>
-        public Performer OnFrameId(string id, UnityAction action)
+        public AnimationPerformer OnFrame(WindroseDirection direction, string id, UnityAction action)
         {
-            _frameIdActions[id] = action;
+            _frameIdActions[(direction, id)] = action;
             return this;
         }
 
