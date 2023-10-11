@@ -1,11 +1,19 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Performers
 {
-    public class SpriteAnimationPerformerSingle : SpriteAnimationPerformer
+    public class PerformerSingle : Performer
     {
+        #region Fields
+
+        protected Dictionary<string, UnityAction> _frameIdActions = new();
+
+        #endregion
+
         #region Properties 
 
         protected SpriteAnimationSimple CurrentSimpleAnimation => _currentAnimation as SpriteAnimationSimple;
@@ -40,6 +48,7 @@ namespace SpriteAnimations.Performers
         public override void StopAnimation()
         {
             base.StopAnimation();
+            _frameIdActions.Clear();
             EndAnimation();
         }
 
@@ -97,6 +106,8 @@ namespace SpriteAnimations.Performers
 
         #endregion
 
+        #region Ending
+
         /// <summary>
         /// Ends the current cycle. In case the animation is loopable, it restarts the cycle.
         /// Case the animation is not a loop, it ends the animation.
@@ -133,6 +144,24 @@ namespace SpriteAnimations.Performers
             _currentFrame = null;
             _onEndAction?.Invoke();
         }
+
+        #endregion
+
+        #region Actions
+
+        /// <summary>
+        /// Sets an action to be invoked when a specific frame ID is played.
+        /// </summary>
+        /// <param name="id">The frame ID.</param>
+        /// <param name="action">The UnityAction to be invoked.</param>
+        /// <returns>The updated PerformerSingle instance.</returns>
+        public Performer OnFrameId(string id, UnityAction action)
+        {
+            _frameIdActions[id] = action;
+            return this;
+        }
+
+        #endregion
     }
 
 }

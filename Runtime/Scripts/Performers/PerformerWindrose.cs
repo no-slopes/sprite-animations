@@ -1,16 +1,21 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using static SpriteAnimations.SpriteAnimation;
 using static SpriteAnimations.SpriteAnimationWindrose;
 
 namespace SpriteAnimations.Performers
 {
-    public class SpriteAnimationPerformerWindrose : SpriteAnimationPerformer
+    public class PerformerWindrose : Performer
     {
         #region Fields
 
-        private int _directionLessTicks = 0;
+        protected int _directionLessTicks = 0;
         private bool _warnedAboutDirectionLess = false;
+
+        protected WindroseDirection _currentDirection;
+        protected Dictionary<(WindroseDirection, string), UnityAction> _frameIdActions = new();
 
         #endregion
 
@@ -45,7 +50,7 @@ namespace SpriteAnimations.Performers
         /// </summary>
         /// <param name="direction">The direction to set.</param>
         /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
-        public SpriteAnimationPerformerWindrose SetDirection(WindroseDirection direction)
+        public PerformerWindrose SetDirection(WindroseDirection direction)
         {
             // Try to get the cycle for the specified direction
             if (!CurrentWindroseAnimation.TryGetCycle(WindroseDirection.East, out _currentCycle))
@@ -55,6 +60,9 @@ namespace SpriteAnimations.Performers
                 EndAnimation();
                 return this;
             }
+
+            // Sets the current direction
+            _currentDirection = direction;
 
             // Calculate the duration for the current cycle
             _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
@@ -105,7 +113,7 @@ namespace SpriteAnimations.Performers
 
             if (string.IsNullOrEmpty(evaluatedFrame.Id)) return;
 
-            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
+            if (_frameIdActions.TryGetValue((_currentDirection, evaluatedFrame.Id), out var byNameAction))
             {
                 byNameAction.Invoke();
             }
@@ -138,6 +146,8 @@ namespace SpriteAnimations.Performers
         }
 
         #endregion
+
+        #region Ending
 
         /// <summary>
         /// Ends the current cycle. In case the animation is loopable, it restarts the cycle.
@@ -175,6 +185,18 @@ namespace SpriteAnimations.Performers
             _currentFrame = null;
             _onEndAction?.Invoke();
         }
+
+        #endregion
+
+        #region Actions
+
+        public Performer OnFrame(WindroseDirection direction, string id, UnityAction action)
+        {
+            _frameIdActions[(direction, id)] = action;
+            return this;
+        }
+
+        #endregion
     }
 
 }

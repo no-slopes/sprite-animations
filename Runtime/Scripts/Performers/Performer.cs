@@ -5,7 +5,7 @@ using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Performers
 {
-    public abstract class SpriteAnimationPerformer
+    public abstract class Performer
     {
 
         #region Fields
@@ -31,7 +31,6 @@ namespace SpriteAnimations.Performers
         protected float _currentCycleDuration = 0.0f;
 
         protected Dictionary<int, UnityAction> _frameIndexActions = new();
-        protected Dictionary<string, UnityAction> _frameIdActions = new();
         protected UnityAction _onEndAction;
 
         #endregion       
@@ -62,7 +61,6 @@ namespace SpriteAnimations.Performers
         public virtual void StopAnimation()
         {
             _frameIndexActions.Clear();
-            _frameIdActions.Clear();
             _onEndAction = null;
         }
 
@@ -104,22 +102,9 @@ namespace SpriteAnimations.Performers
         /// <param name="frameIndex">The index of the frame.</param>
         /// <param name="action">The action to be performed.</param>
         /// <returns>The SpriteAnimationPerformer instance.</returns>
-        public SpriteAnimationPerformer OnFrame(int frameIndex, UnityAction action)
+        public Performer OnFrame(int frameIndex, UnityAction action)
         {
             _frameIndexActions[frameIndex] = action;
-            return this;
-        }
-
-        /// <summary>
-        /// Adds an action to be performed on a specific frame of the sprite animation.
-        /// This overrides previous actions defined for that frame name.
-        /// </summary>
-        /// <param name="id">The id of the frame.</param>
-        /// <param name="action">The action to be performed.</param>
-        /// <returns>The updated SpriteAnimationPerformer object.</returns>
-        public SpriteAnimationPerformer OnFrame(string id, UnityAction action)
-        {
-            _frameIdActions[id] = action;
             return this;
         }
 
@@ -129,7 +114,7 @@ namespace SpriteAnimations.Performers
         /// </summary>
         /// <param name="action">The UnityAction to be invoked.</param>
         /// <returns>The updated SpriteAnimationPerformer instance.</returns>
-        public SpriteAnimationPerformer OnEnd(UnityAction action)
+        public Performer OnEnd(UnityAction action)
         {
             _onEndAction = action;
             return this;

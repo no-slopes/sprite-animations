@@ -37,7 +37,7 @@ namespace SpriteAnimations
                 AdjustCyclesToSize(_size);
             }
         }
-        public override Type PerformerType => typeof(SpriteAnimationPerformerWindrose);
+        public override Type PerformerType => typeof(PerformerWindrose);
         public override SpriteAnimationType AnimationType => SpriteAnimationType.Windrose;
 
         #endregion

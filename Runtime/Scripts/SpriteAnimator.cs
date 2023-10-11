@@ -53,9 +53,9 @@ namespace SpriteAnimations
 
         #region Fields
 
-        protected SpriteAnimationPerformerFactory _performersFactory;
+        protected PerformerFactory _performersFactory;
 
-        protected SpriteAnimationPerformer _currentPerformer;
+        protected Performer _currentPerformer;
         protected Dictionary<string, SpriteAnimation> _animations;
 
         #endregion
@@ -98,7 +98,7 @@ namespace SpriteAnimations
                 }
             }
 
-            _performersFactory = new SpriteAnimationPerformerFactory(this);
+            _performersFactory = new PerformerFactory(this);
             _animations = new Dictionary<string, SpriteAnimation>();
             _spriteAnimations.ForEach(a => _animations.Add(a.AnimationName, a));
         }
@@ -134,7 +134,7 @@ namespace SpriteAnimations
         /// <summary>
         /// Plays the default animation. 
         /// </summary>
-        public SpriteAnimationPerformer Play()
+        public Performer Play()
         {
             if (_currentAnimation == null)
             {
@@ -149,7 +149,7 @@ namespace SpriteAnimations
         /// animator in orther to be found.
         /// </summary>
         /// <param name="name"></param>
-        public SpriteAnimationPerformer Play(string name)
+        public Performer Play(string name)
         {
             if (!TryeGetAnimationByName(name, out var animation))
             {
@@ -163,7 +163,7 @@ namespace SpriteAnimations
         /// Plays the given animation. Does not require registering.
         /// </summary>
         /// <param name="animation"></param>
-        public SpriteAnimationPerformer Play(SpriteAnimation animation)
+        public Performer Play(SpriteAnimation animation)
         {
             if (animation == _currentAnimation) return _currentPerformer;
 
@@ -178,13 +178,12 @@ namespace SpriteAnimations
 
             _state = SpriteAnimatorState.Playing;
             return _currentPerformer;
-
         }
 
         /// <summary>
         /// Pauses the animator. Use Resume to continue.
         /// </summary>
-        public SpriteAnimationPerformer Pause()
+        public Performer Pause()
         {
             _state = SpriteAnimatorState.Paused;
             _stateChanged.Invoke(_state);
@@ -194,7 +193,7 @@ namespace SpriteAnimations
         /// <summary>
         /// Resumes a paused animator.
         /// </summary>
-        public SpriteAnimationPerformer Resume()
+        public Performer Resume()
         {
             _state = SpriteAnimatorState.Playing;
             _stateChanged.Invoke(_state);
