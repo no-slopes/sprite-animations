@@ -10,9 +10,9 @@
 
 Apenas um recurso **totalmente gratuito** e **de código aberto** para animar suas folhas de sprites.
 
-## Versão da Unity
+## Versões testadas da Unity
 
-[2019.4.40 LTS](https://unity3d.com/pt/unity/whats-new/2019.4.40) até [2021.3.6 LTS](https://unity3d.com/pt/unity/whats-new/2021.3.6)
+[2022.3.10 LTS](https://unity3d.com/pt/unity/whats-new/2022.3.10)
 
 ## Sobre a No Slopes
 

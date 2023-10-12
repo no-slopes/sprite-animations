@@ -1,10 +1,10 @@
 {
     "name": "com.no-slopes.sprite-animations",
-    "version": "v0.0.1-preview",
+    "version": "v0.1.1-preview",
     "displayName": "Sprite Animations",
     "description": "A solution for animating sprite sheets in Unity.",
-    "unity": "2019.1",
-    "unityRelease": "0b5",
+    "unity": "2022.3",
+    "unityRelease": "10f1",
     "documentationUrl": "https://github.com/no-slopes/sprite-animations",
     "changelogUrl": "https://github.com/no-slopes/sprite-animations/blob/main/CHANGELOG.md",
     "licensesUrl": "https://github.com/no-slopes/sprite-animations/blob/main/LICENSE.md",

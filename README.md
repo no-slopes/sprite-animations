@@ -10,9 +10,9 @@
 
 Just a **completly free** and **open source** asset for animating your spritesheets.
 
-## Unity Version
+## Unity tested versions
 
-[2019.4.40 LTS](https://unity3d.com/pt/unity/whats-new/2019.4.40) to [2021.3.6 LTS](https://unity3d.com/pt/unity/whats-new/2021.3.6)
+[2022.3.10 LTS](https://unity.com/releases/editor/whats-new/2022.3.10)
 
 ## About No Slopes
 
