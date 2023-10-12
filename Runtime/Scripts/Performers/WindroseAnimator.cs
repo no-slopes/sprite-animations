@@ -108,9 +108,36 @@ namespace SpriteAnimations.Performers
         /// Sets the direction of the animation.
         /// </summary>
         /// <param name="direction">The direction to set.</param>
+        /// <param name="flipStrategy">The strategy to use when flipping the sprite.</param>
         /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
-        public WindroseAnimator SetDirection(WindroseDirection direction)
+        public WindroseAnimator SetDirection(WindroseDirection direction, FlipStrategy flipStrategy = FlipStrategy.NoFlip)
         {
+            if (flipStrategy.Equals(FlipStrategy.Flip))
+            {
+                bool shouldFlip = false;
+                switch (direction)
+                {
+                    case WindroseDirection.West:
+                        shouldFlip = true;
+                        direction = WindroseDirection.East;
+                        break;
+                    case WindroseDirection.NorthWest:
+                        shouldFlip = true;
+                        direction = WindroseDirection.NorthEast;
+                        break;
+                    case WindroseDirection.SouthWest:
+                        shouldFlip = true;
+                        direction = WindroseDirection.SouthEast;
+                        break;
+                }
+
+                _animator.SpriteRenderer.flipX = shouldFlip;
+            }
+            else
+            {
+                _animator.SpriteRenderer.flipX = false;
+            }
+
             // Try to get the cycle for the specified direction
             if (!CurrentWindroseAnimation.TryGetCycle(direction, out _currentCycle))
             {
@@ -131,13 +158,14 @@ namespace SpriteAnimations.Performers
         /// Sets the direction of the animation.
         /// </summary>
         /// <param name="direction">The direction to set.</param>
+        /// <param name="flipStrategy">The strategy to use when flipping the sprite.</param>
         /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
-        public WindroseAnimator SetDirection(Vector2 movementInput)
+        public WindroseAnimator SetDirection(Vector2 movementInput, FlipStrategy flipStrategy = FlipStrategy.NoFlip)
         {
             // Sets the current direction
             Vector2Int signedMovementInput = DirectionSign(movementInput);
             WindroseDirection direction = DirectionFromInput(signedMovementInput);
-            return SetDirection(direction);
+            return SetDirection(direction, flipStrategy);
         }
 
         /// <summary>
