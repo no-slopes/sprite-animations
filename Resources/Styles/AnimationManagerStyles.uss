@@ -160,3 +160,16 @@
     justify-content: center;
     -unity-text-align: middle-left;
 }
+
+.object-field {
+}
+
+.object-field .unity-object-field__selector {
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+}
+
+.object-field .unity-object-field__display {
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+}

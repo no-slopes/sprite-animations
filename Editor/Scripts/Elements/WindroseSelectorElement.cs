@@ -40,13 +40,13 @@ namespace SpriteAnimations.Editor
 
         public void Initialize()
         {
-            if (!TryGetButton("east", out Button eastButton))
+            if (!TryGetButton("south", out Button southButton))
             {
-                Logger.LogError("Could not find east button!");
+                Logger.LogError("Could not find south button!");
             }
 
-            eastButton.AddToClassList("selected");
-            SelectDirection(WindroseDirection.East);
+            southButton.AddToClassList("selected");
+            SelectDirection(WindroseDirection.South);
         }
 
         #endregion
@@ -119,7 +119,7 @@ namespace SpriteAnimations.Editor
                     direction = WindroseDirection.NorthWest;
                     return true;
                 default:
-                    direction = WindroseDirection.East;
+                    direction = WindroseDirection.South;
                     return false;
             }
         }

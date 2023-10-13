@@ -6,7 +6,6 @@ namespace SpriteAnimations.Performers
 {
     public abstract class AnimationPerformer
     {
-
         #region Fields
 
         protected SpriteAnimator _animator;
