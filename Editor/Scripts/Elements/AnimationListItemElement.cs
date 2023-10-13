@@ -22,13 +22,15 @@ namespace SpriteAnimations.Editor
             get => _animation;
             set
             {
+                if (_animation != null)
+                {
+                    _animation.NameChanged -= OnAnimationNameChanged;
+                }
+
                 _animation = value;
                 _animationNameText.text = !string.IsNullOrEmpty(_animation.AnimationName) ? _animation.AnimationName : _animation.name;
                 _animationTypeText.text = ResolveAnimationTypeLabel(_animation.AnimationType);
-                _animation.NameChanged += (newName) =>
-                {
-                    _animationNameText.text = !string.IsNullOrEmpty(newName) ? newName : $"[Filename] {_animation.name}";
-                };
+                _animation.NameChanged += OnAnimationNameChanged;
             }
         }
 
@@ -55,6 +57,15 @@ namespace SpriteAnimations.Editor
         private string ResolveAnimationTypeLabel(SpriteAnimationType animationType)
         {
             return $"[{animationType}]";
+        }
+
+        #endregion
+
+        #region Animation Name
+
+        private void OnAnimationNameChanged(string newName)
+        {
+            _animationNameText.text = !string.IsNullOrEmpty(newName) ? newName : $"[Filename] {_animation.name}";
         }
 
         #endregion

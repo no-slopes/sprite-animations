@@ -37,6 +37,7 @@ namespace SpriteAnimations.Editor
             {
                 AnimationListItemElement item = e as AnimationListItemElement;
                 item.Animation = _animations[i];
+                Debug.Log($"Bound item {item.Animation.AnimationName} to position {i}");
             };
 
             _animationsListView.selectedIndicesChanged += OnListItemsSelected;
@@ -70,6 +71,7 @@ namespace SpriteAnimations.Editor
 
         public void Reload()
         {
+            _animationsListView.SetEnabled(false);
             _animationsListView.Rebuild();
 
             if (_animations.Count > 0)
@@ -77,6 +79,8 @@ namespace SpriteAnimations.Editor
                 SelectAnimation(_animations[0]);
                 _animationsListView.SetSelection(0);
             }
+
+            _animationsListView.SetEnabled(true);
         }
 
         #endregion
