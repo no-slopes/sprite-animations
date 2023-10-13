@@ -1,33 +1,39 @@
 {
-    "name": "com.no-slopes.sprite-animations",
-    "version": "v0.2.1-preview",
-    "displayName": "Sprite Animations",
-    "description": "A solution for animating sprite sheets in Unity.",
-    "unity": "2022.3",
-    "unityRelease": "10f1",
-    "documentationUrl": "https://github.com/no-slopes/sprite-animations",
-    "changelogUrl": "https://github.com/no-slopes/sprite-animations/blob/main/CHANGELOG.md",
-    "licensesUrl": "https://github.com/no-slopes/sprite-animations/blob/main/LICENSE.md",
-    "author": {
-        "name": "No Slopes",
-        "email": "contato.noslopes@gmail.com",
-        "url": "http://githbub.com/no-slopes"
-    },
-    "keywords": [
-        "2D",
-        "sprite",
-        "sprites",
-        "sheet",
-        "character",
-        "characters",
-        "animations",
-        "sprite renderer",
-        "image",
-        "images",
-        "platformer",
-        "top",
-        "down",
-        "top down",
-        "top-down"
-    ]
+  "name": "com.no-slopes.sprite-animations",
+  "version": "0.2.1",
+  "displayName": "Sprite Animations",
+  "description": "A solution for animating sprite sheets in Unity.",
+  "unity": "2022.3",
+  "unityRelease": "10f1",
+  "documentationUrl": "https://github.com/no-slopes/sprite-animations",
+  "changelogUrl": "https://github.com/no-slopes/sprite-animations/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/no-slopes/sprite-animations/blob/main/LICENSE.md",
+  "author": {
+    "name": "No Slopes",
+    "email": "contato.noslopes@gmail.com",
+    "url": "http://githbub.com/no-slopes"
+  },
+  "keywords": [
+    "2D",
+    "sprite",
+    "sprites",
+    "sheet",
+    "character",
+    "characters",
+    "animations",
+    "sprite renderer",
+    "image",
+    "images",
+    "platformer",
+    "top",
+    "down",
+    "top down",
+    "top-down"
+  ],
+  "scripts": {
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "release-it": "^16.2.1"
+  }
 }
