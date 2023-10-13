@@ -40,6 +40,8 @@ namespace SpriteAnimations.Editor
 
         public void Initialize()
         {
+            ResetButtons();
+
             if (!TryGetButton("south", out Button southButton))
             {
                 Logger.LogError("Could not find south button!");

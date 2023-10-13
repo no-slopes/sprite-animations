@@ -37,7 +37,6 @@ namespace SpriteAnimations.Editor
             {
                 AnimationListItemElement item = e as AnimationListItemElement;
                 item.Animation = _animations[i];
-                Debug.Log($"Bound item {item.Animation.AnimationName} to position {i}");
             };
 
             _animationsListView.selectedIndicesChanged += OnListItemsSelected;
