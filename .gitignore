@@ -88,4 +88,9 @@ fmod_editor.log
 /[Aa]ssets/StreamingAssets/**/*.bank
 /[Aa]ssets/StreamingAssets/**/*.bank.meta
 
+# Release it
+/node_modules
+.release-it.json
+
+
 
