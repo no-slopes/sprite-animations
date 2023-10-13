@@ -55,7 +55,7 @@ namespace SpriteAnimations.Performers
 
         public virtual void StartAnimation(SpriteAnimation animation)
         {
-
+            _animator.SpriteRenderer.flipX = false;
         }
 
         public virtual void StopAnimation()

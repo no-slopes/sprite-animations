@@ -130,3 +130,33 @@
     max-width: none;
     min-width: auto;
 }
+
+.field {
+    height: 30px;
+}
+
+.field > Label {
+    width: 240px;
+    max-width: none;
+    min-width: auto;
+    flex-shrink: 0;
+}
+
+.field-container {
+    height: 40px;
+    width: 100%;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    justify-content: center;
+}
+
+.field .unity-base-field__input {
+    justify-content: center;
+    -unity-text-align: middle-left;
+}

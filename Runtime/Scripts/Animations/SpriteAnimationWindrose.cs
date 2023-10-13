@@ -60,6 +60,9 @@ namespace SpriteAnimations
         [SerializeField]
         protected bool _isLoopable = false;
 
+        [SerializeField]
+        protected FlipStrategy _flipStrategy = FlipStrategy.NoFlip;
+
         [SerializeField, HideInInspector]
         protected WindroseCycles _cycles = new();
 
@@ -68,6 +71,7 @@ namespace SpriteAnimations
         #region Getters
 
         public bool IsLoopable { get => _isLoopable; set => _isLoopable = value; }
+        public FlipStrategy FlipStrategy { get => _flipStrategy; set => _flipStrategy = value; }
         public override Type PerformerType => typeof(WindroseAnimator);
         public override SpriteAnimationType AnimationType => SpriteAnimationType.Windrose;
 
@@ -101,22 +105,6 @@ namespace SpriteAnimations
         public bool TryGetCycle(WindroseDirection direction, out SpriteAnimationCycle cycle)
         {
             return _cycles.TryGetValue(direction, out cycle);
-        }
-
-        #endregion
-
-        #region Enums
-
-        public enum WindroseDirection
-        {
-            North,
-            NorthEast,
-            East,
-            SouthEast,
-            South,
-            SouthWest,
-            West,
-            NorthWest
         }
 
         #endregion

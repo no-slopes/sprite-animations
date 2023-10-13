@@ -11,9 +11,6 @@ namespace SpriteAnimations.Editor
         #region Inspector
 
         [SerializeField]
-        private VisualTreeAsset _inspectorAsset;
-
-        [SerializeField]
         private MonoScript _scriptAsset;
 
         #endregion
@@ -30,8 +27,8 @@ namespace SpriteAnimations.Editor
         {
             _spriteAnimator = target as SpriteAnimator;
 
-            VisualElement inspector = new();
-            _inspectorAsset.CloneTree(inspector);
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/SpriteAnimatorInspector");
+            TemplateContainer inspector = tree.Instantiate();
 
             ObjectField scriptField = inspector.Query<ObjectField>("script-field");
             scriptField.SetEnabled(false);

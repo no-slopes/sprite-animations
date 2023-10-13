@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 1; align-items: flex-start; justify-content: flex-start; background-color: rgb(12, 1, 3); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; width: 100%; height: 100%;">
+        <ui:VisualElement name="orientation-field-container" class="buttons-container field-container" style="justify-content: center;">
+            <ui:EnumField label="Orientation" type="SpriteAnimations.Editor.ExtractionOrientation, SpriteAnimations" name="orientation-field" value="Horizontal" tooltip="If the animations are set vertically or horizontally" class="field" />
+        </ui:VisualElement>
+        <ui:VisualElement name="size-field-container" class="buttons-container field-container" style="height: 40px; justify-content: space-around;">
+            <ui:IntegerField label="Total number of animations" value="1" name="original-sheet-size-field" tooltip="The total amount of animations the source sprite has.  Not only the amount you want to extract" class="field" style="height: 30px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="sprite-field-container" class="buttons-container field-container" style="flex-grow: 0; flex-shrink: 0; justify-content: space-around;">
+            <uie:ObjectField label="Source Sprite" name="sprite-field" type="UnityEngine.Sprite, UnityEngine.CoreModule" class="field" />
+        </ui:VisualElement>
+        <ui:VisualElement name="form" style="flex-grow: 1; align-items: stretch; width: 100%; display: flex;">
+            <ui:VisualElement name="resulting-size-field-container" class="buttons-container field-container" style="flex-grow: 0; flex-shrink: 0; flex-direction: row; align-items: stretch; width: 100%;">
+                <ui:IntegerField label="Source number of Columns" value="0" name="columns-field" readonly="false" tooltip="The total amount of columns the source sprite has. This is not the target number of columns." class="field" style="flex-grow: 1; flex-shrink: 1; align-items: stretch;" />
+                <ui:IntegerField label="Source number of rows" value="0" name="rows-field" readonly="false" tooltip="The total amount of rows the source sprite has. This is not the target number of rows" class="field" style="flex-grow: 1; flex-shrink: 1; align-items: stretch;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="from-field-container" class="buttons-container field-container" style="flex-grow: 0; flex-shrink: 0; flex-direction: row; align-items: stretch; width: 100%;">
+                <ui:IntegerField label="Starting position" value="0" name="from-field" class="field" style="flex-grow: 1; flex-shrink: 1; align-items: stretch;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="amount-field-container" class="buttons-container field-container">
+                <ui:IntegerField label="Amount of animations to extract" value="1" name="amount-field" tooltip="The amount of animations to be extracted starting from the selected position" class="field" />
+            </ui:VisualElement>
+            <ui:VisualElement name="create-button-container" class="buttons-container field-container" style="flex-grow: 0; flex-shrink: 0; margin-top: 10px; margin-bottom: 10px;">
+                <ui:Button text="Extract" parse-escape-sequences="true" display-tooltip-when-elided="true" name="extract-button" class="interactable" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; font-size: 14px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="select-sprite-tip" style="flex-grow: 1; align-items: center; justify-content: center; width: 100%; display: none;">
+            <ui:Label tabindex="-1" text="Select a Sprite..." parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); font-size: 14px; -unity-text-align: middle-center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
