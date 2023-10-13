@@ -90,7 +90,9 @@ fmod_editor.log
 
 # Release it
 /node_modules
+/node_modules.meta
 .release-it.json
+
 
 
 
