@@ -4,6 +4,16 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.AnimationPerformer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.AnimationPerformer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.AnimationCreatedEvent.yml",
       "output": {
         ".html": {
@@ -274,6 +284,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.PerformerFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.PerformerFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Performers.AnimationPerformer.yml",
       "output": {
         ".html": {
@@ -318,6 +338,16 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.Performers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SingleAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SingleAnimator.html"
         }
       },
       "version": ""
@@ -428,6 +458,16 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.UpdateMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.WindroseAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.WindroseAnimator.html"
         }
       },
       "version": ""

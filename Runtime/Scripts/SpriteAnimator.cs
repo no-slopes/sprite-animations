@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
-using SpriteAnimations.Performers;
 
 #if UNITY_EDITOR
 using SpriteAnimations.Editor;
@@ -10,7 +9,8 @@ using SpriteAnimations.Editor;
 namespace SpriteAnimations
 {
     /// <summary>
-    /// This compoment represents the animator for a sprite renderer.
+    /// The Sprite Animator. Responsible for playing animations by changing the sprites
+    /// of a SpriteRenderer based on the fps of the playing animation.
     /// </summary>
     [RequireComponent(typeof(SpriteRenderer))]
     [AddComponentMenu("Sprite Animator")]
