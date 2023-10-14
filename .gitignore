@@ -92,6 +92,10 @@ fmod_editor.log
 /node_modules
 /node_modules.meta
 
+# Environment
+
+.env
+
 
 
 

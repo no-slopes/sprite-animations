@@ -31,7 +31,7 @@
     "top-down"
   ],
   "scripts": {
-    "release": "release-it"
+    "release": "dotenv release-it"
   },
   "devDependencies": {
     "release-it": "^16.2.1"
