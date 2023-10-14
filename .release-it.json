@@ -5,9 +5,16 @@
   },
   "hooks": {
     "before:init": [
+      "git checkout main",
       "git pull"
     ],
-    "after:bump": "npx auto-changelog -p"
+    "after:bump": [
+      "npx auto-changelog -p"
+    ],
+    "after:release": [
+      "echo Successfully released ${name} v${version} to ${repo.repository}.",
+      "git checkout develop"
+    ]
   },
   "github": {
     "release": true
