@@ -1,0 +1,19 @@
+{
+  "git": {
+    "requiredBranch": "main",
+    "commitMessage": "chore: release v${version}"
+  },
+  "hooks": {
+    "before:init": [
+      "git pull",
+      "dotenv docfx docfx_project/docfx.json"
+    ],
+    "after:bump": "npx auto-changelog -p"
+  },
+  "github": {
+    "release": true
+  },
+  "npm": {
+    "publish": true
+  }
+}

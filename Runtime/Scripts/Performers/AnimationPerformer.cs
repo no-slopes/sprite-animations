@@ -2,8 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SpriteAnimations.Performers
+namespace SpriteAnimations
 {
+    /// <summary>
+    /// The base class for all animation performers.
+    /// </summary>
     public abstract class AnimationPerformer
     {
         #region Fields
@@ -44,7 +47,6 @@ namespace SpriteAnimations.Performers
 
         #region Getters 
 
-        public abstract SpriteAnimationType AnimationType { get; }
         public SpriteAnimationCycle CurrentCycle => _currentCycle;
         public SpriteAnimationFrame CurrentFrame => _currentFrame;
 

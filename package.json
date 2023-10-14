@@ -11,7 +11,7 @@
   "author": {
     "name": "No Slopes",
     "email": "contato.noslopes@gmail.com",
-    "url": "http://githbub.com/no-slopes"
+    "url": "http://github.com/no-slopes"
   },
   "keywords": [
     "2D",
@@ -31,7 +31,7 @@
     "top-down"
   ],
   "scripts": {
-    "release": "release-it"
+    "release": "dotenv release-it"
   },
   "devDependencies": {
     "release-it": "^16.2.1"

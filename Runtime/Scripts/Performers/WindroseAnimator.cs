@@ -1,33 +1,42 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 using static SpriteAnimations.SpriteAnimationWindrose;
 
-namespace SpriteAnimations.Performers
+namespace SpriteAnimations
 {
+    /// <summary>
+    /// The performer responsible for playing windrose animations.
+    /// </summary>
     public class WindroseAnimator : AnimationPerformer
     {
         #region Fields
 
+        /// <summary>
+        /// The number of Updates before warning dev about no direction set.
+        /// </summary>
         protected int _directionLessTicks = 0;
-        private bool _warnedAboutDirectionLess = false;
 
+        /// <summary>
+        /// If dev is already warned about no direction being set for the animation
+        /// </summary>
+        protected bool _warnedAboutDirectionLess = false;
+
+        /// <summary>
+        /// The current direction in wich the animation is playing.
+        /// </summary>
         protected WindroseDirection _currentDirection;
 
         #endregion
 
         #region Properties 
 
+        /// <summary>
+        /// The current windrose animation being played
+        /// </summary>
+        /// <returns> The animation or null if no animation is being played </returns>
         protected SpriteAnimationWindrose CurrentWindroseAnimation => _currentAnimation as SpriteAnimationWindrose;
 
-        #endregion    
-
-        #region Getters
-
-        public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
-
-        #endregion   
+        #endregion     
 
         #region Sprite Animation Logic 
 
