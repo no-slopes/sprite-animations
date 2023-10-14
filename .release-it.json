@@ -5,6 +5,10 @@
   },
   "hooks": {
     "before:init": [
+      "docfx docfx_project/docfx.json",
+      "git add docs",
+      "git commit -m 'API Documentation for v${version} generated'",
+      "git push",
       "git checkout main",
       "git merge develop"
     ],
