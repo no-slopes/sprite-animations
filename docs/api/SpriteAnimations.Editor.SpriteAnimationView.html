@@ -1,0 +1,669 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SpriteAnimationView
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SpriteAnimationView
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/new/feature/release-process/apiSpec/new?filename=SpriteAnimations_Editor_SpriteAnimationView.md&amp;value=---%0Auid%3A%20SpriteAnimations.Editor.SpriteAnimationView%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SpriteAnimations.Editor.SpriteAnimationView">
+
+
+
+  <h1 id="SpriteAnimations_Editor_SpriteAnimationView" data-uid="SpriteAnimations.Editor.SpriteAnimationView" class="text-break">
+    Class SpriteAnimationView
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SpriteAnimations.html">SpriteAnimations</a>.<a class="xref" href="SpriteAnimations.Editor.html">Editor</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SpriteAnimations.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SpriteAnimationView : VisualElement, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CallbackEventHandler</span></div>
+      <div><span class="xref">Focusable</span></div>
+      <div><span class="xref">VisualElement</span></div>
+      <div><span class="xref">SpriteAnimationView</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">IEventHandler</span></div>
+      <div><span class="xref">IResolvedStyle</span></div>
+      <div><span class="xref">ITransform</span></div>
+      <div><span class="xref">ITransitionAnimations</span></div>
+      <div><span class="xref">IExperimentalFeatures</span></div>
+      <div><span class="xref">IVisualElementScheduler</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="SpriteAnimations.Editor.SpriteAnimationViewSimple.html">SpriteAnimationViewSimple</a></div>
+      <div><a class="xref" href="SpriteAnimations.Editor.SpriteAnimationViewWindrose.html">SpriteAnimationViewWindrose</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">VisualElement.disabledUssClassName</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.ExecuteDefaultAction(EventBase)</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.Focus()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.SendEvent(EventBase)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">VisualElement.SetEnabledFromHierarchy(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">VisualElement.SetEnabled(bool)</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.MarkDirtyRepaint()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.ContainsPoint(Vector2)</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.Overlaps(Rect)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">VisualElement.DoMeasure(float, VisualElement.MeasureMode, float, VisualElement.MeasureMode)</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.GetClasses()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.ClearClassList()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">VisualElement.AddToClassList(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">VisualElement.RemoveFromClassList(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">VisualElement.ToggleInClassList(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">VisualElement.EnableInClassList(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">VisualElement.ClassListContains(string)</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.FindAncestorUserData()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.Add(VisualElement)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">VisualElement.Insert(int, VisualElement)</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.Remove(VisualElement)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">VisualElement.RemoveAt(int)</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.Clear()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">VisualElement.ElementAt(int)</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.IndexOf(VisualElement)</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.Children()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.comparison-1">VisualElement.Sort(Comparison&lt;VisualElement&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.BringToFront()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.SendToBack()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.PlaceBehind(VisualElement)</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.PlaceInFront(VisualElement)</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.RemoveFromHierarchy()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.GetFirstOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.GetFirstAncestorOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.Contains(VisualElement)</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.FindCommonAncestor(VisualElement)</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.resolvedStyle</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.viewDataKey</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.userData</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.canGrabFocus</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.focusController</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.usageHints</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.transform</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.layout</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.contentRect</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.paddingRect</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.worldBound</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.localBound</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.worldTransform</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.pickingMode</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.name</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.enabledInHierarchy</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.enabledSelf</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.languageDirection</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.visible</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.generateVisualContent</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.experimental</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.hierarchy</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.cacheAsBitmap</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.parent</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.panel</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.contentContainer</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.visualTreeAssetSource</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">VisualElement.this[int]</a>
+    </div>
+    <div>
+      <span class="xref">VisualElement.childCount</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.schedule</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.style</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.customStyle</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.styleSheets</span>
+    </div>
+    <div>
+      <span class="xref">VisualElement.tooltip</span>
+    </div>
+    <div>
+      <span class="xref">Focusable.Blur()</span>
+    </div>
+    <div>
+      <span class="xref">Focusable.focusable</span>
+    </div>
+    <div>
+      <span class="xref">Focusable.tabIndex</span>
+    </div>
+    <div>
+      <span class="xref">Focusable.delegatesFocus</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.RegisterCallback&lt;TEventType&gt;(EventCallback&lt;TEventType&gt;, TrickleDown)</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.RegisterCallback&lt;TEventType, TUserArgsType&gt;(EventCallback&lt;TEventType, TUserArgsType&gt;, TUserArgsType, TrickleDown)</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.UnregisterCallback&lt;TEventType&gt;(EventCallback&lt;TEventType&gt;, TrickleDown)</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.UnregisterCallback&lt;TEventType, TUserArgsType&gt;(EventCallback&lt;TEventType, TUserArgsType&gt;, TrickleDown)</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.HandleEvent(EventBase)</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.HasTrickleDownHandlers()</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.HasBubbleUpHandlers()</span>
+    </div>
+    <div>
+      <span class="xref">CallbackEventHandler.ExecuteDefaultActionAtTarget(EventBase)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SpriteAnimations_Editor_SpriteAnimationView__ctor_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.#ctor*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__ctor_SpriteAnimations_Editor_ContentElement_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.#ctor(SpriteAnimations.Editor.ContentElement)">
+  SpriteAnimationView(ContentElement)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpriteAnimationView(ContentElement contentElement)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentElement</code> <a class="xref" href="SpriteAnimations.Editor.ContentElement.html">ContentElement</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__animation" data-uid="SpriteAnimations.Editor.SpriteAnimationView._animation">
+  _animation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SpriteAnimation _animation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__contentElement" data-uid="SpriteAnimations.Editor.SpriteAnimationView._contentElement">
+  _contentElement
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ContentElement _contentElement</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.Editor.ContentElement.html">ContentElement</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SpriteAnimations_Editor_SpriteAnimationView_Animation_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Animation*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_Animation" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Animation">
+  Animation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpriteAnimation Animation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpriteAnimations_Editor_SpriteAnimationView_AnimationType_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.AnimationType*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_AnimationType" data-uid="SpriteAnimations.Editor.SpriteAnimationView.AnimationType">
+  AnimationType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract SpriteAnimationType AnimationType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationType.html">SpriteAnimationType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SpriteAnimations_Editor_SpriteAnimationView_Dismiss_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Dismiss*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_Dismiss" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Dismiss">
+  Dismiss()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dismiss()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpriteAnimations_Editor_SpriteAnimationView_Initialize_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Initialize*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_Initialize_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Initialize(SpriteAnimations.SpriteAnimation)">
+  Initialize(SpriteAnimation)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Initialize(SpriteAnimation animation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/no-slopes/sprite-animations/blob/feature/release-process/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L10" class="edit-link">Edit this page</a>
+        </div>
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

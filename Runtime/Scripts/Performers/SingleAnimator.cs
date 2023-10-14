@@ -1,11 +1,10 @@
-using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-using UnityEngine.Events;
-using static SpriteAnimations.SpriteAnimation;
 
-namespace SpriteAnimations.Performers
+namespace SpriteAnimations
 {
+    /// <summary>
+    /// The performer responsible for playing single animations.
+    /// </summary>
     public class SingleAnimator : AnimationPerformer
     {
         #region Fields
@@ -16,13 +15,7 @@ namespace SpriteAnimations.Performers
 
         protected SpriteAnimationSimple CurrentSimpleAnimation => _currentAnimation as SpriteAnimationSimple;
 
-        #endregion    
-
-        #region Getters
-
-        public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
-
-        #endregion   
+        #endregion  
 
         #region Sprite Animation Logic 
 

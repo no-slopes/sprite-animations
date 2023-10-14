@@ -1,7 +1,5 @@
-using SpriteAnimations.Performers;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static SpriteAnimations.SpriteAnimation;
 
 namespace SpriteAnimations.Editor
 {
