@@ -6,7 +6,7 @@
   "hooks": {
     "before:init": [
       "git checkout main",
-      "git pull"
+      "git merge develop"
     ],
     "after:bump": [
       "npx auto-changelog -p"
