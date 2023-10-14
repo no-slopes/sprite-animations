@@ -6,7 +6,7 @@
           "files": [
             "SpriteAnimations.csproj"
           ],
-          "src": "$CSPROJ_ROOT"
+          "src": "../../sprite-animations-development"
         }
       ],
       "dest": "api",
@@ -45,7 +45,7 @@
         ]
       }
     ],
-    "output": "_site",
+    "output": "../docs_site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
