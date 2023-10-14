@@ -294,56 +294,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Performers.AnimationPerformer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Performers.AnimationPerformer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Performers.PerformerFactory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Performers.PerformerFactory.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Performers.SingleAnimator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Performers.SingleAnimator.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Performers.WindroseAnimator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Performers.WindroseAnimator.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Performers.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Performers.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.SingleAnimator.yml",
       "output": {
         ".html": {
@@ -398,16 +348,6 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.SpriteAnimationType.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.SpriteAnimationWindrose.FrameIds.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.SpriteAnimationWindrose.FrameIds.html"
         }
       },
       "version": ""

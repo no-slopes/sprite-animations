@@ -5,8 +5,7 @@
   },
   "hooks": {
     "before:init": [
-      "git pull",
-      "dotenv docfx docfx_project/docfx.json"
+      "git pull"
     ],
     "after:bump": "npx auto-changelog -p"
   },
