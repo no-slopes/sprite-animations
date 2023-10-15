@@ -1,1730 +1,1906 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SpriteAnimator
- </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SpriteAnimator
- ">
-    <meta name="generator" content="docfx ">
-  
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  
-  
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
+      <title>Class SpriteAnimator
+ | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SpriteAnimator
+ | Sprite Animations ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
 
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
-              </a>
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.jpg" alt="Sprite Animations by No Slopes">
+            Sprite Animations by No Slopes
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
-            </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="SpriteAnimations.SpriteAnimator">
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SpriteAnimations.SpriteAnimator">
 
 
 
-  <h1 id="SpriteAnimations_SpriteAnimator" data-uid="SpriteAnimations.SpriteAnimator" class="text-break">Class SpriteAnimator
-</h1>
-  <div class="markdown level0 summary"><p>The Sprite Animator. Responsible for playing animations by changing the sprites
+  <h1 id="SpriteAnimations_SpriteAnimator" data-uid="SpriteAnimations.SpriteAnimator" class="text-break">
+      Class SpriteAnimator
+  </h1>
+
+  <div class="markdown level0 summary">
+    <p>The Sprite Animator. Responsible for playing animations by changing the sprites
 of a SpriteRenderer based on the fps of the playing animation.</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">Object</span></div>
-    <div class="level2"><span class="xref">Component</span></div>
-    <div class="level3"><span class="xref">Behaviour</span></div>
-    <div class="level4"><span class="xref">MonoBehaviour</span></div>
-    <div class="level5"><span class="xref">SpriteAnimator</span></div>
+
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">MonoBehaviour.IsInvoking()</span>
-    </div>
-    <div>
-      <span class="xref">MonoBehaviour.CancelInvoke()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.Invoke(string, float)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.InvokeRepeating(string, float, float)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.CancelInvoke(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.IsInvoking(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine(IEnumerator)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine_Auto(IEnumerator)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StopCoroutine(IEnumerator)</a>
-    </div>
-    <div>
-      <span class="xref">MonoBehaviour.StopCoroutine(Coroutine)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StopCoroutine(string)</a>
-    </div>
-    <div>
-      <span class="xref">MonoBehaviour.StopAllCoroutines()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">MonoBehaviour.print(object)</a>
-    </div>
-    <div>
-      <span class="xref">MonoBehaviour.destroyCancellationToken</span>
-    </div>
-    <div>
-      <span class="xref">MonoBehaviour.useGUILayout</span>
-    </div>
-    <div>
-      <span class="xref">MonoBehaviour.runInEditMode</span>
-    </div>
-    <div>
-      <span class="xref">Behaviour.enabled</span>
-    </div>
-    <div>
-      <span class="xref">Behaviour.isActiveAndEnabled</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponent(Type)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponent&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.TryGetComponent(Type, out Component)</a>
-    </div>
-    <div>
-      <span class="xref">Component.TryGetComponent&lt;T&gt;(out T)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.GetComponent(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInChildren&lt;T&gt;(bool)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponentInChildren&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool, List&lt;T&gt;)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponentsInChildren&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInParent&lt;T&gt;(bool)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponentInParent&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool, List&lt;T&gt;)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponentsInParent&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type, List&lt;Component&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponents&lt;T&gt;(List&lt;T&gt;)</a>
-    </div>
-    <div>
-      <span class="xref">Component.GetComponents&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.CompareTag(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object, SendMessageOptions)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, SendMessageOptions)</a>
-    </div>
-    <div>
-      <span class="xref">Component.transform</span>
-    </div>
-    <div>
-      <span class="xref">Component.gameObject</span>
-    </div>
-    <div>
-      <span class="xref">Component.tag</span>
-    </div>
-    <div>
-      <span class="xref">Object.GetInstanceID()</span>
-    </div>
-    <div>
-      <span class="xref">Object.GetHashCode()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion)</span>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate(Object)</span>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate(Object, Transform)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</span>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
-    </div>
-    <div>
-      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
-    </div>
-    <div>
-      <span class="xref">Object.Destroy(Object)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
-    </div>
-    <div>
-      <span class="xref">Object.DestroyImmediate(Object)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
-    </div>
-    <div>
-      <span class="xref">Object.DontDestroyOnLoad(Object)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
-    </div>
-    <div>
-      <span class="xref">Object.DestroyObject(Object)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
-    </div>
-    <div>
-      <span class="xref">Object.FindObjectsOfType&lt;T&gt;()</span>
-    </div>
-    <div>
-      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
-    </div>
-    <div>
-      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
-    </div>
-    <div>
-      <span class="xref">Object.FindObjectOfType&lt;T&gt;()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
-    </div>
-    <div>
-      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
-    </div>
-    <div>
-      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
-    </div>
-    <div>
-      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
-    </div>
-    <div>
-      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
-    </div>
-    <div>
-      <span class="xref">Object.ToString()</span>
-    </div>
-    <div>
-      <span class="xref">Object.name</span>
-    </div>
-    <div>
-      <span class="xref">Object.hideFlags</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
+
+  <div class="markdown level0 conceptual">
+    
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="SpriteAnimations.html">SpriteAnimations</a></h6>
-  <h6><strong>Assembly</strong>: SpriteAnimations.dll</h6>
-  <h5 id="SpriteAnimations_SpriteAnimator_syntax">Syntax</h5>
+
+                                  <! -- CLASS  -->
+                                
+  <!-- 
+
+      <div class="inheritance">
+    
+      <h5>
+        Inheritance
+      </h5>
+      
+            <div class="level0">
+            <xref uid="System.Object" text="object"/>
+            </div>
+            <div class="level1">
+            <xref uid="UnityEngine.Object" text="Object"/>
+            </div>
+            <div class="level2">
+            <xref uid="UnityEngine.Component" text="Component"/>
+            </div>
+            <div class="level3">
+            <xref uid="UnityEngine.Behaviour" text="Behaviour"/>
+            </div>
+            <div class="level4">
+            <xref uid="UnityEngine.MonoBehaviour" text="MonoBehaviour"/>
+            </div>
+      
+        <div class="level5">
+          <span class="xref">
+            SpriteAnimator
+          </span>
+        </div>
+      
+      </div>
+
+  -->
+
+                                                   <! -- IMPLEMENTS  -->
+
+                                                      <! -- INHERITED MEMBERS  -->
+  <!-- 
+      <div class="inheritedMembers">
+          <h5>
+            Inherited Members
+          </h5>
+        
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.IsInvoking" text="MonoBehaviour.IsInvoking()" alt="UnityEngine.MonoBehaviour.IsInvoking()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.CancelInvoke" text="MonoBehaviour.CancelInvoke()" alt="UnityEngine.MonoBehaviour.CancelInvoke()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.Invoke(System.String,System.Single)" text="MonoBehaviour.Invoke(string, float)" alt="UnityEngine.MonoBehaviour.Invoke(string, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.InvokeRepeating(System.String,System.Single,System.Single)" text="MonoBehaviour.InvokeRepeating(string, float, float)" alt="UnityEngine.MonoBehaviour.InvokeRepeating(string, float, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.CancelInvoke(System.String)" text="MonoBehaviour.CancelInvoke(string)" alt="UnityEngine.MonoBehaviour.CancelInvoke(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.IsInvoking(System.String)" text="MonoBehaviour.IsInvoking(string)" alt="UnityEngine.MonoBehaviour.IsInvoking(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StartCoroutine(System.String)" text="MonoBehaviour.StartCoroutine(string)" alt="UnityEngine.MonoBehaviour.StartCoroutine(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StartCoroutine(System.String,System.Object)" text="MonoBehaviour.StartCoroutine(string, object)" alt="UnityEngine.MonoBehaviour.StartCoroutine(string, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)" text="MonoBehaviour.StartCoroutine(IEnumerator)" alt="UnityEngine.MonoBehaviour.StartCoroutine(System.Collections.IEnumerator)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)" text="MonoBehaviour.StartCoroutine_Auto(IEnumerator)" alt="UnityEngine.MonoBehaviour.StartCoroutine_Auto(System.Collections.IEnumerator)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)" text="MonoBehaviour.StopCoroutine(IEnumerator)" alt="UnityEngine.MonoBehaviour.StopCoroutine(System.Collections.IEnumerator)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StopCoroutine(UnityEngine.Coroutine)" text="MonoBehaviour.StopCoroutine(Coroutine)" alt="UnityEngine.MonoBehaviour.StopCoroutine(UnityEngine.Coroutine)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StopCoroutine(System.String)" text="MonoBehaviour.StopCoroutine(string)" alt="UnityEngine.MonoBehaviour.StopCoroutine(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.StopAllCoroutines" text="MonoBehaviour.StopAllCoroutines()" alt="UnityEngine.MonoBehaviour.StopAllCoroutines()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.print(System.Object)" text="MonoBehaviour.print(object)" alt="UnityEngine.MonoBehaviour.print(object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.destroyCancellationToken" text="MonoBehaviour.destroyCancellationToken" alt="UnityEngine.MonoBehaviour.destroyCancellationToken"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.useGUILayout" text="MonoBehaviour.useGUILayout" alt="UnityEngine.MonoBehaviour.useGUILayout"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.MonoBehaviour.runInEditMode" text="MonoBehaviour.runInEditMode" alt="UnityEngine.MonoBehaviour.runInEditMode"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Behaviour.enabled" text="Behaviour.enabled" alt="UnityEngine.Behaviour.enabled"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Behaviour.isActiveAndEnabled" text="Behaviour.isActiveAndEnabled" alt="UnityEngine.Behaviour.isActiveAndEnabled"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponent(System.Type)" text="Component.GetComponent(Type)" alt="UnityEngine.Component.GetComponent(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponent``1" text="Component.GetComponent&lt;T&gt;()" alt="UnityEngine.Component.GetComponent&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.TryGetComponent(System.Type,UnityEngine.Component@)" text="Component.TryGetComponent(Type, out Component)" alt="UnityEngine.Component.TryGetComponent(System.Type, out UnityEngine.Component)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.TryGetComponent``1(``0@)" text="Component.TryGetComponent&lt;T&gt;(out T)" alt="UnityEngine.Component.TryGetComponent&lt;T&gt;(out T)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponent(System.String)" text="Component.GetComponent(string)" alt="UnityEngine.Component.GetComponent(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInChildren(System.Type,System.Boolean)" text="Component.GetComponentInChildren(Type, bool)" alt="UnityEngine.Component.GetComponentInChildren(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInChildren(System.Type)" text="Component.GetComponentInChildren(Type)" alt="UnityEngine.Component.GetComponentInChildren(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInChildren``1(System.Boolean)" text="Component.GetComponentInChildren&lt;T&gt;(bool)" alt="UnityEngine.Component.GetComponentInChildren&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInChildren``1" text="Component.GetComponentInChildren&lt;T&gt;()" alt="UnityEngine.Component.GetComponentInChildren&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInChildren(System.Type,System.Boolean)" text="Component.GetComponentsInChildren(Type, bool)" alt="UnityEngine.Component.GetComponentsInChildren(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInChildren(System.Type)" text="Component.GetComponentsInChildren(Type)" alt="UnityEngine.Component.GetComponentsInChildren(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInChildren``1(System.Boolean)" text="Component.GetComponentsInChildren&lt;T&gt;(bool)" alt="UnityEngine.Component.GetComponentsInChildren&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInChildren``1(System.Boolean,System.Collections.Generic.List{``0})" text="Component.GetComponentsInChildren&lt;T&gt;(bool, List&lt;T&gt;)" alt="UnityEngine.Component.GetComponentsInChildren&lt;T&gt;(bool, System.Collections.Generic.List&lt;T&gt;)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInChildren``1" text="Component.GetComponentsInChildren&lt;T&gt;()" alt="UnityEngine.Component.GetComponentsInChildren&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInChildren``1(System.Collections.Generic.List{``0})" text="Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)" alt="UnityEngine.Component.GetComponentsInChildren&lt;T&gt;(System.Collections.Generic.List&lt;T&gt;)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInParent(System.Type,System.Boolean)" text="Component.GetComponentInParent(Type, bool)" alt="UnityEngine.Component.GetComponentInParent(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInParent(System.Type)" text="Component.GetComponentInParent(Type)" alt="UnityEngine.Component.GetComponentInParent(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInParent``1(System.Boolean)" text="Component.GetComponentInParent&lt;T&gt;(bool)" alt="UnityEngine.Component.GetComponentInParent&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentInParent``1" text="Component.GetComponentInParent&lt;T&gt;()" alt="UnityEngine.Component.GetComponentInParent&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInParent(System.Type,System.Boolean)" text="Component.GetComponentsInParent(Type, bool)" alt="UnityEngine.Component.GetComponentsInParent(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInParent(System.Type)" text="Component.GetComponentsInParent(Type)" alt="UnityEngine.Component.GetComponentsInParent(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInParent``1(System.Boolean)" text="Component.GetComponentsInParent&lt;T&gt;(bool)" alt="UnityEngine.Component.GetComponentsInParent&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInParent``1(System.Boolean,System.Collections.Generic.List{``0})" text="Component.GetComponentsInParent&lt;T&gt;(bool, List&lt;T&gt;)" alt="UnityEngine.Component.GetComponentsInParent&lt;T&gt;(bool, System.Collections.Generic.List&lt;T&gt;)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponentsInParent``1" text="Component.GetComponentsInParent&lt;T&gt;()" alt="UnityEngine.Component.GetComponentsInParent&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponents(System.Type)" text="Component.GetComponents(Type)" alt="UnityEngine.Component.GetComponents(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponents(System.Type,System.Collections.Generic.List{UnityEngine.Component})" text="Component.GetComponents(Type, List&lt;Component&gt;)" alt="UnityEngine.Component.GetComponents(System.Type, System.Collections.Generic.List&lt;UnityEngine.Component&gt;)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponents``1(System.Collections.Generic.List{``0})" text="Component.GetComponents&lt;T&gt;(List&lt;T&gt;)" alt="UnityEngine.Component.GetComponents&lt;T&gt;(System.Collections.Generic.List&lt;T&gt;)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.GetComponents``1" text="Component.GetComponents&lt;T&gt;()" alt="UnityEngine.Component.GetComponents&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.CompareTag(System.String)" text="Component.CompareTag(string)" alt="UnityEngine.Component.CompareTag(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessageUpwards(System.String,System.Object,UnityEngine.SendMessageOptions)" text="Component.SendMessageUpwards(string, object, SendMessageOptions)" alt="UnityEngine.Component.SendMessageUpwards(string, object, UnityEngine.SendMessageOptions)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessageUpwards(System.String,System.Object)" text="Component.SendMessageUpwards(string, object)" alt="UnityEngine.Component.SendMessageUpwards(string, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessageUpwards(System.String)" text="Component.SendMessageUpwards(string)" alt="UnityEngine.Component.SendMessageUpwards(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessageUpwards(System.String,UnityEngine.SendMessageOptions)" text="Component.SendMessageUpwards(string, SendMessageOptions)" alt="UnityEngine.Component.SendMessageUpwards(string, UnityEngine.SendMessageOptions)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessage(System.String,System.Object)" text="Component.SendMessage(string, object)" alt="UnityEngine.Component.SendMessage(string, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessage(System.String)" text="Component.SendMessage(string)" alt="UnityEngine.Component.SendMessage(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)" text="Component.SendMessage(string, object, SendMessageOptions)" alt="UnityEngine.Component.SendMessage(string, object, UnityEngine.SendMessageOptions)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.SendMessage(System.String,UnityEngine.SendMessageOptions)" text="Component.SendMessage(string, SendMessageOptions)" alt="UnityEngine.Component.SendMessage(string, UnityEngine.SendMessageOptions)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.BroadcastMessage(System.String,System.Object,UnityEngine.SendMessageOptions)" text="Component.BroadcastMessage(string, object, SendMessageOptions)" alt="UnityEngine.Component.BroadcastMessage(string, object, UnityEngine.SendMessageOptions)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.BroadcastMessage(System.String,System.Object)" text="Component.BroadcastMessage(string, object)" alt="UnityEngine.Component.BroadcastMessage(string, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.BroadcastMessage(System.String)" text="Component.BroadcastMessage(string)" alt="UnityEngine.Component.BroadcastMessage(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.BroadcastMessage(System.String,UnityEngine.SendMessageOptions)" text="Component.BroadcastMessage(string, SendMessageOptions)" alt="UnityEngine.Component.BroadcastMessage(string, UnityEngine.SendMessageOptions)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.transform" text="Component.transform" alt="UnityEngine.Component.transform"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.gameObject" text="Component.gameObject" alt="UnityEngine.Component.gameObject"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Component.tag" text="Component.tag" alt="UnityEngine.Component.tag"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.GetInstanceID" text="Object.GetInstanceID()" alt="UnityEngine.Object.GetInstanceID()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.GetHashCode" text="Object.GetHashCode()" alt="UnityEngine.Object.GetHashCode()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Equals(System.Object)" text="Object.Equals(object)" alt="UnityEngine.Object.Equals(object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)" text="Object.Instantiate(Object, Vector3, Quaternion)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)" text="Object.Instantiate(Object, Vector3, Quaternion, Transform)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object)" text="Object.Instantiate(Object)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)" text="Object.Instantiate(Object, Transform)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)" text="Object.Instantiate(Object, Transform, bool)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0)" text="Object.Instantiate&lt;T&gt;(T)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)" text="Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)" text="Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)" text="Object.Instantiate&lt;T&gt;(T, Transform)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)" text="Object.Instantiate&lt;T&gt;(T, Transform, bool)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)" text="Object.Destroy(Object, float)" alt="UnityEngine.Object.Destroy(UnityEngine.Object, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Destroy(UnityEngine.Object)" text="Object.Destroy(Object)" alt="UnityEngine.Object.Destroy(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)" text="Object.DestroyImmediate(Object, bool)" alt="UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyImmediate(UnityEngine.Object)" text="Object.DestroyImmediate(Object)" alt="UnityEngine.Object.DestroyImmediate(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType(System.Type)" text="Object.FindObjectsOfType(Type)" alt="UnityEngine.Object.FindObjectsOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)" text="Object.FindObjectsOfType(Type, bool)" alt="UnityEngine.Object.FindObjectsOfType(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType(Type, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)" text="Object.DontDestroyOnLoad(Object)" alt="UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)" text="Object.DestroyObject(Object, float)" alt="UnityEngine.Object.DestroyObject(UnityEngine.Object, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyObject(UnityEngine.Object)" text="Object.DestroyObject(Object)" alt="UnityEngine.Object.DestroyObject(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindSceneObjectsOfType(System.Type)" text="Object.FindSceneObjectsOfType(Type)" alt="UnityEngine.Object.FindSceneObjectsOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)" text="Object.FindObjectsOfTypeIncludingAssets(Type)" alt="UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType``1" text="Object.FindObjectsOfType&lt;T&gt;()" alt="UnityEngine.Object.FindObjectsOfType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType``1(System.Boolean)" text="Object.FindObjectsOfType&lt;T&gt;(bool)" alt="UnityEngine.Object.FindObjectsOfType&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType``1" text="Object.FindObjectOfType&lt;T&gt;()" alt="UnityEngine.Object.FindObjectOfType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType``1(System.Boolean)" text="Object.FindObjectOfType&lt;T&gt;(bool)" alt="UnityEngine.Object.FindObjectOfType&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType``1" text="Object.FindFirstObjectByType&lt;T&gt;()" alt="UnityEngine.Object.FindFirstObjectByType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType``1" text="Object.FindAnyObjectByType&lt;T&gt;()" alt="UnityEngine.Object.FindAnyObjectByType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)" text="Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)" alt="UnityEngine.Object.FindFirstObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)" text="Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)" alt="UnityEngine.Object.FindAnyObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfTypeAll(System.Type)" text="Object.FindObjectsOfTypeAll(Type)" alt="UnityEngine.Object.FindObjectsOfTypeAll(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType(System.Type)" text="Object.FindObjectOfType(Type)" alt="UnityEngine.Object.FindObjectOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType(System.Type)" text="Object.FindFirstObjectByType(Type)" alt="UnityEngine.Object.FindFirstObjectByType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType(System.Type)" text="Object.FindAnyObjectByType(Type)" alt="UnityEngine.Object.FindAnyObjectByType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)" text="Object.FindObjectOfType(Type, bool)" alt="UnityEngine.Object.FindObjectOfType(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)" text="Object.FindFirstObjectByType(Type, FindObjectsInactive)" alt="UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)" text="Object.FindAnyObjectByType(Type, FindObjectsInactive)" alt="UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.ToString" text="Object.ToString()" alt="UnityEngine.Object.ToString()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.name" text="Object.name" alt="UnityEngine.Object.name"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.hideFlags" text="Object.hideFlags" alt="UnityEngine.Object.hideFlags"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.Equals(System.Object,System.Object)" text="object.Equals(object, object)" alt="object.Equals(object, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.GetType" text="object.GetType()" alt="object.GetType()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.MemberwiseClone" text="object.MemberwiseClone()" alt="object.MemberwiseClone()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.ReferenceEquals(System.Object,System.Object)" text="object.ReferenceEquals(object, object)" alt="object.ReferenceEquals(object, object)"/>
+                  </div>
+      </div>
+  -->
+
+                                                      <! -- NAMESPACE  -->
+  <!-- 
+  <h6>
+      <strong>
+        Namespace
+      </strong>: <xref uid="SpriteAnimations" text="SpriteAnimations"/>
+  </h6>
+  -->
+
+                                                      <! -- ASSEMBLY  -->
+  <!-- 
+  <h6>
+      <strong>
+        Assembly
+      </strong>: SpriteAnimations.dll
+  </h6>
+  -->
+    
+    
+                                                                  <! -- SYNTAX  -->
+  <!-- 
+  <h5 id="SpriteAnimations_SpriteAnimator_syntax">
+    Syntax
+  </h5>
+  -->
+                                                                  <! -- CODE  -->
+  <!-- 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RequireComponent(typeof(SpriteRenderer))]
+      <pre>
+          <code class="lang- hljs">
+            [RequireComponent(typeof(SpriteRenderer))]
 [AddComponentMenu(&quot;Sprite Animator&quot;)]
-public class SpriteAnimator : MonoBehaviour</code></pre>
+public class SpriteAnimator : MonoBehaviour
+          </code>
+      </pre>
   </div>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__animationChanged.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._animationChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L39">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__animationChanged" data-uid="SpriteAnimations.SpriteAnimator._animationChanged">_animationChanged</h4>
+  -->
+
+
+
+
+
+                                                   <! -- RETURNS  -->
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__animationChanged" data-uid="SpriteAnimations.SpriteAnimator._animationChanged">
+  _animationChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected UnityEvent&lt;SpriteAnimation&gt; _animationChanged</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__animations.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._animations%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L49">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__animations" data-uid="SpriteAnimations.SpriteAnimator._animations">_animations</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__animations" data-uid="SpriteAnimations.SpriteAnimator._animations">
+  _animations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected Dictionary&lt;string, SpriteAnimation&gt; _animations</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__currentAnimation.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._currentAnimation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L30">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__currentAnimation" data-uid="SpriteAnimations.SpriteAnimator._currentAnimation">_currentAnimation</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__currentAnimation" data-uid="SpriteAnimations.SpriteAnimator._currentAnimation">
+  _currentAnimation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected SpriteAnimation _currentAnimation</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__currentPerformer.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._currentPerformer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L48">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__currentPerformer" data-uid="SpriteAnimations.SpriteAnimator._currentPerformer">_currentPerformer</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__currentPerformer" data-uid="SpriteAnimations.SpriteAnimator._currentPerformer">
+  _currentPerformer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected AnimationPerformer _currentPerformer</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__performersFactory.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._performersFactory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L46">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__performersFactory" data-uid="SpriteAnimations.SpriteAnimator._performersFactory">_performersFactory</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__performersFactory" data-uid="SpriteAnimations.SpriteAnimator._performersFactory">
+  _performersFactory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected PerformerFactory _performersFactory</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.PerformerFactory.html">PerformerFactory</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__playOnStart.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._playOnStart%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L36">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__playOnStart" data-uid="SpriteAnimations.SpriteAnimator._playOnStart">_playOnStart</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.PerformerFactory.html">PerformerFactory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__playOnStart" data-uid="SpriteAnimations.SpriteAnimator._playOnStart">
+  _playOnStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected bool _playOnStart</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__spriteAnimations.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._spriteAnimations%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L33">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__spriteAnimations" data-uid="SpriteAnimations.SpriteAnimator._spriteAnimations">_spriteAnimations</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__spriteAnimations" data-uid="SpriteAnimations.SpriteAnimator._spriteAnimations">
+  _spriteAnimations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected List&lt;SpriteAnimation&gt; _spriteAnimations</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__spriteRenderer.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._spriteRenderer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L24">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__spriteRenderer" data-uid="SpriteAnimations.SpriteAnimator._spriteRenderer">_spriteRenderer</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__spriteRenderer" data-uid="SpriteAnimations.SpriteAnimator._spriteRenderer">
+  _spriteRenderer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected SpriteRenderer _spriteRenderer</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">SpriteRenderer</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__state.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._state%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L58">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__state" data-uid="SpriteAnimations.SpriteAnimator._state">_state</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SpriteRenderer</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__state" data-uid="SpriteAnimations.SpriteAnimator._state">
+  _state
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected SpriteAnimator.SpriteAnimatorState _state</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__stateChanged.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._stateChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L42">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__stateChanged" data-uid="SpriteAnimations.SpriteAnimator._stateChanged">_stateChanged</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__stateChanged" data-uid="SpriteAnimations.SpriteAnimator._stateChanged">
+  _stateChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected UnityEvent&lt;SpriteAnimator.SpriteAnimatorState&gt; _stateChanged</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator__updateMode.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator._updateMode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L27">View Source</a>
-  </span>
-  <h4 id="SpriteAnimations_SpriteAnimator__updateMode" data-uid="SpriteAnimations.SpriteAnimator._updateMode">_updateMode</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimator__updateMode" data-uid="SpriteAnimations.SpriteAnimator._updateMode">
+  _updateMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected UpdateMode _updateMode</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.UpdateMode.html">UpdateMode</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_AnimationChanged.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.AnimationChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L73">View Source</a>
-  </span>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.UpdateMode.html">UpdateMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="SpriteAnimations_SpriteAnimator_AnimationChanged_" data-uid="SpriteAnimations.SpriteAnimator.AnimationChanged*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_AnimationChanged" data-uid="SpriteAnimations.SpriteAnimator.AnimationChanged">AnimationChanged</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_AnimationChanged" data-uid="SpriteAnimations.SpriteAnimator.AnimationChanged">
+  AnimationChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public UnityEvent&lt;SpriteAnimation&gt; AnimationChanged { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Animations.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Animations%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L56">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Animations_" data-uid="SpriteAnimations.SpriteAnimator.Animations*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Animations" data-uid="SpriteAnimations.SpriteAnimator.Animations">Animations</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Animations" data-uid="SpriteAnimations.SpriteAnimator.Animations">
+  Animations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;SpriteAnimation&gt; Animations { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_CurrentAnimation.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.CurrentAnimation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L71">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_CurrentAnimation_" data-uid="SpriteAnimations.SpriteAnimator.CurrentAnimation*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_CurrentAnimation" data-uid="SpriteAnimations.SpriteAnimator.CurrentAnimation">CurrentAnimation</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_CurrentAnimation" data-uid="SpriteAnimations.SpriteAnimator.CurrentAnimation">
+  CurrentAnimation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimation CurrentAnimation { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_DefaultAnimation.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.DefaultAnimation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L55">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_DefaultAnimation_" data-uid="SpriteAnimations.SpriteAnimator.DefaultAnimation*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_DefaultAnimation" data-uid="SpriteAnimations.SpriteAnimator.DefaultAnimation">DefaultAnimation</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_DefaultAnimation" data-uid="SpriteAnimations.SpriteAnimator.DefaultAnimation">
+  DefaultAnimation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimation DefaultAnimation { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Paused.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Paused%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L61">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Paused_" data-uid="SpriteAnimations.SpriteAnimator.Paused*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Paused" data-uid="SpriteAnimations.SpriteAnimator.Paused">Paused</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Paused" data-uid="SpriteAnimations.SpriteAnimator.Paused">
+  Paused
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Paused { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Playing.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Playing%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L60">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Playing_" data-uid="SpriteAnimations.SpriteAnimator.Playing*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Playing" data-uid="SpriteAnimations.SpriteAnimator.Playing">Playing</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Playing" data-uid="SpriteAnimations.SpriteAnimator.Playing">
+  Playing
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Playing { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_SpriteRenderer.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.SpriteRenderer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L69">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_SpriteRenderer_" data-uid="SpriteAnimations.SpriteAnimator.SpriteRenderer*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_SpriteRenderer" data-uid="SpriteAnimations.SpriteAnimator.SpriteRenderer">SpriteRenderer</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_SpriteRenderer" data-uid="SpriteAnimations.SpriteAnimator.SpriteRenderer">
+  SpriteRenderer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteRenderer SpriteRenderer { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">SpriteRenderer</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_State.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.State%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L68">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SpriteRenderer</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_State_" data-uid="SpriteAnimations.SpriteAnimator.State*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_State" data-uid="SpriteAnimations.SpriteAnimator.State">State</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_State" data-uid="SpriteAnimations.SpriteAnimator.State">
+  State
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimator.SpriteAnimatorState State { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_StateChanged.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.StateChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L74">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_StateChanged_" data-uid="SpriteAnimations.SpriteAnimator.StateChanged*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_StateChanged" data-uid="SpriteAnimations.SpriteAnimator.StateChanged">StateChanged</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_StateChanged" data-uid="SpriteAnimations.SpriteAnimator.StateChanged">
+  StateChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public UnityEvent&lt;SpriteAnimator.SpriteAnimatorState&gt; StateChanged { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Stopped.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Stopped%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L62">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UnityEvent</span>&lt;<a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a>.<a class="xref" href="SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html">SpriteAnimatorState</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Stopped_" data-uid="SpriteAnimations.SpriteAnimator.Stopped*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Stopped" data-uid="SpriteAnimations.SpriteAnimator.Stopped">Stopped</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Stopped" data-uid="SpriteAnimations.SpriteAnimator.Stopped">
+  Stopped
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Stopped { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Awake.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Awake%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L80">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="SpriteAnimations_SpriteAnimator_Awake_" data-uid="SpriteAnimations.SpriteAnimator.Awake*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Awake" data-uid="SpriteAnimations.SpriteAnimator.Awake">Awake()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Awake" data-uid="SpriteAnimations.SpriteAnimator.Awake">
+  Awake()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void Awake()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_CalculateCurrentAnimationDuration.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.CalculateCurrentAnimationDuration%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L308">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_CalculateCurrentAnimationDuration_" data-uid="SpriteAnimations.SpriteAnimator.CalculateCurrentAnimationDuration*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_CalculateCurrentAnimationDuration" data-uid="SpriteAnimations.SpriteAnimator.CalculateCurrentAnimationDuration">CalculateCurrentAnimationDuration()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_CalculateCurrentAnimationDuration" data-uid="SpriteAnimations.SpriteAnimator.CalculateCurrentAnimationDuration">
+  CalculateCurrentAnimationDuration()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Calculates the duration of the current animation.
 Depending on the type of animation this can have serious perfomance impacts
 as it has to evaluate all frames of all the animation cycles.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float CalculateCurrentAnimationDuration()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><p>The duration of the current animation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_ChangeAnimation_SpriteAnimations_SpriteAnimation_.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.ChangeAnimation(SpriteAnimations.SpriteAnimation)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L268">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the current animation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_ChangeAnimation_" data-uid="SpriteAnimations.SpriteAnimator.ChangeAnimation*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_ChangeAnimation_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.SpriteAnimator.ChangeAnimation(SpriteAnimations.SpriteAnimation)">ChangeAnimation(SpriteAnimation)</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_ChangeAnimation_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.SpriteAnimator.ChangeAnimation(SpriteAnimations.SpriteAnimation)">
+  ChangeAnimation(SpriteAnimation)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>This changes the current animation to be played by the animator. It will call
 the current animation Stop() method and the new animation Start() method.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected void ChangeAnimation(SpriteAnimation animation)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td><span class="parametername">animation</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_FixedUpdate.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.FixedUpdate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L114">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_FixedUpdate_" data-uid="SpriteAnimations.SpriteAnimator.FixedUpdate*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_FixedUpdate" data-uid="SpriteAnimations.SpriteAnimator.FixedUpdate">FixedUpdate()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_FixedUpdate" data-uid="SpriteAnimations.SpriteAnimator.FixedUpdate">
+  FixedUpdate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void FixedUpdate()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_GetAnimationByName_System_String_.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.GetAnimationByName(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L283">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_GetAnimationByName_" data-uid="SpriteAnimations.SpriteAnimator.GetAnimationByName*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_GetAnimationByName_System_String_" data-uid="SpriteAnimations.SpriteAnimator.GetAnimationByName(System.String)">GetAnimationByName(string)</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_GetAnimationByName_System_String_" data-uid="SpriteAnimations.SpriteAnimator.GetAnimationByName(System.String)">
+  GetAnimationByName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimation GetAnimationByName(string name)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_LateUpdate.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.LateUpdate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L108">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_LateUpdate_" data-uid="SpriteAnimations.SpriteAnimator.LateUpdate*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_LateUpdate" data-uid="SpriteAnimations.SpriteAnimator.LateUpdate">LateUpdate()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_LateUpdate" data-uid="SpriteAnimations.SpriteAnimator.LateUpdate">
+  LateUpdate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void LateUpdate()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Pause.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Pause%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L234">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Pause_" data-uid="SpriteAnimations.SpriteAnimator.Pause*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Pause" data-uid="SpriteAnimations.SpriteAnimator.Pause">Pause()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Pause" data-uid="SpriteAnimations.SpriteAnimator.Pause">
+  Pause()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Pauses the animator. Use Resume to continue.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer Pause()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Play.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Play%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L127">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Play_" data-uid="SpriteAnimations.SpriteAnimator.Play*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Play" data-uid="SpriteAnimations.SpriteAnimator.Play">Play()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Play" data-uid="SpriteAnimations.SpriteAnimator.Play">
+  Play()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Plays the default animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer Play()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Play_SpriteAnimations_SpriteAnimation_.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Play(SpriteAnimations.SpriteAnimation)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L212">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Play_" data-uid="SpriteAnimations.SpriteAnimator.Play*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Play_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.SpriteAnimator.Play(SpriteAnimations.SpriteAnimation)">Play(SpriteAnimation)</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Play_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.SpriteAnimator.Play(SpriteAnimations.SpriteAnimation)">
+  Play(SpriteAnimation)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Plays the given sprite animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer Play(SpriteAnimation animation)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td><span class="parametername">animation</span></td>
-        <td><p>The animation to play.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></td>
-        <td><p>The animation performer.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Play_System_String_.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Play(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L164">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd><p>The animation to play.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd><p>The animation performer.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Play_" data-uid="SpriteAnimations.SpriteAnimator.Play*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Play_System_String_" data-uid="SpriteAnimations.SpriteAnimator.Play(System.String)">Play(string)</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Play_System_String_" data-uid="SpriteAnimations.SpriteAnimator.Play(System.String)">
+  Play(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Plays the specified animation by its name. Note that the animation must be registered to the
 animator in order to be found.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer Play(string name)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name of the animation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></td>
-        <td><p>The AnimationPerformer instance for the played animation, or null if the animation is not found.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Play__1_SpriteAnimations_SpriteAnimation_.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Play%60%601(SpriteAnimations.SpriteAnimation)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L184">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the animation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd><p>The AnimationPerformer instance for the played animation, or null if the animation is not found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Play_" data-uid="SpriteAnimations.SpriteAnimator.Play*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Play__1_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.SpriteAnimator.Play``1(SpriteAnimations.SpriteAnimation)">Play&lt;TAnimator&gt;(SpriteAnimation)</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Play__1_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.SpriteAnimator.Play``1(SpriteAnimations.SpriteAnimation)">
+  Play&lt;TAnimator&gt;(SpriteAnimation)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L184"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Plays the specified animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TAnimator Play&lt;TAnimator&gt;(SpriteAnimation animation) where TAnimator : AnimationPerformer</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td><span class="parametername">animation</span></td>
-        <td><p>The animation to play.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TAnimator</span></td>
-        <td><p>The animation performer.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TAnimator</span></td>
-        <td><p>The type of the animation performer.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Play__1_System_String_.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Play%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L144">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd><p>The animation to play.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TAnimator</span></dt>
+    <dd><p>The animation performer.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TAnimator</code></dt>
+    <dd><p>The type of the animation performer.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Play_" data-uid="SpriteAnimations.SpriteAnimator.Play*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Play__1_System_String_" data-uid="SpriteAnimations.SpriteAnimator.Play``1(System.String)">Play&lt;TAnimator&gt;(string)</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Play__1_System_String_" data-uid="SpriteAnimations.SpriteAnimator.Play``1(System.String)">
+  Play&lt;TAnimator&gt;(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Plays the specified animation by its name. Note that the animation must be registered to the
 animator in order to be found.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TAnimator Play&lt;TAnimator&gt;(string name) where TAnimator : AnimationPerformer</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name of the animation to play.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TAnimator</span></td>
-        <td><p>The AnimationPerformer instance for the played animation, or null if the animation is not found.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TAnimator</span></td>
-        <td><p>The type of the animator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Resume.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Resume%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L244">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the animation to play.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TAnimator</span></dt>
+    <dd><p>The AnimationPerformer instance for the played animation, or null if the animation is not found.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TAnimator</code></dt>
+    <dd><p>The type of the animator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Resume_" data-uid="SpriteAnimations.SpriteAnimator.Resume*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Resume" data-uid="SpriteAnimations.SpriteAnimator.Resume">Resume()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Resume" data-uid="SpriteAnimations.SpriteAnimator.Resume">
+  Resume()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Resumes a paused animator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer Resume()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Start.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Start%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L96">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Start_" data-uid="SpriteAnimations.SpriteAnimator.Start*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Start" data-uid="SpriteAnimations.SpriteAnimator.Start">Start()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Start" data-uid="SpriteAnimations.SpriteAnimator.Start">
+  Start()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void Start()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Stop.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Stop%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L254">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Stop_" data-uid="SpriteAnimations.SpriteAnimator.Stop*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Stop" data-uid="SpriteAnimations.SpriteAnimator.Stop">Stop()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Stop" data-uid="SpriteAnimations.SpriteAnimator.Stop">
+  Stop()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L254"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Stops animating</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_TryGetAnimationByName_System_String_SpriteAnimations_SpriteAnimation__.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.TryGetAnimationByName(System.String%2CSpriteAnimations.SpriteAnimation%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L293">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_TryGetAnimationByName_" data-uid="SpriteAnimations.SpriteAnimator.TryGetAnimationByName*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_TryGetAnimationByName_System_String_SpriteAnimations_SpriteAnimation__" data-uid="SpriteAnimations.SpriteAnimator.TryGetAnimationByName(System.String,SpriteAnimations.SpriteAnimation@)">TryGetAnimationByName(string, out SpriteAnimation)</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_TryGetAnimationByName_System_String_SpriteAnimations_SpriteAnimation__" data-uid="SpriteAnimations.SpriteAnimator.TryGetAnimationByName(System.String,SpriteAnimations.SpriteAnimation@)">
+  TryGetAnimationByName(string, out SpriteAnimation)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetAnimationByName(string name, out SpriteAnimation animation)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></td>
-        <td><span class="parametername">animation</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_Update.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.Update%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L102">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_SpriteAnimator_Update_" data-uid="SpriteAnimations.SpriteAnimator.Update*"></a>
-  <h4 id="SpriteAnimations_SpriteAnimator_Update" data-uid="SpriteAnimations.SpriteAnimator.Update">Update()</h4>
+
+  <h3 id="SpriteAnimations_SpriteAnimator_Update" data-uid="SpriteAnimations.SpriteAnimator.Update">
+  Update()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/SpriteAnimator.cs/#L15" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="toggle-mode">
-                <div class="icon">
-                  <i aria-hidden="true">☀</i>
-                </div>
-                <label class="switch">
-                  <input type="checkbox" id="switch-style">
-                  <span class="slider round"></span>
-                </label>
-                <div class="icon">
-                  <i aria-hidden="true">☾</i>
-                </div>
-              </div>
 
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <h5>In this article</h5>
-              <div></div>
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
-              </nav>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <div class="pull-left">
-        
-        <span>Generated by <strong>DocFX</strong></span>
-            </div>
-            <div class="toggle-mode pull-right visible-sm visible-xs">
-              <div class="icon">
-                <i aria-hidden="true">☀</i>
-              </div>
-              <label class="switch">
-                <input type="checkbox" id="switch-style-m">
-                <span class="slider round"></span>
-              </label>
-              <div class="icon">
-                <i aria-hidden="true">☾</i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
-      </footer>    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

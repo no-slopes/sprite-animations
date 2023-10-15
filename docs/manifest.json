@@ -448,6 +448,9 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -528,6 +531,29 @@
       "output": {
         ".html": {
           "relative_path": "documentation/toc.html"
+        },
+        ".json": {
+          "relative_path": "documentation/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.jpg"
         }
       },
       "version": ""
@@ -548,6 +574,9 @@
       "output": {
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""

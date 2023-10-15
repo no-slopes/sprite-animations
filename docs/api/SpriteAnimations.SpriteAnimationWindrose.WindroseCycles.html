@@ -1,291 +1,357 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SpriteAnimationWindrose.WindroseCycles
- </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SpriteAnimationWindrose.WindroseCycles
- ">
-    <meta name="generator" content="docfx ">
-  
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  
-  
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
+      <title>Class SpriteAnimationWindrose.WindroseCycles
+ | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SpriteAnimationWindrose.WindroseCycles
+ | Sprite Animations ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimationWindrose_WindroseCycles.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimationWindrose.WindroseCycles%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
 
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
-              </a>
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.jpg" alt="Sprite Animations by No Slopes">
+            Sprite Animations by No Slopes
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
-            </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="SpriteAnimations.SpriteAnimationWindrose.WindroseCycles">
-
-
-
-  <h1 id="SpriteAnimations_SpriteAnimationWindrose_WindroseCycles" data-uid="SpriteAnimations.SpriteAnimationWindrose.WindroseCycles" class="text-break">Class SpriteAnimationWindrose.WindroseCycles
-</h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;</div>
-    <div class="level2"><span class="xref">SpriteAnimationWindrose.WindroseCycles</span></div>
-  </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.idictionary">IDictionary</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.ideserializationcallback">IDeserializationCallback</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a></div>
-    <div><span class="xref">ISerializationCallbackReceiver</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.add">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Add(WindroseDirection, SpriteAnimationCycle)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.clear">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Clear()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.containskey">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.ContainsKey(WindroseDirection)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.containsvalue">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.ContainsValue(SpriteAnimationCycle)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.ensurecapacity">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.EnsureCapacity(int)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.getenumerator">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.getobjectdata">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.GetObjectData(SerializationInfo, StreamingContext)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.ondeserialization">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.OnDeserialization(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.remove#system-collections-generic-dictionary-2-remove(-0)">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Remove(WindroseDirection)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.remove#system-collections-generic-dictionary-2-remove(-0-1@)">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Remove(WindroseDirection, out SpriteAnimationCycle)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trimexcess#system-collections-generic-dictionary-2-trimexcess">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TrimExcess()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trimexcess#system-collections-generic-dictionary-2-trimexcess(system-int32)">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TrimExcess(int)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.tryadd">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TryAdd(WindroseDirection, SpriteAnimationCycle)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.trygetvalue">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TryGetValue(WindroseDirection, out SpriteAnimationCycle)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.comparer">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Comparer</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.count">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Count</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.item">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.this[WindroseDirection]</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.keys">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Keys</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.values">Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Values</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="SpriteAnimations.html">SpriteAnimations</a></h6>
-  <h6><strong>Assembly</strong>: SpriteAnimations.dll</h6>
-  <h5 id="SpriteAnimations_SpriteAnimationWindrose_WindroseCycles_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Serializable]
-protected class SpriteAnimationWindrose.WindroseCycles : Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;, IDictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;, ICollection&lt;KeyValuePair&lt;WindroseDirection, SpriteAnimationCycle&gt;&gt;, IReadOnlyDictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;, IReadOnlyCollection&lt;KeyValuePair&lt;WindroseDirection, SpriteAnimationCycle&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;WindroseDirection, SpriteAnimationCycle&gt;&gt;, IDictionary, ICollection, IEnumerable, IDeserializationCallback, ISerializable, ISerializationCallbackReceiver</code></pre>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey, TValue&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary&lt;TKey, TValue&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.idictionary">IDictionary</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.ideserializationcallback">IDeserializationCallback</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a>
-  </div>
-  <div>
-      <span class="xref">UnityEngine.ISerializationCallbackReceiver</span>
-  </div>
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimationWindrose_WindroseCycles.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimationWindrose.WindroseCycles%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationWindrose.cs/#L177" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="toggle-mode">
-                <div class="icon">
-                  <i aria-hidden="true">☀</i>
-                </div>
-                <label class="switch">
-                  <input type="checkbox" id="switch-style">
-                  <span class="slider round"></span>
-                </label>
-                <div class="icon">
-                  <i aria-hidden="true">☾</i>
-                </div>
-              </div>
-
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <h5>In this article</h5>
-              <div></div>
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <div class="pull-left">
-        
-        <span>Generated by <strong>DocFX</strong></span>
-            </div>
-            <div class="toggle-mode pull-right visible-sm visible-xs">
-              <div class="icon">
-                <i aria-hidden="true">☀</i>
-              </div>
-              <label class="switch">
-                <input type="checkbox" id="switch-style-m">
-                <span class="slider round"></span>
-              </label>
-              <div class="icon">
-                <i aria-hidden="true">☾</i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
-      </footer>    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SpriteAnimations.SpriteAnimationWindrose.WindroseCycles">
+
+
+
+  <h1 id="SpriteAnimations_SpriteAnimationWindrose_WindroseCycles" data-uid="SpriteAnimations.SpriteAnimationWindrose.WindroseCycles" class="text-break">
+      Class SpriteAnimationWindrose.WindroseCycles
+  </h1>
+
+  <div class="markdown level0 summary">
+    
+  </div>
+
+  <div class="markdown level0 conceptual">
+    
+  </div>
+
+                                  <! -- CLASS  -->
+                                
+  <!-- 
+
+      <div class="inheritance">
+    
+      <h5>
+        Inheritance
+      </h5>
+      
+            <div class="level0">
+            <xref uid="System.Object" text="object"/>
+            </div>
+            <div class="level1">
+            <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;
+            </div>
+      
+        <div class="level2">
+          <span class="xref">
+            SpriteAnimationWindrose.WindroseCycles
+          </span>
+        </div>
+      
+      </div>
+
+  -->
+
+                                                   <! -- IMPLEMENTS  -->
+      <div class="implements">
+          <h5>
+            Implements
+          </h5>
+      
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;&gt;
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;&gt;
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a>, <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a>&gt;&gt;
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.idictionary">IDictionary</a>
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a>
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.ideserializationcallback">IDeserializationCallback</a>
+                  </div>
+                  <div>
+                  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a>
+                  </div>
+                  <div>
+                  <span class="xref">ISerializationCallbackReceiver</span>
+                  </div>
+      </div>
+
+                                                      <! -- INHERITED MEMBERS  -->
+  <!-- 
+      <div class="inheritedMembers">
+          <h5>
+            Inherited Members
+          </h5>
+        
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Add(`0,`1)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Add(WindroseDirection, SpriteAnimationCycle)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Add(SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Clear" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Clear()" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Clear()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.ContainsKey(`0)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.ContainsKey(WindroseDirection)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.ContainsKey(SpriteAnimations.WindroseDirection)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.ContainsValue(`1)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.ContainsValue(SpriteAnimationCycle)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.ContainsValue(SpriteAnimations.SpriteAnimationCycle)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.EnsureCapacity(System.Int32)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.EnsureCapacity(int)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.EnsureCapacity(int)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.GetEnumerator" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.GetEnumerator()" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.GetEnumerator()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.GetObjectData(SerializationInfo, StreamingContext)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.OnDeserialization(System.Object)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.OnDeserialization(object)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.OnDeserialization(object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Remove(`0)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Remove(WindroseDirection)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Remove(SpriteAnimations.WindroseDirection)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Remove(`0,`1@)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Remove(WindroseDirection, out SpriteAnimationCycle)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Remove(SpriteAnimations.WindroseDirection, out SpriteAnimations.SpriteAnimationCycle)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.TrimExcess" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TrimExcess()" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.TrimExcess()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.TrimExcess(System.Int32)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TrimExcess(int)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.TrimExcess(int)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.TryAdd(`0,`1)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TryAdd(WindroseDirection, SpriteAnimationCycle)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.TryAdd(SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.TryGetValue(`0,`1@)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.TryGetValue(WindroseDirection, out SpriteAnimationCycle)" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.TryGetValue(SpriteAnimations.WindroseDirection, out SpriteAnimations.SpriteAnimationCycle)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Comparer" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Comparer" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Comparer"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Count" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Count" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Count"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Item(`0)" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.this[WindroseDirection]" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.this[SpriteAnimations.WindroseDirection]"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Keys" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Keys" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Keys"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Collections.Generic.Dictionary`2.Values" text="Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;.Values" alt="System.Collections.Generic.Dictionary&lt;SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle&gt;.Values"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.Equals(System.Object)" text="object.Equals(object)" alt="object.Equals(object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.Equals(System.Object,System.Object)" text="object.Equals(object, object)" alt="object.Equals(object, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.GetHashCode" text="object.GetHashCode()" alt="object.GetHashCode()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.GetType" text="object.GetType()" alt="object.GetType()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.MemberwiseClone" text="object.MemberwiseClone()" alt="object.MemberwiseClone()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.ReferenceEquals(System.Object,System.Object)" text="object.ReferenceEquals(object, object)" alt="object.ReferenceEquals(object, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.ToString" text="object.ToString()" alt="object.ToString()"/>
+                  </div>
+      </div>
+  -->
+
+                                                      <! -- NAMESPACE  -->
+  <!-- 
+  <h6>
+      <strong>
+        Namespace
+      </strong>: <xref uid="SpriteAnimations" text="SpriteAnimations"/>
+  </h6>
+  -->
+
+                                                      <! -- ASSEMBLY  -->
+  <!-- 
+  <h6>
+      <strong>
+        Assembly
+      </strong>: SpriteAnimations.dll
+  </h6>
+  -->
+    
+    
+                                                                  <! -- SYNTAX  -->
+  <!-- 
+  <h5 id="SpriteAnimations_SpriteAnimationWindrose_WindroseCycles_syntax">
+    Syntax
+  </h5>
+  -->
+                                                                  <! -- CODE  -->
+  <!-- 
+  <div class="codewrapper">
+      <pre>
+          <code class="lang- hljs">
+            [Serializable]
+protected class SpriteAnimationWindrose.WindroseCycles : Dictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;, IDictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;, ICollection&lt;KeyValuePair&lt;WindroseDirection, SpriteAnimationCycle&gt;&gt;, IReadOnlyDictionary&lt;WindroseDirection, SpriteAnimationCycle&gt;, IReadOnlyCollection&lt;KeyValuePair&lt;WindroseDirection, SpriteAnimationCycle&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;WindroseDirection, SpriteAnimationCycle&gt;&gt;, IDictionary, ICollection, IEnumerable, IDeserializationCallback, ISerializable, ISerializationCallbackReceiver
+          </code>
+      </pre>
+  </div>
+  -->
+
+
+
+
+
+                                                   <! -- RETURNS  -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
