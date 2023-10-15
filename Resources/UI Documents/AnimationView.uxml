@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/AnimationsManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationsManagerStyles" />
+    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
     <ui:VisualElement name="container" style="flex-grow: 1; height: 100%; width: auto; flex-basis: auto; align-items: stretch; justify-content: flex-start; min-width: auto;">
         <ui:VisualElement name="content-header" style="height: auto; min-width: auto; align-items: flex-start; justify-content: center; flex-direction: column; flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; max-height: none; border-bottom-color: rgb(118, 118, 118); border-bottom-width: 1px; min-height: 150px;">
             <ui:VisualElement name="animation-object-field-container" style="flex-direction: row; width: 100%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-grow: 1; max-height: 40px;">
@@ -13,6 +13,6 @@
                 <ui:SliderInt picking-mode="Ignore" value="0" high-value="60" name="fps-slider" show-input-field="true" direction="Horizontal" inverted="false" label="FPS:" style="color: rgb(255, 255, 255); align-items: center; min-height: 24px;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="content-body" style="flex-grow: 1; height: 100%; padding-top: 10px; padding-right: 5px; padding-bottom: 10px; padding-left: 5px;" />
+        <ui:VisualElement name="content-container" style="flex-grow: 1; height: 100%;" />
     </ui:VisualElement>
 </ui:UXML>

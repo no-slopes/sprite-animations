@@ -6,12 +6,6 @@ namespace SpriteAnimations.Editor
     public class SpriteAnimationViewFactory
     {
         private Dictionary<SpriteAnimationType, SpriteAnimationView> _views = new();
-        private ContentElement _contentElement;
-
-        public SpriteAnimationViewFactory(ContentElement contentElement)
-        {
-            _contentElement = contentElement;
-        }
 
         public SpriteAnimationView GetView(SpriteAnimationType animationType)
         {
@@ -27,8 +21,8 @@ namespace SpriteAnimations.Editor
         {
             SpriteAnimationView view = animationType switch
             {
-                SpriteAnimationType.Simple => new SpriteAnimationViewSimple(_contentElement),
-                SpriteAnimationType.Windrose => new SpriteAnimationViewWindrose(_contentElement),
+                SpriteAnimationType.Simple => new SpriteAnimationViewSimple(),
+                SpriteAnimationType.Windrose => new SpriteAnimationViewWindrose(),
                 _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null),
             };
 

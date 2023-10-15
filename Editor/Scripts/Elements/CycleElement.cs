@@ -4,14 +4,12 @@ using UnityEngine.UIElements;
 
 namespace SpriteAnimations.Editor
 {
+    public delegate void CycleCollectionResetEvent(CycleElement cycle);
     public class CycleElement : VisualElement
     {
         #region Fields
 
         private SpriteAnimationCycle _cycle;
-        private ContentElement _contentElement;
-
-        private AnimationPreviewElement _animationPreviewElement;
 
         private ScrollView _scrollView;
         private VisualElement _scrollViewContentContainer;
@@ -34,32 +32,27 @@ namespace SpriteAnimations.Editor
             }
         }
 
+
         #endregion
 
         #region Getters
 
         public int Size => _cycle.Size;
+        public List<SpriteAnimationFrame> Frames => _cycle.Frames;
         public ScrollView ScrollView => _scrollView;
 
         #endregion
 
         #region Constructors
 
-        public CycleElement(ContentElement contentElement)
+        public CycleElement()
         {
             style.flexDirection = FlexDirection.Row;
             style.flexGrow = 1;
 
-            _contentElement = contentElement;
-
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Cycle");
             TemplateContainer template = tree.Instantiate();
             template.style.flexGrow = 1;
-
-            VisualElement previewContainer = template.Q<VisualElement>("animation-preview-container");
-            previewContainer.AddToClassList("animation-preview");
-            _animationPreviewElement = GenerateAnimationPreviewElement(_contentElement);
-            previewContainer.Add(_animationPreviewElement);
 
             _scrollView = template.Q<ScrollView>("scroll-view");
             _scrollViewContentContainer = _scrollView.Q<VisualElement>("unity-content-container");
@@ -85,8 +78,6 @@ namespace SpriteAnimations.Editor
         {
             _cycle = cycle;
 
-            _animationPreviewElement.Frames = cycle.Frames;
-
             for (int i = 0; i < _cycle.Size; i++)
             {
                 _scrollView.Insert(i, new FrameElement(this, i, _cycle.Frames[i]));
@@ -99,18 +90,6 @@ namespace SpriteAnimations.Editor
         {
             _cycle = null;
             _scrollView.Clear();
-            // Super important to prevent memory leaks.
-            _animationPreviewElement.Stop();
-            _animationPreviewElement.Dismiss();
-        }
-
-        #endregion
-
-        #region Animation Preview Element
-
-        private AnimationPreviewElement GenerateAnimationPreviewElement(ContentElement contentElement)
-        {
-            return new(contentElement);
         }
 
         #endregion
@@ -150,6 +129,11 @@ namespace SpriteAnimations.Editor
 
             UpdateSizeText(_cycle.Size);
             EvaluateButtons();
+
+            if (_cycle.Frames.Count == 0)
+            {
+                CycleCollectionReset?.Invoke(this);
+            }
         }
 
         public void AddFrame()
@@ -181,6 +165,7 @@ namespace SpriteAnimations.Editor
         {
             FrameElement frameElement = new(this, index, frame);
 
+            int previousCount = _cycle.Frames.Count;
             _cycle.Frames.Add(frame);
 
             _scrollViewContentContainer.RegisterCallback<GeometryChangedEvent>(AfterAdd);
@@ -188,6 +173,11 @@ namespace SpriteAnimations.Editor
 
             UpdateSizeText(_cycle.Size);
             EvaluateButtons();
+
+            if (previousCount <= 0)
+            {
+                CycleCollectionReset?.Invoke(this);
+            }
         }
 
         public void SetFrames(List<Sprite> sprites)
@@ -209,7 +199,10 @@ namespace SpriteAnimations.Editor
 
             UpdateSizeText(_cycle.Size);
             EvaluateButtons();
+            CycleCollectionReset?.Invoke(this);
         }
+
+        public event CycleCollectionResetEvent CycleCollectionReset;
 
         public void ClearFrames()
         {

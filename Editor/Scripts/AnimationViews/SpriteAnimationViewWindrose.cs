@@ -7,12 +7,11 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private TemplateContainer _template;
-
         private Toggle _loopableField;
         private CycleElement _cycleElement;
         private SpriteAnimationWindrose _spriteAnimationWindrose;
         private WindroseSelectorElement _windroseSelector;
+        private AnimationPreviewElement _animationPreview;
 
         #endregion
 
@@ -24,25 +23,31 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SpriteAnimationViewWindrose(ContentElement contentElement) : base(contentElement)
+        public SpriteAnimationViewWindrose()
         {
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationViewWindrose");
-            _template = tree.Instantiate();
+            TemplateContainer template = tree.Instantiate();
+            template.style.flexGrow = 1;
 
-            VisualElement windroseSelectorContainer = _template.Q<VisualElement>("windrose-selector-container");
+            _loopableField = template.Q<Toggle>("loopable-field");
+            _loopableField.RegisterValueChangedCallback(OnLoopableValueChanges);
+
+            VisualElement windroseSelectorContainer = template.Q<VisualElement>("windrose-selector-container");
             windroseSelectorContainer.Clear();
             _windroseSelector = new WindroseSelectorElement();
             _windroseSelector.DirectionSelected += OnWindroseDirectionSelected;
             windroseSelectorContainer.Add(_windroseSelector);
 
-            _loopableField = _template.Q<Toggle>("loopable-field");
-            _loopableField.RegisterValueChangedCallback(OnLoopableValueChanges);
+            VisualElement animationPreviewContainer = template.Q<VisualElement>("animation-preview-container");
+            animationPreviewContainer.Clear();
+            _animationPreview = new AnimationPreviewElement();
+            animationPreviewContainer.Add(_animationPreview);
 
-            VisualElement cycleContainer = _template.Q<VisualElement>("cycle-container");
-            _cycleElement = new CycleElement(contentElement);
+            VisualElement cycleContainer = template.Q<VisualElement>("cycle-container");
+            _cycleElement = new CycleElement();
             cycleContainer.Add(_cycleElement);
 
-            Add(_template);
+            _contentContainer.Add(template);
         }
 
         #endregion
@@ -70,8 +75,13 @@ namespace SpriteAnimations.Editor
 
         private void OnWindroseDirectionSelected(WindroseDirection windroseDirection)
         {
+            SpriteAnimationCycle cycle = _spriteAnimationWindrose.FindOrCreateCycle(windroseDirection);
+
             _cycleElement.Dismiss();
-            _cycleElement.Initialize(_spriteAnimationWindrose.FindOrCreateCycle(windroseDirection));
+            _cycleElement.Initialize(cycle);
+
+            _animationPreview.Dismiss();
+            _animationPreview.Initialize(this, this, _cycleElement);
         }
 
         #endregion

@@ -10,45 +10,26 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private ContentElement _contentElement;
-
         private VisualElement _imageContainer;
         private Image _image;
         private ToolbarButton _playButton;
         private ToolbarButton _stopButton;
 
-        private List<SpriteAnimationFrame> _frames;
+        private IFPSProvider _fpsProvider;
+        private ITickProvider _tickProvider;
+        private CycleElement _cycle;
         private SpriteAnimationFrame _currentFrame;
 
         private bool _playing;
+        private int _fps = 0;
         private float _currentCycleElapsedTime = 0;
-
-        #endregion
-
-        #region Properties
-
-        public List<SpriteAnimationFrame> Frames
-        {
-            get => _frames;
-            set
-            {
-                _frames = value;
-                if (_frames.Count > 0)
-                {
-                    _currentFrame = _frames[0];
-                    _image.sprite = _currentFrame.Sprite;
-                }
-            }
-        }
 
         #endregion
 
         #region Constructors
 
-        public AnimationPreviewElement(ContentElement contentElement)
+        public AnimationPreviewElement()
         {
-            _contentElement = contentElement;
-
             AddToClassList("animation-cycle");
 
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationPreview");
@@ -79,8 +60,29 @@ namespace SpriteAnimations.Editor
 
         #region Initialization
 
+        public void Initialize(ITickProvider tickProvider, IFPSProvider fpsProvider, CycleElement cycle)
+        {
+            _fpsProvider = fpsProvider;
+            _fpsProvider.FPSChanged += OnFPSChanged;
+            _fps = _fpsProvider.FPS;
+
+            _tickProvider = tickProvider;
+            _cycle = cycle;
+            _cycle.CycleCollectionReset += OnCycleCollectionReset;
+            OnCycleCollectionReset(_cycle);
+        }
+
         public void Dismiss()
         {
+            if (_cycle != null)
+                _cycle.CycleCollectionReset -= OnCycleCollectionReset;
+
+            if (_fpsProvider != null)
+                _fpsProvider.FPSChanged -= OnFPSChanged;
+
+            Stop();
+
+            _cycle = null;
             _currentFrame = null;
             _image.sprite = null;
         }
@@ -91,7 +93,7 @@ namespace SpriteAnimations.Editor
 
         private void OnTick(float deltaTime)
         {
-            if (_frames.Count == 0)
+            if (_cycle.Frames.Count == 0)
             {
                 _image.sprite = null;
                 Stop();
@@ -99,11 +101,11 @@ namespace SpriteAnimations.Editor
             }
 
             _currentCycleElapsedTime += deltaTime;
-            float frameDuration = _contentElement.CurrentAnimation != null ? 1f / _contentElement.CurrentAnimation.FPS : 0f;
-            float duration = _frames.Count * frameDuration;
 
-            int frameIndex = Mathf.FloorToInt(_currentCycleElapsedTime * _frames.Count / duration);
-            SpriteAnimationFrame evaluatedFrame = _frames.ElementAtOrDefault(frameIndex);
+            float frameDuration = 1f / _fps;
+            float duration = _cycle.Frames.Count * frameDuration;
+
+            SpriteAnimationFrame evaluatedFrame = EvaluateCurrentFrameIndex(_currentCycleElapsedTime, duration);
 
             if (_currentCycleElapsedTime >= duration)
             {
@@ -112,8 +114,34 @@ namespace SpriteAnimations.Editor
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
-            _currentFrame = evaluatedFrame;
-            _image.sprite = evaluatedFrame.Sprite;
+            SetFrame(evaluatedFrame);
+        }
+
+        #endregion
+
+        #region Frames
+
+        private SpriteAnimationFrame EvaluateCurrentFrameIndex(float elapsedTime, float duration)
+        {
+
+            int frameIndex = Mathf.FloorToInt(elapsedTime * _cycle.Frames.Count / duration);
+            return _cycle.Frames.ElementAtOrDefault(frameIndex);
+        }
+
+        private void SetFrame(SpriteAnimationFrame frame)
+        {
+            _currentFrame = frame;
+            _image.sprite = _currentFrame.Sprite;
+
+        }
+
+        #endregion
+
+        #region FPS
+
+        private void OnFPSChanged(int fps)
+        {
+            _fps = fps;
         }
 
         #endregion
@@ -124,13 +152,13 @@ namespace SpriteAnimations.Editor
         {
             if (_playing) return;
 
-            if (_frames.Count == 0)
+            if (_cycle.Frames.Count == 0)
             {
                 _image.sprite = null;
                 return;
             }
 
-            _contentElement.Tick += OnTick;
+            _tickProvider.Tick += OnTick;
             _currentCycleElapsedTime = 0;
             _playing = true;
         }
@@ -140,10 +168,26 @@ namespace SpriteAnimations.Editor
             if (!_playing) return;
 
             _playing = false;
-            _contentElement.Tick -= OnTick;
+            _tickProvider.Tick -= OnTick;
             _currentFrame = null;
 
-            if (_frames.Count == 0)
+            if (_cycle.Frames.Count == 0)
+            {
+                _image.sprite = null;
+            }
+        }
+
+        #endregion
+
+        #region Cycle
+
+        private void OnCycleCollectionReset(CycleElement cycle)
+        {
+            if (cycle.Frames.Count > 0)
+            {
+                SetFrame(cycle.Frames[0]);
+            }
+            else
             {
                 _image.sprite = null;
             }

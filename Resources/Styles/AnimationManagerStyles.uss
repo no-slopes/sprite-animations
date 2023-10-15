@@ -173,3 +173,8 @@
     text-overflow: ellipsis;
     flex-wrap: wrap;
 }
+
+#loopable-field > Label {
+    max-width: 100px;
+    min-width: 10px;
+}

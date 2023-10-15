@@ -38,16 +38,18 @@ namespace SpriteAnimations.Editor
         // UI Elements
         private VisualElement _noAnimatorContainer;
         private VisualElement _selectedAnimatorContainer;
-        private VisualElement _contentContainer;
 
         private ObjectField _animatorSelectorField;
         private Button _fromSelectionButton;
 
         private SidebarElement _sidebarElement;
-        private ContentElement _contentElement;
 
         private SpriteAnimator _spriteAnimator;
         private SpriteAnimation _selectedAnimation;
+
+        private VisualElement _viewContainer;
+        private SpriteAnimationView _view;
+        private SpriteAnimationViewFactory _viewsFactory;
 
         #endregion
 
@@ -73,6 +75,7 @@ namespace SpriteAnimations.Editor
         private void OnEnable()
         {
             _timeTracker = (float)EditorApplication.timeSinceStartup;
+            _viewsFactory = new SpriteAnimationViewFactory();
 
             VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("UI Documents/Main");
             TemplateContainer templateContainer = visualTree.Instantiate();
@@ -107,16 +110,16 @@ namespace SpriteAnimations.Editor
 
         private void OnDisable()
         {
-            _contentElement?.Dismiss();
+            _view?.Dismiss();
         }
 
         private void Update()
         {
-            if (_selectedAnimation == null || _contentElement == null) return;
+            if (_selectedAnimation == null || _view == null) return;
 
             float deltaTime = (float)EditorApplication.timeSinceStartup - _timeTracker;
             _timeTracker += deltaTime;
-            _contentElement.PerformTick(deltaTime);
+            _view.PerformTick(deltaTime);
         }
 
         public void EvaluateSpriteAnimator(SpriteAnimator spriteAnimator)
@@ -129,7 +132,7 @@ namespace SpriteAnimations.Editor
             }
 
             _spriteAnimator = spriteAnimator;
-            LoadSpriteAnimator(_spriteAnimator);
+            LoadAnimations(_spriteAnimator);
             DisplaySelectedAnimatorContainer();
         }
 
@@ -143,10 +146,7 @@ namespace SpriteAnimations.Editor
             _sidebarElement.AnimationSelected += OnAnimationSelected;
             sidebar.Add(_sidebarElement);
 
-            _contentContainer = root.Q<VisualElement>("content");
-            _contentElement = new ContentElement();
-            _contentElement.DestroyAnimationRequested += DestroySelectedAnimation;
-            _contentContainer.Add(_contentElement);
+            _viewContainer = root.Q<VisualElement>("animation-view-container");
 
             _animatorSelectorField = root.Q<ObjectField>("animator-selector-field");
             _fromSelectionButton = root.Q<Button>("from-selection-button");
@@ -157,23 +157,19 @@ namespace SpriteAnimations.Editor
             _selectedAnimatorContainer.style.display = DisplayStyle.None;
             _noAnimatorContainer.style.display = DisplayStyle.Flex;
 
-            _contentContainer.style.display = DisplayStyle.None;
+            _viewContainer.style.display = DisplayStyle.None;
 
-            _contentElement.Dismiss();
+            DissmissCurrentView();
         }
 
         private void DisplaySelectedAnimatorContainer()
         {
             _noAnimatorContainer.style.display = DisplayStyle.None;
             _selectedAnimatorContainer.style.display = DisplayStyle.Flex;
+            _viewContainer.style.display = DisplayStyle.Flex;
         }
 
-        private void DisplayContent()
-        {
-            _contentContainer.style.display = DisplayStyle.Flex;
-        }
-
-        private void LoadSpriteAnimator(SpriteAnimator spriteAnimator)
+        private void LoadAnimations(SpriteAnimator spriteAnimator)
         {
             spriteAnimator.Animations.RemoveAll(animation => animation == null);
             _sidebarElement.Initialize(spriteAnimator.Animations);
@@ -185,12 +181,28 @@ namespace SpriteAnimations.Editor
 
         private void OnAnimationSelected(SpriteAnimation animation)
         {
-            _contentElement.Dismiss();
+            DissmissCurrentView();
 
             _selectedAnimation = animation;
 
-            _contentElement.Initialize(animation);
-            _contentContainer.style.display = DisplayStyle.Flex;
+            InitializeView(_selectedAnimation);
+        }
+
+        private void DissmissCurrentView()
+        {
+            _viewContainer?.Clear();
+            if (_view == null) return;
+            _view?.Dismiss();
+            _view.DestroyAnimationRequested -= DestroySelectedAnimation;
+
+        }
+
+        private void InitializeView(SpriteAnimation spriteAnimation)
+        {
+            _view = _viewsFactory.GetView(_selectedAnimation.AnimationType);
+            _viewContainer.Add(_view);
+            _view.Initialize(_selectedAnimation);
+            _view.DestroyAnimationRequested += DestroySelectedAnimation;
         }
 
         public void DestroySelectedAnimation()
@@ -217,7 +229,7 @@ namespace SpriteAnimations.Editor
             }
 
             AssetDatabase.SaveAssets();
-
+            DissmissCurrentView();
             _sidebarElement.Reload();
         }
 

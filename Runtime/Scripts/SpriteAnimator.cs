@@ -20,30 +20,38 @@ namespace SpriteAnimations
 
         #endregion
 
+        [Tooltip("The sprite renderer used for the animation.")]
         [SerializeField]
         protected SpriteRenderer _spriteRenderer;
 
+        [Tooltip("The update mode of the animator.")]
         [SerializeField]
         protected UpdateMode _updateMode = UpdateMode.Update;
 
-        [SerializeField]
-        protected SpriteAnimation _currentAnimation;
-
-        [SerializeField]
-        protected List<SpriteAnimation> _spriteAnimations = new();
-
+        [Tooltip("If the animator should start playing on start.")]
         [SerializeField]
         protected bool _playOnStart = true;
 
+        [Tooltip("The animation that will be played when this animator behaviour starts.")]
+        [SerializeField]
+        protected SpriteAnimation _defaultAnimation;
+
+        [Tooltip("The animations that can be played by this Sprite Animator. Use the Animations Manager to edit this.")]
+        [SerializeField]
+        protected List<SpriteAnimation> _spriteAnimations = new();
+
+        [Tooltip("The event that will be invoked when the animation changes.")]
         [SerializeField]
         protected UnityEvent<SpriteAnimation> _animationChanged;
 
+        [Tooltip("The event that will be invoked when the animator state changes.")]
         [SerializeField]
         protected UnityEvent<SpriteAnimatorState> _stateChanged;
 
         #region Fields
 
         protected PerformerFactory _performersFactory;
+        protected SpriteAnimation _currentAnimation;
 
         protected AnimationPerformer _currentPerformer;
         protected Dictionary<string, SpriteAnimation> _animations;
@@ -52,25 +60,63 @@ namespace SpriteAnimations
 
         #region Properties
 
-        public SpriteAnimation DefaultAnimation => _spriteAnimations.Count > 0 ? _spriteAnimations[0] : null;
+        /// <summary>
+        /// The default animation that will be played when this animator behaviour starts.
+        /// </summary>
+        public SpriteAnimation DefaultAnimation => _defaultAnimation;
+
+        /// <summary>
+        /// The list of animations registered to this animator. 
+        /// 
+        /// Important: Changing this at runtime will have no effect on the capacity of the animator
+        /// to play changed list of animations.
+        /// </summary>
         public List<SpriteAnimation> Animations => _spriteAnimations;
 
         protected SpriteAnimatorState _state = SpriteAnimatorState.Stopped;
 
-        public bool Playing => _state == SpriteAnimatorState.Playing;
-        public bool Paused => _state == SpriteAnimatorState.Paused;
-        public bool Stopped => _state == SpriteAnimatorState.Stopped;
+        /// <summary>
+        /// Is the animator playing?
+        /// </summary>
+        public bool IsPlaying => _state == SpriteAnimatorState.Playing;
+
+        /// <summary>
+        /// Is The animator paused?
+        /// </summary>
+        public bool IsPaused => _state == SpriteAnimatorState.Paused;
+
+        /// <summary>
+        /// Is The animation stopped?
+        /// </summary>
+        public bool IsStopped => _state == SpriteAnimatorState.Stopped;
 
         #endregion
 
         #region Getters
 
+        /// <summary>
+        /// The current state of the animator.
+        /// </summary>
         public SpriteAnimatorState State => _state;
+
+        /// <summary>
+        /// The sprite renderer used by the animator.
+        /// </summary>
         public SpriteRenderer SpriteRenderer => _spriteRenderer;
 
+        /// <summary>
+        /// The current animation being played by the animator.
+        /// </summary>
         public SpriteAnimation CurrentAnimation => _currentAnimation;
 
+        /// <summary>
+        /// The event that will be invoked when the animation changes.
+        /// </summary>
         public UnityEvent<SpriteAnimation> AnimationChanged => _animationChanged;
+
+        /// <summary>
+        /// The event that will be invoked when the animator state changes.
+        /// </summary>
         public UnityEvent<SpriteAnimatorState> StateChanged => _stateChanged;
 
         #endregion
@@ -95,25 +141,36 @@ namespace SpriteAnimations
 
         protected virtual void Start()
         {
-            if (_playOnStart && DefaultAnimation != null)
+            if (!_playOnStart) return;
+
+            if (_defaultAnimation != null)
+            {
                 Play(DefaultAnimation);
+                return;
+            }
+
+            if (_spriteAnimations.Count > 0)
+            {
+                Play(_spriteAnimations[0]);
+                return;
+            }
         }
 
         protected virtual void Update()
         {
-            if (!Playing || !_updateMode.Equals(UpdateMode.Update)) return;
+            if (!IsPlaying || !_updateMode.Equals(UpdateMode.Update)) return;
             _currentPerformer?.Tick(Time.deltaTime);
         }
 
         protected virtual void LateUpdate()
         {
-            if (!Playing || !_updateMode.Equals(UpdateMode.LateUpdate)) return;
+            if (!IsPlaying || !_updateMode.Equals(UpdateMode.LateUpdate)) return;
             _currentPerformer?.Tick(Time.deltaTime);
         }
 
         protected virtual void FixedUpdate()
         {
-            if (!Playing || !_updateMode.Equals(UpdateMode.FixedUpdate)) return;
+            if (!IsPlaying || !_updateMode.Equals(UpdateMode.FixedUpdate)) return;
             _currentPerformer?.Tick(Time.deltaTime);
         }
 
@@ -122,13 +179,19 @@ namespace SpriteAnimations
         #region Controlling Animator
 
         /// <summary>
-        /// Plays the default animation. 
+        /// Plays the default animation. Or the first animation registered to the animator if 
+        /// there is no default animation registered.
         /// </summary>
         public AnimationPerformer Play()
         {
             if (_currentAnimation == null)
             {
                 return Play(DefaultAnimation);
+            }
+
+            if (_spriteAnimations.Count > 0)
+            {
+                return Play(_spriteAnimations[0]);
             }
 
             return Play(_currentAnimation);
@@ -280,6 +343,11 @@ namespace SpriteAnimations
 
         #region Handling Animation
 
+        /// <summary>
+        /// Gets a registered animation by its name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns> The animation or null if not found </returns>
         public SpriteAnimation GetAnimationByName(string name)
         {
             if (!TryGetAnimationByName(name, out var animation))
@@ -290,6 +358,12 @@ namespace SpriteAnimations
             return animation;
         }
 
+        /// <summary>
+        /// Tries to get a registered animation by its name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="animation"></param>
+        /// <returns> True if the animation is found, false otherwise </returns>
         public bool TryGetAnimationByName(string name, out SpriteAnimation animation)
         {
             return _animations.TryGetValue(name, out animation);

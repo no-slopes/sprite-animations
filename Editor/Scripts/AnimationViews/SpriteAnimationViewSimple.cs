@@ -7,11 +7,10 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private TemplateContainer _template;
-
         private Toggle _loopableField;
         private CycleElement _cycleElement;
         private SpriteAnimationSimple _simpleSpriteAnimation;
+        private AnimationPreviewElement _animationPreview;
 
         #endregion
 
@@ -23,22 +22,25 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SpriteAnimationViewSimple(ContentElement contentElement) : base(contentElement)
+        public SpriteAnimationViewSimple()
         {
-            style.flexGrow = 1;
-
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationViewSimple");
-            _template = tree.Instantiate();
-            _template.style.flexGrow = 1;
+            TemplateContainer template = tree.Instantiate();
+            template.style.flexGrow = 1;
 
-            _loopableField = _template.Q<Toggle>("loopable-field");
+            _loopableField = template.Q<Toggle>("loopable-field");
             _loopableField.RegisterValueChangedCallback(OnLoopableValueChanges);
 
-            VisualElement cycleContainer = _template.Q<VisualElement>("cycle-container");
-            _cycleElement = new CycleElement(contentElement);
+            VisualElement animationPreviewContainer = template.Q<VisualElement>("animation-preview-container");
+            animationPreviewContainer.Clear();
+            _animationPreview = new AnimationPreviewElement();
+            animationPreviewContainer.Add(_animationPreview);
+
+            VisualElement cycleContainer = template.Q<VisualElement>("cycle-container");
+            _cycleElement = new CycleElement();
             cycleContainer.Add(_cycleElement);
 
-            Add(_template);
+            _contentContainer.Add(template);
         }
 
         #endregion
@@ -50,7 +52,8 @@ namespace SpriteAnimations.Editor
             base.Initialize(animation);
             _simpleSpriteAnimation = animation as SpriteAnimationSimple;
             _loopableField.value = _simpleSpriteAnimation.IsLoopable;
-            _cycleElement.Initialize(_simpleSpriteAnimation.Cycle);
+            _cycleElement.Initialize(_simpleSpriteAnimation.Cycle); // Must be initialized before the preview
+            _animationPreview.Initialize(this, this, _cycleElement);
         }
 
         public override void Dismiss()

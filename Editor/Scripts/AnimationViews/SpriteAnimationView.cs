@@ -4,15 +4,26 @@ using UnityEngine.UIElements;
 using static SpriteAnimations.SpriteAnimation;
 using UnityEditor;
 using UnityEditor.Playables;
+using UnityEditor.UIElements;
 
 namespace SpriteAnimations.Editor
 {
-    public abstract class SpriteAnimationView : VisualElement
+    public delegate void FPSChangedEvent(int fps);
+    public delegate void TickEvent(float deltaTime);
+    public delegate void DestroyAnimationRequestedEvent();
+    public abstract class SpriteAnimationView : VisualElement, ITickProvider, IFPSProvider
     {
         #region Fields
 
-        protected ContentElement _contentElement;
         protected SpriteAnimation _animation;
+
+        protected VisualElement _contentContainer;
+        protected Button _deleteAnimationButton;
+
+        private ObjectField _animationField;
+        private TextField _animationNameField;
+        private SliderInt _fpsSlider;
+
 
         #endregion
 
@@ -22,6 +33,9 @@ namespace SpriteAnimations.Editor
 
         #region Getters
 
+        public int FPS => _animation.FPS;
+        public string AnimationName => _animationNameField.value;
+
         public SpriteAnimation Animation => _animation;
         public abstract SpriteAnimationType AnimationType { get; }
 
@@ -29,9 +43,25 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SpriteAnimationView(ContentElement contentElement)
+        public SpriteAnimationView()
         {
-            _contentElement = contentElement;
+            style.flexGrow = 1;
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationView");
+            TemplateContainer template = tree.Instantiate();
+            template.style.flexGrow = 1;
+
+            _deleteAnimationButton = template.Q<Button>("delete-animation-button");
+            _deleteAnimationButton.clicked += () => DestroyAnimationRequested?.Invoke();
+
+            _contentContainer = template.Q<VisualElement>("content-container");
+            _contentContainer.style.flexGrow = 1;
+
+            _animationField = template.Q<ObjectField>("animation-field");
+            _animationField.SetEnabled(false);
+            _animationNameField = template.Q<TextField>("animation-name-field");
+            _fpsSlider = template.Q<SliderInt>("fps-slider");
+
+            Add(template);
         }
 
         #endregion
@@ -42,11 +72,12 @@ namespace SpriteAnimations.Editor
         {
             _animation = animation;
 
-            _contentElement.FPSSlider.value = _animation.FPS;
-            _contentElement.AnimationNameField.value = _animation.AnimationName;
+            _animationField.value = _animation;
+            _fpsSlider.value = _animation.FPS;
+            _animationNameField.value = _animation.AnimationName;
 
-            _contentElement.AnimationNameField.RegisterValueChangedCallback(OnAnimationNameChanged);
-            _contentElement.FPSSlider.RegisterValueChangedCallback(OnFPSChange);
+            _animationNameField.RegisterValueChangedCallback(OnAnimationNameChanged);
+            _fpsSlider.RegisterValueChangedCallback(OnFPSChange);
         }
 
         public virtual void Dismiss()
@@ -58,23 +89,43 @@ namespace SpriteAnimations.Editor
             }
 
             _animation = null;
-            _contentElement.AnimationNameField.UnregisterValueChangedCallback(OnAnimationNameChanged);
-            _contentElement.FPSSlider.UnregisterValueChangedCallback(OnFPSChange);
+            _animationNameField.UnregisterValueChangedCallback(OnAnimationNameChanged);
+            _fpsSlider.UnregisterValueChangedCallback(OnFPSChange);
         }
 
         #endregion
 
         #region FPS
 
+        public event FPSChangedEvent FPSChanged;
+
         private void OnFPSChange(ChangeEvent<int> changeEvent)
         {
             _animation.FPS = changeEvent.newValue;
+            FPSChanged?.Invoke(_animation.FPS);
         }
 
         private void OnAnimationNameChanged(ChangeEvent<string> changeEvent)
         {
             _animation.AnimationName = changeEvent.newValue;
         }
+
+        #endregion
+
+        #region Tick
+
+        public event TickEvent Tick;
+
+        public virtual void PerformTick(float deltaTime)
+        {
+            Tick?.Invoke(deltaTime);
+        }
+
+        #endregion        
+
+        #region Animation
+
+        public event DestroyAnimationRequestedEvent DestroyAnimationRequested;
 
         #endregion
     }
