@@ -484,6 +484,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "documentation/changelog.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/changelog.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "documentation/index.md",
       "output": {
         ".html": {
