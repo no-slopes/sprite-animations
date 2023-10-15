@@ -13,8 +13,9 @@
       "git checkout main",
       "git merge develop",
       "git push origin main",
-      "echo Successfully released ${name} v${version} to ${repo.repository}.",
-      "git checkout develop"
+      "git checkout develop",
+      "git merge main",
+      "echo Successfully released ${name} v${version} to ${repo.repository}."
     ]
   },
   "github": {
