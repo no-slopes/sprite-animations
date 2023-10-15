@@ -2,10 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-#if UNITY_EDITOR
-using SpriteAnimations.Editor;
-#endif
-
 namespace SpriteAnimations
 {
     /// <summary>
