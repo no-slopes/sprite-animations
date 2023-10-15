@@ -451,9 +451,6 @@
         },
         ".json": {
           "relative_path": "api/toc.json"
-        },
-        ".json": {
-          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -577,9 +574,6 @@
       "output": {
         ".html": {
           "relative_path": "toc.html"
-        },
-        ".json": {
-          "relative_path": "toc.json"
         },
         ".json": {
           "relative_path": "toc.json"

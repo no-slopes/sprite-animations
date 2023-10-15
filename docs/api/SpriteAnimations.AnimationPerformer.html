@@ -69,33 +69,6 @@
             <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-      </nav>
-    </header>
-
-    <main class="container-xxl">
-      <div class="toc-offcanvas">
-        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <nav class="toc" id="toc"></nav>
-          </div>
-        </div>
-      </div>
-
-      <div class="content">
-        <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
-            <i class="bi bi-list"></i>
-          </button>
-
-          <nav id="breadcrumb"></nav>
-        </div>
-
-        <article data-uid="SpriteAnimations.AnimationPerformer">
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
@@ -261,7 +234,6 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected SpriteAnimator _animator</code></pre>
   </div>
@@ -291,7 +263,6 @@
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected SpriteAnimation _currentAnimation</code></pre>
@@ -324,7 +295,6 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected SpriteAnimationCycle _currentCycle</code></pre>
   </div>
@@ -354,7 +324,6 @@
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected float _currentCycleDuration</code></pre>
@@ -387,7 +356,6 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected float _currentCycleElapsedTime</code></pre>
   </div>
@@ -419,7 +387,6 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected SpriteAnimationFrame _currentFrame</code></pre>
   </div>
@@ -449,7 +416,6 @@
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected Dictionary&lt;string, UnityAction&gt; _frameIdActions</code></pre>
@@ -481,7 +447,6 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected Dictionary&lt;int, UnityAction&gt; _frameIndexActions</code></pre>
   </div>
@@ -512,32 +477,9 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected UnityAction _onEndAction</code></pre>
   </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">UnityAction</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
 
 
 
@@ -570,28 +512,9 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimator Animator { get; set; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
 
 
 
@@ -620,28 +543,9 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimationCycle CurrentCycle { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
 
 
 
@@ -670,28 +574,9 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimationFrame CurrentFrame { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationFrame.html">SpriteAnimationFrame</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
 
 
 
@@ -720,28 +605,9 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected bool HasCurrentAnimation { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
 
 
 
@@ -770,32 +636,9 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected bool HasCurrentCycle { get; }</code></pre>
   </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
 
 
 
@@ -829,41 +672,9 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected int CalculateFrameIndex(float elapsedTime, int amountOfFrames, float duration)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>elapsedTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd><p>The time that has elapsed since the animation started.</p>
-</dd>
-    <dt><code>amountOfFrames</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The total number of frames in the animation.</p>
-</dd>
-    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd><p>The duration of the animation in seconds.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The index of the current frame to display.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -907,35 +718,9 @@ This overrides previous actions defined for that animation end.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer OnEnd(UnityAction action)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>action</code> <span class="xref">UnityAction</span></dt>
-    <dd><p>The UnityAction to be invoked.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
-    <dd><p>The updated SpriteAnimationPerformer instance.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -972,38 +757,9 @@ This overrides previous actions defined for that animation end.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer SetOnFrame(int frameIndex, UnityAction action)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>frameIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The index of the frame.</p>
-</dd>
-    <dt><code>action</code> <span class="xref">UnityAction</span></dt>
-    <dd><p>The action to be performed.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
-    <dd><p>The SpriteAnimationPerformer instance.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -1043,38 +799,9 @@ This overrides previous actions defined for that animation end.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer SetOnFrame(string id, UnityAction action)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The frame ID.</p>
-</dd>
-    <dt><code>action</code> <span class="xref">UnityAction</span></dt>
-    <dd><p>The UnityAction to be invoked.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
-    <dd><p>The updated PerformerSingle instance.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -1113,28 +840,9 @@ This overrides previous actions defined for that animation end.</p>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void StartAnimation(SpriteAnimation animation)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -1163,23 +871,9 @@ This overrides previous actions defined for that animation end.</p>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void StopAnimation()</code></pre>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1203,28 +897,9 @@ This overrides previous actions defined for that animation end.</p>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void Tick(float deltaTime)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -1254,34 +929,9 @@ This overrides previous actions defined for that animation end.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
-
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected bool ValidateAnimation(SpriteAnimation animation)</code></pre>
   </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>true if animation can be played</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -1312,22 +962,7 @@ This overrides previous actions defined for that animation end.</p>
 
         
       </div>
-        
-      </div>
 
-      <div class="affix">
-        <nav id="affix"></nav>
-      </div>
-    </main>
-
-
-    <footer class="border-top">
-      <div class="container-xxl">
-        <div class="flex-fill">
-          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
-        </div>
-      </div>
-    </footer>
       <div class="affix">
         <nav id="affix"></nav>
       </div>
