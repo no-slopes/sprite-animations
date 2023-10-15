@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/indie/projetos/Games/No Slopes/sprite-animations/docfx_project",
+  "source_base_path": "C:/Users/indie/projetos/Games/No Slopes/sprite-animations-development/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -454,6 +454,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "documentation/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "documentation/animations-manager.md",
       "output": {
         ".html": {
@@ -478,16 +488,6 @@
       "output": {
         ".html": {
           "relative_path": "documentation/animations-manager/types-of-animations.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "documentation/changelog.md",
-      "output": {
-        ".html": {
-          "relative_path": "documentation/changelog.html"
         }
       },
       "version": ""
