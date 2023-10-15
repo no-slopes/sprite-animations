@@ -5,7 +5,7 @@
   },
   "hooks": {
     "after:bump": [
-      "npx auto-changelog -p",
+      "npx auto-changelog -p --output docs/documentation/changelog.md",
       "docfx docfx_project/docfx.json"
     ],
     "after:release": [
