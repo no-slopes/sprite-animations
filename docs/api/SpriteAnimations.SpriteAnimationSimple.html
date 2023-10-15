@@ -1,0 +1,693 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SpriteAnimationSimple
+ | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SpriteAnimationSimple
+ | Sprite Animations ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimationSimple.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimationSimple%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.jpg" alt="Sprite Animations by No Slopes">
+            Sprite Animations by No Slopes
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SpriteAnimations.SpriteAnimationSimple">
+
+
+
+  <h1 id="SpriteAnimations_SpriteAnimationSimple" data-uid="SpriteAnimations.SpriteAnimationSimple" class="text-break">
+      Class SpriteAnimationSimple
+  </h1>
+
+  <div class="markdown level0 summary">
+    
+  </div>
+
+  <div class="markdown level0 conceptual">
+    
+  </div>
+
+                                  <! -- CLASS  -->
+                                
+  <!-- 
+
+      <div class="inheritance">
+    
+      <h5>
+        Inheritance
+      </h5>
+      
+            <div class="level0">
+            <xref uid="System.Object" text="object"/>
+            </div>
+            <div class="level1">
+            <xref uid="UnityEngine.Object" text="Object"/>
+            </div>
+            <div class="level2">
+            <xref uid="UnityEngine.ScriptableObject" text="ScriptableObject"/>
+            </div>
+            <div class="level3">
+            <xref uid="SpriteAnimations.SpriteAnimation" text="SpriteAnimation"/>
+            </div>
+      
+        <div class="level4">
+          <span class="xref">
+            SpriteAnimationSimple
+          </span>
+        </div>
+      
+      </div>
+
+  -->
+
+                                                   <! -- IMPLEMENTS  -->
+
+                                                      <! -- INHERITED MEMBERS  -->
+  <!-- 
+      <div class="inheritedMembers">
+          <h5>
+            Inherited Members
+          </h5>
+        
+            
+                  <div>
+                          <xref uid="SpriteAnimations.SpriteAnimation._animationName" text="SpriteAnimation._animationName" alt="SpriteAnimations.SpriteAnimation._animationName"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.SpriteAnimation._fps" text="SpriteAnimation._fps" alt="SpriteAnimations.SpriteAnimation._fps"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.SpriteAnimation.FPS" text="SpriteAnimation.FPS" alt="SpriteAnimations.SpriteAnimation.FPS"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.SpriteAnimation.AnimationName" text="SpriteAnimation.AnimationName" alt="SpriteAnimations.SpriteAnimation.AnimationName"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.SpriteAnimation.CalculateDuration" text="SpriteAnimation.CalculateDuration()" alt="SpriteAnimations.SpriteAnimation.CalculateDuration()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.SpriteAnimation.NameChanged" text="SpriteAnimation.NameChanged" alt="SpriteAnimations.SpriteAnimation.NameChanged"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.SetDirty" text="ScriptableObject.SetDirty()" alt="UnityEngine.ScriptableObject.SetDirty()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.CreateInstance(System.String)" text="ScriptableObject.CreateInstance(string)" alt="UnityEngine.ScriptableObject.CreateInstance(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.CreateInstance(System.Type)" text="ScriptableObject.CreateInstance(Type)" alt="UnityEngine.ScriptableObject.CreateInstance(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.CreateInstance``1" text="ScriptableObject.CreateInstance&lt;T&gt;()" alt="UnityEngine.ScriptableObject.CreateInstance&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.GetInstanceID" text="Object.GetInstanceID()" alt="UnityEngine.Object.GetInstanceID()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.GetHashCode" text="Object.GetHashCode()" alt="UnityEngine.Object.GetHashCode()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Equals(System.Object)" text="Object.Equals(object)" alt="UnityEngine.Object.Equals(object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)" text="Object.Instantiate(Object, Vector3, Quaternion)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)" text="Object.Instantiate(Object, Vector3, Quaternion, Transform)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object)" text="Object.Instantiate(Object)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)" text="Object.Instantiate(Object, Transform)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)" text="Object.Instantiate(Object, Transform, bool)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0)" text="Object.Instantiate&lt;T&gt;(T)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)" text="Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)" text="Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)" text="Object.Instantiate&lt;T&gt;(T, Transform)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)" text="Object.Instantiate&lt;T&gt;(T, Transform, bool)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)" text="Object.Destroy(Object, float)" alt="UnityEngine.Object.Destroy(UnityEngine.Object, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Destroy(UnityEngine.Object)" text="Object.Destroy(Object)" alt="UnityEngine.Object.Destroy(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)" text="Object.DestroyImmediate(Object, bool)" alt="UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyImmediate(UnityEngine.Object)" text="Object.DestroyImmediate(Object)" alt="UnityEngine.Object.DestroyImmediate(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType(System.Type)" text="Object.FindObjectsOfType(Type)" alt="UnityEngine.Object.FindObjectsOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)" text="Object.FindObjectsOfType(Type, bool)" alt="UnityEngine.Object.FindObjectsOfType(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType(Type, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)" text="Object.DontDestroyOnLoad(Object)" alt="UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)" text="Object.DestroyObject(Object, float)" alt="UnityEngine.Object.DestroyObject(UnityEngine.Object, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyObject(UnityEngine.Object)" text="Object.DestroyObject(Object)" alt="UnityEngine.Object.DestroyObject(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindSceneObjectsOfType(System.Type)" text="Object.FindSceneObjectsOfType(Type)" alt="UnityEngine.Object.FindSceneObjectsOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)" text="Object.FindObjectsOfTypeIncludingAssets(Type)" alt="UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType``1" text="Object.FindObjectsOfType&lt;T&gt;()" alt="UnityEngine.Object.FindObjectsOfType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType``1(System.Boolean)" text="Object.FindObjectsOfType&lt;T&gt;(bool)" alt="UnityEngine.Object.FindObjectsOfType&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType``1" text="Object.FindObjectOfType&lt;T&gt;()" alt="UnityEngine.Object.FindObjectOfType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType``1(System.Boolean)" text="Object.FindObjectOfType&lt;T&gt;(bool)" alt="UnityEngine.Object.FindObjectOfType&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType``1" text="Object.FindFirstObjectByType&lt;T&gt;()" alt="UnityEngine.Object.FindFirstObjectByType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType``1" text="Object.FindAnyObjectByType&lt;T&gt;()" alt="UnityEngine.Object.FindAnyObjectByType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)" text="Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)" alt="UnityEngine.Object.FindFirstObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)" text="Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)" alt="UnityEngine.Object.FindAnyObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfTypeAll(System.Type)" text="Object.FindObjectsOfTypeAll(Type)" alt="UnityEngine.Object.FindObjectsOfTypeAll(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType(System.Type)" text="Object.FindObjectOfType(Type)" alt="UnityEngine.Object.FindObjectOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType(System.Type)" text="Object.FindFirstObjectByType(Type)" alt="UnityEngine.Object.FindFirstObjectByType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType(System.Type)" text="Object.FindAnyObjectByType(Type)" alt="UnityEngine.Object.FindAnyObjectByType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)" text="Object.FindObjectOfType(Type, bool)" alt="UnityEngine.Object.FindObjectOfType(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)" text="Object.FindFirstObjectByType(Type, FindObjectsInactive)" alt="UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)" text="Object.FindAnyObjectByType(Type, FindObjectsInactive)" alt="UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.ToString" text="Object.ToString()" alt="UnityEngine.Object.ToString()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.name" text="Object.name" alt="UnityEngine.Object.name"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.hideFlags" text="Object.hideFlags" alt="UnityEngine.Object.hideFlags"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.Equals(System.Object,System.Object)" text="object.Equals(object, object)" alt="object.Equals(object, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.GetType" text="object.GetType()" alt="object.GetType()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.MemberwiseClone" text="object.MemberwiseClone()" alt="object.MemberwiseClone()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.ReferenceEquals(System.Object,System.Object)" text="object.ReferenceEquals(object, object)" alt="object.ReferenceEquals(object, object)"/>
+                  </div>
+      </div>
+  -->
+
+                                                      <! -- NAMESPACE  -->
+  <!-- 
+  <h6>
+      <strong>
+        Namespace
+      </strong>: <xref uid="SpriteAnimations" text="SpriteAnimations"/>
+  </h6>
+  -->
+
+                                                      <! -- ASSEMBLY  -->
+  <!-- 
+  <h6>
+      <strong>
+        Assembly
+      </strong>: SpriteAnimations.dll
+  </h6>
+  -->
+    
+    
+                                                                  <! -- SYNTAX  -->
+  <!-- 
+  <h5 id="SpriteAnimations_SpriteAnimationSimple_syntax">
+    Syntax
+  </h5>
+  -->
+                                                                  <! -- CODE  -->
+  <!-- 
+  <div class="codewrapper">
+      <pre>
+          <code class="lang- hljs">
+            [CreateAssetMenu(fileName = &quot;Simple Sprite Animation&quot;, menuName = &quot;Sprite Animations/Simple Sprite Animation&quot;)]
+public class SpriteAnimationSimple : SpriteAnimation
+          </code>
+      </pre>
+  </div>
+  -->
+
+
+
+
+
+                                                   <! -- RETURNS  -->
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimationSimple__cycle" data-uid="SpriteAnimations.SpriteAnimationSimple._cycle">
+  _cycle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationSimple.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The animation frames</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected SpriteAnimationCycle _cycle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_SpriteAnimationSimple__isLoopable" data-uid="SpriteAnimations.SpriteAnimationSimple._isLoopable">
+  _isLoopable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationSimple.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If the animation should loop</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected bool _isLoopable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SpriteAnimations_SpriteAnimationSimple_AnimationType_" data-uid="SpriteAnimations.SpriteAnimationSimple.AnimationType*"></a>
+
+  <h3 id="SpriteAnimations_SpriteAnimationSimple_AnimationType" data-uid="SpriteAnimations.SpriteAnimationSimple.AnimationType">
+  AnimationType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationSimple.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override SpriteAnimationType AnimationType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationType.html">SpriteAnimationType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpriteAnimations_SpriteAnimationSimple_Cycle_" data-uid="SpriteAnimations.SpriteAnimationSimple.Cycle*"></a>
+
+  <h3 id="SpriteAnimations_SpriteAnimationSimple_Cycle" data-uid="SpriteAnimations.SpriteAnimationSimple.Cycle">
+  Cycle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationSimple.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpriteAnimationCycle Cycle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpriteAnimations_SpriteAnimationSimple_IsLoopable_" data-uid="SpriteAnimations.SpriteAnimationSimple.IsLoopable*"></a>
+
+  <h3 id="SpriteAnimations_SpriteAnimationSimple_IsLoopable" data-uid="SpriteAnimations.SpriteAnimationSimple.IsLoopable">
+  IsLoopable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationSimple.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLoopable { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpriteAnimations_SpriteAnimationSimple_PerformerType_" data-uid="SpriteAnimations.SpriteAnimationSimple.PerformerType*"></a>
+
+  <h3 id="SpriteAnimations_SpriteAnimationSimple_PerformerType" data-uid="SpriteAnimations.SpriteAnimationSimple.PerformerType">
+  PerformerType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationSimple.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type PerformerType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SpriteAnimations_SpriteAnimationSimple_CalculateFramesCount_" data-uid="SpriteAnimations.SpriteAnimationSimple.CalculateFramesCount*"></a>
+
+  <h3 id="SpriteAnimations_SpriteAnimationSimple_CalculateFramesCount" data-uid="SpriteAnimations.SpriteAnimationSimple.CalculateFramesCount">
+  CalculateFramesCount()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationSimple.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the total amount of frames in the animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CalculateFramesCount()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The count of frames.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

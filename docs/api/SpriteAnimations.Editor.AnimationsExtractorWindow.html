@@ -1,0 +1,747 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AnimationsExtractorWindow
+ | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AnimationsExtractorWindow
+ | Sprite Animations ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_Editor_AnimationsExtractorWindow.md&amp;value=---%0Auid%3A%20SpriteAnimations.Editor.AnimationsExtractorWindow%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.jpg" alt="Sprite Animations by No Slopes">
+            Sprite Animations by No Slopes
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SpriteAnimations.Editor.AnimationsExtractorWindow">
+
+
+
+  <h1 id="SpriteAnimations_Editor_AnimationsExtractorWindow" data-uid="SpriteAnimations.Editor.AnimationsExtractorWindow" class="text-break">
+      Class AnimationsExtractorWindow
+  </h1>
+
+  <div class="markdown level0 summary">
+    
+  </div>
+
+  <div class="markdown level0 conceptual">
+    
+  </div>
+
+                                  <! -- CLASS  -->
+                                
+  <!-- 
+
+      <div class="inheritance">
+    
+      <h5>
+        Inheritance
+      </h5>
+      
+            <div class="level0">
+            <xref uid="System.Object" text="object"/>
+            </div>
+            <div class="level1">
+            <xref uid="UnityEngine.Object" text="Object"/>
+            </div>
+            <div class="level2">
+            <xref uid="UnityEngine.ScriptableObject" text="ScriptableObject"/>
+            </div>
+            <div class="level3">
+            <xref uid="UnityEditor.EditorWindow" text="EditorWindow"/>
+            </div>
+      
+        <div class="level4">
+          <span class="xref">
+            AnimationsExtractorWindow
+          </span>
+        </div>
+      
+      </div>
+
+  -->
+
+                                                   <! -- IMPLEMENTS  -->
+
+                                                      <! -- INHERITED MEMBERS  -->
+  <!-- 
+      <div class="inheritedMembers">
+          <h5>
+            Inherited Members
+          </h5>
+        
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.BeginWindows" text="EditorWindow.BeginWindows()" alt="UnityEditor.EditorWindow.BeginWindows()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.EndWindows" text="EditorWindow.EndWindows()" alt="UnityEditor.EditorWindow.EndWindows()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)" text="EditorWindow.ShowNotification(GUIContent)" alt="UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent,System.Double)" text="EditorWindow.ShowNotification(GUIContent, double)" alt="UnityEditor.EditorWindow.ShowNotification(UnityEngine.GUIContent, double)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.RemoveNotification" text="EditorWindow.RemoveNotification()" alt="UnityEditor.EditorWindow.RemoveNotification()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowTab" text="EditorWindow.ShowTab()" alt="UnityEditor.EditorWindow.ShowTab()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.Focus" text="EditorWindow.Focus()" alt="UnityEditor.EditorWindow.Focus()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowUtility" text="EditorWindow.ShowUtility()" alt="UnityEditor.EditorWindow.ShowUtility()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowPopup" text="EditorWindow.ShowPopup()" alt="UnityEditor.EditorWindow.ShowPopup()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowModalUtility" text="EditorWindow.ShowModalUtility()" alt="UnityEditor.EditorWindow.ShowModalUtility()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect,UnityEngine.Vector2)" text="EditorWindow.ShowAsDropDown(Rect, Vector2)" alt="UnityEditor.EditorWindow.ShowAsDropDown(UnityEngine.Rect, UnityEngine.Vector2)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.Show" text="EditorWindow.Show()" alt="UnityEditor.EditorWindow.Show()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.Show(System.Boolean)" text="EditorWindow.Show(bool)" alt="UnityEditor.EditorWindow.Show(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowAuxWindow" text="EditorWindow.ShowAuxWindow()" alt="UnityEditor.EditorWindow.ShowAuxWindow()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.ShowModal" text="EditorWindow.ShowModal()" alt="UnityEditor.EditorWindow.ShowModal()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String,System.Boolean)" text="EditorWindow.GetWindow(Type, bool, string, bool)" alt="UnityEditor.EditorWindow.GetWindow(System.Type, bool, string, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean,System.String)" text="EditorWindow.GetWindow(Type, bool, string)" alt="UnityEditor.EditorWindow.GetWindow(System.Type, bool, string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow(System.Type,System.Boolean)" text="EditorWindow.GetWindow(Type, bool)" alt="UnityEditor.EditorWindow.GetWindow(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow(System.Type)" text="EditorWindow.GetWindow(Type)" alt="UnityEditor.EditorWindow.GetWindow(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean,System.String)" text="EditorWindow.GetWindowWithRect(Type, Rect, bool, string)" alt="UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect, bool, string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect,System.Boolean)" text="EditorWindow.GetWindowWithRect(Type, Rect, bool)" alt="UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindowWithRect(System.Type,UnityEngine.Rect)" text="EditorWindow.GetWindowWithRect(Type, Rect)" alt="UnityEditor.EditorWindow.GetWindowWithRect(System.Type, UnityEngine.Rect)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1" text="EditorWindow.GetWindow&lt;T&gt;()" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.Boolean)" text="EditorWindow.GetWindow&lt;T&gt;(bool)" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String)" text="EditorWindow.GetWindow&lt;T&gt;(bool, string)" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(bool, string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.String)" text="EditorWindow.GetWindow&lt;T&gt;(string)" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean)" text="EditorWindow.GetWindow&lt;T&gt;(string, bool)" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(string, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.Boolean,System.String,System.Boolean)" text="EditorWindow.GetWindow&lt;T&gt;(bool, string, bool)" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(bool, string, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.Type[])" text="EditorWindow.GetWindow&lt;T&gt;(params Type[])" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(params System.Type[])"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.String,System.Type[])" text="EditorWindow.GetWindow&lt;T&gt;(string, params Type[])" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(string, params System.Type[])"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindow``1(System.String,System.Boolean,System.Type[])" text="EditorWindow.GetWindow&lt;T&gt;(string, bool, params Type[])" alt="UnityEditor.EditorWindow.GetWindow&lt;T&gt;(string, bool, params System.Type[])"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.CreateWindow``1(System.Type[])" text="EditorWindow.CreateWindow&lt;T&gt;(params Type[])" alt="UnityEditor.EditorWindow.CreateWindow&lt;T&gt;(params System.Type[])"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.CreateWindow``1(System.String,System.Type[])" text="EditorWindow.CreateWindow&lt;T&gt;(string, params Type[])" alt="UnityEditor.EditorWindow.CreateWindow&lt;T&gt;(string, params System.Type[])"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.HasOpenInstances``1" text="EditorWindow.HasOpenInstances&lt;T&gt;()" alt="UnityEditor.EditorWindow.HasOpenInstances&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)" text="EditorWindow.FocusWindowIfItsOpen(Type)" alt="UnityEditor.EditorWindow.FocusWindowIfItsOpen(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.FocusWindowIfItsOpen``1" text="EditorWindow.FocusWindowIfItsOpen&lt;T&gt;()" alt="UnityEditor.EditorWindow.FocusWindowIfItsOpen&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect)" text="EditorWindow.GetWindowWithRect&lt;T&gt;(Rect)" alt="UnityEditor.EditorWindow.GetWindowWithRect&lt;T&gt;(UnityEngine.Rect)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean)" text="EditorWindow.GetWindowWithRect&lt;T&gt;(Rect, bool)" alt="UnityEditor.EditorWindow.GetWindowWithRect&lt;T&gt;(UnityEngine.Rect, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String)" text="EditorWindow.GetWindowWithRect&lt;T&gt;(Rect, bool, string)" alt="UnityEditor.EditorWindow.GetWindowWithRect&lt;T&gt;(UnityEngine.Rect, bool, string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetWindowWithRect``1(UnityEngine.Rect,System.Boolean,System.String,System.Boolean)" text="EditorWindow.GetWindowWithRect&lt;T&gt;(Rect, bool, string, bool)" alt="UnityEditor.EditorWindow.GetWindowWithRect&lt;T&gt;(UnityEngine.Rect, bool, string, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.SaveChanges" text="EditorWindow.SaveChanges()" alt="UnityEditor.EditorWindow.SaveChanges()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.DiscardChanges" text="EditorWindow.DiscardChanges()" alt="UnityEditor.EditorWindow.DiscardChanges()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.Close" text="EditorWindow.Close()" alt="UnityEditor.EditorWindow.Close()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.Repaint" text="EditorWindow.Repaint()" alt="UnityEditor.EditorWindow.Repaint()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)" text="EditorWindow.SendEvent(Event)" alt="UnityEditor.EditorWindow.SendEvent(UnityEngine.Event)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.GetExtraPaneTypes" text="EditorWindow.GetExtraPaneTypes()" alt="UnityEditor.EditorWindow.GetExtraPaneTypes()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.TryGetOverlay(System.String,UnityEditor.Overlays.Overlay@)" text="EditorWindow.TryGetOverlay(string, out Overlay)" alt="UnityEditor.EditorWindow.TryGetOverlay(string, out UnityEditor.Overlays.Overlay)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.OnBackingScaleFactorChanged" text="EditorWindow.OnBackingScaleFactorChanged()" alt="UnityEditor.EditorWindow.OnBackingScaleFactorChanged()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.dataModeController" text="EditorWindow.dataModeController" alt="UnityEditor.EditorWindow.dataModeController"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.rootVisualElement" text="EditorWindow.rootVisualElement" alt="UnityEditor.EditorWindow.rootVisualElement"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.overlayCanvas" text="EditorWindow.overlayCanvas" alt="UnityEditor.EditorWindow.overlayCanvas"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.wantsMouseMove" text="EditorWindow.wantsMouseMove" alt="UnityEditor.EditorWindow.wantsMouseMove"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.wantsMouseEnterLeaveWindow" text="EditorWindow.wantsMouseEnterLeaveWindow" alt="UnityEditor.EditorWindow.wantsMouseEnterLeaveWindow"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.wantsLessLayoutEvents" text="EditorWindow.wantsLessLayoutEvents" alt="UnityEditor.EditorWindow.wantsLessLayoutEvents"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.autoRepaintOnSceneChange" text="EditorWindow.autoRepaintOnSceneChange" alt="UnityEditor.EditorWindow.autoRepaintOnSceneChange"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.maximized" text="EditorWindow.maximized" alt="UnityEditor.EditorWindow.maximized"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.hasFocus" text="EditorWindow.hasFocus" alt="UnityEditor.EditorWindow.hasFocus"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.docked" text="EditorWindow.docked" alt="UnityEditor.EditorWindow.docked"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.focusedWindow" text="EditorWindow.focusedWindow" alt="UnityEditor.EditorWindow.focusedWindow"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.mouseOverWindow" text="EditorWindow.mouseOverWindow" alt="UnityEditor.EditorWindow.mouseOverWindow"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.hasUnsavedChanges" text="EditorWindow.hasUnsavedChanges" alt="UnityEditor.EditorWindow.hasUnsavedChanges"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.saveChangesMessage" text="EditorWindow.saveChangesMessage" alt="UnityEditor.EditorWindow.saveChangesMessage"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.minSize" text="EditorWindow.minSize" alt="UnityEditor.EditorWindow.minSize"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.maxSize" text="EditorWindow.maxSize" alt="UnityEditor.EditorWindow.maxSize"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.title" text="EditorWindow.title" alt="UnityEditor.EditorWindow.title"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.titleContent" text="EditorWindow.titleContent" alt="UnityEditor.EditorWindow.titleContent"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.depthBufferBits" text="EditorWindow.depthBufferBits" alt="UnityEditor.EditorWindow.depthBufferBits"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.antiAlias" text="EditorWindow.antiAlias" alt="UnityEditor.EditorWindow.antiAlias"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEditor.EditorWindow.position" text="EditorWindow.position" alt="UnityEditor.EditorWindow.position"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.SetDirty" text="ScriptableObject.SetDirty()" alt="UnityEngine.ScriptableObject.SetDirty()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.CreateInstance(System.String)" text="ScriptableObject.CreateInstance(string)" alt="UnityEngine.ScriptableObject.CreateInstance(string)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.CreateInstance(System.Type)" text="ScriptableObject.CreateInstance(Type)" alt="UnityEngine.ScriptableObject.CreateInstance(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.ScriptableObject.CreateInstance``1" text="ScriptableObject.CreateInstance&lt;T&gt;()" alt="UnityEngine.ScriptableObject.CreateInstance&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.GetInstanceID" text="Object.GetInstanceID()" alt="UnityEngine.Object.GetInstanceID()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.GetHashCode" text="Object.GetHashCode()" alt="UnityEngine.Object.GetHashCode()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Equals(System.Object)" text="Object.Equals(object)" alt="UnityEngine.Object.Equals(object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)" text="Object.Instantiate(Object, Vector3, Quaternion)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)" text="Object.Instantiate(Object, Vector3, Quaternion, Transform)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object)" text="Object.Instantiate(Object)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)" text="Object.Instantiate(Object, Transform)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)" text="Object.Instantiate(Object, Transform, bool)" alt="UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0)" text="Object.Instantiate&lt;T&gt;(T)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)" text="Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)" text="Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)" text="Object.Instantiate&lt;T&gt;(T, Transform)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)" text="Object.Instantiate&lt;T&gt;(T, Transform, bool)" alt="UnityEngine.Object.Instantiate&lt;T&gt;(T, UnityEngine.Transform, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)" text="Object.Destroy(Object, float)" alt="UnityEngine.Object.Destroy(UnityEngine.Object, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.Destroy(UnityEngine.Object)" text="Object.Destroy(Object)" alt="UnityEngine.Object.Destroy(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)" text="Object.DestroyImmediate(Object, bool)" alt="UnityEngine.Object.DestroyImmediate(UnityEngine.Object, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyImmediate(UnityEngine.Object)" text="Object.DestroyImmediate(Object)" alt="UnityEngine.Object.DestroyImmediate(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType(System.Type)" text="Object.FindObjectsOfType(Type)" alt="UnityEngine.Object.FindObjectsOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)" text="Object.FindObjectsOfType(Type, bool)" alt="UnityEngine.Object.FindObjectsOfType(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType(Type, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType(System.Type,UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType(System.Type, UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)" text="Object.DontDestroyOnLoad(Object)" alt="UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)" text="Object.DestroyObject(Object, float)" alt="UnityEngine.Object.DestroyObject(UnityEngine.Object, float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.DestroyObject(UnityEngine.Object)" text="Object.DestroyObject(Object)" alt="UnityEngine.Object.DestroyObject(UnityEngine.Object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindSceneObjectsOfType(System.Type)" text="Object.FindSceneObjectsOfType(Type)" alt="UnityEngine.Object.FindSceneObjectsOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)" text="Object.FindObjectsOfTypeIncludingAssets(Type)" alt="UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType``1" text="Object.FindObjectsOfType&lt;T&gt;()" alt="UnityEngine.Object.FindObjectsOfType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfType``1(System.Boolean)" text="Object.FindObjectsOfType&lt;T&gt;(bool)" alt="UnityEngine.Object.FindObjectsOfType&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsByType``1(UnityEngine.FindObjectsInactive,UnityEngine.FindObjectsSortMode)" text="Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)" alt="UnityEngine.Object.FindObjectsByType&lt;T&gt;(UnityEngine.FindObjectsInactive, UnityEngine.FindObjectsSortMode)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType``1" text="Object.FindObjectOfType&lt;T&gt;()" alt="UnityEngine.Object.FindObjectOfType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType``1(System.Boolean)" text="Object.FindObjectOfType&lt;T&gt;(bool)" alt="UnityEngine.Object.FindObjectOfType&lt;T&gt;(bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType``1" text="Object.FindFirstObjectByType&lt;T&gt;()" alt="UnityEngine.Object.FindFirstObjectByType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType``1" text="Object.FindAnyObjectByType&lt;T&gt;()" alt="UnityEngine.Object.FindAnyObjectByType&lt;T&gt;()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType``1(UnityEngine.FindObjectsInactive)" text="Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)" alt="UnityEngine.Object.FindFirstObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType``1(UnityEngine.FindObjectsInactive)" text="Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)" alt="UnityEngine.Object.FindAnyObjectByType&lt;T&gt;(UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectsOfTypeAll(System.Type)" text="Object.FindObjectsOfTypeAll(Type)" alt="UnityEngine.Object.FindObjectsOfTypeAll(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType(System.Type)" text="Object.FindObjectOfType(Type)" alt="UnityEngine.Object.FindObjectOfType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType(System.Type)" text="Object.FindFirstObjectByType(Type)" alt="UnityEngine.Object.FindFirstObjectByType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType(System.Type)" text="Object.FindAnyObjectByType(Type)" alt="UnityEngine.Object.FindAnyObjectByType(System.Type)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)" text="Object.FindObjectOfType(Type, bool)" alt="UnityEngine.Object.FindObjectOfType(System.Type, bool)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindFirstObjectByType(System.Type,UnityEngine.FindObjectsInactive)" text="Object.FindFirstObjectByType(Type, FindObjectsInactive)" alt="UnityEngine.Object.FindFirstObjectByType(System.Type, UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.FindAnyObjectByType(System.Type,UnityEngine.FindObjectsInactive)" text="Object.FindAnyObjectByType(Type, FindObjectsInactive)" alt="UnityEngine.Object.FindAnyObjectByType(System.Type, UnityEngine.FindObjectsInactive)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.ToString" text="Object.ToString()" alt="UnityEngine.Object.ToString()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.name" text="Object.name" alt="UnityEngine.Object.name"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="UnityEngine.Object.hideFlags" text="Object.hideFlags" alt="UnityEngine.Object.hideFlags"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.Equals(System.Object,System.Object)" text="object.Equals(object, object)" alt="object.Equals(object, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.GetType" text="object.GetType()" alt="object.GetType()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.MemberwiseClone" text="object.MemberwiseClone()" alt="object.MemberwiseClone()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.ReferenceEquals(System.Object,System.Object)" text="object.ReferenceEquals(object, object)" alt="object.ReferenceEquals(object, object)"/>
+                  </div>
+      </div>
+  -->
+
+                                                      <! -- NAMESPACE  -->
+  <!-- 
+  <h6>
+      <strong>
+        Namespace
+      </strong>: <a class="xref" href="SpriteAnimations.html">SpriteAnimations</a>.<a class="xref" href="SpriteAnimations.Editor.html">Editor</a>
+  </h6>
+  -->
+
+                                                      <! -- ASSEMBLY  -->
+  <!-- 
+  <h6>
+      <strong>
+        Assembly
+      </strong>: SpriteAnimations.dll
+  </h6>
+  -->
+    
+    
+                                                                  <! -- SYNTAX  -->
+  <!-- 
+  <h5 id="SpriteAnimations_Editor_AnimationsExtractorWindow_syntax">
+    Syntax
+  </h5>
+  -->
+                                                                  <! -- CODE  -->
+  <!-- 
+  <div class="codewrapper">
+      <pre>
+          <code class="lang- hljs">
+            public class AnimationsExtractorWindow : EditorWindow
+          </code>
+      </pre>
+  </div>
+  -->
+
+
+
+
+
+                                                   <! -- RETURNS  -->
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SpriteAnimations_Editor_AnimationsExtractorWindow_OpenEditorWindow_" data-uid="SpriteAnimations.Editor.AnimationsExtractorWindow.OpenEditorWindow*"></a>
+
+  <h3 id="SpriteAnimations_Editor_AnimationsExtractorWindow_OpenEditorWindow" data-uid="SpriteAnimations.Editor.AnimationsExtractorWindow.OpenEditorWindow">
+  OpenEditorWindow()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/Windows/AnimationsExtractor.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MenuItem(&quot;Tools/Sprite Animations/Animations Extractor&quot;)]
+public static AnimationsExtractorWindow OpenEditorWindow()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.Editor.AnimationsExtractorWindow.html">AnimationsExtractorWindow</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

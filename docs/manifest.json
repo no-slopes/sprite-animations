@@ -1,0 +1,633 @@
+{
+  "source_base_path": "C:/Users/indie/projetos/Games/No Slopes/sprite-animations-development/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.AnimationPerformer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.AnimationPerformer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.AnimationCreatedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.AnimationCreatedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.AnimationListItemElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.AnimationListItemElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.AnimationPreviewElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.AnimationPreviewElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.AnimationSelectedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.AnimationSelectedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.AnimationsExtractorWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.AnimationsExtractorWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.AnimationsManagerWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.AnimationsManagerWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.ContentElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.ContentElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.CreateAnimationOptionsMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.CreateAnimationOptionsMenu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.CreateAnimationWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.CreateAnimationWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.CycleCollectionResetEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.CycleCollectionResetEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.CycleElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.CycleElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.DestroyAnimationRequestedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.DestroyAnimationRequestedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.DirectionSelectedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.DirectionSelectedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.ExtractionOrientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.ExtractionOrientation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.FPSChangedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.FPSChangedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.FrameElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.FrameElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.FramesDropManipulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.FramesDropManipulator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.IFPSProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.IFPSProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.ITickProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.ITickProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SidebarElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SidebarElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewSimple.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewSimple.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewWindrose.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewWindrose.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimatorInspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimatorInspector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.TickEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.TickEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.WindroseSelectorElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.WindroseSelectorElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.FlipStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.FlipStrategy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Logger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.NameChangedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.NameChangedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.PerformerFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.PerformerFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SingleAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SingleAnimator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationCycle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationFrame.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationSimple.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationSimple.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationWindrose.WindroseCycles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationWindrose.WindroseCycles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationWindrose.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationWindrose.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimator.SpriteAnimatorState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.UpdateMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.UpdateMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.WindroseAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.WindroseAnimator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.WindroseDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.WindroseDirection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/animations-manager.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/animations-manager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/animations-manager/animations.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/animations-manager/animations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/animations-manager/types-of-animations.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/animations-manager/types-of-animations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "documentation/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/sprite-animator.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/sprite-animator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "documentation/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/toc.html"
+        },
+        ".json": {
+          "relative_path": "documentation/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
