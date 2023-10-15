@@ -27,6 +27,12 @@
   --material-danger-header: #d32f2f1a;
   --material-danger-background: #ffebee;
   --material-danger-background-dark: #572c2c;
+
+  --bs-link-color: #e5395f;
+  --bs-link-hover-color: #bd2735;
+  
+  --bs-link-color-rgb:229,57,95 !important;
+  --bs-link-hover-color-rgb: 189,35,69 !important;
 }
 
 /* HEADINGS */
@@ -74,6 +80,8 @@ img {
 /** NAVBAR **/
 .navbar-brand > img {
   box-shadow: none;
+  width: 40px;
+  height: 40px;
   color: var(--bs-nav-link-color);
 }
 
@@ -92,7 +100,8 @@ img {
 
 .navbar-nav a.nav-link:focus,
 .navbar-nav a.nav-link:hover {
-  background-color: var(--bs-primary-border-subtle);
+  color: #dee2e6;
+  background-color: var(--bs-link-color);
 }
 
 .navbar-nav .nav-link.active,
