@@ -163,6 +163,12 @@
                   <div>
                   <span class="xref">IVisualElementScheduler</span>
                   </div>
+                  <div>
+                  <a class="xref" href="SpriteAnimations.Editor.ITickProvider.html">ITickProvider</a>
+                  </div>
+                  <div>
+                  <a class="xref" href="SpriteAnimations.Editor.IFPSProvider.html">IFPSProvider</a>
+                  </div>
       </div>
 
                                                       <! -- INHERITED MEMBERS  -->
@@ -561,7 +567,7 @@
   <div class="codewrapper">
       <pre>
           <code class="lang- hljs">
-            public abstract class SpriteAnimationView : VisualElement, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+            public abstract class SpriteAnimationView : VisualElement, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler, ITickProvider, IFPSProvider
           </code>
       </pre>
   </div>
@@ -587,23 +593,18 @@
 
   <a id="SpriteAnimations_Editor_SpriteAnimationView__ctor_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.#ctor*"></a>
 
-  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__ctor_SpriteAnimations_Editor_ContentElement_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.#ctor(SpriteAnimations.Editor.ContentElement)">
-  SpriteAnimationView(ContentElement)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__ctor" data-uid="SpriteAnimations.Editor.SpriteAnimationView.#ctor">
+  SpriteAnimationView()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SpriteAnimationView(ContentElement contentElement)</code></pre>
+    <pre><code class="lang-csharp hljs">public SpriteAnimationView()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>contentElement</code> <a class="xref" href="SpriteAnimations.Editor.ContentElement.html">ContentElement</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -623,7 +624,7 @@
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationView__animation" data-uid="SpriteAnimations.Editor.SpriteAnimationView._animation">
   _animation
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -651,16 +652,16 @@
 
 
 
-  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__contentElement" data-uid="SpriteAnimations.Editor.SpriteAnimationView._contentElement">
-  _contentElement
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__contentContainer" data-uid="SpriteAnimations.Editor.SpriteAnimationView._contentContainer">
+  _contentContainer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected ContentElement _contentElement</code></pre>
+    <pre><code class="lang-csharp hljs">protected VisualElement _contentContainer</code></pre>
   </div>
 
 
@@ -668,7 +669,37 @@
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.Editor.ContentElement.html">ContentElement</a></dt>
+    <dt><span class="xref">VisualElement</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView__deleteAnimationButton" data-uid="SpriteAnimations.Editor.SpriteAnimationView._deleteAnimationButton">
+  _deleteAnimationButton
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Button _deleteAnimationButton</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Button</span></dt>
     <dd></dd>
   </dl>
 
@@ -688,7 +719,7 @@
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationView_Animation" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Animation">
   Animation
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -715,11 +746,42 @@
 
 
 
+  <a id="SpriteAnimations_Editor_SpriteAnimationView_AnimationName_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.AnimationName*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_AnimationName" data-uid="SpriteAnimations.Editor.SpriteAnimationView.AnimationName">
+  AnimationName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AnimationName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SpriteAnimations_Editor_SpriteAnimationView_AnimationType_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.AnimationType*"></a>
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationView_AnimationType" data-uid="SpriteAnimations.Editor.SpriteAnimationView.AnimationType">
   AnimationType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -746,6 +808,37 @@
 
 
 
+  <a id="SpriteAnimations_Editor_SpriteAnimationView_FPS_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.FPS*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_FPS" data-uid="SpriteAnimations.Editor.SpriteAnimationView.FPS">
+  FPS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FPS { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -754,7 +847,7 @@
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationView_Dismiss" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Dismiss">
   Dismiss()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L83"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -780,7 +873,7 @@
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationView_Initialize_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Initialize(SpriteAnimations.SpriteAnimation)">
   Initialize(SpriteAnimation)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -800,6 +893,131 @@
 
 
 
+
+
+
+
+
+
+
+  <a id="SpriteAnimations_Editor_SpriteAnimationView_PerformTick_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.PerformTick*"></a>
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_PerformTick_System_Single_" data-uid="SpriteAnimations.Editor.SpriteAnimationView.PerformTick(System.Single)">
+  PerformTick(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void PerformTick(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_DestroyAnimationRequested" data-uid="SpriteAnimations.Editor.SpriteAnimationView.DestroyAnimationRequested">
+  DestroyAnimationRequested
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event DestroyAnimationRequestedEvent DestroyAnimationRequested</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.Editor.DestroyAnimationRequestedEvent.html">DestroyAnimationRequestedEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_FPSChanged" data-uid="SpriteAnimations.Editor.SpriteAnimationView.FPSChanged">
+  FPSChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event FPSChangedEvent FPSChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.Editor.FPSChangedEvent.html">FPSChangedEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationView_Tick" data-uid="SpriteAnimations.Editor.SpriteAnimationView.Tick">
+  Tick
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationView.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TickEvent Tick</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.Editor.TickEvent.html">TickEvent</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

@@ -104,6 +104,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.CycleCollectionResetEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.CycleCollectionResetEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.CycleElement.yml",
       "output": {
         ".html": {
@@ -144,6 +154,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.FPSChangedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.FPSChangedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.FrameElement.yml",
       "output": {
         ".html": {
@@ -158,6 +178,26 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.Editor.FramesDropManipulator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.IFPSProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.IFPSProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.ITickProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.ITickProvider.html"
         }
       },
       "version": ""
@@ -554,6 +594,16 @@
       "output": {
         "resource": {
           "relative_path": "images/logo.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/showcase.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/showcase.gif"
         }
       },
       "version": ""

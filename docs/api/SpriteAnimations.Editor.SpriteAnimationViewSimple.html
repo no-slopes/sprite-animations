@@ -160,6 +160,12 @@
                   <div>
                   <span class="xref">IVisualElementScheduler</span>
                   </div>
+                  <div>
+                  <a class="xref" href="SpriteAnimations.Editor.ITickProvider.html">ITickProvider</a>
+                  </div>
+                  <div>
+                  <a class="xref" href="SpriteAnimations.Editor.IFPSProvider.html">IFPSProvider</a>
+                  </div>
       </div>
 
                                                       <! -- INHERITED MEMBERS  -->
@@ -171,15 +177,43 @@
         
             
                   <div>
-                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView._contentElement" text="SpriteAnimationView._contentElement" alt="SpriteAnimations.Editor.SpriteAnimationView._contentElement"/>
-                  </div>
-            
-                  <div>
                           <xref uid="SpriteAnimations.Editor.SpriteAnimationView._animation" text="SpriteAnimationView._animation" alt="SpriteAnimations.Editor.SpriteAnimationView._animation"/>
                   </div>
             
                   <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView._contentContainer" text="SpriteAnimationView._contentContainer" alt="SpriteAnimations.Editor.SpriteAnimationView._contentContainer"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView._deleteAnimationButton" text="SpriteAnimationView._deleteAnimationButton" alt="SpriteAnimations.Editor.SpriteAnimationView._deleteAnimationButton"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView.FPS" text="SpriteAnimationView.FPS" alt="SpriteAnimations.Editor.SpriteAnimationView.FPS"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView.AnimationName" text="SpriteAnimationView.AnimationName" alt="SpriteAnimations.Editor.SpriteAnimationView.AnimationName"/>
+                  </div>
+            
+                  <div>
                           <xref uid="SpriteAnimations.Editor.SpriteAnimationView.Animation" text="SpriteAnimationView.Animation" alt="SpriteAnimations.Editor.SpriteAnimationView.Animation"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView.FPSChanged" text="SpriteAnimationView.FPSChanged" alt="SpriteAnimations.Editor.SpriteAnimationView.FPSChanged"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView.Tick" text="SpriteAnimationView.Tick" alt="SpriteAnimations.Editor.SpriteAnimationView.Tick"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView.PerformTick(System.Single)" text="SpriteAnimationView.PerformTick(float)" alt="SpriteAnimations.Editor.SpriteAnimationView.PerformTick(float)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.Editor.SpriteAnimationView.DestroyAnimationRequested" text="SpriteAnimationView.DestroyAnimationRequested" alt="SpriteAnimations.Editor.SpriteAnimationView.DestroyAnimationRequested"/>
                   </div>
             
                   <div>
@@ -570,7 +604,7 @@
   <div class="codewrapper">
       <pre>
           <code class="lang- hljs">
-            public class SpriteAnimationViewSimple : SpriteAnimationView, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler
+            public class SpriteAnimationViewSimple : SpriteAnimationView, IEventHandler, IResolvedStyle, ITransform, ITransitionAnimations, IExperimentalFeatures, IVisualElementScheduler, ITickProvider, IFPSProvider
           </code>
       </pre>
   </div>
@@ -596,23 +630,18 @@
 
   <a id="SpriteAnimations_Editor_SpriteAnimationViewSimple__ctor_" data-uid="SpriteAnimations.Editor.SpriteAnimationViewSimple.#ctor*"></a>
 
-  <h3 id="SpriteAnimations_Editor_SpriteAnimationViewSimple__ctor_SpriteAnimations_Editor_ContentElement_" data-uid="SpriteAnimations.Editor.SpriteAnimationViewSimple.#ctor(SpriteAnimations.Editor.ContentElement)">
-  SpriteAnimationViewSimple(ContentElement)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SpriteAnimations_Editor_SpriteAnimationViewSimple__ctor" data-uid="SpriteAnimations.Editor.SpriteAnimationViewSimple.#ctor">
+  SpriteAnimationViewSimple()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SpriteAnimationViewSimple(ContentElement contentElement)</code></pre>
+    <pre><code class="lang-csharp hljs">public SpriteAnimationViewSimple()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>contentElement</code> <a class="xref" href="SpriteAnimations.Editor.ContentElement.html">ContentElement</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -633,7 +662,7 @@
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationViewSimple_AnimationType" data-uid="SpriteAnimations.Editor.SpriteAnimationViewSimple.AnimationType">
   AnimationType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -668,7 +697,7 @@
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationViewSimple_Dismiss" data-uid="SpriteAnimations.Editor.SpriteAnimationViewSimple.Dismiss">
   Dismiss()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -694,7 +723,7 @@
 
   <h3 id="SpriteAnimations_Editor_SpriteAnimationViewSimple_Initialize_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.Editor.SpriteAnimationViewSimple.Initialize(SpriteAnimations.SpriteAnimation)">
   Initialize(SpriteAnimation)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Editor/Scripts/AnimationViews/SpriteAnimationViewSimple.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
