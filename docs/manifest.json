@@ -448,32 +448,86 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html"
-        },
-        ".json": {
-          "relative_path": "api/toc.json"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/intro.md",
+      "source_relative_path": "documentation/animations-manager.md",
       "output": {
         ".html": {
-          "relative_path": "articles/intro.html"
+          "relative_path": "documentation/animations-manager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/animations-manager/animations.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/animations-manager/animations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/animations-manager/types-of-animations.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/animations-manager/types-of-animations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/changelog.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/changelog.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/sprite-animator.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/sprite-animator.html"
         }
       },
       "version": ""
     },
     {
       "type": "Toc",
-      "source_relative_path": "articles/toc.yml",
+      "source_relative_path": "documentation/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "articles/toc.html"
-        },
-        ".json": {
-          "relative_path": "articles/toc.json"
+          "relative_path": "documentation/toc.html"
         }
       },
       "version": ""
@@ -494,9 +548,6 @@
       "output": {
         ".html": {
           "relative_path": "toc.html"
-        },
-        ".json": {
-          "relative_path": "toc.json"
         }
       },
       "version": ""

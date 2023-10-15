@@ -22,6 +22,10 @@
     }
   ],
   "build": {
+    "template": [
+      "default",
+      "templates/darkfx"
+    ],
     "content": [
       {
         "files": [
@@ -31,8 +35,14 @@
       },
       {
         "files": [
-          "articles/**.md",
-          "articles/**/toc.yml",
+          "documentation/**.md",
+          "documentation/**.yml",
+          "documentation/animations-manager/**.yml",
+          "documentation/animations-manager/**.md",
+          "documentation/installation/**.yml",
+          "documentation/installation/**.md",
+          "documentation/sprite-animator/**.yml",
+          "documentation/sprite-animator/**.md",
           "toc.yml",
           "*.md"
         ]
@@ -48,10 +58,6 @@
     "output": "../docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
-    "template": [
-      "default",
-      "modern"
-    ],
     "postProcessors": [],
     "keepFileLink": false,
     "disableGitFeatures": false
