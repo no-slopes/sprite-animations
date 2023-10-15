@@ -12,6 +12,7 @@ namespace SpriteAnimations.Editor
 
         private VisualElement _imageContainer;
         private Image _image;
+        private Slider _zoomSlider;
         private ToolbarButton _playButton;
         private ToolbarButton _stopButton;
 
@@ -35,17 +36,17 @@ namespace SpriteAnimations.Editor
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationPreview");
             TemplateContainer template = tree.Instantiate();
 
-            template.style.height = 231;
+            template.style.height = 251;
             template.style.width = 200;
 
             _imageContainer = template.Q<VisualElement>("image-container");
-
             _image = new Image();
-
             _image.style.width = 150;
             _image.style.height = 150;
-
             _imageContainer.Add(_image);
+
+            _zoomSlider = template.Q<Slider>("zoom-slider");
+            _zoomSlider.RegisterValueChangedCallback(evt => SetImageZoom(evt.newValue));
 
             _playButton = template.Q<ToolbarButton>("play-button");
             _stopButton = template.Q<ToolbarButton>("stop-button");
@@ -65,6 +66,8 @@ namespace SpriteAnimations.Editor
             _fpsProvider = fpsProvider;
             _fpsProvider.FPSChanged += OnFPSChanged;
             _fps = _fpsProvider.FPS;
+
+            _zoomSlider.value = 1;
 
             _tickProvider = tickProvider;
             _cycle = cycle;
@@ -191,6 +194,15 @@ namespace SpriteAnimations.Editor
             {
                 _image.sprite = null;
             }
+        }
+
+        #endregion
+
+        #region Image
+
+        private void SetImageZoom(float zoom)
+        {
+            _image.transform.scale = new Vector3(zoom, zoom, 1);
         }
 
         #endregion
