@@ -5,7 +5,8 @@
   },
   "hooks": {
     "after:bump": [
-      "npx auto-changelog -p --output docs/documentation/changelog.md",
+      "npx auto-changelog -p --output changelog.md",
+      "mv -f changelog.md ../sprite-animations-development/docfx_project/documentation/changelog.md",
       "docfx docfx_project/docfx.json"
     ],
     "after:release": [
