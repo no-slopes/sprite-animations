@@ -82,7 +82,18 @@
           </button>
 
           <nav id="breadcrumb"></nav>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
+
+        <article data-uid="SpriteAnimations.PerformerFactory">
 
         <article data-uid="SpriteAnimations.PerformerFactory">
 
@@ -230,9 +241,32 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public PerformerFactory(SpriteAnimator animator)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animator</code> <a class="xref" href="SpriteAnimations.SpriteAnimator.html">SpriteAnimator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -266,9 +300,35 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected AnimationPerformer Fabricate(SpriteAnimation animation)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd><p>The SpriteAnimation to create an AnimationPerformer for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd><p>The fabricated AnimationPerformer.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -306,9 +366,35 @@ If the performer is not found, a new one is created.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AnimationPerformer Get(SpriteAnimation animation)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd><p>The SpriteAnimation to retrieve the performer for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a></dt>
+    <dd><p>The AnimationPerformer for the given SpriteAnimation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -345,9 +431,41 @@ If the performer is not found, a new one is created.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TAnimator Get&lt;TAnimator&gt;(SpriteAnimation animation) where TAnimator : AnimationPerformer</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd><p>The sprite animation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TAnimator</span></dt>
+    <dd><p>An animator of type TAnimator.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TAnimator</code></dt>
+    <dd><p>The type of the animator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -385,7 +503,19 @@ If the performer is not found, a new one is created.</p>
 
         
       </div>
+        
+      </div>
 
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
       <div class="affix">
         <nav id="affix"></nav>
       </div>
@@ -398,6 +528,7 @@ If the performer is not found, a new one is created.</p>
           <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
         </div>
       </div>
+    </footer>
     </footer>
   </body>
 </html>

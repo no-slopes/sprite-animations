@@ -449,6 +449,7 @@ public class SpriteAnimationWindrose : SpriteAnimation
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 [HideInInspector]
@@ -480,6 +481,7 @@ protected SpriteAnimationWindrose.WindroseCycles _cycles</code></pre>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
+
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
@@ -513,10 +515,33 @@ protected FlipStrategy _flipStrategy</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected bool _isLoopable</code></pre>
   </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
 
 
 
@@ -550,9 +575,28 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override SpriteAnimationType AnimationType { get; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationType.html">SpriteAnimationType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
 
@@ -582,9 +626,28 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FlipStrategy FlipStrategy { get; set; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.FlipStrategy.html">FlipStrategy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
 
@@ -614,9 +677,28 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsLoopable { get; set; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
 
@@ -646,9 +728,32 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override Type PerformerType { get; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
 
 
 
@@ -682,9 +787,29 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int CalculateFramesCount()</code></pre>
   </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum size of all cycles.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 
   <h4 class="section">Returns</h4>
@@ -715,9 +840,35 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static WindroseDirection DirectionFromInput(Vector2Int signedInput)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>signedInput</code> <span class="xref">Vector2Int</span></dt>
+    <dd><p>The signed input representing the x and y coordinates.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a></dt>
+    <dd><p>The windrose direction based on the signed input.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -754,9 +905,35 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Vector2Int DirectionSign(Vector2 movementInput)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>movementInput</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The movement input vector.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2Int</span></dt>
+    <dd><p>A Vector2Int representing the sign of each component of the movement input.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -793,9 +970,35 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SpriteAnimationCycle FindOrCreateCycle(WindroseDirection direction)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a></dt>
+    <dd><p>The direction to find or create the cycle for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a></dt>
+    <dd><p>The found or created SpriteAnimationCycle.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -832,9 +1035,35 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Vector2Int InputFromDirection(WindroseDirection direction)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a></dt>
+    <dd><p>The WindroseDirection enum value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2Int</span></dt>
+    <dd><p>A Vector2Int representing the direction.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -871,6 +1100,7 @@ protected bool _isLoopable</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetCycle(WindroseDirection direction, out SpriteAnimationCycle cycle)</code></pre>
   </div>
@@ -903,9 +1133,39 @@ protected bool _isLoopable</code></pre>
 
 
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a></dt>
+    <dd><p>The windrose direction.</p>
+</dd>
+    <dt><code>cycle</code> <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a></dt>
+    <dd><p>The sprite animation cycle associated with the direction, if found.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the sprite animation cycle was found, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
 
+        
+      </div>
         
       </div>
 

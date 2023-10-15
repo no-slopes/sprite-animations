@@ -82,7 +82,18 @@
           </button>
 
           <nav id="breadcrumb"></nav>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
+
+        <article data-uid="SpriteAnimations.WindroseAnimator">
 
         <article data-uid="SpriteAnimations.WindroseAnimator">
 
@@ -308,6 +319,7 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected WindroseDirection _currentDirection</code></pre>
   </div>
@@ -338,6 +350,7 @@
   <div class="markdown level1 summary"><p>The number of Updates before warning dev about no direction set.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
+
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected int _directionLessTicks</code></pre>
@@ -370,9 +383,32 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected bool _warnedAboutDirectionLess</code></pre>
   </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
 
 
 
@@ -406,9 +442,33 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected SpriteAnimationWindrose CurrentWindroseAnimation { get; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationWindrose.html">SpriteAnimationWindrose</a></dt>
+    <dd><p>The animation or null if no animation is being played</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
 
 
 
@@ -443,9 +503,23 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected void EndAnimation()</code></pre>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -471,9 +545,23 @@ Case the animation is not a loop, it ends the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void EndCycle()</code></pre>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -497,9 +585,23 @@ Case the animation is not a loop, it ends the animation.</p>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected void EvaluateEnd()</code></pre>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -524,9 +626,23 @@ Case the animation is not a loop, it ends the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void ResetCycle()</code></pre>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -551,9 +667,38 @@ Case the animation is not a loop, it ends the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public WindroseAnimator SetDirection(WindroseDirection direction, FlipStrategy flipStrategy = FlipStrategy.NoFlip)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a></dt>
+    <dd><p>The direction to set.</p>
+</dd>
+    <dt><code>flipStrategy</code> <a class="xref" href="SpriteAnimations.FlipStrategy.html">FlipStrategy</a></dt>
+    <dd><p>The strategy to use when flipping the sprite.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.WindroseAnimator.html">WindroseAnimator</a></dt>
+    <dd><p>The updated SpriteAnimationPerformerWindrose instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -593,9 +738,37 @@ Case the animation is not a loop, it ends the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public WindroseAnimator SetDirection(Vector2 movementInput, FlipStrategy flipStrategy = FlipStrategy.NoFlip)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>movementInput</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>flipStrategy</code> <a class="xref" href="SpriteAnimations.FlipStrategy.html">FlipStrategy</a></dt>
+    <dd><p>The strategy to use when flipping the sprite.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.WindroseAnimator.html">WindroseAnimator</a></dt>
+    <dd><p>The updated SpriteAnimationPerformerWindrose instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -634,9 +807,34 @@ Case the animation is not a loop, it ends the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public WindroseAnimator SetDirection(Vector2Int signedMovementInput)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>signedMovementInput</code> <span class="xref">Vector2Int</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.WindroseAnimator.html">WindroseAnimator</a></dt>
+    <dd><p>The updated SpriteAnimationPerformerWindrose instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -672,9 +870,28 @@ Case the animation is not a loop, it ends the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void StartAnimation(SpriteAnimation animation)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animation</code> <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -704,9 +921,23 @@ Case the animation is not a loop, it ends the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void StopAnimation()</code></pre>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -732,9 +963,28 @@ This also handles the animation cycles.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Tick(float deltaTime)</code></pre>
   </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
@@ -759,7 +1009,19 @@ This also handles the animation cycles.</p>
 
         
       </div>
+        
+      </div>
 
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
       <div class="affix">
         <nav id="affix"></nav>
       </div>
@@ -772,6 +1034,7 @@ This also handles the animation cycles.</p>
           <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
         </div>
       </div>
+    </footer>
     </footer>
   </body>
 </html>

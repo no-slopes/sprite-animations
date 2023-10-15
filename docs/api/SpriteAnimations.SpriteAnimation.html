@@ -82,7 +82,18 @@
           </button>
 
           <nav id="breadcrumb"></nav>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
+
+        <article data-uid="SpriteAnimations.SpriteAnimation">
 
         <article data-uid="SpriteAnimations.SpriteAnimation">
 
@@ -428,6 +439,7 @@
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected string _animationName</code></pre>
@@ -460,10 +472,33 @@ protected string _animationName</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
 protected int _fps</code></pre>
   </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
 
 
 
@@ -498,9 +533,28 @@ in the SpriteAnimator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string AnimationName { get; set; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
 
@@ -529,9 +583,28 @@ in the SpriteAnimator.</p>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract SpriteAnimationType AnimationType { get; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationType.html">SpriteAnimationType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
 
@@ -561,9 +634,28 @@ in the SpriteAnimator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int FPS { get; set; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
 
@@ -592,9 +684,32 @@ in the SpriteAnimator.</p>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract Type PerformerType { get; }</code></pre>
   </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
 
 
 
@@ -628,9 +743,29 @@ in the SpriteAnimator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float CalculateDuration()</code></pre>
   </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the animation in seconds.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 
   <h4 class="section">Returns</h4>
@@ -660,6 +795,7 @@ in the SpriteAnimator.</p>
   <div class="markdown level1 summary"><p>Calculates the total amount of frames in the animation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
+
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract int CalculateFramesCount()</code></pre>
@@ -696,9 +832,28 @@ in the SpriteAnimator.</p>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event NameChangedEvent NameChanged</code></pre>
   </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.NameChangedEvent.html">NameChangedEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 
 
@@ -723,7 +878,19 @@ in the SpriteAnimator.</p>
 
         
       </div>
+        
+      </div>
 
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
       <div class="affix">
         <nav id="affix"></nav>
       </div>
@@ -736,6 +903,7 @@ in the SpriteAnimator.</p>
           <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
         </div>
       </div>
+    </footer>
     </footer>
   </body>
 </html>
