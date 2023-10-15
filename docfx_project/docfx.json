@@ -22,6 +22,10 @@
     }
   ],
   "build": {
+    "template": [
+      "default",
+      "templates/darkfx"
+    ],
     "content": [
       {
         "files": [
@@ -48,10 +52,6 @@
     "output": "../docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
-    "template": [
-      "default",
-      "modern"
-    ],
     "postProcessors": [],
     "keepFileLink": false,
     "disableGitFeatures": false
