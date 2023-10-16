@@ -191,10 +191,10 @@ namespace SpriteAnimations.Editor
         private void DissmissCurrentView()
         {
             _viewContainer?.Clear();
-            if (_view == null) return;
             _view?.Dismiss();
-            _view.DestroyAnimationRequested -= DestroySelectedAnimation;
 
+            if (_view != null)
+                _view.DestroyAnimationRequested -= DestroySelectedAnimation;
         }
 
         private void InitializeView(SpriteAnimation spriteAnimation)
