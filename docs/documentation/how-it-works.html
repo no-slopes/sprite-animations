@@ -2,11 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Delegate AnimationSelectedEvent
- | Sprite Animations </title>
+      <title>How it works | Sprite Animations </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Delegate AnimationSelectedEvent
- | Sprite Animations ">
+      <meta name="title" content="How it works | Sprite Animations ">
       
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -17,7 +15,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/new/main/apiSpec/new?filename=SpriteAnimations_Editor_AnimationSelectedEvent.md&amp;value=---%0Auid%3A%20SpriteAnimations.Editor.AnimationSelectedEvent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/blob/main/docfx_project/documentation/how-it-works.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -43,7 +41,7 @@
   </script>
 
 
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
@@ -84,123 +82,77 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="SpriteAnimations.Editor.AnimationSelectedEvent">
+        <article data-uid="">
+<h1 id="how-it-works">How it works</h1>
 
+<p>It all comes down to a <a href="https://docs.unity3d.com/Manual/class-MonoBehaviour.html">MonoBehaviour</a> responsible for animating <a href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObjects</a> by changing the sprites of a <a href="https://docs.unity3d.com/Manual/class-SpriteRenderer.html">SpriteRenderer</a> based on the FPS defined for that particular animation.</p>
+<h2 id="work-flow">Work flow</h2>
+<ul>
+<li>Attach the <a href="sprite-animator.html">SpriteAnimator</a> component to a GameObject and feed it a SpriteRenderer.</li>
+<li>Then you will use the <a href="animations-manager.html">Animations Manager</a> window to organize all the animations that animator can play during runtime.</li>
+<li>Create a Script (or scripts) and tell the animator wich animation to play using the <code>SpriteAnimator.Play()</code> method:</li>
+</ul>
+<blockquote>
+<p>[TODO]
+Image of the animations manager window</p>
+</blockquote>
+<h2 id="playing-animations">Playing animations</h2>
+<p>Just tell the animator to play it:</p>
+<pre><code class="lang-csharp">
+public SpriteAnimator _animator;
 
+private void Start()
+{
+    _animator.Play(&quot;Idle&quot;);
+}
 
-  <h1 id="SpriteAnimations_Editor_AnimationSelectedEvent" data-uid="SpriteAnimations.Editor.AnimationSelectedEvent" class="text-break">
-      Delegate AnimationSelectedEvent
-  </h1>
+</code></pre>
+<p>or, if you do not like working with strings, you can reference an animation through inspector and use it:</p>
+<blockquote>
+<p>[TODO]
+Image using inspector to provide an animation</p>
+</blockquote>
+<pre><code class="lang-csharp">
+public SpriteAnimator _animator;
+public SpriteAnimation _idleAnimation;
 
-  <div class="markdown level0 summary">
-    
-  </div>
+private void Start()
+{
+    _animator.Play(_idleAnimation);
+}
 
-  <div class="markdown level0 conceptual">
-    
-  </div>
+</code></pre>
+<p>in case you need to perform some routine when an specific frame plays, it is easy:</p>
+<pre><code class="lang-csharp">
+private void Start()
+{
+    _animator.Play(&quot;Shoot&quot;).SetOnFrame(2, () =&gt;
+    {
+        Debug.Log(&quot;This is fired when the third frame is played.&quot;);
+        Instantiate(_projectile);
+    });
+}
 
-                                  <! -- CLASS  -->
-                                
-  <!-- 
-  -->
+</code></pre>
+<p>while using the <a href="animations-manager.html">Animations Manager</a> window, you can even set IDs to frames so you can inform actions to be fired when
+a frame associated with that ID plays:</p>
+<pre><code class="lang-csharp">
+private void Start()
+{
+    _animator.Play(&quot;Sword Attack&quot;).SetOnFrame(&quot;Slash&quot;, OnSwordSlash);
+}
 
-                                                   <! -- IMPLEMENTS  -->
+private void OnSwordSlash()
+{
+    Debug.Log(&quot;Slash frame played&quot;);
+    // Check colisions and deal damage.
+}
 
-                                                      <! -- INHERITED MEMBERS  -->
-  <!-- 
-  -->
-
-                                                      <! -- NAMESPACE  -->
-  <!-- 
-  <h6>
-      <strong>
-        Namespace
-      </strong>: <a class="xref" href="SpriteAnimations.html">SpriteAnimations</a>.<a class="xref" href="SpriteAnimations.Editor.html">Editor</a>
-  </h6>
-  -->
-
-                                                      <! -- ASSEMBLY  -->
-  <!-- 
-  <h6>
-      <strong>
-        Assembly
-      </strong>: SpriteAnimations.dll
-  </h6>
-  -->
-    
-    
-                                                                  <! -- SYNTAX  -->
-  <!-- 
-  <h5 id="SpriteAnimations_Editor_AnimationSelectedEvent_syntax">
-    Syntax
-  </h5>
-  -->
-                                                                  <! -- CODE  -->
-  <!-- 
-  <div class="codewrapper">
-      <pre>
-          <code class="lang- hljs">
-            public delegate void AnimationSelectedEvent(SpriteAnimation animation)
-          </code>
-      </pre>
-  </div>
-  -->
-
-      <h5 class="parameters">
-        Parameters
-      </h5>
-    
-      <table class="table table-bordered table-striped table-condensed">
-          <thead>
-              <tr>
-                  <th>
-                    Type
-                  </th>
-                  <th>
-                    Name
-                  </th>
-                  <th>
-                    Description
-                  </th>
-              </tr>
-          </thead>
-      <tbody>
-
-      <tr>
-          <td>
-            <a class="xref" href="SpriteAnimations.SpriteAnimation.html">SpriteAnimation</a>
-          </td>
-        
-          <td>
-              <span class="parametername">
-                animation
-              </span>
-          </td>
-        
-          <td>
-            
-          </td>
-      </tr>
-
-  </tbody>
-  </table>
-
-
-                                                   <! -- RETURNS  -->
-
-
-
-
-
-
-
-
-
-
+</code></pre>
 </article>
 
 
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
         
       </div>
 

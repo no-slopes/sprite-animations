@@ -537,20 +537,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/index.md",
+      "source_relative_path": "documentation/how-it-works.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/index.html"
+          "relative_path": "documentation/how-it-works.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/installation.md",
+      "source_relative_path": "documentation/install.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/installation.html"
+          "relative_path": "documentation/install.html"
         }
       },
       "version": ""
