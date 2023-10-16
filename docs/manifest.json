@@ -507,20 +507,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/animations-manager.md",
+      "source_relative_path": "documentation/animations-manager/animations.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/animations-manager.html"
+          "relative_path": "documentation/animations-manager/animations.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/animations-manager/animations.md",
+      "source_relative_path": "documentation/animations-manager/index.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/animations-manager/animations.html"
+          "relative_path": "documentation/animations-manager/index.html"
         }
       },
       "version": ""
@@ -557,10 +557,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/sprite-animator.md",
+      "source_relative_path": "documentation/sprite-animator/index.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/sprite-animator.html"
+          "relative_path": "documentation/sprite-animator/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/sprite-animator/performers.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/sprite-animator/performers.html"
         }
       },
       "version": ""
@@ -594,6 +604,16 @@
       "output": {
         "resource": {
           "relative_path": "images/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/frame-id-slash.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/frame-id-slash.png"
         }
       },
       "version": ""

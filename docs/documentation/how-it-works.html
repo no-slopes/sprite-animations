@@ -88,15 +88,15 @@
 <p>It all comes down to a <a href="https://docs.unity3d.com/Manual/class-MonoBehaviour.html">MonoBehaviour</a> responsible for animating <a href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObjects</a> by changing the sprites of a <a href="https://docs.unity3d.com/Manual/class-SpriteRenderer.html">SpriteRenderer</a> based on the FPS defined for that particular animation.</p>
 <h2 id="work-flow">Work flow</h2>
 <ul>
-<li>Attach the <a href="sprite-animator.html">SpriteAnimator</a> component to a GameObject and feed it a SpriteRenderer.</li>
+<li>Attach the <a href="sprite-animator/index.html">SpriteAnimator</a> component to a GameObject and feed it a SpriteRenderer.</li>
 </ul>
 <p><img src="../images/sprite-animator-component.png" alt="Sprite Animator Component"></p>
 <ul>
-<li>Then you will use the <a href="animations-manager.html">Animations Manager</a> window to organize all the animations that animator can play during runtime.</li>
+<li>Then you will use the <a href="animations-manager/index.html">Animations Manager</a> window to organize all the animations that animator can play during runtime.</li>
 </ul>
 <p><img src="../images/animations-manager-window.png" alt="Animations Manager Window"></p>
 <ul>
-<li>Create a Script (or scripts) and tell the animator wich animation to play using the <a href="https://no-slopes.github.io/sprite-animations/api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_Play_SpriteAnimations_SpriteAnimation_">Play()</a> method:</li>
+<li>Create a Script (or scripts) and tell the animator wich animation to play using the <a href="https://no-slopes.github.io/sprite-animations/api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_Play_System_String_">Play()</a> method:</li>
 </ul>
 <p><img src="../images/script-using-animator.png" alt="Script using animator"></p>
 <h2 id="playing-animations">Playing animations</h2>
@@ -118,33 +118,6 @@ public SpriteAnimation _idleAnimation;
 private void Start()
 {
     _animator.Play(_idleAnimation);
-}
-
-</code></pre>
-<p>in case you need to perform some routine when a specific frame plays, it is easy:</p>
-<pre><code class="lang-csharp">
-private void Start()
-{
-    _animator.Play(&quot;Shoot&quot;).SetOnFrame(2, () =&gt;
-    {
-        Debug.Log(&quot;This is fired when the third frame is played.&quot;);
-        Instantiate(_projectile);
-    });
-}
-
-</code></pre>
-<p>while using the <a href="animations-manager.html">Animations Manager</a> window, you can even set IDs to frames so you can inform actions to be fired when
-a frame associated with that ID plays:</p>
-<pre><code class="lang-csharp">
-private void Start()
-{
-    _animator.Play(&quot;Sword Attack&quot;).SetOnFrame(&quot;Slash&quot;, OnSwordSlash);
-}
-
-private void OnSwordSlash()
-{
-    Debug.Log(&quot;Slash frame played&quot;);
-    // Check colisions and deal damage.
 }
 
 </code></pre>

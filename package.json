@@ -34,6 +34,8 @@
     "release": "release-it"
   },
   "devDependencies": {
+    "doc-serve": "docfx docfx_project/docfx.json --serve",
+    "doc-build": "docfx docfx_project/docfx.json",
     "release-it": "^16.2.1"
   }
 }

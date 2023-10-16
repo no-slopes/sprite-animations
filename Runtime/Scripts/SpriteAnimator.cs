@@ -386,10 +386,23 @@ namespace SpriteAnimations
 
         #region Enums
 
+        /// <summary>
+        /// The state of the animator
+        /// </summary>
         public enum SpriteAnimatorState
         {
+            /// <summary>
+            /// The animator is playing the last defined animation
+            /// </summary>
             Playing = 0,
+            /// <summary>
+            /// The animator is paused, meaning it will not change frames of the current
+            /// animation untill it is resumed
+            /// </summary>
             Paused = 1,
+            /// <summary>
+            /// The animator is stopped, meaning no animation is currently defined.
+            /// </summary>
             Stopped = 2
         }
 
