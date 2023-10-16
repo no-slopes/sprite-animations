@@ -2804,18 +2804,18 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.WindroseAnimator.ResetCycle
   nameWithType: WindroseAnimator.ResetCycle
-- uid: SpriteAnimations.WindroseAnimator.SetDirection(SpriteAnimations.WindroseDirection,SpriteAnimations.FlipStrategy)
-  name: SetDirection(WindroseDirection, FlipStrategy)
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_SpriteAnimations_WindroseDirection_SpriteAnimations_FlipStrategy_
-  commentId: M:SpriteAnimations.WindroseAnimator.SetDirection(SpriteAnimations.WindroseDirection,SpriteAnimations.FlipStrategy)
-  fullName: SpriteAnimations.WindroseAnimator.SetDirection(SpriteAnimations.WindroseDirection, SpriteAnimations.FlipStrategy)
-  nameWithType: WindroseAnimator.SetDirection(WindroseDirection, FlipStrategy)
-- uid: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2,SpriteAnimations.FlipStrategy)
-  name: SetDirection(Vector2, FlipStrategy)
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_UnityEngine_Vector2_SpriteAnimations_FlipStrategy_
-  commentId: M:SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2,SpriteAnimations.FlipStrategy)
-  fullName: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2, SpriteAnimations.FlipStrategy)
-  nameWithType: WindroseAnimator.SetDirection(Vector2, FlipStrategy)
+- uid: SpriteAnimations.WindroseAnimator.SetDirection(SpriteAnimations.WindroseDirection,SpriteAnimations.WindroseFlipStrategy)
+  name: SetDirection(WindroseDirection, WindroseFlipStrategy)
+  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_SpriteAnimations_WindroseDirection_SpriteAnimations_WindroseFlipStrategy_
+  commentId: M:SpriteAnimations.WindroseAnimator.SetDirection(SpriteAnimations.WindroseDirection,SpriteAnimations.WindroseFlipStrategy)
+  fullName: SpriteAnimations.WindroseAnimator.SetDirection(SpriteAnimations.WindroseDirection, SpriteAnimations.WindroseFlipStrategy)
+  nameWithType: WindroseAnimator.SetDirection(WindroseDirection, WindroseFlipStrategy)
+- uid: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2,SpriteAnimations.WindroseFlipStrategy)
+  name: SetDirection(Vector2, WindroseFlipStrategy)
+  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_UnityEngine_Vector2_SpriteAnimations_WindroseFlipStrategy_
+  commentId: M:SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2,SpriteAnimations.WindroseFlipStrategy)
+  fullName: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2, SpriteAnimations.WindroseFlipStrategy)
+  nameWithType: WindroseAnimator.SetDirection(Vector2, WindroseFlipStrategy)
 - uid: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int)
   name: SetDirection(Vector2Int)
   href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_UnityEngine_Vector2Int_
@@ -2943,3 +2943,21 @@ references:
   commentId: F:SpriteAnimations.WindroseDirection.West
   fullName: SpriteAnimations.WindroseDirection.West
   nameWithType: WindroseDirection.West
+- uid: SpriteAnimations.WindroseFlipStrategy
+  name: WindroseFlipStrategy
+  href: api/SpriteAnimations.WindroseFlipStrategy.html
+  commentId: T:SpriteAnimations.WindroseFlipStrategy
+  fullName: SpriteAnimations.WindroseFlipStrategy
+  nameWithType: WindroseFlipStrategy
+- uid: SpriteAnimations.WindroseFlipStrategy.FlipEastToPlayWest
+  name: FlipEastToPlayWest
+  href: api/SpriteAnimations.WindroseFlipStrategy.html#SpriteAnimations_WindroseFlipStrategy_FlipEastToPlayWest
+  commentId: F:SpriteAnimations.WindroseFlipStrategy.FlipEastToPlayWest
+  fullName: SpriteAnimations.WindroseFlipStrategy.FlipEastToPlayWest
+  nameWithType: WindroseFlipStrategy.FlipEastToPlayWest
+- uid: SpriteAnimations.WindroseFlipStrategy.NoFlip
+  name: NoFlip
+  href: api/SpriteAnimations.WindroseFlipStrategy.html#SpriteAnimations_WindroseFlipStrategy_NoFlip
+  commentId: F:SpriteAnimations.WindroseFlipStrategy.NoFlip
+  fullName: SpriteAnimations.WindroseFlipStrategy.NoFlip
+  nameWithType: WindroseFlipStrategy.NoFlip

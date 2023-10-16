@@ -89,7 +89,7 @@ namespace SpriteAnimations
         protected bool _isLoopable = false;
 
         [SerializeField]
-        protected FlipStrategy _flipStrategy = FlipStrategy.NoFlip;
+        protected WindroseFlipStrategy _flipStrategy = WindroseFlipStrategy.NoFlip;
 
         [SerializeField, HideInInspector]
         protected WindroseCycles _cycles = new();
@@ -106,7 +106,7 @@ namespace SpriteAnimations
         /// <summary>
         /// If this animation should flip the east cycles sprites to compose the the west cycles.
         /// </summary>
-        public FlipStrategy FlipStrategy { get => _flipStrategy; set => _flipStrategy = value; }
+        public WindroseFlipStrategy FlipStrategy { get => _flipStrategy; set => _flipStrategy = value; }
 
         /// <summary>
         /// The type of the performer.

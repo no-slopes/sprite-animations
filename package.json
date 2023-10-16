@@ -31,11 +31,11 @@
     "top-down"
   ],
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "serve-docs": "docfx ../sprite-animations-development/docfx_project/docfx.json --serve",
+    "build-docs": "docfx ../sprite-animations-development/docfx_project/docfx.json"
   },
   "devDependencies": {
-    "doc-serve": "docfx docfx_project/docfx.json --serve",
-    "doc-build": "docfx docfx_project/docfx.json",
     "release-it": "^16.2.1"
   }
 }

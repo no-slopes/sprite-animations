@@ -35,14 +35,14 @@ namespace SpriteAnimations
     }
 
     /// <summary>
-    /// The flip strategy for that animation
+    /// The flip strategy for a windrose animation
     /// </summary>
-    public enum FlipStrategy
+    public enum WindroseFlipStrategy
     {
         /// <summary>
-        /// The WindroseAnimator will flip East sprites to play West animations
+        /// The WindroseAnimator will flip East (NorthEast, East and SouthEast)  sprites and play them as West (West, NorthWest and SouthWest) sprites
         /// </summary>
-        Flip,
+        FlipEastToPlayWest,
         /// <summary>
         /// There will be no flip at all.
         /// </summary>

@@ -15,7 +15,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/blob/main/docfx_project/documentation/how-it-works.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/blob/develop/docfx_project/documentation/how-it-works.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -101,25 +101,21 @@
 <p><img src="../images/script-using-animator.png" alt="Script using animator"></p>
 <h2 id="playing-animations">Playing animations</h2>
 <p>Just tell the animator to play it:</p>
-<pre><code class="lang-csharp">
-public SpriteAnimator _animator;
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
 
 private void Start()
 {
     _animator.Play(&quot;Idle&quot;);
 }
-
 </code></pre>
 <p>or, if you do not like working with strings, you can reference an animation through inspector and use it:</p>
-<pre><code class="lang-csharp">
-public SpriteAnimator _animator;
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
 public SpriteAnimation _idleAnimation;
 
 private void Start()
 {
     _animator.Play(_idleAnimation);
 }
-
 </code></pre>
 </article>
 

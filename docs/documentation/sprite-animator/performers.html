@@ -15,7 +15,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/blob/main/docfx_project/documentation/sprite-animator/performers.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/blob/develop/docfx_project/documentation/sprite-animator/performers.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -116,7 +116,7 @@ private void Start()
 <h2 id="animationperformer-types">AnimationPerformer types</h2>
 <p>There is no need to worry about the AnimationPerfomer type if you only need basic usage for that specific animation. However, if you need specialized features of
 an AnimationPerformer, you will need to access the right type of the desired AnimationPerformer child class.</p>
-<p>For examples, this is needed when you want to tell the <a href="#the-windroseanimator">WindroseAnimator</a> in wich direction it should play the animation.</p>
+<p>For examples, this is needed when you want to tell the <a href="windrose-animator.html">WindroseAnimator</a> in wich direction it should play the animation.</p>
 <p>Here are some examples on how you can access the correct performer type</p>
 <h5 id="the-no-slopes-preferred-way">The &quot;No Slopes preferred&quot; way:</h5>
 <p>Just like you do when using Unity's <a href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject.GetComponent</a> method.</p>
@@ -129,68 +129,6 @@ an AnimationPerformer, you will need to access the right type of the desired Ani
 <h5 id="the-explicit-cast-way">The &quot;explicit cast&quot; way:</h5>
 <pre><code class="lang-csharp">WindroseAnimator windroseAnimator = (WindroseAnimator)_animator.Play(&quot;Idle&quot;);
 </code></pre>
-<h2 id="the-singleanimator">The SingleAnimator</h2>
-<p>This is the performer for <a href="../animations-manager/types-of-animations.html#single-animation">Single Animations</a>.</p>
-<p>As <a href="../animations-manager/types-of-animations.html#single-animation">Single Animations</a> are the most basic type of animation we have,
-its performer goes as far as allowing you to use the <code>SetOnFrame()</code> and <code>OnEnd()</code> methods to register Frame Actions.</p>
-<h2 id="the-windroseanimator">The WindroseAnimator</h2>
-<p>This is the performer for <a href="../animations-manager/types-of-animations.html#windrose-animation">Windrose Animations</a>.</p>
-<p>In addition to allowing the usage of <code>SetOnFrame()</code> and <code>OnEnd()</code> methods, the WindroseAnimator allows you to set the direction in wich you
-want that animation to played.</p>
-<p>You can set direction by telling an specific direction of the <a href="https://no-slopes.github.io/sprite-animationsSpriteAnimations.WindroseDirection.html">WindroseDirection enum</a>:</p>
-<pre><code class="lang-csharp">using SpriteAnimations; // &lt;- Important so you can use the WindroseDirection enum
-
-public class MyClass : MonoBehaviour
-{
-    public SpriteAnimator _animator;
-
-    private void Start()
-    {
-        _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;).SetDirection(WindroseDirection.East);
-    }
-}
-</code></pre>
-<p>or you can pass in a Vector2 and it will resolve wich direction that Vector2 is pointing to:</p>
-<pre><code class="lang-csharp">using SpriteAnimations;
-
-public class MyClass : MonoBehaviour
-{
-    public SpriteAnimator _animator;
-    public Vector2 _movementInput;
-
-    private void Start()
-    {
-        _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;).SetDirection(_movementInput);
-    }
-}
-</code></pre>
-<p>You might wanna cache the performer to change direction when the player inputs new movement data:</p>
-<pre><code class="lang-csharp">using SpriteAnimations;
-
-public class WalkPlayer : MonoBehaviour
-{
-    public SpriteAnimator _animator;
-
-    private WindroseAnimator _perfomer;
-
-    // This would be called whenever the animator should play the walk animation.
-    public void PlayWalk(Vector2 startingDirection)
-    {
-        _performer = _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;);
-        _perfomer.SetDirection(startingDirection);
-    }
-
-    // This would be called whenenever new input is recognized
-    public void ChangeDirection(Vector newDirection)
-    {
-        _performer?.SetDirection(newDirection);
-    }
-}
-</code></pre>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>These examples should only inform you how to interact with the performer. Since your project has its own peculiar ways, these are not meant to be copy pasted and expected to work out of the box.</p>
-</div>
 </article>
 
 
