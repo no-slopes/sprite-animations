@@ -1,6 +1,6 @@
 {
   "git": {
-    "requiredBranch": "develop",
+    "requiredBranch": "main",
     "commitMessage": "chore: release v${version}"
   },
   "hooks": {
@@ -10,11 +10,6 @@
       "docfx ../sprite-animations-development/docfx_project/docfx.json"
     ],
     "after:release": [
-      "git checkout main",
-      "git merge develop",
-      "git push origin main",
-      "git checkout develop",
-      "git merge main",
       "echo Successfully released ${name} v${version} to ${repo.repository}."
     ]
   },
