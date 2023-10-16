@@ -48,9 +48,6 @@ namespace SpriteAnimations.Editor
             _defaultAnimationFieldContainer = inspector.Query<VisualElement>("default-animation-field-row");
             DisplayDefaultAnimationContainer(_playerOnStartToggle.value);
 
-            PropertyField animationsListField = inspector.Query<PropertyField>("animations-list-field");
-            animationsListField.SetEnabled(false);
-
             return inspector;
         }
 

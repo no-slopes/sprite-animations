@@ -580,6 +580,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/animations-manager-window.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/animations-manager-window.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/favicon.ico",
       "output": {
         "resource": {
@@ -594,6 +604,56 @@
       "output": {
         "resource": {
           "relative_path": "images/logo.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/package-manager-my-registries-list.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/package-manager-my-registries-list.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/package-manager-my-registries.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/package-manager-my-registries.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/project-settings-package-manager.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/project-settings-package-manager.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/script-using-animator.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/script-using-animator.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/sprite-animator-component.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/sprite-animator-component.png"
         }
       },
       "version": ""

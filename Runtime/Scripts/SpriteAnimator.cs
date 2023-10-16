@@ -9,7 +9,7 @@ namespace SpriteAnimations
     /// of a SpriteRenderer based on the fps of the playing animation.
     /// </summary>
     [RequireComponent(typeof(SpriteRenderer))]
-    [AddComponentMenu("Sprite Animator")]
+    [AddComponentMenu("No Slopes/Sprite Animations/Sprite Animator")]
     public class SpriteAnimator : MonoBehaviour
     {
         #region Components

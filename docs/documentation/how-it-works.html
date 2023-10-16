@@ -89,13 +89,16 @@
 <h2 id="work-flow">Work flow</h2>
 <ul>
 <li>Attach the <a href="sprite-animator.html">SpriteAnimator</a> component to a GameObject and feed it a SpriteRenderer.</li>
-<li>Then you will use the <a href="animations-manager.html">Animations Manager</a> window to organize all the animations that animator can play during runtime.</li>
-<li>Create a Script (or scripts) and tell the animator wich animation to play using the <code>SpriteAnimator.Play()</code> method:</li>
 </ul>
-<blockquote>
-<p>[TODO]
-Image of the animations manager window</p>
-</blockquote>
+<p><img src="../images/sprite-animator-component.png" alt="Sprite Animator Component"></p>
+<ul>
+<li>Then you will use the <a href="animations-manager.html">Animations Manager</a> window to organize all the animations that animator can play during runtime.</li>
+</ul>
+<p><img src="../images/animations-manager-window.png" alt="Animations Manager Window"></p>
+<ul>
+<li>Create a Script (or scripts) and tell the animator wich animation to play using the <a href="https://no-slopes.github.io/sprite-animations/api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_Play_SpriteAnimations_SpriteAnimation_">Play()</a> method:</li>
+</ul>
+<p><img src="../images/script-using-animator.png" alt="Script using animator"></p>
 <h2 id="playing-animations">Playing animations</h2>
 <p>Just tell the animator to play it:</p>
 <pre><code class="lang-csharp">
@@ -108,10 +111,6 @@ private void Start()
 
 </code></pre>
 <p>or, if you do not like working with strings, you can reference an animation through inspector and use it:</p>
-<blockquote>
-<p>[TODO]
-Image using inspector to provide an animation</p>
-</blockquote>
 <pre><code class="lang-csharp">
 public SpriteAnimator _animator;
 public SpriteAnimation _idleAnimation;
@@ -122,7 +121,7 @@ private void Start()
 }
 
 </code></pre>
-<p>in case you need to perform some routine when an specific frame plays, it is easy:</p>
+<p>in case you need to perform some routine when a specific frame plays, it is easy:</p>
 <pre><code class="lang-csharp">
 private void Start()
 {
