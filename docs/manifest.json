@@ -14,10 +14,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.AnimationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.AnimationType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.AnimatorState.yml",
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.AnimatorState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Cycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Cycle.html"
         }
       },
       "version": ""
@@ -304,6 +324,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Frame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Frame.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.FramePlayedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.FramePlayedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Logger.yml",
       "output": {
         ".html": {
@@ -348,26 +388,6 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.SpriteAnimation.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.SpriteAnimationCycle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.SpriteAnimationCycle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.SpriteAnimationFrame.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.SpriteAnimationFrame.html"
         }
       },
       "version": ""

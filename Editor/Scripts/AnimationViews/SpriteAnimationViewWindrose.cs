@@ -17,7 +17,7 @@ namespace SpriteAnimations.Editor
 
         #region Getters
 
-        public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
+        public override AnimationType AnimationType => AnimationType.Simple;
 
         #endregion
 
@@ -75,7 +75,7 @@ namespace SpriteAnimations.Editor
 
         private void OnWindroseDirectionSelected(WindroseDirection windroseDirection)
         {
-            SpriteAnimationCycle cycle = _spriteAnimationWindrose.FindOrCreateCycle(windroseDirection);
+            Cycle cycle = _spriteAnimationWindrose.FindOrCreateCycle(windroseDirection);
 
             _cycleElement.Dismiss();
             _cycleElement.Initialize(cycle);

@@ -19,7 +19,7 @@ namespace SpriteAnimations.Editor
         private IFPSProvider _fpsProvider;
         private ITickProvider _tickProvider;
         private CycleElement _cycle;
-        private SpriteAnimationFrame _currentFrame;
+        private Frame _currentFrame;
 
         private bool _playing;
         private int _fps = 0;
@@ -108,7 +108,7 @@ namespace SpriteAnimations.Editor
             float frameDuration = 1f / _fps;
             float duration = _cycle.Frames.Count * frameDuration;
 
-            SpriteAnimationFrame evaluatedFrame = EvaluateCurrentFrameIndex(_currentCycleElapsedTime, duration);
+            Frame evaluatedFrame = EvaluateCurrentFrameIndex(_currentCycleElapsedTime, duration);
 
             if (_currentCycleElapsedTime >= duration)
             {
@@ -124,14 +124,14 @@ namespace SpriteAnimations.Editor
 
         #region Frames
 
-        private SpriteAnimationFrame EvaluateCurrentFrameIndex(float elapsedTime, float duration)
+        private Frame EvaluateCurrentFrameIndex(float elapsedTime, float duration)
         {
 
             int frameIndex = Mathf.FloorToInt(elapsedTime * _cycle.Frames.Count / duration);
             return _cycle.Frames.ElementAtOrDefault(frameIndex);
         }
 
-        private void SetFrame(SpriteAnimationFrame frame)
+        private void SetFrame(Frame frame)
         {
             _currentFrame = frame;
             _image.sprite = _currentFrame.Sprite;

@@ -116,7 +116,7 @@ namespace SpriteAnimations
         /// <summary>
         /// The type of the animation.
         /// </summary>
-        public override SpriteAnimationType AnimationType => SpriteAnimationType.Windrose;
+        public override AnimationType AnimationType => AnimationType.Windrose;
 
         #endregion
 
@@ -140,13 +140,13 @@ namespace SpriteAnimations
         /// </summary>
         /// <param name="direction">The direction to find or create the cycle for.</param>
         /// <returns>The found or created SpriteAnimationCycle.</returns>
-        public SpriteAnimationCycle FindOrCreateCycle(WindroseDirection direction)
+        public Cycle FindOrCreateCycle(WindroseDirection direction)
         {
             // Check if the cycle for the specified direction already exists
             if (!_cycles.ContainsKey(direction))
             {
                 // Create a new SpriteAnimationCycle
-                SpriteAnimationCycle newCycle = new()
+                Cycle newCycle = new()
                 {
                     Identifiable = false
                 };
@@ -165,7 +165,7 @@ namespace SpriteAnimations
         /// <param name="direction">The windrose direction.</param>
         /// <param name="cycle">The sprite animation cycle associated with the direction, if found.</param>
         /// <returns>True if the sprite animation cycle was found, false otherwise.</returns>
-        public bool TryGetCycle(WindroseDirection direction, out SpriteAnimationCycle cycle)
+        public bool TryGetCycle(WindroseDirection direction, out Cycle cycle)
         {
             return _cycles.TryGetValue(direction, out cycle);
         }
@@ -175,13 +175,13 @@ namespace SpriteAnimations
         #region Subclasses
 
         [Serializable]
-        protected class WindroseCycles : Dictionary<WindroseDirection, SpriteAnimationCycle>, ISerializationCallbackReceiver
+        protected class WindroseCycles : Dictionary<WindroseDirection, Cycle>, ISerializationCallbackReceiver
         {
             [SerializeField, HideInInspector]
             private List<WindroseDirection> _keyData = new();
 
             [SerializeField, HideInInspector]
-            private List<SpriteAnimationCycle> _valueData = new();
+            private List<Cycle> _valueData = new();
 
             void ISerializationCallbackReceiver.OnAfterDeserialize()
             {

@@ -100,7 +100,7 @@ private void Start()
 <p>Yes. It is because of the performer we can chain methods like this:</p>
 <pre><code class="lang-csharp">private void Start()
 {
-    _animator.Play(&quot;Idle&quot;).SetOnFrame(5, ()=&gt;
+    _animator.Play(&quot;Idle&quot;).SetOnFrame(5, frame =&gt;
     {
         Debug.Log(&quot;Frame indexed as 5 played.&quot;);
     }).OnEnd(() =&gt;
@@ -129,6 +129,75 @@ an AnimationPerformer, you will need to access the right type of the desired Ani
 <p><strong>The &quot;explicit cast&quot; way:</strong></p>
 <pre><code class="lang-csharp">WindroseAnimator windroseAnimator = (WindroseAnimator)_animator.Play(&quot;Idle&quot;);
 </code></pre>
+<h2 id="defining-actions">Defining Actions</h2>
+<p>You can interact with the animation currently playing and specify actions to be fired when some event happen.</p>
+<p><strong>Listening to every single frame</strong></p>
+<pre><code class="lang-csharp">private AnimationPerformer _performer;
+
+private void OnEnable()
+{
+    _performer = _animator.Play(&quot;Shoot&quot;);
+    _performer.FramePlayed += OnFramePlayed;
+}
+
+private void OnDisable()
+{
+    // Unsubscribing so we avoid memory leaks
+    if (_performer !=  null)
+        _performer?.FramePlayed -= OnFramePlayed;
+}
+
+private void OnFramePlayed(int index, Frame frame)
+{
+    Debug.Log($&quot;The frame {index} has just been played&quot;);
+    // Proceed to do stuff based on that frame.
+}
+</code></pre>
+<p><strong>Listen for when a specific frame is played:</strong></p>
+<p>In case you need to perform some routine when a specific frame plays, it is easy. Use the <code>SetOnFrame()</code> method:</p>
+<pre><code class="lang-csharp">public void PlayShoot()
+{
+    _animator.Play(&quot;Shoot&quot;).SetOnFrame(2, frame =&gt;
+    {
+        Debug.Log(&quot;This is fired when the third frame is played.&quot;);
+        Instantiate(_projectile);
+    });
+}
+</code></pre>
+<p>No need to unsubscribe since every time a new animation is played all its subscriptions are cleared.</p>
+<p>While using the <a href="../animations-manager/index.html">Animations Manager</a> window, you can even set IDs to frames so you can inform actions to be fired when
+a frame associated with that ID plays:</p>
+<p><img src="../../images/frame-id-slash.png" alt="Frame ID Slash"></p>
+<pre><code class="lang-csharp">public void PlaySwordAttack()
+{
+    _animator.Play(&quot;Sword Attack&quot;).SetOnFrame(&quot;Slash&quot;, OnSwordSlash);
+}
+
+private void OnSwordSlash(Frame frame)
+{
+    Debug.Log(&quot;Slash frame played&quot;);
+    // Check colisions and deal damage.
+}
+</code></pre>
+<p><strong>When the animation ends:</strong></p>
+<p>You can define an action to be fired when the animation ends (upon last frame being played) using the <code>OnEnd()</code> method:</p>
+<pre><code class="lang-csharp">public void PlayDeath()
+{
+    _animator.Play(&quot;Death&quot;).OnEnd(AnnounceDeath);
+}
+
+private void AnnounceDeath()
+{
+    Debug.Log(&quot;This character id now Dead&quot;);
+    // Start funeral
+    // End gameplay
+    // Reflect on life choices...
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the animation is marked as loopable, the <code>OnEnd()</code> action registered will be fired every time the last frame is played.</p>
+</div>
 </article>
 
 

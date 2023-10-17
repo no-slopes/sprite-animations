@@ -49,7 +49,7 @@ namespace SpriteAnimations
         #region Abstratctions
 
         public abstract Type PerformerType { get; }
-        public abstract SpriteAnimationType AnimationType { get; }
+        public abstract AnimationType AnimationType { get; }
 
         #endregion
 

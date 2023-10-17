@@ -85,8 +85,8 @@ namespace SpriteAnimations.Editor
 
             SpriteAnimation animation = _typeField.value switch
             {
-                SpriteAnimationType.Simple => CreateSingleSpriteAnimation(path, name),
-                SpriteAnimationType.Windrose => CreateWindroseSpriteAnimation(path, name),
+                AnimationType.Simple => CreateSingleSpriteAnimation(path, name),
+                AnimationType.Windrose => CreateWindroseSpriteAnimation(path, name),
                 _ => throw new ArgumentOutOfRangeException(nameof(_typeField.value), null, null)
             };
 

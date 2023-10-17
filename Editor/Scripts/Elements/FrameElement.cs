@@ -8,7 +8,7 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private SpriteAnimationFrame _frame;
+        private Frame _frame;
 
         private CycleElement _owner;
         private Label _indexLabel;
@@ -45,7 +45,7 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public FrameElement(CycleElement owner, int index, SpriteAnimationFrame frame)
+        public FrameElement(CycleElement owner, int index, Frame frame)
         {
             _owner = owner;
             _frame = frame;
@@ -95,7 +95,7 @@ namespace SpriteAnimations.Editor
 
         #region Frame
 
-        private void InitializeValues(int index, SpriteAnimationFrame frame)
+        private void InitializeValues(int index, Frame frame)
         {
             _frame.Index = index;
             _indexLabel.text = index.ToString();

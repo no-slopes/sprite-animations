@@ -4,7 +4,7 @@
         <ui:VisualElement name="field-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
             <uie:ObjectField label="Script" type="UnityEditor.MonoScript, UnityEditor.CoreModule" name="script-field" binding-path="SpriteAnimator" class="w-100 sa-field" />
         </ui:VisualElement>
-        <ui:VisualElement name="logo-container" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: center; padding-top: 0; padding-right: 5px; padding-bottom: 0; padding-left: 5px; flex-grow: 0;">
+        <ui:VisualElement name="logo-container" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: center; padding-top: 0; padding-right: 5px; padding-bottom: 0; padding-left: 5px; flex-grow: 0; display: none;">
             <ui:VisualElement name="logo" style="flex-grow: 0; flex-shrink: 0; align-items: center; justify-content: center; height: 40px; width: 200px; background-image: resource(&apos;Images/Logo Horizontal_40h&apos;);" />
         </ui:VisualElement>
         <ui:VisualElement name="buttons" class="row" style="width: 100%; justify-content: flex-start; align-items: center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">

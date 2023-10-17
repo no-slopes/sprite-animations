@@ -58,7 +58,7 @@ namespace SpriteAnimations
             if (!HasCurrentAnimation) return;
 
             int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
-            SpriteAnimationFrame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
+            Frame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
@@ -67,17 +67,19 @@ namespace SpriteAnimations
             _currentFrame = evaluatedFrame;
             _animator.SpriteRenderer.sprite = _currentFrame.Sprite;
 
+            InvokeFramePlayed(frameIndex, _currentFrame);
+
             // Calling frame actions
             if (_frameIndexActions.TryGetValue(frameIndex, out var byIndexAction))
             {
-                byIndexAction.Invoke();
+                byIndexAction.Invoke(_currentFrame);
             }
 
             if (string.IsNullOrEmpty(evaluatedFrame.Id)) return;
 
             if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
             {
-                byNameAction.Invoke();
+                byNameAction.Invoke(_currentFrame);
             }
         }
 

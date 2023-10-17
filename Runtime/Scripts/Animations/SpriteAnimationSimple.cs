@@ -19,17 +19,17 @@ namespace SpriteAnimations
         /// </summary>
         /// <typeparam name="SpriteAnimationFrame"></typeparam>
         [SerializeField]
-        protected SpriteAnimationCycle _cycle = new();
+        protected Cycle _cycle = new();
 
         #endregion  
 
         #region Getters
 
         public bool IsLoopable { get => _isLoopable; set => _isLoopable = value; }
-        public SpriteAnimationCycle Cycle => _cycle;
+        public Cycle Cycle => _cycle;
 
         public override Type PerformerType => typeof(SingleAnimator);
-        public override SpriteAnimationType AnimationType => SpriteAnimationType.Simple;
+        public override AnimationType AnimationType => AnimationType.Simple;
 
         #endregion
 

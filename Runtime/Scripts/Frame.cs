@@ -4,7 +4,7 @@ using System;
 namespace SpriteAnimations
 {
     [Serializable]
-    public class SpriteAnimationFrame
+    public class Frame
     {
         #region Setup
 

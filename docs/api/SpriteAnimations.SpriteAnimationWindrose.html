@@ -550,7 +550,7 @@ protected bool _isLoopable</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override SpriteAnimationType AnimationType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override AnimationType AnimationType { get; }</code></pre>
   </div>
 
 
@@ -559,7 +559,7 @@ protected bool _isLoopable</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationType.html">SpriteAnimationType</a></dt>
+    <dt><a class="xref" href="SpriteAnimations.AnimationType.html">AnimationType</a></dt>
     <dd></dd>
   </dl>
 
@@ -793,7 +793,7 @@ protected bool _isLoopable</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SpriteAnimationCycle FindOrCreateCycle(WindroseDirection direction)</code></pre>
+    <pre><code class="lang-csharp hljs">public Cycle FindOrCreateCycle(WindroseDirection direction)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -805,7 +805,7 @@ protected bool _isLoopable</code></pre>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a></dt>
+    <dt><a class="xref" href="SpriteAnimations.Cycle.html">Cycle</a></dt>
     <dd><p>The found or created SpriteAnimationCycle.</p>
 </dd>
   </dl>
@@ -861,8 +861,8 @@ protected bool _isLoopable</code></pre>
 
   <a id="SpriteAnimations_SpriteAnimationWindrose_TryGetCycle_" data-uid="SpriteAnimations.SpriteAnimationWindrose.TryGetCycle*"></a>
 
-  <h3 id="SpriteAnimations_SpriteAnimationWindrose_TryGetCycle_SpriteAnimations_WindroseDirection_SpriteAnimations_SpriteAnimationCycle__" data-uid="SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection,SpriteAnimations.SpriteAnimationCycle@)">
-  TryGetCycle(WindroseDirection, out SpriteAnimationCycle)
+  <h3 id="SpriteAnimations_SpriteAnimationWindrose_TryGetCycle_SpriteAnimations_WindroseDirection_SpriteAnimations_Cycle__" data-uid="SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection,SpriteAnimations.Cycle@)">
+  TryGetCycle(WindroseDirection, out Cycle)
   <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Animations/SpriteAnimationWindrose.cs/#L168"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -871,7 +871,7 @@ protected bool _isLoopable</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool TryGetCycle(WindroseDirection direction, out SpriteAnimationCycle cycle)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool TryGetCycle(WindroseDirection direction, out Cycle cycle)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -879,7 +879,7 @@ protected bool _isLoopable</code></pre>
     <dt><code>direction</code> <a class="xref" href="SpriteAnimations.WindroseDirection.html">WindroseDirection</a></dt>
     <dd><p>The windrose direction.</p>
 </dd>
-    <dt><code>cycle</code> <a class="xref" href="SpriteAnimations.SpriteAnimationCycle.html">SpriteAnimationCycle</a></dt>
+    <dt><code>cycle</code> <a class="xref" href="SpriteAnimations.Cycle.html">Cycle</a></dt>
     <dd><p>The sprite animation cycle associated with the direction, if found.</p>
 </dd>
   </dl>

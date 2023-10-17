@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace SpriteAnimations
 {
+    public delegate void FramePlayedEvent(int index, Frame frame);
     /// <summary>
     /// The base class for all animation performers.
     /// </summary>
@@ -17,7 +19,7 @@ namespace SpriteAnimations
         /// <summary>
         /// List of frames used by the current cycle  
         /// </summary>
-        protected SpriteAnimationCycle _currentCycle;
+        protected Cycle _currentCycle;
 
         /// <summary>
         /// Used when running an animation
@@ -27,12 +29,12 @@ namespace SpriteAnimations
         /// <summary>
         /// Current frame of the current cycle
         /// </summary>
-        protected SpriteAnimationFrame _currentFrame;
+        protected Frame _currentFrame;
 
         protected float _currentCycleDuration = 0.0f;
 
-        protected Dictionary<int, UnityAction> _frameIndexActions = new();
-        protected Dictionary<string, UnityAction> _frameIdActions = new();
+        protected Dictionary<int, UnityAction<Frame>> _frameIndexActions = new();
+        protected Dictionary<string, UnityAction<Frame>> _frameIdActions = new();
         protected UnityAction _onEndAction;
 
         #endregion       
@@ -47,29 +49,71 @@ namespace SpriteAnimations
 
         #region Getters 
 
-        public SpriteAnimationCycle CurrentCycle => _currentCycle;
-        public SpriteAnimationFrame CurrentFrame => _currentFrame;
+        /// <summary>
+        /// Current cycle being played
+        /// </summary>
+        public Cycle CurrentCycle => _currentCycle;
+
+        /// <summary>
+        /// The current frame displayed in the animator's SpriteRenderer
+        /// </summary>
+        public Frame CurrentFrame => _currentFrame;
+
+        #endregion
+
+        #region Events
+
+        /// <summary>
+        /// Event invoked when this performer changed the current frame displayed at the animator's SpriteRenderer
+        /// </summary>
+        public event FramePlayedEvent FramePlayed;
+
+        protected void InvokeFramePlayed(int index, Frame frame)
+        {
+            FramePlayed?.Invoke(index, frame);
+        }
+
+        protected void ClearFramePlayedListeners()
+        {
+            FramePlayed = null;
+        }
 
         #endregion
 
         #region Logic       
 
+        /// <summary>
+        /// Starts the given sprite animation.
+        /// </summary>
+        /// <param name="animation">The sprite animation to start.</param>
         public virtual void StartAnimation(SpriteAnimation animation)
         {
+            // Set the flipX property of the sprite renderer to false
             _animator.SpriteRenderer.flipX = false;
         }
 
+        /// <summary>
+        /// Stops the animation and clears all the frame index actions, frame ID actions, and the on end action.
+        /// </summary>
         public virtual void StopAnimation()
         {
+            // Clear the frame index actions
             _frameIndexActions.Clear();
+
+            // Clear the frame ID actions
             _frameIdActions.Clear();
+
+            // Set the on end action to null
             _onEndAction = null;
+
+            ClearFramePlayedListeners();
         }
 
-        public virtual void Tick(float deltaTime)
-        {
-
-        }
+        /// <summary>
+        /// The method called every time the animator should evaluate if the frame must be changed.
+        /// </summary>
+        /// <param name="deltaTime">The time elapsed since the last tick.</param>
+        public abstract void Tick(float deltaTime);
 
         /// <summary>
         /// Validates if the animation should be played.
@@ -103,7 +147,7 @@ namespace SpriteAnimations
         /// <param name="frameIndex">The index of the frame.</param>
         /// <param name="action">The action to be performed.</param>
         /// <returns>The SpriteAnimationPerformer instance.</returns>
-        public AnimationPerformer SetOnFrame(int frameIndex, UnityAction action)
+        public AnimationPerformer SetOnFrame(int frameIndex, UnityAction<Frame> action)
         {
             _frameIndexActions[frameIndex] = action;
             return this;
@@ -115,7 +159,7 @@ namespace SpriteAnimations
         /// <param name="id">The frame ID.</param>
         /// <param name="action">The UnityAction to be invoked.</param>
         /// <returns>The updated PerformerSingle instance.</returns>
-        public AnimationPerformer SetOnFrame(string id, UnityAction action)
+        public AnimationPerformer SetOnFrame(string id, UnityAction<Frame> action)
         {
             _frameIdActions[id] = action;
             return this;

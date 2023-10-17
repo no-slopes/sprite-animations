@@ -37,7 +37,7 @@ namespace SpriteAnimations.Editor
         public string AnimationName => _animationNameField.value;
 
         public SpriteAnimation Animation => _animation;
-        public abstract SpriteAnimationType AnimationType { get; }
+        public abstract AnimationType AnimationType { get; }
 
         #endregion
 

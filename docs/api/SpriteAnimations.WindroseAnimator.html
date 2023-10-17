@@ -195,15 +195,27 @@
                   </div>
             
                   <div>
+                          <xref uid="SpriteAnimations.AnimationPerformer.FramePlayed" text="AnimationPerformer.FramePlayed" alt="SpriteAnimations.AnimationPerformer.FramePlayed"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.AnimationPerformer.InvokeFramePlayed(System.Int32,SpriteAnimations.Frame)" text="AnimationPerformer.InvokeFramePlayed(int, Frame)" alt="SpriteAnimations.AnimationPerformer.InvokeFramePlayed(int, SpriteAnimations.Frame)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners" text="AnimationPerformer.ClearFramePlayedListeners()" alt="SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners()"/>
+                  </div>
+            
+                  <div>
                           <xref uid="SpriteAnimations.AnimationPerformer.ValidateAnimation(SpriteAnimations.SpriteAnimation)" text="AnimationPerformer.ValidateAnimation(SpriteAnimation)" alt="SpriteAnimations.AnimationPerformer.ValidateAnimation(SpriteAnimations.SpriteAnimation)"/>
                   </div>
             
                   <div>
-                          <xref uid="SpriteAnimations.AnimationPerformer.SetOnFrame(System.Int32,UnityEngine.Events.UnityAction)" text="AnimationPerformer.SetOnFrame(int, UnityAction)" alt="SpriteAnimations.AnimationPerformer.SetOnFrame(int, UnityEngine.Events.UnityAction)"/>
+                          <xref uid="SpriteAnimations.AnimationPerformer.SetOnFrame(System.Int32,UnityEngine.Events.UnityAction{SpriteAnimations.Frame})" text="AnimationPerformer.SetOnFrame(int, UnityAction&lt;Frame&gt;)" alt="SpriteAnimations.AnimationPerformer.SetOnFrame(int, UnityEngine.Events.UnityAction&lt;SpriteAnimations.Frame&gt;)"/>
                   </div>
             
                   <div>
-                          <xref uid="SpriteAnimations.AnimationPerformer.SetOnFrame(System.String,UnityEngine.Events.UnityAction)" text="AnimationPerformer.SetOnFrame(string, UnityAction)" alt="SpriteAnimations.AnimationPerformer.SetOnFrame(string, UnityEngine.Events.UnityAction)"/>
+                          <xref uid="SpriteAnimations.AnimationPerformer.SetOnFrame(System.String,UnityEngine.Events.UnityAction{SpriteAnimations.Frame})" text="AnimationPerformer.SetOnFrame(string, UnityAction&lt;Frame&gt;)" alt="SpriteAnimations.AnimationPerformer.SetOnFrame(string, UnityEngine.Events.UnityAction&lt;SpriteAnimations.Frame&gt;)"/>
                   </div>
             
                   <div>
@@ -435,7 +447,7 @@
 
   <h3 id="SpriteAnimations_WindroseAnimator_EndAnimation" data-uid="SpriteAnimations.WindroseAnimator.EndAnimation">
   EndAnimation()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L251"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ends the animation at the current frame.</p>
@@ -462,7 +474,7 @@
 
   <h3 id="SpriteAnimations_WindroseAnimator_EndCycle" data-uid="SpriteAnimations.WindroseAnimator.EndCycle">
   EndCycle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L226"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ends the current cycle. In case the animation is loopable, it restarts the cycle.
@@ -490,7 +502,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_WindroseAnimator_EvaluateEnd" data-uid="SpriteAnimations.WindroseAnimator.EvaluateEnd">
   EvaluateEnd()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L210"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -516,7 +528,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_WindroseAnimator_ResetCycle" data-uid="SpriteAnimations.WindroseAnimator.ResetCycle">
   ResetCycle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L239"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L241"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resets the cycle.</p>
@@ -543,7 +555,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_WindroseAnimator_SetDirection_SpriteAnimations_WindroseDirection_SpriteAnimations_WindroseFlipStrategy_" data-uid="SpriteAnimations.WindroseAnimator.SetDirection(SpriteAnimations.WindroseDirection,SpriteAnimations.WindroseFlipStrategy)">
   SetDirection(WindroseDirection, WindroseFlipStrategy)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the direction of the animation.</p>
@@ -585,7 +597,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_WindroseAnimator_SetDirection_UnityEngine_Vector2_SpriteAnimations_WindroseFlipStrategy_" data-uid="SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2,SpriteAnimations.WindroseFlipStrategy)">
   SetDirection(Vector2, WindroseFlipStrategy)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the direction of the animation.</p>
@@ -626,7 +638,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_WindroseAnimator_SetDirection_UnityEngine_Vector2Int_" data-uid="SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int)">
   SetDirection(Vector2Int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Runtime/Scripts/Performers/WindroseAnimator.cs/#L187"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the direction of the animation.</p>

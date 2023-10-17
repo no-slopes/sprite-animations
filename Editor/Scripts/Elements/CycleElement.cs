@@ -9,7 +9,7 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private SpriteAnimationCycle _cycle;
+        private Cycle _cycle;
 
         private ScrollView _scrollView;
         private VisualElement _scrollViewContentContainer;
@@ -23,7 +23,7 @@ namespace SpriteAnimations.Editor
 
         #region Properties
 
-        public SpriteAnimationCycle Cycle
+        public Cycle Cycle
         {
             get => _cycle;
             set
@@ -38,7 +38,7 @@ namespace SpriteAnimations.Editor
         #region Getters
 
         public int Size => _cycle.Size;
-        public List<SpriteAnimationFrame> Frames => _cycle.Frames;
+        public List<Frame> Frames => _cycle.Frames;
         public ScrollView ScrollView => _scrollView;
 
         #endregion
@@ -74,7 +74,7 @@ namespace SpriteAnimations.Editor
 
         #region Flow
 
-        public void Initialize(SpriteAnimationCycle cycle)
+        public void Initialize(Cycle cycle)
         {
             _cycle = cycle;
 
@@ -104,7 +104,7 @@ namespace SpriteAnimations.Editor
             frameAtA.Index = b;
             frameAtB.Index = a;
 
-            SpriteAnimationFrame temp = _cycle.Frames[a];
+            Frame temp = _cycle.Frames[a];
             _cycle.Frames[a] = _cycle.Frames[b];
             _cycle.Frames[b] = temp;
 
@@ -140,7 +140,7 @@ namespace SpriteAnimations.Editor
         {
             int index = _cycle.Size;
 
-            SpriteAnimationFrame frame = new()
+            Frame frame = new()
             {
                 Index = index
             };
@@ -152,7 +152,7 @@ namespace SpriteAnimations.Editor
         {
             int index = _cycle.Size;
 
-            SpriteAnimationFrame frame = new()
+            Frame frame = new()
             {
                 Index = index,
                 Sprite = sprite
@@ -161,7 +161,7 @@ namespace SpriteAnimations.Editor
             AddFrame(index, frame);
         }
 
-        private void AddFrame(int index, SpriteAnimationFrame frame)
+        private void AddFrame(int index, Frame frame)
         {
             FrameElement frameElement = new(this, index, frame);
 
@@ -187,7 +187,7 @@ namespace SpriteAnimations.Editor
 
             for (int i = 0; i < sprites.Count; i++)
             {
-                SpriteAnimationFrame frame = new()
+                Frame frame = new()
                 {
                     Index = i,
                     Sprite = sprites[i],

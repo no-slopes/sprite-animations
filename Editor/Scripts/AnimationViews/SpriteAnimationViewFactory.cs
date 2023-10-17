@@ -5,9 +5,9 @@ namespace SpriteAnimations.Editor
 {
     public class SpriteAnimationViewFactory
     {
-        private Dictionary<SpriteAnimationType, SpriteAnimationView> _views = new();
+        private Dictionary<AnimationType, SpriteAnimationView> _views = new();
 
-        public SpriteAnimationView GetView(SpriteAnimationType animationType)
+        public SpriteAnimationView GetView(AnimationType animationType)
         {
             if (!_views.TryGetValue(animationType, out SpriteAnimationView view))
             {
@@ -17,12 +17,12 @@ namespace SpriteAnimations.Editor
             return view;
         }
 
-        protected SpriteAnimationView Fabricate(SpriteAnimationType animationType)
+        protected SpriteAnimationView Fabricate(AnimationType animationType)
         {
             SpriteAnimationView view = animationType switch
             {
-                SpriteAnimationType.Simple => new SpriteAnimationViewSimple(),
-                SpriteAnimationType.Windrose => new SpriteAnimationViewWindrose(),
+                AnimationType.Simple => new SpriteAnimationViewSimple(),
+                AnimationType.Windrose => new SpriteAnimationViewWindrose(),
                 _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null),
             };
 

@@ -54,7 +54,7 @@ namespace SpriteAnimations.Editor
 
         #region Animation Type
 
-        private string ResolveAnimationTypeLabel(SpriteAnimationType animationType)
+        private string ResolveAnimationTypeLabel(AnimationType animationType)
         {
             return $"[{animationType}]";
         }

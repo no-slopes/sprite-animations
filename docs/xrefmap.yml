@@ -42,6 +42,19 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.AnimationPerformer.CalculateFrameIndex
   nameWithType: AnimationPerformer.CalculateFrameIndex
+- uid: SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners
+  name: ClearFramePlayedListeners()
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_ClearFramePlayedListeners
+  commentId: M:SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners
+  fullName: SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners()
+  nameWithType: AnimationPerformer.ClearFramePlayedListeners()
+- uid: SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners*
+  name: ClearFramePlayedListeners
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_ClearFramePlayedListeners_
+  commentId: Overload:SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners
+  isSpec: "True"
+  fullName: SpriteAnimations.AnimationPerformer.ClearFramePlayedListeners
+  nameWithType: AnimationPerformer.ClearFramePlayedListeners
 - uid: SpriteAnimations.AnimationPerformer.CurrentCycle
   name: CurrentCycle
   href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_CurrentCycle
@@ -68,6 +81,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.AnimationPerformer.CurrentFrame
   nameWithType: AnimationPerformer.CurrentFrame
+- uid: SpriteAnimations.AnimationPerformer.FramePlayed
+  name: FramePlayed
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_FramePlayed
+  commentId: E:SpriteAnimations.AnimationPerformer.FramePlayed
+  fullName: SpriteAnimations.AnimationPerformer.FramePlayed
+  nameWithType: AnimationPerformer.FramePlayed
 - uid: SpriteAnimations.AnimationPerformer.HasCurrentAnimation
   name: HasCurrentAnimation
   href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_HasCurrentAnimation
@@ -94,6 +113,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.AnimationPerformer.HasCurrentCycle
   nameWithType: AnimationPerformer.HasCurrentCycle
+- uid: SpriteAnimations.AnimationPerformer.InvokeFramePlayed(System.Int32,SpriteAnimations.Frame)
+  name: InvokeFramePlayed(int, Frame)
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_InvokeFramePlayed_System_Int32_SpriteAnimations_Frame_
+  commentId: M:SpriteAnimations.AnimationPerformer.InvokeFramePlayed(System.Int32,SpriteAnimations.Frame)
+  name.vb: InvokeFramePlayed(Integer, Frame)
+  fullName: SpriteAnimations.AnimationPerformer.InvokeFramePlayed(int, SpriteAnimations.Frame)
+  fullName.vb: SpriteAnimations.AnimationPerformer.InvokeFramePlayed(Integer, SpriteAnimations.Frame)
+  nameWithType: AnimationPerformer.InvokeFramePlayed(int, Frame)
+  nameWithType.vb: AnimationPerformer.InvokeFramePlayed(Integer, Frame)
+- uid: SpriteAnimations.AnimationPerformer.InvokeFramePlayed*
+  name: InvokeFramePlayed
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_InvokeFramePlayed_
+  commentId: Overload:SpriteAnimations.AnimationPerformer.InvokeFramePlayed
+  isSpec: "True"
+  fullName: SpriteAnimations.AnimationPerformer.InvokeFramePlayed
+  nameWithType: AnimationPerformer.InvokeFramePlayed
 - uid: SpriteAnimations.AnimationPerformer.OnEnd(UnityEngine.Events.UnityAction)
   name: OnEnd(UnityAction)
   href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_OnEnd_UnityEngine_Events_UnityAction_
@@ -107,24 +142,24 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.AnimationPerformer.OnEnd
   nameWithType: AnimationPerformer.OnEnd
-- uid: SpriteAnimations.AnimationPerformer.SetOnFrame(System.Int32,UnityEngine.Events.UnityAction)
-  name: SetOnFrame(int, UnityAction)
-  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_SetOnFrame_System_Int32_UnityEngine_Events_UnityAction_
-  commentId: M:SpriteAnimations.AnimationPerformer.SetOnFrame(System.Int32,UnityEngine.Events.UnityAction)
-  name.vb: SetOnFrame(Integer, UnityAction)
-  fullName: SpriteAnimations.AnimationPerformer.SetOnFrame(int, UnityEngine.Events.UnityAction)
-  fullName.vb: SpriteAnimations.AnimationPerformer.SetOnFrame(Integer, UnityEngine.Events.UnityAction)
-  nameWithType: AnimationPerformer.SetOnFrame(int, UnityAction)
-  nameWithType.vb: AnimationPerformer.SetOnFrame(Integer, UnityAction)
-- uid: SpriteAnimations.AnimationPerformer.SetOnFrame(System.String,UnityEngine.Events.UnityAction)
-  name: SetOnFrame(string, UnityAction)
-  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_SetOnFrame_System_String_UnityEngine_Events_UnityAction_
-  commentId: M:SpriteAnimations.AnimationPerformer.SetOnFrame(System.String,UnityEngine.Events.UnityAction)
-  name.vb: SetOnFrame(String, UnityAction)
-  fullName: SpriteAnimations.AnimationPerformer.SetOnFrame(string, UnityEngine.Events.UnityAction)
-  fullName.vb: SpriteAnimations.AnimationPerformer.SetOnFrame(String, UnityEngine.Events.UnityAction)
-  nameWithType: AnimationPerformer.SetOnFrame(string, UnityAction)
-  nameWithType.vb: AnimationPerformer.SetOnFrame(String, UnityAction)
+- uid: SpriteAnimations.AnimationPerformer.SetOnFrame(System.Int32,UnityEngine.Events.UnityAction{SpriteAnimations.Frame})
+  name: SetOnFrame(int, UnityAction<Frame>)
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_SetOnFrame_System_Int32_UnityEngine_Events_UnityAction_SpriteAnimations_Frame__
+  commentId: M:SpriteAnimations.AnimationPerformer.SetOnFrame(System.Int32,UnityEngine.Events.UnityAction{SpriteAnimations.Frame})
+  name.vb: SetOnFrame(Integer, UnityAction(Of Frame))
+  fullName: SpriteAnimations.AnimationPerformer.SetOnFrame(int, UnityEngine.Events.UnityAction<SpriteAnimations.Frame>)
+  fullName.vb: SpriteAnimations.AnimationPerformer.SetOnFrame(Integer, UnityEngine.Events.UnityAction(Of SpriteAnimations.Frame))
+  nameWithType: AnimationPerformer.SetOnFrame(int, UnityAction<Frame>)
+  nameWithType.vb: AnimationPerformer.SetOnFrame(Integer, UnityAction(Of Frame))
+- uid: SpriteAnimations.AnimationPerformer.SetOnFrame(System.String,UnityEngine.Events.UnityAction{SpriteAnimations.Frame})
+  name: SetOnFrame(string, UnityAction<Frame>)
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_SetOnFrame_System_String_UnityEngine_Events_UnityAction_SpriteAnimations_Frame__
+  commentId: M:SpriteAnimations.AnimationPerformer.SetOnFrame(System.String,UnityEngine.Events.UnityAction{SpriteAnimations.Frame})
+  name.vb: SetOnFrame(String, UnityAction(Of Frame))
+  fullName: SpriteAnimations.AnimationPerformer.SetOnFrame(string, UnityEngine.Events.UnityAction<SpriteAnimations.Frame>)
+  fullName.vb: SpriteAnimations.AnimationPerformer.SetOnFrame(String, UnityEngine.Events.UnityAction(Of SpriteAnimations.Frame))
+  nameWithType: AnimationPerformer.SetOnFrame(string, UnityAction<Frame>)
+  nameWithType.vb: AnimationPerformer.SetOnFrame(String, UnityAction(Of Frame))
 - uid: SpriteAnimations.AnimationPerformer.SetOnFrame*
   name: SetOnFrame
   href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer_SetOnFrame_
@@ -241,6 +276,24 @@ references:
   commentId: F:SpriteAnimations.AnimationPerformer._onEndAction
   fullName: SpriteAnimations.AnimationPerformer._onEndAction
   nameWithType: AnimationPerformer._onEndAction
+- uid: SpriteAnimations.AnimationType
+  name: AnimationType
+  href: api/SpriteAnimations.AnimationType.html
+  commentId: T:SpriteAnimations.AnimationType
+  fullName: SpriteAnimations.AnimationType
+  nameWithType: AnimationType
+- uid: SpriteAnimations.AnimationType.Simple
+  name: Simple
+  href: api/SpriteAnimations.AnimationType.html#SpriteAnimations_AnimationType_Simple
+  commentId: F:SpriteAnimations.AnimationType.Simple
+  fullName: SpriteAnimations.AnimationType.Simple
+  nameWithType: AnimationType.Simple
+- uid: SpriteAnimations.AnimationType.Windrose
+  name: Windrose
+  href: api/SpriteAnimations.AnimationType.html#SpriteAnimations_AnimationType_Windrose
+  commentId: F:SpriteAnimations.AnimationType.Windrose
+  fullName: SpriteAnimations.AnimationType.Windrose
+  nameWithType: AnimationType.Windrose
 - uid: SpriteAnimations.AnimatorState
   name: AnimatorState
   href: api/SpriteAnimations.AnimatorState.html
@@ -265,6 +318,98 @@ references:
   commentId: F:SpriteAnimations.AnimatorState.Stopped
   fullName: SpriteAnimations.AnimatorState.Stopped
   nameWithType: AnimatorState.Stopped
+- uid: SpriteAnimations.Cycle
+  name: Cycle
+  href: api/SpriteAnimations.Cycle.html
+  commentId: T:SpriteAnimations.Cycle
+  fullName: SpriteAnimations.Cycle
+  nameWithType: Cycle
+- uid: SpriteAnimations.Cycle.#ctor
+  name: Cycle()
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle__ctor
+  commentId: M:SpriteAnimations.Cycle.#ctor
+  name.vb: New()
+  fullName: SpriteAnimations.Cycle.Cycle()
+  fullName.vb: SpriteAnimations.Cycle.New()
+  nameWithType: Cycle.Cycle()
+  nameWithType.vb: Cycle.New()
+- uid: SpriteAnimations.Cycle.#ctor*
+  name: Cycle
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle__ctor_
+  commentId: Overload:SpriteAnimations.Cycle.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SpriteAnimations.Cycle.Cycle
+  fullName.vb: SpriteAnimations.Cycle.New
+  nameWithType: Cycle.Cycle
+  nameWithType.vb: Cycle.New
+- uid: SpriteAnimations.Cycle.CalculateDuration(System.Single)
+  name: CalculateDuration(float)
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_CalculateDuration_System_Single_
+  commentId: M:SpriteAnimations.Cycle.CalculateDuration(System.Single)
+  name.vb: CalculateDuration(Single)
+  fullName: SpriteAnimations.Cycle.CalculateDuration(float)
+  fullName.vb: SpriteAnimations.Cycle.CalculateDuration(Single)
+  nameWithType: Cycle.CalculateDuration(float)
+  nameWithType.vb: Cycle.CalculateDuration(Single)
+- uid: SpriteAnimations.Cycle.CalculateDuration*
+  name: CalculateDuration
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_CalculateDuration_
+  commentId: Overload:SpriteAnimations.Cycle.CalculateDuration
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.CalculateDuration
+  nameWithType: Cycle.CalculateDuration
+- uid: SpriteAnimations.Cycle.Frames
+  name: Frames
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Frames
+  commentId: P:SpriteAnimations.Cycle.Frames
+  fullName: SpriteAnimations.Cycle.Frames
+  nameWithType: Cycle.Frames
+- uid: SpriteAnimations.Cycle.Frames*
+  name: Frames
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Frames_
+  commentId: Overload:SpriteAnimations.Cycle.Frames
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.Frames
+  nameWithType: Cycle.Frames
+- uid: SpriteAnimations.Cycle.Identifiable
+  name: Identifiable
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Identifiable
+  commentId: P:SpriteAnimations.Cycle.Identifiable
+  fullName: SpriteAnimations.Cycle.Identifiable
+  nameWithType: Cycle.Identifiable
+- uid: SpriteAnimations.Cycle.Identifiable*
+  name: Identifiable
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Identifiable_
+  commentId: Overload:SpriteAnimations.Cycle.Identifiable
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.Identifiable
+  nameWithType: Cycle.Identifiable
+- uid: SpriteAnimations.Cycle.Size
+  name: Size
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Size
+  commentId: P:SpriteAnimations.Cycle.Size
+  fullName: SpriteAnimations.Cycle.Size
+  nameWithType: Cycle.Size
+- uid: SpriteAnimations.Cycle.Size*
+  name: Size
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Size_
+  commentId: Overload:SpriteAnimations.Cycle.Size
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.Size
+  nameWithType: Cycle.Size
+- uid: SpriteAnimations.Cycle._frames
+  name: _frames
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle__frames
+  commentId: F:SpriteAnimations.Cycle._frames
+  fullName: SpriteAnimations.Cycle._frames
+  nameWithType: Cycle._frames
+- uid: SpriteAnimations.Cycle._identifiable
+  name: _identifiable
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle__identifiable
+  commentId: F:SpriteAnimations.Cycle._identifiable
+  fullName: SpriteAnimations.Cycle._identifiable
+  nameWithType: Cycle._identifiable
 - uid: SpriteAnimations.Editor
   name: SpriteAnimations.Editor
   href: api/SpriteAnimations.Editor.html
@@ -802,12 +947,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.CycleElement.HighlightDropArea
   nameWithType: CycleElement.HighlightDropArea
-- uid: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.SpriteAnimationCycle)
-  name: Initialize(SpriteAnimationCycle)
-  href: api/SpriteAnimations.Editor.CycleElement.html#SpriteAnimations_Editor_CycleElement_Initialize_SpriteAnimations_SpriteAnimationCycle_
-  commentId: M:SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.SpriteAnimationCycle)
-  fullName: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.SpriteAnimationCycle)
-  nameWithType: CycleElement.Initialize(SpriteAnimationCycle)
+- uid: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle)
+  name: Initialize(Cycle)
+  href: api/SpriteAnimations.Editor.CycleElement.html#SpriteAnimations_Editor_CycleElement_Initialize_SpriteAnimations_Cycle_
+  commentId: M:SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle)
+  fullName: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle)
+  nameWithType: CycleElement.Initialize(Cycle)
 - uid: SpriteAnimations.Editor.CycleElement.Initialize*
   name: Initialize
   href: api/SpriteAnimations.Editor.CycleElement.html#SpriteAnimations_Editor_CycleElement_Initialize_
@@ -931,15 +1076,15 @@ references:
   commentId: T:SpriteAnimations.Editor.FrameElement
   fullName: SpriteAnimations.Editor.FrameElement
   nameWithType: FrameElement
-- uid: SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.SpriteAnimationFrame)
-  name: FrameElement(CycleElement, int, SpriteAnimationFrame)
-  href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement__ctor_SpriteAnimations_Editor_CycleElement_System_Int32_SpriteAnimations_SpriteAnimationFrame_
-  commentId: M:SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.SpriteAnimationFrame)
-  name.vb: New(CycleElement, Integer, SpriteAnimationFrame)
-  fullName: SpriteAnimations.Editor.FrameElement.FrameElement(SpriteAnimations.Editor.CycleElement, int, SpriteAnimations.SpriteAnimationFrame)
-  fullName.vb: SpriteAnimations.Editor.FrameElement.New(SpriteAnimations.Editor.CycleElement, Integer, SpriteAnimations.SpriteAnimationFrame)
-  nameWithType: FrameElement.FrameElement(CycleElement, int, SpriteAnimationFrame)
-  nameWithType.vb: FrameElement.New(CycleElement, Integer, SpriteAnimationFrame)
+- uid: SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.Frame)
+  name: FrameElement(CycleElement, int, Frame)
+  href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement__ctor_SpriteAnimations_Editor_CycleElement_System_Int32_SpriteAnimations_Frame_
+  commentId: M:SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.Frame)
+  name.vb: New(CycleElement, Integer, Frame)
+  fullName: SpriteAnimations.Editor.FrameElement.FrameElement(SpriteAnimations.Editor.CycleElement, int, SpriteAnimations.Frame)
+  fullName.vb: SpriteAnimations.Editor.FrameElement.New(SpriteAnimations.Editor.CycleElement, Integer, SpriteAnimations.Frame)
+  nameWithType: FrameElement.FrameElement(CycleElement, int, Frame)
+  nameWithType.vb: FrameElement.New(CycleElement, Integer, Frame)
 - uid: SpriteAnimations.Editor.FrameElement.#ctor*
   name: FrameElement
   href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement__ctor_
@@ -1298,12 +1443,12 @@ references:
   commentId: T:SpriteAnimations.Editor.SpriteAnimationViewFactory
   fullName: SpriteAnimations.Editor.SpriteAnimationViewFactory
   nameWithType: SpriteAnimationViewFactory
-- uid: SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate(SpriteAnimations.SpriteAnimationType)
-  name: Fabricate(SpriteAnimationType)
-  href: api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html#SpriteAnimations_Editor_SpriteAnimationViewFactory_Fabricate_SpriteAnimations_SpriteAnimationType_
-  commentId: M:SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate(SpriteAnimations.SpriteAnimationType)
-  fullName: SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate(SpriteAnimations.SpriteAnimationType)
-  nameWithType: SpriteAnimationViewFactory.Fabricate(SpriteAnimationType)
+- uid: SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate(SpriteAnimations.AnimationType)
+  name: Fabricate(AnimationType)
+  href: api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html#SpriteAnimations_Editor_SpriteAnimationViewFactory_Fabricate_SpriteAnimations_AnimationType_
+  commentId: M:SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate(SpriteAnimations.AnimationType)
+  fullName: SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate(SpriteAnimations.AnimationType)
+  nameWithType: SpriteAnimationViewFactory.Fabricate(AnimationType)
 - uid: SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate*
   name: Fabricate
   href: api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html#SpriteAnimations_Editor_SpriteAnimationViewFactory_Fabricate_
@@ -1311,12 +1456,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.SpriteAnimationViewFactory.Fabricate
   nameWithType: SpriteAnimationViewFactory.Fabricate
-- uid: SpriteAnimations.Editor.SpriteAnimationViewFactory.GetView(SpriteAnimations.SpriteAnimationType)
-  name: GetView(SpriteAnimationType)
-  href: api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html#SpriteAnimations_Editor_SpriteAnimationViewFactory_GetView_SpriteAnimations_SpriteAnimationType_
-  commentId: M:SpriteAnimations.Editor.SpriteAnimationViewFactory.GetView(SpriteAnimations.SpriteAnimationType)
-  fullName: SpriteAnimations.Editor.SpriteAnimationViewFactory.GetView(SpriteAnimations.SpriteAnimationType)
-  nameWithType: SpriteAnimationViewFactory.GetView(SpriteAnimationType)
+- uid: SpriteAnimations.Editor.SpriteAnimationViewFactory.GetView(SpriteAnimations.AnimationType)
+  name: GetView(AnimationType)
+  href: api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html#SpriteAnimations_Editor_SpriteAnimationViewFactory_GetView_SpriteAnimations_AnimationType_
+  commentId: M:SpriteAnimations.Editor.SpriteAnimationViewFactory.GetView(SpriteAnimations.AnimationType)
+  fullName: SpriteAnimations.Editor.SpriteAnimationViewFactory.GetView(SpriteAnimations.AnimationType)
+  nameWithType: SpriteAnimationViewFactory.GetView(AnimationType)
 - uid: SpriteAnimations.Editor.SpriteAnimationViewFactory.GetView*
   name: GetView
   href: api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html#SpriteAnimations_Editor_SpriteAnimationViewFactory_GetView_
@@ -1521,6 +1666,75 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.WindroseSelectorElement.Initialize
   nameWithType: WindroseSelectorElement.Initialize
+- uid: SpriteAnimations.Frame
+  name: Frame
+  href: api/SpriteAnimations.Frame.html
+  commentId: T:SpriteAnimations.Frame
+  fullName: SpriteAnimations.Frame
+  nameWithType: Frame
+- uid: SpriteAnimations.Frame.Id
+  name: Id
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Id
+  commentId: P:SpriteAnimations.Frame.Id
+  fullName: SpriteAnimations.Frame.Id
+  nameWithType: Frame.Id
+- uid: SpriteAnimations.Frame.Id*
+  name: Id
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Id_
+  commentId: Overload:SpriteAnimations.Frame.Id
+  isSpec: "True"
+  fullName: SpriteAnimations.Frame.Id
+  nameWithType: Frame.Id
+- uid: SpriteAnimations.Frame.Index
+  name: Index
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Index
+  commentId: P:SpriteAnimations.Frame.Index
+  fullName: SpriteAnimations.Frame.Index
+  nameWithType: Frame.Index
+- uid: SpriteAnimations.Frame.Index*
+  name: Index
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Index_
+  commentId: Overload:SpriteAnimations.Frame.Index
+  isSpec: "True"
+  fullName: SpriteAnimations.Frame.Index
+  nameWithType: Frame.Index
+- uid: SpriteAnimations.Frame.Sprite
+  name: Sprite
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Sprite
+  commentId: P:SpriteAnimations.Frame.Sprite
+  fullName: SpriteAnimations.Frame.Sprite
+  nameWithType: Frame.Sprite
+- uid: SpriteAnimations.Frame.Sprite*
+  name: Sprite
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Sprite_
+  commentId: Overload:SpriteAnimations.Frame.Sprite
+  isSpec: "True"
+  fullName: SpriteAnimations.Frame.Sprite
+  nameWithType: Frame.Sprite
+- uid: SpriteAnimations.Frame._id
+  name: _id
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame__id
+  commentId: F:SpriteAnimations.Frame._id
+  fullName: SpriteAnimations.Frame._id
+  nameWithType: Frame._id
+- uid: SpriteAnimations.Frame._index
+  name: _index
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame__index
+  commentId: F:SpriteAnimations.Frame._index
+  fullName: SpriteAnimations.Frame._index
+  nameWithType: Frame._index
+- uid: SpriteAnimations.Frame._sprite
+  name: _sprite
+  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame__sprite
+  commentId: F:SpriteAnimations.Frame._sprite
+  fullName: SpriteAnimations.Frame._sprite
+  nameWithType: Frame._sprite
+- uid: SpriteAnimations.FramePlayedEvent
+  name: FramePlayedEvent
+  href: api/SpriteAnimations.FramePlayedEvent.html
+  commentId: T:SpriteAnimations.FramePlayedEvent
+  fullName: SpriteAnimations.FramePlayedEvent
+  nameWithType: FramePlayedEvent
 - uid: SpriteAnimations.Logger
   name: Logger
   href: api/SpriteAnimations.Logger.html
@@ -1856,161 +2070,6 @@ references:
   commentId: F:SpriteAnimations.SpriteAnimation._fps
   fullName: SpriteAnimations.SpriteAnimation._fps
   nameWithType: SpriteAnimation._fps
-- uid: SpriteAnimations.SpriteAnimationCycle
-  name: SpriteAnimationCycle
-  href: api/SpriteAnimations.SpriteAnimationCycle.html
-  commentId: T:SpriteAnimations.SpriteAnimationCycle
-  fullName: SpriteAnimations.SpriteAnimationCycle
-  nameWithType: SpriteAnimationCycle
-- uid: SpriteAnimations.SpriteAnimationCycle.#ctor
-  name: SpriteAnimationCycle()
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle__ctor
-  commentId: M:SpriteAnimations.SpriteAnimationCycle.#ctor
-  name.vb: New()
-  fullName: SpriteAnimations.SpriteAnimationCycle.SpriteAnimationCycle()
-  fullName.vb: SpriteAnimations.SpriteAnimationCycle.New()
-  nameWithType: SpriteAnimationCycle.SpriteAnimationCycle()
-  nameWithType.vb: SpriteAnimationCycle.New()
-- uid: SpriteAnimations.SpriteAnimationCycle.#ctor*
-  name: SpriteAnimationCycle
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle__ctor_
-  commentId: Overload:SpriteAnimations.SpriteAnimationCycle.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: SpriteAnimations.SpriteAnimationCycle.SpriteAnimationCycle
-  fullName.vb: SpriteAnimations.SpriteAnimationCycle.New
-  nameWithType: SpriteAnimationCycle.SpriteAnimationCycle
-  nameWithType.vb: SpriteAnimationCycle.New
-- uid: SpriteAnimations.SpriteAnimationCycle.CalculateDuration(System.Single)
-  name: CalculateDuration(float)
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_CalculateDuration_System_Single_
-  commentId: M:SpriteAnimations.SpriteAnimationCycle.CalculateDuration(System.Single)
-  name.vb: CalculateDuration(Single)
-  fullName: SpriteAnimations.SpriteAnimationCycle.CalculateDuration(float)
-  fullName.vb: SpriteAnimations.SpriteAnimationCycle.CalculateDuration(Single)
-  nameWithType: SpriteAnimationCycle.CalculateDuration(float)
-  nameWithType.vb: SpriteAnimationCycle.CalculateDuration(Single)
-- uid: SpriteAnimations.SpriteAnimationCycle.CalculateDuration*
-  name: CalculateDuration
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_CalculateDuration_
-  commentId: Overload:SpriteAnimations.SpriteAnimationCycle.CalculateDuration
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationCycle.CalculateDuration
-  nameWithType: SpriteAnimationCycle.CalculateDuration
-- uid: SpriteAnimations.SpriteAnimationCycle.Frames
-  name: Frames
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_Frames
-  commentId: P:SpriteAnimations.SpriteAnimationCycle.Frames
-  fullName: SpriteAnimations.SpriteAnimationCycle.Frames
-  nameWithType: SpriteAnimationCycle.Frames
-- uid: SpriteAnimations.SpriteAnimationCycle.Frames*
-  name: Frames
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_Frames_
-  commentId: Overload:SpriteAnimations.SpriteAnimationCycle.Frames
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationCycle.Frames
-  nameWithType: SpriteAnimationCycle.Frames
-- uid: SpriteAnimations.SpriteAnimationCycle.Identifiable
-  name: Identifiable
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_Identifiable
-  commentId: P:SpriteAnimations.SpriteAnimationCycle.Identifiable
-  fullName: SpriteAnimations.SpriteAnimationCycle.Identifiable
-  nameWithType: SpriteAnimationCycle.Identifiable
-- uid: SpriteAnimations.SpriteAnimationCycle.Identifiable*
-  name: Identifiable
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_Identifiable_
-  commentId: Overload:SpriteAnimations.SpriteAnimationCycle.Identifiable
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationCycle.Identifiable
-  nameWithType: SpriteAnimationCycle.Identifiable
-- uid: SpriteAnimations.SpriteAnimationCycle.Size
-  name: Size
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_Size
-  commentId: P:SpriteAnimations.SpriteAnimationCycle.Size
-  fullName: SpriteAnimations.SpriteAnimationCycle.Size
-  nameWithType: SpriteAnimationCycle.Size
-- uid: SpriteAnimations.SpriteAnimationCycle.Size*
-  name: Size
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle_Size_
-  commentId: Overload:SpriteAnimations.SpriteAnimationCycle.Size
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationCycle.Size
-  nameWithType: SpriteAnimationCycle.Size
-- uid: SpriteAnimations.SpriteAnimationCycle._frames
-  name: _frames
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle__frames
-  commentId: F:SpriteAnimations.SpriteAnimationCycle._frames
-  fullName: SpriteAnimations.SpriteAnimationCycle._frames
-  nameWithType: SpriteAnimationCycle._frames
-- uid: SpriteAnimations.SpriteAnimationCycle._identifiable
-  name: _identifiable
-  href: api/SpriteAnimations.SpriteAnimationCycle.html#SpriteAnimations_SpriteAnimationCycle__identifiable
-  commentId: F:SpriteAnimations.SpriteAnimationCycle._identifiable
-  fullName: SpriteAnimations.SpriteAnimationCycle._identifiable
-  nameWithType: SpriteAnimationCycle._identifiable
-- uid: SpriteAnimations.SpriteAnimationFrame
-  name: SpriteAnimationFrame
-  href: api/SpriteAnimations.SpriteAnimationFrame.html
-  commentId: T:SpriteAnimations.SpriteAnimationFrame
-  fullName: SpriteAnimations.SpriteAnimationFrame
-  nameWithType: SpriteAnimationFrame
-- uid: SpriteAnimations.SpriteAnimationFrame.Id
-  name: Id
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame_Id
-  commentId: P:SpriteAnimations.SpriteAnimationFrame.Id
-  fullName: SpriteAnimations.SpriteAnimationFrame.Id
-  nameWithType: SpriteAnimationFrame.Id
-- uid: SpriteAnimations.SpriteAnimationFrame.Id*
-  name: Id
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame_Id_
-  commentId: Overload:SpriteAnimations.SpriteAnimationFrame.Id
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationFrame.Id
-  nameWithType: SpriteAnimationFrame.Id
-- uid: SpriteAnimations.SpriteAnimationFrame.Index
-  name: Index
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame_Index
-  commentId: P:SpriteAnimations.SpriteAnimationFrame.Index
-  fullName: SpriteAnimations.SpriteAnimationFrame.Index
-  nameWithType: SpriteAnimationFrame.Index
-- uid: SpriteAnimations.SpriteAnimationFrame.Index*
-  name: Index
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame_Index_
-  commentId: Overload:SpriteAnimations.SpriteAnimationFrame.Index
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationFrame.Index
-  nameWithType: SpriteAnimationFrame.Index
-- uid: SpriteAnimations.SpriteAnimationFrame.Sprite
-  name: Sprite
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame_Sprite
-  commentId: P:SpriteAnimations.SpriteAnimationFrame.Sprite
-  fullName: SpriteAnimations.SpriteAnimationFrame.Sprite
-  nameWithType: SpriteAnimationFrame.Sprite
-- uid: SpriteAnimations.SpriteAnimationFrame.Sprite*
-  name: Sprite
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame_Sprite_
-  commentId: Overload:SpriteAnimations.SpriteAnimationFrame.Sprite
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationFrame.Sprite
-  nameWithType: SpriteAnimationFrame.Sprite
-- uid: SpriteAnimations.SpriteAnimationFrame._id
-  name: _id
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame__id
-  commentId: F:SpriteAnimations.SpriteAnimationFrame._id
-  fullName: SpriteAnimations.SpriteAnimationFrame._id
-  nameWithType: SpriteAnimationFrame._id
-- uid: SpriteAnimations.SpriteAnimationFrame._index
-  name: _index
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame__index
-  commentId: F:SpriteAnimations.SpriteAnimationFrame._index
-  fullName: SpriteAnimations.SpriteAnimationFrame._index
-  nameWithType: SpriteAnimationFrame._index
-- uid: SpriteAnimations.SpriteAnimationFrame._sprite
-  name: _sprite
-  href: api/SpriteAnimations.SpriteAnimationFrame.html#SpriteAnimations_SpriteAnimationFrame__sprite
-  commentId: F:SpriteAnimations.SpriteAnimationFrame._sprite
-  fullName: SpriteAnimations.SpriteAnimationFrame._sprite
-  nameWithType: SpriteAnimationFrame._sprite
 - uid: SpriteAnimations.SpriteAnimationSimple
   name: SpriteAnimationSimple
   href: api/SpriteAnimations.SpriteAnimationSimple.html
@@ -2235,15 +2294,15 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationWindrose.PerformerType
   nameWithType: SpriteAnimationWindrose.PerformerType
-- uid: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection,SpriteAnimations.SpriteAnimationCycle@)
-  name: TryGetCycle(WindroseDirection, out SpriteAnimationCycle)
-  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_TryGetCycle_SpriteAnimations_WindroseDirection_SpriteAnimations_SpriteAnimationCycle__
-  commentId: M:SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection,SpriteAnimations.SpriteAnimationCycle@)
-  name.vb: TryGetCycle(WindroseDirection, SpriteAnimationCycle)
-  fullName: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection, out SpriteAnimations.SpriteAnimationCycle)
-  fullName.vb: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection, SpriteAnimations.SpriteAnimationCycle)
-  nameWithType: SpriteAnimationWindrose.TryGetCycle(WindroseDirection, out SpriteAnimationCycle)
-  nameWithType.vb: SpriteAnimationWindrose.TryGetCycle(WindroseDirection, SpriteAnimationCycle)
+- uid: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection,SpriteAnimations.Cycle@)
+  name: TryGetCycle(WindroseDirection, out Cycle)
+  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_TryGetCycle_SpriteAnimations_WindroseDirection_SpriteAnimations_Cycle__
+  commentId: M:SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection,SpriteAnimations.Cycle@)
+  name.vb: TryGetCycle(WindroseDirection, Cycle)
+  fullName: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection, out SpriteAnimations.Cycle)
+  fullName.vb: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle(SpriteAnimations.WindroseDirection, SpriteAnimations.Cycle)
+  nameWithType: SpriteAnimationWindrose.TryGetCycle(WindroseDirection, out Cycle)
+  nameWithType.vb: SpriteAnimationWindrose.TryGetCycle(WindroseDirection, Cycle)
 - uid: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle*
   name: TryGetCycle
   href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_TryGetCycle_
