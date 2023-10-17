@@ -17,9 +17,11 @@ https://github.com/no-slopes/sprite-animations/assets/95456621/c9b5d3c5-aba1-415
 - Coding made easy.
 - Perfect for state driven (FSM) characters.
 
+Checkout [how it works](https://no-slopes.github.io/sprite-animations/documentation/how-it-works.html) and give it a try!
+
 ## Key features:
 
-- [Sprite Animator](https://no-slopes.github.io/sprite-animations/documentationsprite-animator/index.html)
+- [Sprite Animator](https://no-slopes.github.io/sprite-animations/documentation/sprite-animator/index.html)
 - [Animations Manager](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html)
 
 ## Check the docs
@@ -37,7 +39,7 @@ tools along the way.
 
 ## The author
 
-My name is Gabriel, ppl know me by Gabo and you can find me as @indiegabo or @indiegabodev in most social medias.
+My name is Gabriel, ppl know me by Gabo and you can find me as @indiegabo or @indiegabodev in most social networks.
 
 ## Special thanks and credits:
 
