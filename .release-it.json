@@ -4,11 +4,6 @@
     "commitMessage": "chore: release v${version}"
   },
   "hooks": {
-    "after:bump": [
-      "npx auto-changelog -p",
-      "mv -f CHANGELOG.md ../sprite-animations-development/docfx_project/documentation/CHANGELOG.md",
-      "docfx ../sprite-animations-development/docfx_project/docfx.json"
-    ],
     "after:release": [
       "echo Successfully released ${name} v${version} to ${repo.repository}."
     ]
