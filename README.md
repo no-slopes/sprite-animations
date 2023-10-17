@@ -6,7 +6,7 @@
 
 A smooth and intuitive way to work with spritesheets in Unity.
 
-![Showcase video](https://user-images.githubusercontent.com/95456621/275359291-0d4a0d30-edce-4287-8588-5d4f1aa63ad1.mp4)
+https://github.com/no-slopes/sprite-animations/assets/95456621/c9b5d3c5-aba1-4150-84fe-ccc2c45ee71e
 
 ## Why bother?
 
