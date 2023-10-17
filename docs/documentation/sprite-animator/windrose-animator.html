@@ -85,7 +85,7 @@
         <article data-uid="">
 <h1 id="the-windroseanimator">The WindroseAnimator</h1>
 
-<p>This is the performer for <a href="../animations-manager/types-of-animations.html#windrose-animation">Windrose Animations</a>.</p>
+<p>This is the performer for <a href="../animations/windrose-animation.html">Windrose Animations</a>.</p>
 <p>In addition to allowing the usage of <code>SetOnFrame()</code> and <code>OnEnd()</code> methods, the WindroseAnimator allows you to set the direction in wich you
 want that animation to played.</p>
 <p>You can set direction by telling an specific direction of the <a href="https://no-slopes.github.io/sprite-animationsSpriteAnimations.WindroseDirection.html">WindroseDirection enum</a>:</p>
@@ -174,7 +174,7 @@ public class WalkPlayer : MonoBehaviour
     }
 
     // This would be called whenenever new input is recognized
-    public void ChangeDirection(Vector newDirection)
+    public void ChangeDirection(Vector2 newDirection)
     {
         _performer?.SetDirection(newDirection);
     }

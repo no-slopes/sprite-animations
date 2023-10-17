@@ -85,9 +85,31 @@
         <article data-uid="">
 <h1 id="the-singleanimator">The SingleAnimator</h1>
 
-<p>This is the performer for <a href="../animations-manager/types-of-animations.html#single-animation">Single Animations</a>.</p>
-<p>As <a href="../animations-manager/types-of-animations.html#single-animation">Single Animations</a> are the most basic type of animation we have,
+<p>This is the performer for <a href="../animations/single-animation.html">Single Animations</a>.</p>
+<p>As <a href="../animations/single-animation.html">Single Animations</a> are the most basic type of animation we have,
 its performer goes as far as allowing you to use the <code>SetOnFrame()</code> and <code>OnEnd()</code> methods to register Frame Actions.</p>
+<pre><code class="lang-csharp">private SingleAnimator _perfomer;
+
+private void Start()
+{
+    _perfomer = _animator.Play&lt;SingleAnimator&gt;(&quot;Idle&quot;);
+    _performer.OnEnd(() =&gt; { Debug.Log(&quot;The animation ended.&quot;); })
+}
+</code></pre>
+<pre><code class="lang-csharp">private SingleAnimator _perfomer;
+
+private void Start()
+{
+    _perfomer = _animator.Play&lt;SingleAnimator&gt;(&quot;Idle&quot;);
+    _performer.SetOnFrame(3, ()=&gt;
+    {
+        Debug.Log(&quot;Frame indexed as 3 played.&quot;);
+    }).OnEnd(() =&gt;
+    {
+        Debug.Log(&quot;The animation ended.&quot;);
+    });
+}
+</code></pre>
 </article>
 
 

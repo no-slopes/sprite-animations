@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Animation Performers | Sprite Animations </title>
+      <title>Types of animations | Sprite Animations </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Animation Performers | Sprite Animations ">
+      <meta name="title" content="Types of animations | Sprite Animations ">
       
       <link rel="icon" href="../../images/favicon.ico">
       <link rel="stylesheet" href="../../public/docfx.min.css">
@@ -15,7 +15,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/blob/develop/docfx_project/documentation/sprite-animator/performers.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations-development/blob/develop/docfx_project/documentation/animations/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -83,52 +83,14 @@
         </div>
 
         <article data-uid="">
-<h1 id="animation-performers">Animation Performers</h1>
+<h1 id="types-of-animations">Types of animations</h1>
 
-<p>Since we need different <a href="../animations/index.html">types of animations</a> in order to create the intended quality of life of the Sprite Animations solution, the <a href="index.html">Sprite Animator</a> delegates the execution of the animation to a performer wich knows exactly how to interact with that animation. So, depending on the type of the animation, the <a href="https://no-slopes.github.io/sprite-animations/api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_Play_System_String_">Play()</a> method will return a different <a href="https://no-slopes.github.io/sprite-animations/api/SpriteAnimations.AnimationPerformer.html">AnimationPerformer</a> based on the type of the animation requested.</p>
-<p>Although all animations performers share basic features, it is important to know how you can interact with specific performers based on the type of animation
-you are telling the <a href="index.html">Sprite Animator</a> to play.</p>
-<h2 id="accessing-performers">Accessing performers</h2>
-<pre><code class="lang-csharp">private AnimationPerformer _perfomer;
-
-private void Start()
-{
-    _perfomer = _animator.Play(&quot;Idle&quot;);
-    _performer.OnEnd(() =&gt; { Debug.Log(&quot;The animation ended.&quot;); })
-}
-</code></pre>
-<p>Yes. It is because of the performer we can chain methods like this:</p>
-<pre><code class="lang-csharp">private void Start()
-{
-    _animator.Play(&quot;Idle&quot;).SetOnFrame(5, ()=&gt;
-    {
-        Debug.Log(&quot;Frame indexed as 5 played.&quot;);
-    }).OnEnd(() =&gt;
-    {
-        Debug.Log(&quot;The animation ended.&quot;);
-    });
-}
-</code></pre>
-<div class="TIP">
-<h5>Tip</h5>
-<p>Chaining methods like this is a design pattern called <a href="https://en.wikipedia.org/wiki/Fluent_interface">Fluent Interface</a></p>
-</div>
-<h2 id="animationperformer-types">AnimationPerformer types</h2>
-<p>There is no need to worry about the AnimationPerfomer type if you only need basic usage for that specific animation. However, if you need specialized features of
-an AnimationPerformer, you will need to access the right type of the desired AnimationPerformer child class.</p>
-<p>For example, this is needed when you want to tell the <a href="windrose-animator.html">WindroseAnimator</a> in wich direction it should play the animation.</p>
-<p>Here are some examples on how you can access the correct performer type</p>
-<h5 id="the-no-slopes-preferred-way">The &quot;No Slopes preferred&quot; way:</h5>
-<p>Just like you do when using Unity's <a href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject.GetComponent</a> method.</p>
-<pre><code class="lang-csharp">WindroseAnimator windroseAnimator = _animator.Play&lt;WindroseAnimator&gt;(&quot;Idle&quot;);
-</code></pre>
-<p>We prefer this aproach since it already delivers the correct type and makes your code cleaner.</p>
-<h5 id="using-the-as-keyword">Using the &quot;as&quot; keyword:</h5>
-<pre><code class="lang-csharp">WindroseAnimator windroseAnimator = _animator.Play(&quot;Idle&quot;) as WindroseAnimator;
-</code></pre>
-<h5 id="the-explicit-cast-way">The &quot;explicit cast&quot; way:</h5>
-<pre><code class="lang-csharp">WindroseAnimator windroseAnimator = (WindroseAnimator)_animator.Play(&quot;Idle&quot;);
-</code></pre>
+<p>There are currently 2 types of animations available:</p>
+<ul>
+<li><a href="single-animation.html">Single Animation</a></li>
+<li><a href="windrose-animation.html">Windrose Animation</a></li>
+</ul>
+<p>As we are always creating new features and accepting feedback, expect this list to grow.</p>
 </article>
 
 

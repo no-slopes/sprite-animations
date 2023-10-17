@@ -517,16 +517,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/animations-manager/animations.md",
-      "output": {
-        ".html": {
-          "relative_path": "documentation/animations-manager/animations.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "documentation/animations-manager/index.md",
       "output": {
         ".html": {
@@ -537,10 +527,30 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/animations-manager/types-of-animations.md",
+      "source_relative_path": "documentation/animations/index.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/animations-manager/types-of-animations.html"
+          "relative_path": "documentation/animations/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/animations/single-animation.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/animations/single-animation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/animations/windrose-animation.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/animations/windrose-animation.html"
         }
       },
       "version": ""
@@ -630,6 +640,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/creating-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/creating-animation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/dropping-frames.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/dropping-frames.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/favicon.ico",
       "output": {
         "resource": {
@@ -650,10 +680,30 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/frames-list.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/frames-list.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/logo.jpg",
       "output": {
         "resource": {
           "relative_path": "images/logo.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/open-manager-button.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/open-manager-button.png"
         }
       },
       "version": ""
@@ -700,10 +750,40 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/single-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/single-animation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/sprite-animator-component.png",
       "output": {
         "resource": {
           "relative_path": "images/sprite-animator-component.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/tools-menu.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/tools-menu.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/windrose-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/windrose-animation.png"
         }
       },
       "version": ""
