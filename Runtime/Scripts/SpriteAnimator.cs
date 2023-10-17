@@ -273,12 +273,14 @@ namespace SpriteAnimations
             // If the animation is already playing, return the existing animation performer
             if (animation == _currentAnimation)
                 return _performersFactory.Get(animation);
+
             // If the animation is null, log an error and return null
             if (animation == null)
             {
-                Logger.LogError("Could not evaluate an animation to be played. Check animation passed as parameter and the animation frames.", this);
+                Logger.LogError("Trying to play a null animation", this);
                 return null;
             }
+
             // Change the current animation
             ChangeAnimation(animation);
             // Set the state to playing
@@ -312,9 +314,9 @@ namespace SpriteAnimations
         /// </summary>
         public void Stop()
         {
+            _currentPerformer?.StopAnimation(); // Stop current animation.
             _state = AnimatorState.Stopped;
             _stateChanged.Invoke(_state);
-            _currentPerformer?.StopAnimation(); // Stop current animation.
             _currentAnimation = null;
             _currentPerformer = null;
         }
@@ -346,7 +348,7 @@ namespace SpriteAnimations
         /// <returns> The animation or null if not found </returns>
         public SpriteAnimation GetAnimationByName(string name)
         {
-            if (!TryGetAnimationByName(name, out var animation))
+            if (!TryGetAnimationByName(name, out SpriteAnimation animation))
             {
                 return null;
             }
@@ -381,10 +383,6 @@ namespace SpriteAnimations
 
             return _currentAnimation.CalculateDuration();
         }
-
-        #endregion
-
-        #region Enums
 
         #endregion
     }
