@@ -32,3 +32,14 @@ https://github.com/no-slopes/sprite-animations/assets/95456621/c9b5d3c5-aba1-415
 
 We are a small group of game devs / artists building an Indie Game Studio and crafting some
 tools along the way.
+
+## The author
+
+My name is Gabriel, ppl know me by Gabo and you can find me as @indiegabo or @indiegabodev in most social medias.
+
+## Special thanks and credits:
+
+- [DanniBoy](https://www.linkedin.com/in/daniel-souz/) for being my No Slopes associate and desining the logo and icons for the project
+- [Fei]() for providing the spritesheets you see used in showcase videos and images
+- [Cammin](https://github.com/Cammin), creator of [LDtk to Unity](https://github.com/Cammin/LDtkToUnity), for being such a friendly person and giving me directions on how to craft this docs page. BTW if you do not know [LDtk to Unity](https://github.com/Cammin/LDtkToUnity) yet, you should really give it a go if you work with 2D levels in unity. The quality of life this tool provide is insane!
+- [Gabriel Bigardi](https://github.com/GabrielBigardi) for introducing me the concept of changing sprites of a SpriteRenderer directly instead of having Unity's animator to do so.
