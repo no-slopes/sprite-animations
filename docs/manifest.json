@@ -14,6 +14,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.AnimatorState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.AnimatorState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.AnimationCreatedEvent.yml",
       "output": {
         ".html": {

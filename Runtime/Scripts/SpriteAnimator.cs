@@ -42,7 +42,7 @@ namespace SpriteAnimations
 
         [Tooltip("The event that will be invoked when the animator state changes.")]
         [SerializeField]
-        protected UnityEvent<SpriteAnimatorState> _stateChanged;
+        protected UnityEvent<AnimatorState> _stateChanged;
 
         #region Fields
 
@@ -69,22 +69,22 @@ namespace SpriteAnimations
         /// </summary>
         public List<SpriteAnimation> Animations => _spriteAnimations;
 
-        protected SpriteAnimatorState _state = SpriteAnimatorState.Stopped;
+        protected AnimatorState _state = AnimatorState.Stopped;
 
         /// <summary>
         /// Is the animator playing?
         /// </summary>
-        public bool IsPlaying => _state == SpriteAnimatorState.Playing;
+        public bool IsPlaying => _state == AnimatorState.Playing;
 
         /// <summary>
         /// Is The animator paused?
         /// </summary>
-        public bool IsPaused => _state == SpriteAnimatorState.Paused;
+        public bool IsPaused => _state == AnimatorState.Paused;
 
         /// <summary>
         /// Is The animation stopped?
         /// </summary>
-        public bool IsStopped => _state == SpriteAnimatorState.Stopped;
+        public bool IsStopped => _state == AnimatorState.Stopped;
 
         #endregion
 
@@ -93,7 +93,7 @@ namespace SpriteAnimations
         /// <summary>
         /// The current state of the animator.
         /// </summary>
-        public SpriteAnimatorState State => _state;
+        public AnimatorState State => _state;
 
         /// <summary>
         /// The sprite renderer used by the animator.
@@ -113,7 +113,7 @@ namespace SpriteAnimations
         /// <summary>
         /// The event that will be invoked when the animator state changes.
         /// </summary>
-        public UnityEvent<SpriteAnimatorState> StateChanged => _stateChanged;
+        public UnityEvent<AnimatorState> StateChanged => _stateChanged;
 
         #endregion
 
@@ -257,7 +257,7 @@ namespace SpriteAnimations
             ChangeAnimation(animation);
 
             // Set the sprite animator state to playing.
-            _state = SpriteAnimatorState.Playing;
+            _state = AnimatorState.Playing;
 
             // Return the animation performer.
             return _performersFactory.Get<TAnimator>(animation);
@@ -282,7 +282,7 @@ namespace SpriteAnimations
             // Change the current animation
             ChangeAnimation(animation);
             // Set the state to playing
-            _state = SpriteAnimatorState.Playing;
+            _state = AnimatorState.Playing;
             // Return the animation performer for the given animation
             return _performersFactory.Get(animation);
         }
@@ -292,7 +292,7 @@ namespace SpriteAnimations
         /// </summary>
         public AnimationPerformer Pause()
         {
-            _state = SpriteAnimatorState.Paused;
+            _state = AnimatorState.Paused;
             _stateChanged.Invoke(_state);
             return _currentPerformer;
         }
@@ -302,7 +302,7 @@ namespace SpriteAnimations
         /// </summary>
         public AnimationPerformer Resume()
         {
-            _state = SpriteAnimatorState.Playing;
+            _state = AnimatorState.Playing;
             _stateChanged.Invoke(_state);
             return _currentPerformer;
         }
@@ -312,7 +312,7 @@ namespace SpriteAnimations
         /// </summary>
         public void Stop()
         {
-            _state = SpriteAnimatorState.Stopped;
+            _state = AnimatorState.Stopped;
             _stateChanged.Invoke(_state);
             _currentPerformer?.StopAnimation(); // Stop current animation.
             _currentAnimation = null;
@@ -385,26 +385,6 @@ namespace SpriteAnimations
         #endregion
 
         #region Enums
-
-        /// <summary>
-        /// The state of the animator
-        /// </summary>
-        public enum SpriteAnimatorState
-        {
-            /// <summary>
-            /// The animator is playing the last defined animation
-            /// </summary>
-            Playing = 0,
-            /// <summary>
-            /// The animator is paused, meaning it will not change frames of the current
-            /// animation untill it is resumed
-            /// </summary>
-            Paused = 1,
-            /// <summary>
-            /// The animator is stopped, meaning no animation is currently defined.
-            /// </summary>
-            Stopped = 2
-        }
 
         #endregion
     }

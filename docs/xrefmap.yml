@@ -241,6 +241,30 @@ references:
   commentId: F:SpriteAnimations.AnimationPerformer._onEndAction
   fullName: SpriteAnimations.AnimationPerformer._onEndAction
   nameWithType: AnimationPerformer._onEndAction
+- uid: SpriteAnimations.AnimatorState
+  name: AnimatorState
+  href: api/SpriteAnimations.AnimatorState.html
+  commentId: T:SpriteAnimations.AnimatorState
+  fullName: SpriteAnimations.AnimatorState
+  nameWithType: AnimatorState
+- uid: SpriteAnimations.AnimatorState.Paused
+  name: Paused
+  href: api/SpriteAnimations.AnimatorState.html#SpriteAnimations_AnimatorState_Paused
+  commentId: F:SpriteAnimations.AnimatorState.Paused
+  fullName: SpriteAnimations.AnimatorState.Paused
+  nameWithType: AnimatorState.Paused
+- uid: SpriteAnimations.AnimatorState.Playing
+  name: Playing
+  href: api/SpriteAnimations.AnimatorState.html#SpriteAnimations_AnimatorState_Playing
+  commentId: F:SpriteAnimations.AnimatorState.Playing
+  fullName: SpriteAnimations.AnimatorState.Playing
+  nameWithType: AnimatorState.Playing
+- uid: SpriteAnimations.AnimatorState.Stopped
+  name: Stopped
+  href: api/SpriteAnimations.AnimatorState.html#SpriteAnimations_AnimatorState_Stopped
+  commentId: F:SpriteAnimations.AnimatorState.Stopped
+  fullName: SpriteAnimations.AnimatorState.Stopped
+  nameWithType: AnimatorState.Stopped
 - uid: SpriteAnimations.Editor
   name: SpriteAnimations.Editor
   href: api/SpriteAnimations.Editor.html
