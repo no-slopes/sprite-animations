@@ -213,7 +213,7 @@ public class WalkPlayer : MonoBehaviour
     }
 }
 </code></pre>
-<p>And if you do not have West animations (NorthWest, West and SouthWest) or simply do not want to craft them because it would just mean to flip the sprite horizontally, you can pass a <a href="../../api/SpriteAnimations.WindroseFlipStrategy.html">WindroseFlipStrategy.FlipEastToPlayWest</a> as the second parameter to the <code>SetDirection()</code> method and tell the performer to flip accordingly:</p>
+<p>And if you do not have West animations (NorthWest, West and SouthWest) or simply do not want to craft them because it would just mean to flip the sprite horizontally, you can pass <a href="../../api/SpriteAnimations.WindroseFlipStrategy.html">WindroseFlipStrategy.FlipEastToPlayWest</a> as the second parameter to the <code>SetDirection()</code> method and tell the performer to flip accordingly:</p>
 <pre><code class="lang-csharp">using SpriteAnimations; // &lt;- Important to use the WindroseFlipStrategy enum.
 
 public class WalkPlayer : MonoBehaviour

@@ -1521,24 +1521,6 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.WindroseSelectorElement.Initialize
   nameWithType: WindroseSelectorElement.Initialize
-- uid: SpriteAnimations.FlipStrategy
-  name: FlipStrategy
-  href: api/SpriteAnimations.FlipStrategy.html
-  commentId: T:SpriteAnimations.FlipStrategy
-  fullName: SpriteAnimations.FlipStrategy
-  nameWithType: FlipStrategy
-- uid: SpriteAnimations.FlipStrategy.Flip
-  name: Flip
-  href: api/SpriteAnimations.FlipStrategy.html#SpriteAnimations_FlipStrategy_Flip
-  commentId: F:SpriteAnimations.FlipStrategy.Flip
-  fullName: SpriteAnimations.FlipStrategy.Flip
-  nameWithType: FlipStrategy.Flip
-- uid: SpriteAnimations.FlipStrategy.NoFlip
-  name: NoFlip
-  href: api/SpriteAnimations.FlipStrategy.html#SpriteAnimations_FlipStrategy_NoFlip
-  commentId: F:SpriteAnimations.FlipStrategy.NoFlip
-  fullName: SpriteAnimations.FlipStrategy.NoFlip
-  nameWithType: FlipStrategy.NoFlip
 - uid: SpriteAnimations.Logger
   name: Logger
   href: api/SpriteAnimations.Logger.html
