@@ -2,7 +2,7 @@
   Ler em <a href="README.pt-br.md"> Português do Brasil </a>
 </p> -->
 
-![Banner](https://raw.githubusercontent.com/no-slopes/sprite-animations/main/Resources/Images/banner.png)
+![Banner](https://no-slopes.github.io/sprite-animations/images/banner.png)
 
 **by No Slopes**
 
