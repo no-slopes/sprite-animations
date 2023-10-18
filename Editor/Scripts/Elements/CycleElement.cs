@@ -19,6 +19,7 @@ namespace SpriteAnimations.Editor
 
         private Label _sizeText;
         private FramesDropManipulator _dropManipulator;
+        private Sprite _logoSprite;
 
         #endregion
 
@@ -48,6 +49,13 @@ namespace SpriteAnimations.Editor
 
         public CycleElement()
         {
+            _logoSprite = Resources.Load<Sprite>("images/blank");
+
+            if (_logoSprite == null)
+            {
+                Logger.LogWarning("Could not load logo file");
+            }
+
             style.flexDirection = FlexDirection.Row;
             style.flexGrow = 1;
 
@@ -152,7 +160,10 @@ namespace SpriteAnimations.Editor
         {
             int index = _cycle.Size;
 
-            Frame frame = new();
+            Frame frame = new()
+            {
+                Sprite = _logoSprite
+            };
 
             AddFrame(index, frame);
         }

@@ -304,10 +304,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.ViewZoomSliderElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.ViewZoomSliderElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.WindroseSelectorElement.yml",
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.Editor.WindroseSelectorElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.ZoomValueChangedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.ZoomValueChangedEvent.html"
         }
       },
       "version": ""

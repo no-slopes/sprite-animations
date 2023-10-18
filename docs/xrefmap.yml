@@ -498,12 +498,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.AnimationPreviewElement.Dismiss
   nameWithType: AnimationPreviewElement.Dismiss
-- uid: SpriteAnimations.Editor.AnimationPreviewElement.Initialize(SpriteAnimations.Editor.ITickProvider,SpriteAnimations.Editor.IFPSProvider,SpriteAnimations.Editor.CycleElement)
-  name: Initialize(ITickProvider, IFPSProvider, CycleElement)
-  href: api/SpriteAnimations.Editor.AnimationPreviewElement.html#SpriteAnimations_Editor_AnimationPreviewElement_Initialize_SpriteAnimations_Editor_ITickProvider_SpriteAnimations_Editor_IFPSProvider_SpriteAnimations_Editor_CycleElement_
-  commentId: M:SpriteAnimations.Editor.AnimationPreviewElement.Initialize(SpriteAnimations.Editor.ITickProvider,SpriteAnimations.Editor.IFPSProvider,SpriteAnimations.Editor.CycleElement)
-  fullName: SpriteAnimations.Editor.AnimationPreviewElement.Initialize(SpriteAnimations.Editor.ITickProvider, SpriteAnimations.Editor.IFPSProvider, SpriteAnimations.Editor.CycleElement)
-  nameWithType: AnimationPreviewElement.Initialize(ITickProvider, IFPSProvider, CycleElement)
+- uid: SpriteAnimations.Editor.AnimationPreviewElement.Initialize(SpriteAnimations.Editor.ITickProvider,SpriteAnimations.Editor.IFPSProvider,SpriteAnimations.Editor.CycleElement,SpriteAnimations.Editor.ViewZoomSliderElement)
+  name: Initialize(ITickProvider, IFPSProvider, CycleElement, ViewZoomSliderElement)
+  href: api/SpriteAnimations.Editor.AnimationPreviewElement.html#SpriteAnimations_Editor_AnimationPreviewElement_Initialize_SpriteAnimations_Editor_ITickProvider_SpriteAnimations_Editor_IFPSProvider_SpriteAnimations_Editor_CycleElement_SpriteAnimations_Editor_ViewZoomSliderElement_
+  commentId: M:SpriteAnimations.Editor.AnimationPreviewElement.Initialize(SpriteAnimations.Editor.ITickProvider,SpriteAnimations.Editor.IFPSProvider,SpriteAnimations.Editor.CycleElement,SpriteAnimations.Editor.ViewZoomSliderElement)
+  fullName: SpriteAnimations.Editor.AnimationPreviewElement.Initialize(SpriteAnimations.Editor.ITickProvider, SpriteAnimations.Editor.IFPSProvider, SpriteAnimations.Editor.CycleElement, SpriteAnimations.Editor.ViewZoomSliderElement)
+  nameWithType: AnimationPreviewElement.Initialize(ITickProvider, IFPSProvider, CycleElement, ViewZoomSliderElement)
 - uid: SpriteAnimations.Editor.AnimationPreviewElement.Initialize*
   name: Initialize
   href: api/SpriteAnimations.Editor.AnimationPreviewElement.html#SpriteAnimations_Editor_AnimationPreviewElement_Initialize_
@@ -947,12 +947,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.CycleElement.HighlightDropArea
   nameWithType: CycleElement.HighlightDropArea
-- uid: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle)
-  name: Initialize(Cycle)
-  href: api/SpriteAnimations.Editor.CycleElement.html#SpriteAnimations_Editor_CycleElement_Initialize_SpriteAnimations_Cycle_
-  commentId: M:SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle)
-  fullName: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle)
-  nameWithType: CycleElement.Initialize(Cycle)
+- uid: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle,SpriteAnimations.Editor.SpriteAnimationView)
+  name: Initialize(Cycle, SpriteAnimationView)
+  href: api/SpriteAnimations.Editor.CycleElement.html#SpriteAnimations_Editor_CycleElement_Initialize_SpriteAnimations_Cycle_SpriteAnimations_Editor_SpriteAnimationView_
+  commentId: M:SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle,SpriteAnimations.Editor.SpriteAnimationView)
+  fullName: SpriteAnimations.Editor.CycleElement.Initialize(SpriteAnimations.Cycle, SpriteAnimations.Editor.SpriteAnimationView)
+  nameWithType: CycleElement.Initialize(Cycle, SpriteAnimationView)
 - uid: SpriteAnimations.Editor.CycleElement.Initialize*
   name: Initialize
   href: api/SpriteAnimations.Editor.CycleElement.html#SpriteAnimations_Editor_CycleElement_Initialize_
@@ -1076,15 +1076,15 @@ references:
   commentId: T:SpriteAnimations.Editor.FrameElement
   fullName: SpriteAnimations.Editor.FrameElement
   nameWithType: FrameElement
-- uid: SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.Frame)
-  name: FrameElement(CycleElement, int, Frame)
-  href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement__ctor_SpriteAnimations_Editor_CycleElement_System_Int32_SpriteAnimations_Frame_
-  commentId: M:SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.Frame)
-  name.vb: New(CycleElement, Integer, Frame)
-  fullName: SpriteAnimations.Editor.FrameElement.FrameElement(SpriteAnimations.Editor.CycleElement, int, SpriteAnimations.Frame)
-  fullName.vb: SpriteAnimations.Editor.FrameElement.New(SpriteAnimations.Editor.CycleElement, Integer, SpriteAnimations.Frame)
-  nameWithType: FrameElement.FrameElement(CycleElement, int, Frame)
-  nameWithType.vb: FrameElement.New(CycleElement, Integer, Frame)
+- uid: SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.Frame,SpriteAnimations.Editor.ViewZoomSliderElement)
+  name: FrameElement(CycleElement, int, Frame, ViewZoomSliderElement)
+  href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement__ctor_SpriteAnimations_Editor_CycleElement_System_Int32_SpriteAnimations_Frame_SpriteAnimations_Editor_ViewZoomSliderElement_
+  commentId: M:SpriteAnimations.Editor.FrameElement.#ctor(SpriteAnimations.Editor.CycleElement,System.Int32,SpriteAnimations.Frame,SpriteAnimations.Editor.ViewZoomSliderElement)
+  name.vb: New(CycleElement, Integer, Frame, ViewZoomSliderElement)
+  fullName: SpriteAnimations.Editor.FrameElement.FrameElement(SpriteAnimations.Editor.CycleElement, int, SpriteAnimations.Frame, SpriteAnimations.Editor.ViewZoomSliderElement)
+  fullName.vb: SpriteAnimations.Editor.FrameElement.New(SpriteAnimations.Editor.CycleElement, Integer, SpriteAnimations.Frame, SpriteAnimations.Editor.ViewZoomSliderElement)
+  nameWithType: FrameElement.FrameElement(CycleElement, int, Frame, ViewZoomSliderElement)
+  nameWithType.vb: FrameElement.New(CycleElement, Integer, Frame, ViewZoomSliderElement)
 - uid: SpriteAnimations.Editor.FrameElement.#ctor*
   name: FrameElement
   href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement__ctor_
@@ -1095,6 +1095,19 @@ references:
   fullName.vb: SpriteAnimations.Editor.FrameElement.New
   nameWithType: FrameElement.FrameElement
   nameWithType.vb: FrameElement.New
+- uid: SpriteAnimations.Editor.FrameElement.Dismiss
+  name: Dismiss()
+  href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement_Dismiss
+  commentId: M:SpriteAnimations.Editor.FrameElement.Dismiss
+  fullName: SpriteAnimations.Editor.FrameElement.Dismiss()
+  nameWithType: FrameElement.Dismiss()
+- uid: SpriteAnimations.Editor.FrameElement.Dismiss*
+  name: Dismiss
+  href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement_Dismiss_
+  commentId: Overload:SpriteAnimations.Editor.FrameElement.Dismiss
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.FrameElement.Dismiss
+  nameWithType: FrameElement.Dismiss
 - uid: SpriteAnimations.Editor.FrameElement.EvaluateEnabledButtons
   name: EvaluateEnabledButtons()
   href: api/SpriteAnimations.Editor.FrameElement.html#SpriteAnimations_Editor_FrameElement_EvaluateEnabledButtons
@@ -1419,12 +1432,37 @@ references:
   commentId: E:SpriteAnimations.Editor.SpriteAnimationView.Tick
   fullName: SpriteAnimations.Editor.SpriteAnimationView.Tick
   nameWithType: SpriteAnimationView.Tick
+- uid: SpriteAnimations.Editor.SpriteAnimationView.ViewZoomSlider
+  name: ViewZoomSlider
+  href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView_ViewZoomSlider
+  commentId: P:SpriteAnimations.Editor.SpriteAnimationView.ViewZoomSlider
+  fullName: SpriteAnimations.Editor.SpriteAnimationView.ViewZoomSlider
+  nameWithType: SpriteAnimationView.ViewZoomSlider
+- uid: SpriteAnimations.Editor.SpriteAnimationView.ViewZoomSlider*
+  name: ViewZoomSlider
+  href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView_ViewZoomSlider_
+  commentId: Overload:SpriteAnimations.Editor.SpriteAnimationView.ViewZoomSlider
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.SpriteAnimationView.ViewZoomSlider
+  nameWithType: SpriteAnimationView.ViewZoomSlider
 - uid: SpriteAnimations.Editor.SpriteAnimationView._animation
   name: _animation
   href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView__animation
   commentId: F:SpriteAnimations.Editor.SpriteAnimationView._animation
   fullName: SpriteAnimations.Editor.SpriteAnimationView._animation
   nameWithType: SpriteAnimationView._animation
+- uid: SpriteAnimations.Editor.SpriteAnimationView._animationField
+  name: _animationField
+  href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView__animationField
+  commentId: F:SpriteAnimations.Editor.SpriteAnimationView._animationField
+  fullName: SpriteAnimations.Editor.SpriteAnimationView._animationField
+  nameWithType: SpriteAnimationView._animationField
+- uid: SpriteAnimations.Editor.SpriteAnimationView._animationNameField
+  name: _animationNameField
+  href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView__animationNameField
+  commentId: F:SpriteAnimations.Editor.SpriteAnimationView._animationNameField
+  fullName: SpriteAnimations.Editor.SpriteAnimationView._animationNameField
+  nameWithType: SpriteAnimationView._animationNameField
 - uid: SpriteAnimations.Editor.SpriteAnimationView._contentContainer
   name: _contentContainer
   href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView__contentContainer
@@ -1437,6 +1475,18 @@ references:
   commentId: F:SpriteAnimations.Editor.SpriteAnimationView._deleteAnimationButton
   fullName: SpriteAnimations.Editor.SpriteAnimationView._deleteAnimationButton
   nameWithType: SpriteAnimationView._deleteAnimationButton
+- uid: SpriteAnimations.Editor.SpriteAnimationView._fpsSlider
+  name: _fpsSlider
+  href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView__fpsSlider
+  commentId: F:SpriteAnimations.Editor.SpriteAnimationView._fpsSlider
+  fullName: SpriteAnimations.Editor.SpriteAnimationView._fpsSlider
+  nameWithType: SpriteAnimationView._fpsSlider
+- uid: SpriteAnimations.Editor.SpriteAnimationView._viewZoomSlider
+  name: _viewZoomSlider
+  href: api/SpriteAnimations.Editor.SpriteAnimationView.html#SpriteAnimations_Editor_SpriteAnimationView__viewZoomSlider
+  commentId: F:SpriteAnimations.Editor.SpriteAnimationView._viewZoomSlider
+  fullName: SpriteAnimations.Editor.SpriteAnimationView._viewZoomSlider
+  nameWithType: SpriteAnimationView._viewZoomSlider
 - uid: SpriteAnimations.Editor.SpriteAnimationViewFactory
   name: SpriteAnimationViewFactory
   href: api/SpriteAnimations.Editor.SpriteAnimationViewFactory.html
@@ -1622,6 +1672,50 @@ references:
   commentId: T:SpriteAnimations.Editor.TickEvent
   fullName: SpriteAnimations.Editor.TickEvent
   nameWithType: TickEvent
+- uid: SpriteAnimations.Editor.ViewZoomSliderElement
+  name: ViewZoomSliderElement
+  href: api/SpriteAnimations.Editor.ViewZoomSliderElement.html
+  commentId: T:SpriteAnimations.Editor.ViewZoomSliderElement
+  fullName: SpriteAnimations.Editor.ViewZoomSliderElement
+  nameWithType: ViewZoomSliderElement
+- uid: SpriteAnimations.Editor.ViewZoomSliderElement.#ctor
+  name: ViewZoomSliderElement()
+  href: api/SpriteAnimations.Editor.ViewZoomSliderElement.html#SpriteAnimations_Editor_ViewZoomSliderElement__ctor
+  commentId: M:SpriteAnimations.Editor.ViewZoomSliderElement.#ctor
+  name.vb: New()
+  fullName: SpriteAnimations.Editor.ViewZoomSliderElement.ViewZoomSliderElement()
+  fullName.vb: SpriteAnimations.Editor.ViewZoomSliderElement.New()
+  nameWithType: ViewZoomSliderElement.ViewZoomSliderElement()
+  nameWithType.vb: ViewZoomSliderElement.New()
+- uid: SpriteAnimations.Editor.ViewZoomSliderElement.#ctor*
+  name: ViewZoomSliderElement
+  href: api/SpriteAnimations.Editor.ViewZoomSliderElement.html#SpriteAnimations_Editor_ViewZoomSliderElement__ctor_
+  commentId: Overload:SpriteAnimations.Editor.ViewZoomSliderElement.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SpriteAnimations.Editor.ViewZoomSliderElement.ViewZoomSliderElement
+  fullName.vb: SpriteAnimations.Editor.ViewZoomSliderElement.New
+  nameWithType: ViewZoomSliderElement.ViewZoomSliderElement
+  nameWithType.vb: ViewZoomSliderElement.New
+- uid: SpriteAnimations.Editor.ViewZoomSliderElement.Value
+  name: Value
+  href: api/SpriteAnimations.Editor.ViewZoomSliderElement.html#SpriteAnimations_Editor_ViewZoomSliderElement_Value
+  commentId: P:SpriteAnimations.Editor.ViewZoomSliderElement.Value
+  fullName: SpriteAnimations.Editor.ViewZoomSliderElement.Value
+  nameWithType: ViewZoomSliderElement.Value
+- uid: SpriteAnimations.Editor.ViewZoomSliderElement.Value*
+  name: Value
+  href: api/SpriteAnimations.Editor.ViewZoomSliderElement.html#SpriteAnimations_Editor_ViewZoomSliderElement_Value_
+  commentId: Overload:SpriteAnimations.Editor.ViewZoomSliderElement.Value
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.ViewZoomSliderElement.Value
+  nameWithType: ViewZoomSliderElement.Value
+- uid: SpriteAnimations.Editor.ViewZoomSliderElement.ValueChanged
+  name: ValueChanged
+  href: api/SpriteAnimations.Editor.ViewZoomSliderElement.html#SpriteAnimations_Editor_ViewZoomSliderElement_ValueChanged
+  commentId: E:SpriteAnimations.Editor.ViewZoomSliderElement.ValueChanged
+  fullName: SpriteAnimations.Editor.ViewZoomSliderElement.ValueChanged
+  nameWithType: ViewZoomSliderElement.ValueChanged
 - uid: SpriteAnimations.Editor.WindroseSelectorElement
   name: WindroseSelectorElement
   href: api/SpriteAnimations.Editor.WindroseSelectorElement.html
@@ -1666,6 +1760,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.WindroseSelectorElement.Initialize
   nameWithType: WindroseSelectorElement.Initialize
+- uid: SpriteAnimations.Editor.ZoomValueChangedEvent
+  name: ZoomValueChangedEvent
+  href: api/SpriteAnimations.Editor.ZoomValueChangedEvent.html
+  commentId: T:SpriteAnimations.Editor.ZoomValueChangedEvent
+  fullName: SpriteAnimations.Editor.ZoomValueChangedEvent
+  nameWithType: ZoomValueChangedEvent
 - uid: SpriteAnimations.Frame
   name: Frame
   href: api/SpriteAnimations.Frame.html
@@ -1685,19 +1785,6 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Frame.Id
   nameWithType: Frame.Id
-- uid: SpriteAnimations.Frame.Index
-  name: Index
-  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Index
-  commentId: P:SpriteAnimations.Frame.Index
-  fullName: SpriteAnimations.Frame.Index
-  nameWithType: Frame.Index
-- uid: SpriteAnimations.Frame.Index*
-  name: Index
-  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Index_
-  commentId: Overload:SpriteAnimations.Frame.Index
-  isSpec: "True"
-  fullName: SpriteAnimations.Frame.Index
-  nameWithType: Frame.Index
 - uid: SpriteAnimations.Frame.Sprite
   name: Sprite
   href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame_Sprite
@@ -1717,12 +1804,6 @@ references:
   commentId: F:SpriteAnimations.Frame._id
   fullName: SpriteAnimations.Frame._id
   nameWithType: Frame._id
-- uid: SpriteAnimations.Frame._index
-  name: _index
-  href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame__index
-  commentId: F:SpriteAnimations.Frame._index
-  fullName: SpriteAnimations.Frame._index
-  nameWithType: Frame._index
 - uid: SpriteAnimations.Frame._sprite
   name: _sprite
   href: api/SpriteAnimations.Frame.html#SpriteAnimations_Frame__sprite

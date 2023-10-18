@@ -11,7 +11,7 @@
                 <uie:ObjectField name="sprite-field" type="UnityEngine.Sprite, UnityEngine.CoreModule" class="object-field" style="color: rgb(255, 255, 255); width: auto; height: 100%; flex-grow: 1; flex-direction: column; align-items: center; justify-content: center; flex-wrap: nowrap;" />
             </ui:VisualElement>
             <ui:VisualElement name="id-field-container" style="flex-grow: 1; flex-direction: row; align-items: center; width: 100%; height: 30px;">
-                <ui:Label tabindex="-1" text="Id:" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="Used to register actions to be performed ehen the SpriteAnimationPerfomer plays this frame" class="sa-label" style="color: rgb(255, 255, 255); min-width: 50px;" />
+                <ui:Label tabindex="-1" text="Id:" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="Used to register actions to be performed when the AnimationPerfomer plays this frame" class="sa-label" style="color: rgb(255, 255, 255); min-width: 50px;" />
                 <ui:TextField picking-mode="Ignore" name="id-field" style="color: rgb(255, 255, 255); width: auto; height: 100%; flex-grow: 1; flex-shrink: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
