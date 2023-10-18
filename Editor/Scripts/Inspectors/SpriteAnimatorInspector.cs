@@ -62,7 +62,7 @@ namespace SpriteAnimations.Editor
 
         private void OpenDocs()
         {
-            Application.OpenURL("https://no-slopes.github.io/sprite-animations/documentation/sprite-animator.html");
+            Application.OpenURL("https://no-slopes.github.io/sprite-animations/documentation/sprite-animator/index.html");
         }
 
         #endregion
