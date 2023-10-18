@@ -9,6 +9,6 @@
                 <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; height: 200px; width: 200px; -unity-background-image-tint-color: rgb(173, 1, 1); background-color: rgb(38, 79, 120);" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="cycle-container" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 100%;" />
+        <ui:VisualElement name="content" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 100%;" />
     </ui:VisualElement>
 </ui:UXML>

@@ -8,9 +8,11 @@ namespace SpriteAnimations.Editor
     {
         #region Fields
 
-        private Frame _frame;
-
         private CycleElement _owner;
+        private int _index;
+        private Frame _frame;
+        private ViewZoomSliderElement _zoomSlider;
+
         private Label _indexLabel;
         private VisualElement _imagePreviewContainer;
         private ObjectField _spriteField;
@@ -32,11 +34,11 @@ namespace SpriteAnimations.Editor
 
         public int Index
         {
-            get => _frame.Index;
+            get => _index;
             set
             {
-                _frame.Index = value;
-                _indexLabel.text = value.ToString();
+                _index = value;
+                _indexLabel.text = _index.ToString();
                 EvaluateEnabledButtons();
             }
         }
@@ -45,10 +47,13 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public FrameElement(CycleElement owner, int index, Frame frame)
+        public FrameElement(CycleElement owner, int index, Frame frame, ViewZoomSliderElement zoomSlider)
         {
             _owner = owner;
             _frame = frame;
+
+            _zoomSlider = zoomSlider;
+            _zoomSlider.ValueChanged += SetImageZoom;
 
             AddToClassList("animation-cycle");
 
@@ -93,13 +98,24 @@ namespace SpriteAnimations.Editor
 
         #endregion
 
+        #region Flow
+
+        public void Dismiss()
+        {
+            if (_zoomSlider != null)
+                _zoomSlider.ValueChanged -= SetImageZoom;
+        }
+
+        #endregion
+
         #region Frame
 
         private void InitializeValues(int index, Frame frame)
         {
-            _frame.Index = index;
+            _index = index;
             _indexLabel.text = index.ToString();
             _previewImage.sprite = frame.Sprite;
+            SetImageZoom(_zoomSlider.Value);
             _spriteField.value = frame.Sprite;
             _idField.value = frame.Id;
 
@@ -108,19 +124,19 @@ namespace SpriteAnimations.Editor
 
         private void OnUpRequested()
         {
-            if (_frame.Index == 0) return;
-            _owner.Swap(_frame.Index, _frame.Index - 1);
+            if (_index == 0) return;
+            _owner.Swap(_index, _index - 1);
         }
 
         private void OnDownRequested()
         {
-            if (_frame.Index == _owner.Size - 1) return;
-            _owner.Swap(_frame.Index, _frame.Index + 1);
+            if (_index == _owner.Size - 1) return;
+            _owner.Swap(_index, _index + 1);
         }
 
         private void OnDeleteRequested()
         {
-            _owner.RemoveFrame(_frame.Index);
+            _owner.RemoveFrame(_index);
         }
 
         #endregion
@@ -151,6 +167,15 @@ namespace SpriteAnimations.Editor
         {
             _downButton.SetEnabled(Index < _owner.Size - 1);
             _upButton.SetEnabled(Index > 0);
+        }
+
+        #endregion
+
+        #region Zoom
+
+        private void SetImageZoom(float zoomValue)
+        {
+            _previewImage.transform.scale = new Vector3(zoomValue, zoomValue, 1);
         }
 
         #endregion

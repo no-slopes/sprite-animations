@@ -87,7 +87,7 @@ namespace SpriteAnimations
     public enum WindroseFlipStrategy
     {
         /// <summary>
-        /// The WindroseAnimator will flip East (NorthEast, East and SouthEast)  sprites and play them as West (West, NorthWest and SouthWest) sprites
+        /// The WindroseAnimator will flip East (NorthEast, East and SouthEast) sprites horizontally and play them as West (West, NorthWest and SouthWest) sprites
         /// </summary>
         FlipEastToPlayWest,
         /// <summary>

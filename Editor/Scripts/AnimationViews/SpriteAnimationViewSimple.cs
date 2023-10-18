@@ -36,7 +36,10 @@ namespace SpriteAnimations.Editor
             _animationPreview = new AnimationPreviewElement();
             animationPreviewContainer.Add(_animationPreview);
 
-            VisualElement cycleContainer = template.Q<VisualElement>("cycle-container");
+            VisualElement cycleContainer = template.Q<VisualElement>("content");
+
+            cycleContainer.Add(_viewZoomSlider); // Created at the base class
+
             _cycleElement = new CycleElement();
             cycleContainer.Add(_cycleElement);
 
@@ -52,8 +55,8 @@ namespace SpriteAnimations.Editor
             base.Initialize(animation);
             _simpleSpriteAnimation = animation as SpriteAnimationSimple;
             _loopableField.value = _simpleSpriteAnimation.IsLoopable;
-            _cycleElement.Initialize(_simpleSpriteAnimation.Cycle); // Must be initialized before the preview
-            _animationPreview.Initialize(this, this, _cycleElement);
+            _cycleElement.Initialize(_simpleSpriteAnimation.Cycle, this); // Must be initialized before the preview
+            _animationPreview.Initialize(this, this, _cycleElement, _viewZoomSlider);
         }
 
         public override void Dismiss()

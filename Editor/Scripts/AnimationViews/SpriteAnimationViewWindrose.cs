@@ -43,7 +43,10 @@ namespace SpriteAnimations.Editor
             _animationPreview = new AnimationPreviewElement();
             animationPreviewContainer.Add(_animationPreview);
 
-            VisualElement cycleContainer = template.Q<VisualElement>("cycle-container");
+            VisualElement cycleContainer = template.Q<VisualElement>("content");
+
+            cycleContainer.Add(_viewZoomSlider);
+
             _cycleElement = new CycleElement();
             cycleContainer.Add(_cycleElement);
 
@@ -78,10 +81,10 @@ namespace SpriteAnimations.Editor
             Cycle cycle = _spriteAnimationWindrose.FindOrCreateCycle(windroseDirection);
 
             _cycleElement.Dismiss();
-            _cycleElement.Initialize(cycle);
+            _cycleElement.Initialize(cycle, this);
 
             _animationPreview.Dismiss();
-            _animationPreview.Initialize(this, this, _cycleElement);
+            _animationPreview.Initialize(this, this, _cycleElement, ViewZoomSlider);
         }
 
         #endregion

@@ -10,6 +10,7 @@ namespace SpriteAnimations.Editor
         #region Fields
 
         private Cycle _cycle;
+        private SpriteAnimationView _animationView;
 
         private ScrollView _scrollView;
         private VisualElement _scrollViewContentContainer;
@@ -74,13 +75,14 @@ namespace SpriteAnimations.Editor
 
         #region Flow
 
-        public void Initialize(Cycle cycle)
+        public void Initialize(Cycle cycle, SpriteAnimationView view)
         {
             _cycle = cycle;
+            _animationView = view;
 
             for (int i = 0; i < _cycle.Size; i++)
             {
-                _scrollView.Insert(i, new FrameElement(this, i, _cycle.Frames[i]));
+                _scrollView.Insert(i, new FrameElement(this, i, _cycle.Frames[i], view.ViewZoomSlider));
             }
 
             _sizeText.text = _cycle.Size.ToString();
@@ -89,6 +91,17 @@ namespace SpriteAnimations.Editor
         public void Dismiss()
         {
             _cycle = null;
+            _animationView = null;
+
+            if (_cycle != null)
+            {
+                for (int i = 0; i < _cycle.Size; i++)
+                {
+                    FrameElement frameElement = _scrollView.ElementAt(i) as FrameElement;
+                    frameElement.Dismiss();
+                }
+            }
+
             _scrollView.Clear();
         }
 
@@ -104,9 +117,8 @@ namespace SpriteAnimations.Editor
             frameAtA.Index = b;
             frameAtB.Index = a;
 
-            Frame temp = _cycle.Frames[a];
-            _cycle.Frames[a] = _cycle.Frames[b];
-            _cycle.Frames[b] = temp;
+            // Tuple Swap
+            (_cycle.Frames[b], _cycle.Frames[a]) = (_cycle.Frames[a], _cycle.Frames[b]);
 
             _scrollView.Insert(a, frameAtB);
             _scrollView.Insert(b, frameAtA);
@@ -140,10 +152,7 @@ namespace SpriteAnimations.Editor
         {
             int index = _cycle.Size;
 
-            Frame frame = new()
-            {
-                Index = index
-            };
+            Frame frame = new();
 
             AddFrame(index, frame);
         }
@@ -154,7 +163,6 @@ namespace SpriteAnimations.Editor
 
             Frame frame = new()
             {
-                Index = index,
                 Sprite = sprite
             };
 
@@ -163,7 +171,7 @@ namespace SpriteAnimations.Editor
 
         private void AddFrame(int index, Frame frame)
         {
-            FrameElement frameElement = new(this, index, frame);
+            FrameElement frameElement = new(this, index, frame, _animationView.ViewZoomSlider);
 
             int previousCount = _cycle.Frames.Count;
             _cycle.Frames.Add(frame);
@@ -189,12 +197,11 @@ namespace SpriteAnimations.Editor
             {
                 Frame frame = new()
                 {
-                    Index = i,
                     Sprite = sprites[i],
                 };
 
                 _cycle.Frames.Add(frame);
-                _scrollView.Insert(i, new FrameElement(this, i, frame));
+                _scrollView.Insert(i, new FrameElement(this, i, frame, _animationView.ViewZoomSlider));
             }
 
             UpdateSizeText(_cycle.Size);

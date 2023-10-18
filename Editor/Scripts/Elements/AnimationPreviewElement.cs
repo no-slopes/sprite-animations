@@ -12,13 +12,13 @@ namespace SpriteAnimations.Editor
 
         private VisualElement _imageContainer;
         private Image _image;
-        private Slider _zoomSlider;
         private ToolbarButton _playButton;
         private ToolbarButton _stopButton;
 
         private IFPSProvider _fpsProvider;
         private ITickProvider _tickProvider;
         private CycleElement _cycle;
+        private ViewZoomSliderElement _zoomSlider;
         private Frame _currentFrame;
 
         private bool _playing;
@@ -45,9 +45,6 @@ namespace SpriteAnimations.Editor
             _image.style.height = 150;
             _imageContainer.Add(_image);
 
-            _zoomSlider = template.Q<Slider>("zoom-slider");
-            _zoomSlider.RegisterValueChangedCallback(evt => SetImageZoom(evt.newValue));
-
             _playButton = template.Q<ToolbarButton>("play-button");
             _stopButton = template.Q<ToolbarButton>("stop-button");
 
@@ -61,13 +58,15 @@ namespace SpriteAnimations.Editor
 
         #region Initialization
 
-        public void Initialize(ITickProvider tickProvider, IFPSProvider fpsProvider, CycleElement cycle)
+        public void Initialize(ITickProvider tickProvider, IFPSProvider fpsProvider, CycleElement cycle, ViewZoomSliderElement zoomSlider)
         {
             _fpsProvider = fpsProvider;
             _fpsProvider.FPSChanged += OnFPSChanged;
             _fps = _fpsProvider.FPS;
+            _zoomSlider = zoomSlider;
 
-            _zoomSlider.value = 1;
+            SetImageZoom(_zoomSlider.Value);
+            _zoomSlider.ValueChanged += SetImageZoom;
 
             _tickProvider = tickProvider;
             _cycle = cycle;
@@ -82,6 +81,9 @@ namespace SpriteAnimations.Editor
 
             if (_fpsProvider != null)
                 _fpsProvider.FPSChanged -= OnFPSChanged;
+
+            if (_zoomSlider != null)
+                _zoomSlider.ValueChanged -= SetImageZoom;
 
             Stop();
 

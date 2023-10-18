@@ -20,9 +20,10 @@ namespace SpriteAnimations.Editor
         protected VisualElement _contentContainer;
         protected Button _deleteAnimationButton;
 
-        private ObjectField _animationField;
-        private TextField _animationNameField;
-        private SliderInt _fpsSlider;
+        protected ObjectField _animationField;
+        protected TextField _animationNameField;
+        protected SliderInt _fpsSlider;
+        protected ViewZoomSliderElement _viewZoomSlider;
 
 
         #endregion
@@ -38,6 +39,7 @@ namespace SpriteAnimations.Editor
 
         public SpriteAnimation Animation => _animation;
         public abstract AnimationType AnimationType { get; }
+        public ViewZoomSliderElement ViewZoomSlider => _viewZoomSlider;
 
         #endregion
 
@@ -60,6 +62,8 @@ namespace SpriteAnimations.Editor
             _animationField.SetEnabled(false);
             _animationNameField = template.Q<TextField>("animation-name-field");
             _fpsSlider = template.Q<SliderInt>("fps-slider");
+
+            _viewZoomSlider = new ViewZoomSliderElement();
 
             Add(template);
         }

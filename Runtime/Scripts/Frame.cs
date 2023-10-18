@@ -9,9 +9,6 @@ namespace SpriteAnimations
         #region Setup
 
         [SerializeField]
-        protected int _index;
-
-        [SerializeField]
         protected Sprite _sprite;
 
         [SerializeField]
@@ -21,8 +18,14 @@ namespace SpriteAnimations
 
         #region Getters
 
-        public int Index { get => _index; set => _index = value; }
+        /// <summary>
+        /// The sprite that will be displayed when the frame is played
+        /// </summary>
         public Sprite Sprite { get => _sprite; set => _sprite = value; }
+
+        /// <summary>
+        /// The ID of the frame
+        /// </summary>
         public string Id { get => _id; set => _id = value; }
 
         #endregion
