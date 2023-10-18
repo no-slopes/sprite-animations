@@ -4,7 +4,7 @@
 
 ![Banner](https://no-slopes.github.io/sprite-animations/images/banner.png)
 
-**by No Slopes**
+_by No Slopes_
 
 A smooth and intuitive way to work with spritesheets in Unity.
 
