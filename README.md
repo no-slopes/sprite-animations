@@ -39,7 +39,7 @@ tools along the way.
 
 ## The author
 
-<img src="https://avatars.githubusercontent.com/u/95456621?s=400&u=6157064dd1575cd38c484164219301379add841a&v=4" />
+<img src="https://avatars.githubusercontent.com/u/95456621?s=400&u=6157064dd1575cd38c484164219301379add841a&v=4" style="border-radius=5px;"/>
 
 My name is Gabriel, ppl know me by Gabo and you can find me as @indiegabo or @indiegabodev in most social networks.
 
