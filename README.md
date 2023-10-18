@@ -39,9 +39,9 @@ tools along the way.
 
 ## The author
 
-<img src="https://avatars.githubusercontent.com/u/95456621?s=400&u=6157064dd1575cd38c484164219301379add841a&v=4" style="border-radius:50%;"/>
+![portraitzinho-fundo-roxo-rounded](https://github.com/no-slopes/sprite-animations/assets/95456621/2b6523f8-71b4-424c-ae61-5c5d1a3b639e)
 
-My name is Gabriel, ppl know me by Gabo and you can find me as @indiegabo or @indiegabodev in most social networks.
+My name is Gabriel, ppl know me by [Gabo](https://github.com/indiegabo) and you can find me as @indiegabo or @indiegabodev in most social networks.
 
 ## Special thanks and credits:
 
