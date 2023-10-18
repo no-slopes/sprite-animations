@@ -26,11 +26,11 @@
 }
 
 .open-button {
-    background-color: rgb(43, 2, 2);
+    background-color: rgb(145, 43, 43);
 }
 
 .open-button:hover {
-    background-color: rgb(99, 7, 7);
+    background-color: rgb(195, 51, 82);
 }
 
 .open-docs-button {
