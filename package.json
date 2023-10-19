@@ -45,6 +45,7 @@
   "scripts": {
     "changelog-and-docs": "npx auto-changelog -p && mv -f CHANGELOG.md ../sprite-animations-development/docfx_project/documentation/CHANGELOG.md && docfx ../sprite-animations-development/docfx_project/docfx.json && echo Go create Unity assets before releasing",
     "release": "release-it",
+    "release-preview": "release-it --preRelease=preview",
     "serve-docs": "docfx ../sprite-animations-development/docfx_project/docfx.json --serve",
     "build-docs": "docfx ../sprite-animations-development/docfx_project/docfx.json"
   },
