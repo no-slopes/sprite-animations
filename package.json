@@ -34,12 +34,12 @@
     {
       "displayName": "Single Cycle Animations",
       "description": "Contains an animated character using Single Cycle animations. WASD for movement animations and E to perform an attack animation",
-      "path": "Samples~/Single"
+      "path": "Samples/Single"
     },
     {
       "displayName": "Windrose Animations",
       "description": "Contains an animated character using Windrose animations. WASD for movement animations and E to perform a roll animation",
-      "path": "Samples~/Windrose"
+      "path": "Samples/Windrose"
     }
   ],
   "scripts": {
