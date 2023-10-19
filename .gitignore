@@ -93,8 +93,9 @@ fmod_editor.log
 /node_modules.meta
 
 # Environment
-
 .env
+
+# Package
 
 
 
