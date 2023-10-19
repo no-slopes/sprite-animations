@@ -171,8 +171,8 @@ namespace SpriteAnimations.Editor
 
         private void LoadAnimations(SpriteAnimator spriteAnimator)
         {
-            spriteAnimator.Animations.RemoveAll(animation => animation == null);
-            _sidebarElement.Initialize(spriteAnimator.Animations);
+            spriteAnimator.AnimationsList.RemoveAll(animation => animation == null);
+            _sidebarElement.Initialize(spriteAnimator.AnimationsList);
         }
 
         #endregion
@@ -218,7 +218,7 @@ namespace SpriteAnimations.Editor
 
             if (!confirmed) return;
 
-            _spriteAnimator.Animations.Remove(_selectedAnimation);
+            _spriteAnimator.AnimationsList.Remove(_selectedAnimation);
 
             string path = AssetDatabase.GetAssetPath(_selectedAnimation);
 

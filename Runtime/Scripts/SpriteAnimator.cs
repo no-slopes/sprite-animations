@@ -12,9 +12,7 @@ namespace SpriteAnimations
     [AddComponentMenu("No Slopes/Sprite Animations/Sprite Animator")]
     public class SpriteAnimator : MonoBehaviour
     {
-        #region Components
-
-        #endregion
+        #region Inspector
 
         [Tooltip("The sprite renderer used for the animation.")]
         [SerializeField]
@@ -44,7 +42,11 @@ namespace SpriteAnimations
         [SerializeField]
         protected UnityEvent<AnimatorState> _stateChanged;
 
+        #endregion
+
         #region Fields
+
+        protected bool _loaded;
 
         protected PerformerFactory _performersFactory;
         protected SpriteAnimation _currentAnimation;
@@ -67,9 +69,7 @@ namespace SpriteAnimations
         /// Important: Changing this at runtime will have no effect on the capacity of the animator
         /// to play changed list of animations.
         /// </summary>
-        public List<SpriteAnimation> Animations => _spriteAnimations;
-
-        protected AnimatorState _state = AnimatorState.Stopped;
+        public List<SpriteAnimation> AnimationsList => _spriteAnimations;
 
         /// <summary>
         /// Is the animator playing?
@@ -85,6 +85,19 @@ namespace SpriteAnimations
         /// Is The animation stopped?
         /// </summary>
         public bool IsStopped => _state == AnimatorState.Stopped;
+
+        protected AnimatorState _state = AnimatorState.Stopped;
+        protected Dictionary<string, SpriteAnimation> Animations
+        {
+            get
+            {
+                if (!_loaded)
+                {
+                    LoadAnimator();
+                }
+                return _animations;
+            }
+        }
 
         #endregion
 
@@ -121,18 +134,10 @@ namespace SpriteAnimations
 
         protected virtual void Awake()
         {
-            if (_spriteRenderer == null)
+            if (!_loaded)
             {
-                if (!TryGetComponent(out _spriteRenderer))
-                {
-                    Logger.LogError($"Sprite Renderer not found.", this);
-                    return;
-                }
+                LoadAnimator();
             }
-
-            _performersFactory = new PerformerFactory(this);
-            _animations = new Dictionary<string, SpriteAnimation>();
-            _spriteAnimations.ForEach(a => _animations.Add(a.AnimationName, a));
         }
 
         protected virtual void Start()
@@ -337,6 +342,23 @@ namespace SpriteAnimations
             _animationChanged.Invoke(_currentAnimation); // Fires the animation changed event.
         }
 
+        protected void LoadAnimator()
+        {
+            if (_spriteRenderer == null)
+            {
+                if (!TryGetComponent(out _spriteRenderer))
+                {
+                    Logger.LogError($"Sprite Renderer not found.", this);
+                    return;
+                }
+            }
+
+            _performersFactory = new PerformerFactory(this);
+            _animations = new();
+            _spriteAnimations.ForEach(a => _animations.Add(a.AnimationName, a));
+            _loaded = true;
+        }
+
         #endregion
 
         #region Handling Animation
@@ -364,7 +386,7 @@ namespace SpriteAnimations
         /// <returns> True if the animation is found, false otherwise </returns>
         public bool TryGetAnimationByName(string name, out SpriteAnimation animation)
         {
-            return _animations.TryGetValue(name, out animation);
+            return Animations.TryGetValue(name, out animation);
         }
 
         #endregion

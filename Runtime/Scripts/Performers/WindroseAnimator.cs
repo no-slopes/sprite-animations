@@ -24,7 +24,7 @@ namespace SpriteAnimations
         /// <summary>
         /// The current direction in wich the animation is playing.
         /// </summary>
-        protected WindroseDirection _currentDirection;
+        protected WindroseDirection _currentDirection = WindroseDirection.South;
 
         #endregion
 
@@ -50,6 +50,9 @@ namespace SpriteAnimations
             _warnedAboutDirectionLess = false;
             _currentCycleElapsedTime = 0;
             _currentAnimation = animation;
+
+            // Try to get the cycle for the specified direction
+            CurrentWindroseAnimation.TryGetCycle(_currentDirection, out _currentCycle);
         }
 
         /// <summary>
@@ -71,12 +74,10 @@ namespace SpriteAnimations
         {
             if (!HasCurrentAnimation) return;
 
-            EvaluateDirectionLessCycle();
-
             _currentCycleElapsedTime += deltaTime;
             EvaluateEnd();
 
-            if (!HasCurrentAnimation) return;
+            if (!HasCurrentAnimation || !HasCurrentCycle) return;
 
             int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
             Frame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
@@ -94,20 +95,6 @@ namespace SpriteAnimations
             if (_frameIndexActions.TryGetValue(frameIndex, out var byIndexAction))
             {
                 byIndexAction.Invoke(_currentFrame);
-            }
-        }
-
-        private void EvaluateDirectionLessCycle()
-        {
-            if (HasCurrentCycle) return;
-            _directionLessTicks++;
-
-            if (!_warnedAboutDirectionLess && _directionLessTicks > 10)
-            {
-                Logger.LogWarning($"Seems like the animation {_currentAnimation.AnimationName} does not "
-                + "have a direction set. Have you forgotten to call SetDirection?", _animator);
-
-                _warnedAboutDirectionLess = true;
             }
         }
 
@@ -184,23 +171,11 @@ namespace SpriteAnimations
         /// </summary>
         /// <param name="direction">The direction to set.</param>
         /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
-        public WindroseAnimator SetDirection(Vector2Int signedMovementInput)
+        public WindroseAnimator SetDirection(Vector2Int signedMovementInput, WindroseFlipStrategy flipStrategy = WindroseFlipStrategy.NoFlip)
         {
-            // Try to get the cycle for the specified direction
-            if (!CurrentWindroseAnimation.TryGetCycle(WindroseDirection.East, out _currentCycle))
-            {
-                // Log an error if the cycle does not exist
-                Logger.LogError($"Animation '{_currentAnimation.AnimationName}' does not have a cycle for direction {signedMovementInput}.", _animator);
-                EndAnimation();
-                return this;
-            }
-
             // Sets the current direction
-            _currentDirection = DirectionFromInput(signedMovementInput);
-
-            // Calculate the duration for the current cycle
-            _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
-            return this;
+            WindroseDirection direction = DirectionFromInput(signedMovementInput);
+            return SetDirection(direction, flipStrategy);
         }
 
         #endregion
