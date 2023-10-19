@@ -46,6 +46,5 @@ My name is Gabriel, ppl know me by [Gabo](https://github.com/indiegabo) and you 
 ## Special thanks and credits:
 
 - [DanniBoy](https://www.linkedin.com/in/daniel-souz/) for being my No Slopes associate and desining the logo and icons for the project
-- [Fei]() for providing the spritesheets you see used in showcase videos and images
 - [Cammin](https://github.com/Cammin), creator of [LDtk to Unity](https://github.com/Cammin/LDtkToUnity), for being such a friendly person and giving me directions on how to craft this docs page. BTW if you do not know [LDtk to Unity](https://github.com/Cammin/LDtkToUnity) yet, you should really give it a go if you work with 2D levels in unity. The quality of life this tool provide is insane!
 - [Gabriel Bigardi](https://github.com/GabrielBigardi) for introducing me the concept of changing sprites of a SpriteRenderer directly instead of having Unity's animator to do so.

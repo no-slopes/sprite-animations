@@ -30,6 +30,18 @@
     "top down",
     "top-down"
   ],
+  "samples": [
+    {
+      "displayName": "Single Cycle Animations",
+      "description": "Contains an animated character using Single Cycle animations. WASD for movement animations and E to perform an attack animation",
+      "path": "Samples~/Single"
+    },
+    {
+      "displayName": "Windrose Animations",
+      "description": "Contains an animated character using Windrose animations. WASD for movement animations and E to perform a roll animation",
+      "path": "Samples~/Windrose"
+    }
+  ],
   "scripts": {
     "changelog-and-docs": "npx auto-changelog -p && mv -f CHANGELOG.md ../sprite-animations-development/docfx_project/documentation/CHANGELOG.md && docfx ../sprite-animations-development/docfx_project/docfx.json && echo Go create Unity assets before releasing",
     "release": "release-it",
