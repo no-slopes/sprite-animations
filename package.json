@@ -43,7 +43,7 @@
     }
   ],
   "scripts": {
-    "changelog-and-docs": "npx auto-changelog -p && mv -f CHANGELOG.md ../sprite-animations-development/docfx_project/documentation/CHANGELOG.md && docfx ../sprite-animations-development/docfx_project/docfx.json && echo Go create Unity assets before releasing",
+    "pre-release": "npx auto-changelog -p && mv -f CHANGELOG.md ../sprite-animations-development/docfx_project/documentation/CHANGELOG.md && docfx ../sprite-animations-development/docfx_project/docfx.json && echo Go create Unity assets before releasing",
     "release": "release-it",
     "release-minor-preview": "release-it minor --preRelease=preview",
     "release-minor-beta": "release-it minor --preRelease=beta",
