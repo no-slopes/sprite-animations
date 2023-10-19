@@ -2323,19 +2323,6 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationWindrose.FindOrCreateCycle
   nameWithType: SpriteAnimationWindrose.FindOrCreateCycle
-- uid: SpriteAnimations.SpriteAnimationWindrose.FlipStrategy
-  name: FlipStrategy
-  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_FlipStrategy
-  commentId: P:SpriteAnimations.SpriteAnimationWindrose.FlipStrategy
-  fullName: SpriteAnimations.SpriteAnimationWindrose.FlipStrategy
-  nameWithType: SpriteAnimationWindrose.FlipStrategy
-- uid: SpriteAnimations.SpriteAnimationWindrose.FlipStrategy*
-  name: FlipStrategy
-  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_FlipStrategy_
-  commentId: Overload:SpriteAnimations.SpriteAnimationWindrose.FlipStrategy
-  isSpec: "True"
-  fullName: SpriteAnimations.SpriteAnimationWindrose.FlipStrategy
-  nameWithType: SpriteAnimationWindrose.FlipStrategy
 - uid: SpriteAnimations.SpriteAnimationWindrose.InputFromDirection(SpriteAnimations.WindroseDirection)
   name: InputFromDirection(WindroseDirection)
   href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_InputFromDirection_SpriteAnimations_WindroseDirection_
@@ -2403,12 +2390,6 @@ references:
   commentId: F:SpriteAnimations.SpriteAnimationWindrose._cycles
   fullName: SpriteAnimations.SpriteAnimationWindrose._cycles
   nameWithType: SpriteAnimationWindrose._cycles
-- uid: SpriteAnimations.SpriteAnimationWindrose._flipStrategy
-  name: _flipStrategy
-  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose__flipStrategy
-  commentId: F:SpriteAnimations.SpriteAnimationWindrose._flipStrategy
-  fullName: SpriteAnimations.SpriteAnimationWindrose._flipStrategy
-  nameWithType: SpriteAnimationWindrose._flipStrategy
 - uid: SpriteAnimations.SpriteAnimationWindrose._isLoopable
   name: _isLoopable
   href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose__isLoopable
@@ -2447,6 +2428,19 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimator.Animations
   nameWithType: SpriteAnimator.Animations
+- uid: SpriteAnimations.SpriteAnimator.AnimationsList
+  name: AnimationsList
+  href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_AnimationsList
+  commentId: P:SpriteAnimations.SpriteAnimator.AnimationsList
+  fullName: SpriteAnimations.SpriteAnimator.AnimationsList
+  nameWithType: SpriteAnimator.AnimationsList
+- uid: SpriteAnimations.SpriteAnimator.AnimationsList*
+  name: AnimationsList
+  href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_AnimationsList_
+  commentId: Overload:SpriteAnimations.SpriteAnimator.AnimationsList
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimator.AnimationsList
+  nameWithType: SpriteAnimator.AnimationsList
 - uid: SpriteAnimations.SpriteAnimator.Awake
   name: Awake()
   href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_Awake
@@ -2593,6 +2587,19 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimator.LateUpdate
   nameWithType: SpriteAnimator.LateUpdate
+- uid: SpriteAnimations.SpriteAnimator.LoadAnimator
+  name: LoadAnimator()
+  href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_LoadAnimator
+  commentId: M:SpriteAnimations.SpriteAnimator.LoadAnimator
+  fullName: SpriteAnimations.SpriteAnimator.LoadAnimator()
+  nameWithType: SpriteAnimator.LoadAnimator()
+- uid: SpriteAnimations.SpriteAnimator.LoadAnimator*
+  name: LoadAnimator
+  href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_LoadAnimator_
+  commentId: Overload:SpriteAnimations.SpriteAnimator.LoadAnimator
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimator.LoadAnimator
+  nameWithType: SpriteAnimator.LoadAnimator
 - uid: SpriteAnimations.SpriteAnimator.Pause
   name: Pause()
   href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator_Pause
@@ -2813,6 +2820,12 @@ references:
   commentId: F:SpriteAnimations.SpriteAnimator._defaultAnimation
   fullName: SpriteAnimations.SpriteAnimator._defaultAnimation
   nameWithType: SpriteAnimator._defaultAnimation
+- uid: SpriteAnimations.SpriteAnimator._loaded
+  name: _loaded
+  href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator__loaded
+  commentId: F:SpriteAnimations.SpriteAnimator._loaded
+  fullName: SpriteAnimations.SpriteAnimator._loaded
+  nameWithType: SpriteAnimator._loaded
 - uid: SpriteAnimations.SpriteAnimator._performersFactory
   name: _performersFactory
   href: api/SpriteAnimations.SpriteAnimator.html#SpriteAnimations_SpriteAnimator__performersFactory
@@ -2962,12 +2975,12 @@ references:
   commentId: M:SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2,SpriteAnimations.WindroseFlipStrategy)
   fullName: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2, SpriteAnimations.WindroseFlipStrategy)
   nameWithType: WindroseAnimator.SetDirection(Vector2, WindroseFlipStrategy)
-- uid: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int)
-  name: SetDirection(Vector2Int)
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_UnityEngine_Vector2Int_
-  commentId: M:SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int)
-  fullName: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int)
-  nameWithType: WindroseAnimator.SetDirection(Vector2Int)
+- uid: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int,SpriteAnimations.WindroseFlipStrategy)
+  name: SetDirection(Vector2Int, WindroseFlipStrategy)
+  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_UnityEngine_Vector2Int_SpriteAnimations_WindroseFlipStrategy_
+  commentId: M:SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int,SpriteAnimations.WindroseFlipStrategy)
+  fullName: SpriteAnimations.WindroseAnimator.SetDirection(UnityEngine.Vector2Int, SpriteAnimations.WindroseFlipStrategy)
+  nameWithType: WindroseAnimator.SetDirection(Vector2Int, WindroseFlipStrategy)
 - uid: SpriteAnimations.WindroseAnimator.SetDirection*
   name: SetDirection
   href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_SetDirection_
