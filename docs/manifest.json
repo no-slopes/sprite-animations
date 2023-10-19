@@ -394,6 +394,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.MovementInputDetector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.MovementInputDetector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.SingleAnimationChanger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.SingleAnimationChanger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.WindroseAnimationChanger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.WindroseAnimationChanger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.SingleAnimator.yml",
       "output": {
         ".html": {
