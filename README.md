@@ -63,3 +63,9 @@ If you want to buy me a coffee that will be much appreciated.
 - [DanniBoy](https://www.linkedin.com/in/daniel-souz/) for being my No Slopes associate and desining the logo and icons for the project
 - [Cammin](https://github.com/Cammin), creator of [LDtk to Unity](https://github.com/Cammin/LDtkToUnity), for being such a friendly person and giving me directions on how to craft this docs page. BTW if you do not know [LDtk to Unity](https://github.com/Cammin/LDtkToUnity) yet, you should really give it a go if you work with 2D levels in unity. The quality of life this tool provide is insane!
 - [Gabriel Bigardi](https://github.com/GabrielBigardi) for introducing me the concept of changing sprites of a SpriteRenderer directly instead of having Unity's animator to do so.
+
+##### Assets used during showcase
+
+- [EVil Wizard 2](https://luizmelo.itch.io/evil-wizard-2)
+- [Medieval Warrior Pack 2](https://luizmelo.itch.io/medieval-warrior-pack-2)
+- [8-direction Top Down Character](https://gamekrazzy.itch.io/8-direction-top-down-character)
