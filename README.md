@@ -54,6 +54,10 @@ tools along the way.
 
 My name is Gabriel, ppl know me by [Gabo](https://github.com/indiegabo) and you can find me as @indiegabo or @indiegabodev in most social networks.
 
+If you want to buy me a coffee that will be much appreciated.
+
+[![Kofi](https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&logo=kofi&logoColor=f7404b&color=26251f)](https://ko-fi.com/indiegabo)
+
 ## Special thanks and credits:
 
 - [DanniBoy](https://www.linkedin.com/in/daniel-souz/) for being my No Slopes associate and desining the logo and icons for the project
