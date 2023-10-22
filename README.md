@@ -2,8 +2,8 @@
   Ler em <a href="README.pt-br.md"> Português do Brasil </a>
 </p> -->
 
-[![Version](https://img.shields.io/npm/v/com.no-slopes.sprite-animations?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
-[![Downloads](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=downloads&query=%24.downloads&suffix=%2Fmonth&url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.no-slopes.sprite-animations)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
+[![Version](https://img.shields.io/npm/v/com.no-slopes.sprite-animations?color=ff424d&label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
+[![Downloads](https://img.shields.io/badge/dynamic/json?color=ff424d&label=downloads&query=%24.downloads&suffix=%2Fmonth&url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.no-slopes.sprite-animations)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
 ![GitHub Repo stars](https://img.shields.io/github/stars/no-slopes/sprite-animations?label=%E2%AD%90&color=ff424d)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fno-slopes%2Fsprite-animations&count_bg=%23F7404B&title_bg=%235B5B5B&icon=&icon_color=%23514343&title=views&edge_flat=false)](https://hits.seeyoufarm.com)
 
@@ -13,7 +13,7 @@ _by No Slopes_
 
 [![Install](https://img.shields.io/badge/%F0%9F%93%81%20Install-7393B3?style=for-the-badge&color=26251f)](https://no-slopes.github.io/sprite-animations/documentation/install.html)  
 [![Docs](https://img.shields.io/badge/%F0%9F%93%9A%20Documentation-FFCE00?style=for-the-badge&color=26251f)](https://no-slopes.github.io/sprite-animations)  
-[![Kofi](https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&logo=kofi&logoColor=f7404b&color=26251f)](https://ko-fi.com/indiegabo)  
+[![Kofi](https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&logo=kofi&logoColor=f7404b&color=26251f)](https://ko-fi.com/indiegabo)
 
 A smooth and intuitive way to work with spritesheets in Unity.
 
