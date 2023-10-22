@@ -33,7 +33,9 @@ Checkout [how it works](https://no-slopes.github.io/sprite-animations/documentat
 
 ## Installing
 
-https://github.com/no-slopes/sprite-animations/assets/95456621/410bc5ef-c443-4210-a3a0-9e9d35a7d325
+[Installation Video](https://github.com/no-slopes/sprite-animations/assets/95456621/410bc5ef-c443-4210-a3a0-9e9d35a7d325)
+
+Detailed instructions [here](https://no-slopes.github.io/sprite-animations/documentation/install.html)
 
 ## Unity tested versions
 
