@@ -18,7 +18,7 @@ _by No Slopes_
 
 A smooth and intuitive way to work with spritesheets in Unity.
 
-https://github.com/no-slopes/sprite-animations/assets/95456621/c9b5d3c5-aba1-4150-84fe-ccc2c45ee71e
+
 
 ## Why bother?
 
