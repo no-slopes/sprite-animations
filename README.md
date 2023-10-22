@@ -33,7 +33,7 @@ Checkout [how it works](https://no-slopes.github.io/sprite-animations/documentat
 
 ## Installing
 
-[Installation Video](https://github-production-user-asset-6210df.s3.amazonaws.com/95456621/277142241-410bc5ef-c443-4210-a3a0-9e9d35a7d325.mp4)
+[![Installation Video]](https://github-production-user-asset-6210df.s3.amazonaws.com/95456621/277142241-410bc5ef-c443-4210-a3a0-9e9d35a7d325.mp4)
 
 Detailed instructions [here](https://no-slopes.github.io/sprite-animations/documentation/install.html)
 
