@@ -11,6 +11,8 @@
 
 _by No Slopes_
 
+[![Install](https://img.shields.io/badge/%F0%9F%93%81%20Install-7393B3?style=for-the-badge&color=26251f)](https://no-slopes.github.io/sprite-animations/documentation/install.html)
+[![Docs](https://img.shields.io/badge/%F0%9F%93%9A%20Documentation-FFCE00?style=for-the-badge&color=26251f)](https://no-slopes.github.io/sprite-animations)
 [![Kofi](https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&logo=kofi&logoColor=f7404b&color=26251f)](https://ko-fi.com/indiegabo)
 
 A smooth and intuitive way to work with spritesheets in Unity.
@@ -30,10 +32,6 @@ Checkout [how it works](https://no-slopes.github.io/sprite-animations/documentat
 
 - [Sprite Animator](https://no-slopes.github.io/sprite-animations/documentation/sprite-animator/index.html)
 - [Animations Manager](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html)
-
-## Check the docs
-
-- [Documentation](https://no-slopes.github.io/sprite-animations)
 
 ## Installing
 
