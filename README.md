@@ -18,6 +18,8 @@ _by No Slopes_
 
 A smooth and intuitive way to work with spritesheets in Unity.
 
+## Showcase
+
 [![Youtube Showcase](https://img.youtube.com/vi/jpoCPpwkFnM/0.jpg)](https://www.youtube.com/watch?v=jpoCPpwkFnM)
 
 ## Why bother?
