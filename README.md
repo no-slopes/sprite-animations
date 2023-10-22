@@ -33,6 +33,8 @@ Checkout [how it works](https://no-slopes.github.io/sprite-animations/documentat
 
 ## Installing
 
+https://github.com/no-slopes/sprite-animations/assets/95456621/410bc5ef-c443-4210-a3a0-9e9d35a7d325
+
 ## Unity tested versions
 
 [2022.3.10 LTS](https://unity.com/releases/editor/whats-new/2022.3.10)
