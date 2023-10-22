@@ -19,9 +19,11 @@ _by No Slopes_
 A smooth and intuitive way to work with spritesheets in Unity.
 
 ## Showcase
-
+<!--
 [![Youtube Showcase](https://img.youtube.com/vi/jpoCPpwkFnM/0.jpg)](https://www.youtube.com/watch?v=jpoCPpwkFnM)
+-->
 
+[![Youtube Showcase](https://img.youtube.com/vi/x6jFZvvOGgk/0.jpg)](https://www.youtube.com/watch?v=x6jFZvvOGgk)
 ## Why bother?
 
 - The [Animations Manager](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html) window provides qualitity of life when managing your animations and frames.
