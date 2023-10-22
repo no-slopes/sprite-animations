@@ -2,6 +2,7 @@
   Ler em <a href="README.pt-br.md"> Português do Brasil </a>
 </p> -->
 
+![Compatibility](https://img.shields.io/badge/-2022.3%2B-11191F?logo=Unity&color=5d5d5d)
 [![Version](https://img.shields.io/npm/v/com.no-slopes.sprite-animations?color=ff424d&label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
 [![Downloads](https://img.shields.io/badge/dynamic/json?color=ff424d&label=downloads&query=%24.downloads&suffix=%2Fmonth&url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.no-slopes.sprite-animations)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
 ![GitHub Repo stars](https://img.shields.io/github/stars/no-slopes/sprite-animations?label=%E2%AD%90&color=ff424d)
