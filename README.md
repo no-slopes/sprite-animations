@@ -42,7 +42,7 @@ Detailed instructions [here](https://no-slopes.github.io/sprite-animations/docum
 
 ## Unity tested versions
 
-[2022.3.10 LTS](https://unity.com/releases/editor/whats-new/2022.3.10)
+[![Compatibility](https://img.shields.io/badge/-2022.3%2B-11191F?logo=Unity&color=5d5d5d)](https://unity.com/releases/editor/archive)
 
 ## About No Slopes
 
