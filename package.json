@@ -51,8 +51,5 @@
     "release-minor-beta": "release-it minor --preRelease=beta",
     "serve-docs": "docfx ../sprite-animations-development/docfx_project/docfx.json --serve",
     "build-docs": "docfx ../sprite-animations-development/docfx_project/docfx.json"
-  },
-  "devDependencies": {
-    "release-it": "^16.2.1"
   }
 }
