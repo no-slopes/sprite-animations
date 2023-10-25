@@ -43,7 +43,7 @@
     }
   ],
   "scripts": {
-    "pre-release": "npx auto-changelog -p && mv -f CHANGELOG.md ../../docfx_project/documentation/CHANGELOG.md && docfx ../../docfx_project/docfx.json && echo Go create Unity assets before releasing",
+    "pre-release": "npx auto-changelog -p && mv -f CHANGELOG.md ../../docfx_project/documentation/CHANGELOG.md && docfx ../../docfx_project/docfx.json && echo Go create Unity .meta and the .unitypackage before releasing",
     "serve-docs": "docfx ../../docfx_project/docfx.json --serve",
     "build-docs": "docfx ../../docfx_project/docfx.json"
   }
