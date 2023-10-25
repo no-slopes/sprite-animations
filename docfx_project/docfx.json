@@ -61,7 +61,7 @@
         "TODO": "alert alert-secondary"
       }
     },
-    "output": "../Assets/_SpriteAnimations/docs",
+    "output": "../docs",
     "globalMetadata": {
       "_appTitle": "Sprite Animations",
       "_appFaviconPath": "images/favicon.ico",
