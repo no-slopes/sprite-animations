@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 1; flex-direction: row; width: 100%; height: 100%;">
+        <ui:VisualElement name="frames-container" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; width: 100%;">
+            <ui:VisualElement name="top-bar" class="buttons-container" style="flex-grow: 0; height: 50px; flex-direction: row; align-items: center; background-color: rgba(55, 0, 0, 0);">
+                <ui:Label tabindex="-1" text="Size:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="size-label" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+                <ui:Label tabindex="-1" text="99" parse-escape-sequences="true" display-tooltip-when-elided="true" name="size-text" style="-unity-text-align: middle-center; background-color: rgb(40, 91, 128); color: rgb(255, 255, 255); margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;" />
+                <ui:VisualElement name="size-field-element" style="flex-grow: 1; flex-direction: row; max-width: 200px; align-items: center;" />
+                <ui:VisualElement name="expander" style="flex-grow: 1;" />
+                <ui:Button text="Add Frame" parse-escape-sequences="true" display-tooltip-when-elided="true" name="add-button" tooltip="Creates a new frame for the cycle" class="primary" />
+                <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="clear-button" tooltip="Removes all the frames" class="danger" />
+            </ui:VisualElement>
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="scroll-view" style="flex-grow: 1; max-height: none; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; flex-wrap: wrap; overflow: hidden; min-height: 250px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

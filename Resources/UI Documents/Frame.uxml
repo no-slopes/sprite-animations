@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <ui:VisualElement name="container" class="frame-container" style="flex-grow: 1; flex-direction: row; align-items: center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 70px; max-height: 70px; justify-content: space-between;">
+        <ui:VisualElement name="index-container" class="sa-label" style="flex-grow: 0; flex-shrink: 0; max-width: 20px; margin-right: 5px; margin-left: 5px;">
+            <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="index-label" style="color: rgb(255, 255, 255); -unity-font-style: bold;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="image-preview-container" style="flex-grow: 0; flex-shrink: 0; background-color: rgba(60, 0, 0, 0.61); margin-top: 0; margin-right: 5px; margin-bottom: 0; margin-left: 5px; align-items: center; justify-content: center; align-self: auto; flex-direction: row; height: 50px; width: 50px; overflow: hidden;" />
+        <ui:VisualElement name="fields-container" style="flex-grow: 1; height: 100%; justify-content: center; align-items: flex-start;">
+            <ui:VisualElement name="sprite-field-container" style="flex-grow: 1; flex-direction: row; align-items: center; width: 100%; height: 30px; text-overflow: ellipsis;">
+                <ui:Label tabindex="-1" text="Sprite:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="sa-label" style="color: rgb(255, 255, 255); min-width: 50px;" />
+                <uie:ObjectField name="sprite-field" type="UnityEngine.Sprite, UnityEngine.CoreModule" class="object-field" style="color: rgb(255, 255, 255); width: auto; height: 100%; flex-grow: 1; flex-direction: column; align-items: center; justify-content: center; flex-wrap: nowrap;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="id-field-container" style="flex-grow: 1; flex-direction: row; align-items: center; width: 100%; height: 30px;">
+                <ui:Label tabindex="-1" text="Id:" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="Used to register actions to be performed when the AnimationPerfomer plays this frame" class="sa-label" style="color: rgb(255, 255, 255); min-width: 50px;" />
+                <ui:TextField picking-mode="Ignore" name="id-field" style="color: rgb(255, 255, 255); width: auto; height: 100%; flex-grow: 1; flex-shrink: 1;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="arrows-container" style="flex-grow: 0; height: 50px; width: 50px; align-items: center; justify-content: center;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="up-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(233, 233, 233);">
+                <ui:VisualElement name="up-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/Navigation Up&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41);" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="down-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(233, 233, 233);">
+                <ui:VisualElement name="down-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/Navigation Down&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41); background-color: rgba(0, 0, 0, 0);" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="delete-button-container" style="flex-grow: 0; height: 50px; width: 50px; align-items: center; justify-content: center;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="delete-button" class="danger" style="height: 50px; width: 50px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                <ui:VisualElement name="trash-can-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/trash-can&apos;); height: 20px; width: 20px; flex-shrink: 0;" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,55 @@
+.row {
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.unity-base-field {
+}
+
+.unity-base-field > Label {
+    color: rgb(200, 200, 200);
+    -unity-font-style: bold;
+}
+
+.unity-property-field > Label {
+    color: rgb(200, 200, 200);
+    -unity-font-style: bold;
+}
+
+.field-row {
+}
+
+.open-button {
+    background-color: rgb(145, 43, 43);
+}
+
+.open-button:hover {
+    background-color: rgb(195, 51, 82);
+}
+
+.open-docs-button {
+    background-color: rgb(73, 112, 171);
+}
+
+.open-docs-button:hover {
+    background-color: rgb(21, 71, 147);
+}
+
+.sa-field {
+    height: 20px;
+    width: 100%;
+    -unity-text-align: middle-left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.unity-base-field .unity-object-field__display {
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+}
