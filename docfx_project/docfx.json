@@ -1,0 +1,79 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "SpriteAnimations.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "api",
+      "outputFormat": "mref",
+      "includePrivateMembers": false,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "noRestore": false,
+      "namespaceLayout": "flattened",
+      "memberLayout": "samePage",
+      "EnumSortOrder": "alphabetic",
+      "allowCompilationErrors": false
+    }
+  ],
+  "build": {
+    "template": [
+      "default",
+      "modern",
+      "templates/material"
+    ],
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "documentation/**.md",
+          "documentation/**.yml",
+          "documentation/animations-manager/**.yml",
+          "documentation/animations-manager/**.md",
+          "documentation/installation/**.yml",
+          "documentation/installation/**.md",
+          "documentation/sprite-animator/**.yml",
+          "documentation/sprite-animator/**.md",
+          "toc.yml",
+          "*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "markdownEngineProperties": {
+      "alerts": {
+        "TODO": "alert alert-secondary"
+      }
+    },
+    "output": "../docs",
+    "globalMetadata": {
+      "_appTitle": "Sprite Animations",
+      "_appFaviconPath": "images/favicon.ico",
+      "_appLogoPath": "images/logo.png",
+      "enableSearch": true,
+      "_disableContribution": true,
+      "_bannerImagePath": "images/banner.png"
+    },
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "postProcessors": [],
+    "keepFileLink": false,
+    "disableGitFeatures": false
+  }
+}

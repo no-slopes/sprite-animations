@@ -20,7 +20,7 @@ A smooth and intuitive way to work with spritesheets in Unity.
 
 ## Showcase
 
-[![Youtube Showcase](https://img.youtube.com/vi/jpoCPpwkFnM/0.jpg)](https://www.youtube.com/watch?v=jpoCPpwkFnM)
+[![youtube-showcase_640](https://github.com/no-slopes/sprite-animations/assets/95456621/21942d35-ca0c-420d-b5cc-7a3c60095ba4)](https://www.youtube.com/watch?v=jpoCPpwkFnM)
 
 ## Why bother?
 
