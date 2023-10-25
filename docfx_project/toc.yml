@@ -1,0 +1,9 @@
+- name: Docs
+  href: documentation/
+
+- name: Api
+  href: api/
+  homepage: api/SpriteAnimations.yml
+
+- name: Github
+  href: https://github.com/no-slopes/sprite-animations
