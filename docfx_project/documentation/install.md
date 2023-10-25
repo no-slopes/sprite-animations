@@ -43,4 +43,6 @@ The URL will look like this, if you want to install version (tag) v1.0.0:
 
 ## From a .unitypackage
 
-This option will be available soon
+[Pick a .unitypackage](https://github.com/no-slopes/sprite-animations/tree/main/UnityPackages) from a version you want and import it in your project.
+
+[Click here](https://github.com/no-slopes/sprite-animations/blob/main/UnityPackages/sprite-animations_latest.unitypackage) to download the latest one.
