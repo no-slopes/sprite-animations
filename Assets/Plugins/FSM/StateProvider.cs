@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using UnityEngine;
 
 namespace HandyFSM
 {
@@ -41,7 +41,7 @@ namespace HandyFSM
         /// the provider.
         /// </summary>
         /// <param name="baseStateType">The base state type.</param>
-        public void LoadStatesFromBaseType(Type baseStateType)
+        public void LoadStatesFromBaseType(Type baseStateType, bool initializeAfterCommit = true)
         {
 
             // Get all the classes that derive from the base state type and are not abstract
@@ -59,8 +59,46 @@ namespace HandyFSM
                 CommitState(childType, childState);
             }
 
+            if (!initializeAfterCommit) return;
+
             // Initialize each instantiated state
-            instatiatedState.ForEach(state => state.Load(_machine));
+            instatiatedState.ForEach(state => state.Initialize(_machine));
+        }
+
+        /// <summary>
+        /// Receives a list of scriptable states, commits all of them and initializes them.
+        /// </summary>
+        /// <param name="states">The list of scriptable states to load.</param>
+        public void LoadStatesFromScriptablesList(List<ScriptableState> states, bool initializeAfterCommit = true)
+        {
+            List<IState> commitedStates = new();
+
+            // Instantiate and commit each scriptable state
+            foreach (ScriptableState scriptableState in states)
+            {
+                ScriptableState clone = UnityEngine.Object.Instantiate(scriptableState);
+
+                // Commit the state
+                if (!CommitState(clone.GetType(), clone)) continue;
+                commitedStates.Add(clone);
+            }
+
+            if (!initializeAfterCommit) return;
+
+            // We can only initialize the states after commiting them because they might have
+            // transitions wich need other states to work.
+            foreach (IState commitedState in commitedStates)
+            {
+                commitedState.Initialize(_machine);
+            }
+        }
+
+        public void InitializeAllStates()
+        {
+            foreach (IState state in _states.Values)
+            {
+                state.Initialize(_machine);
+            }
         }
 
         /// <summary>
@@ -85,13 +123,13 @@ namespace HandyFSM
             CommitState(stateType, state);
 
             // Initialize the state with the state machine
-            state.Load(_machine);
+            state.Initialize(_machine);
         }
 
         public void LoadState(IState state)
         {
             CommitState(state.GetType(), state);
-            state.Load(_machine);
+            state.Initialize(_machine);
         }
 
         /// <summary>
@@ -99,12 +137,13 @@ namespace HandyFSM
         /// </summary>
         /// <param name="type">The type to commit the state for.</param>
         /// <param name="state">The state to be committed.</param>
-        protected void CommitState(Type type, IState state)
+        protected bool CommitState(Type type, IState state)
         {
-            if (_states.ContainsKey(type)) return;
+            if (_states.ContainsKey(type)) return false;
 
             // Add the state to the dictionary
             _states.Add(type, state);
+            return true;
         }
 
         #endregion

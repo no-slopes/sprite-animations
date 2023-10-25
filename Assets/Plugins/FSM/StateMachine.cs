@@ -148,32 +148,7 @@ namespace HandyFSM
             _machineType = GetType();
             _stateProvider = new StateProvider(this);
 
-            foreach (ScriptableState scriptableState in _scriptableStates)
-            {
-                ScriptableState copy = Instantiate(scriptableState);
-                _stateProvider.LoadState(copy);
-            }
-
-            PropertyInfo baseStateInfo = _machineType.GetProperty("BaseStateType");
-            if (baseStateInfo != null)
-            {
-                Type baseStateType = (Type)baseStateInfo.GetValue(this);
-                LoadStatesOfType(baseStateType);
-            }
-
-            if (_defaultScriptableState != null)
-            {
-                _defaultState = _stateProvider.Get(_defaultScriptableState.GetType());
-                return;
-            }
-
-            PropertyInfo defaultStateInfo = _machineType.GetProperty("DefaultStateType");
-            if (defaultStateInfo != null)
-            {
-                _defaultStateType = (Type)defaultStateInfo.GetValue(this);
-                _defaultState = _stateProvider.Get(_defaultStateType);
-                return;
-            }
+            RecognizeAndInitializeStates();
         }
 
         protected virtual void Start()
@@ -214,6 +189,47 @@ namespace HandyFSM
         #endregion
 
         #region Machine Engine
+
+        /// <summary>
+        /// This method recognizes and initializes the states for the machine.
+        /// </summary>
+        protected void RecognizeAndInitializeStates()
+        {
+            _stateProvider.LoadStatesFromScriptablesList(_scriptableStates, false);
+
+            // Get the PropertyInfo for the LoadableStateType property of the machine type
+            // for the case of this class being inherited.
+            PropertyInfo loadableStateInfo = _machineType.GetProperty("LoadableStateType");
+            if (loadableStateInfo != null)
+            {
+                // Get the loadable state type and load states from that base type
+                Type baseStateType = (Type)loadableStateInfo.GetValue(this);
+                _stateProvider.LoadStatesFromBaseType(baseStateType, false);
+            }
+
+            if (_defaultScriptableState != null)
+            {
+                // If a default scriptable state is set, get the state from the state provider
+                _defaultState = _stateProvider.Get(_defaultScriptableState.GetType());
+            }
+            else
+            {
+                // Get the PropertyInfo for the DefaultStateType property of the machine type
+                PropertyInfo defaultStateInfo = _machineType.GetProperty("DefaultStateType");
+                if (defaultStateInfo != null)
+                {
+                    // Get the default state type and get the state from the state provider
+                    _defaultStateType = (Type)defaultStateInfo.GetValue(this);
+                    _defaultState = _stateProvider.Get(_defaultStateType);
+                    return;
+                }
+            }
+
+            // Initialize all the states
+            // This should occur after the states have been loaded so they can recognize each other
+            // when using Machine.GetState<>();
+            _stateProvider.InitializeAllStates();
+        }
 
         /// <summary>
         /// Turns the machine on and enters the given state
@@ -478,6 +494,14 @@ namespace HandyFSM
             _stateProvider.LoadStatesFromBaseType(stateType);
         }
 
+        /// <summary>
+        /// Loads and initalizes states from a list of ScriptableState objects
+        /// </summary>
+        /// <param name="states">A list of ScriptableState objects to load.</param>
+        public void LoadStatesFromScriptablesList(List<ScriptableState> states)
+        {
+            _stateProvider.LoadStatesFromScriptablesList(states, true);
+        }
         /// <summary>
         /// Loads the state of the given type.
         /// </summary>

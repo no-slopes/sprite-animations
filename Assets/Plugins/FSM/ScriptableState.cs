@@ -34,11 +34,11 @@ namespace HandyFSM
 
         #region Cycle Methods
 
-        public void Load(StateMachine machine)
+        public void Initialize(StateMachine machine)
         {
             _machine = machine;
             SortTransitions();
-            OnLoad();
+            OnInit();
         }
 
         public virtual void OnEnter() { }
@@ -47,7 +47,7 @@ namespace HandyFSM
         public virtual void FixedTick() { }
         public virtual void LateTick() { }
 
-        protected virtual void OnLoad() { }
+        protected virtual void OnInit() { }
 
         #endregion
 

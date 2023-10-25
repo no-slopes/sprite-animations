@@ -7,7 +7,7 @@ public class WarriorStateIdle : WarriorState
 {
     private Func<bool> IsRunning => () => WarriorMachine.MovementInput.x != 0;
 
-    protected override void OnLoad()
+    protected override void OnInit()
     {
         SetInterruptible(true);
 

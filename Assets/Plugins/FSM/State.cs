@@ -41,12 +41,12 @@ namespace HandyFSM
         /// <summary>
         /// This will be called before the  method.
         /// </summary>
-        public virtual void Load(StateMachine machine)
+        public virtual void Initialize(StateMachine machine)
         {
             _machine = machine;
             _name = GetType().Name;
             SortTransitions();
-            OnLoad();
+            OnInit();
         }
 
         public virtual void OnEnter() { }
@@ -55,7 +55,7 @@ namespace HandyFSM
         public virtual void FixedTick() { }
         public virtual void LateTick() { }
 
-        protected virtual void OnLoad() { }
+        protected virtual void OnInit() { }
 
         #endregion
 

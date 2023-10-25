@@ -10,7 +10,7 @@ namespace HandyFSM
 
         bool ShouldTransition(out IState target);
 
-        void Load(StateMachine machine);
+        void Initialize(StateMachine machine);
 
         void OnEnter();
         void OnExit();
