@@ -1,10 +1,10 @@
 {
   "name": "com.no-slopes.sprite-animations",
-  "version": "1.1.1-beta",
+  "version": "1.1.2-beta",
   "displayName": "Sprite Animations",
   "description": "A smooth and intuitive way to work with spritesheets in Unity.",
   "unity": "2022.3",
-  "unityRelease": "10f1",
+  "unityRelease": "0f1",
   "documentationUrl": "https://no-slopes.github.io/sprite-animations",
   "changelogUrl": "https://no-slopes.github.io/sprite-animations/documentation/CHANGELOG.html",
   "licensesUrl": "https://github.com/no-slopes/sprite-animations/blob/main/LICENSE.md",
