@@ -27,8 +27,7 @@
 # Visual Studio cache directory
 .vs/
 
-# Visual Studio Code
-.vscode
+# Visual Studio workspaces
 *.code-workspace
 *.code-workspace.meta
 
@@ -92,8 +91,13 @@ fmod_editor.log
 # Release it
 /node_modules
 /node_modules.meta
-.release-it.json
 
+# Environment
+.env
+
+# Package
+
+package-lock.json.meta
 
 
 

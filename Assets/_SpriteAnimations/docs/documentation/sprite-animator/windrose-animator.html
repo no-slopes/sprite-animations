@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The WindroseAnimator | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The WindroseAnimator | Sprite Animations ">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/feature/structure/docfx_project/documentation/sprite-animator/windrose-animator.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+
+    <meta property="og:title" content="Sprite Animations">
+    <meta property="og:description" content="A smooth and intuitive way to work with spritesheets in Unity.">
+    
+    <meta property="og:image" content="https://no-slopes.github.io/sprite-animations/images/banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta property="og:url" content="https://no-slopes.github.io/sprite-animations">
+    
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="the-windroseanimator">The WindroseAnimator</h1>
+
+<p>This is the performer for <a href="../animations/windrose-animation.html">Windrose Animations</a>.</p>
+<p>In addition to allowing the usage of <code>SetOnFrame()</code> and <code>OnEnd()</code> methods like the <a href="single-animator.html">SingleAnimator</a>, the WindroseAnimator allows you to set the direction in wich you
+want that animation to played.</p>
+<p>You can set direction by telling an specific direction of the <a href="../../api/SpriteAnimations.WindroseDirection.html">WindroseDirection</a> enum:</p>
+<table>
+<thead>
+<tr>
+<th>WindroseDirection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>North</td>
+</tr>
+<tr>
+<td>NorthEast</td>
+</tr>
+<tr>
+<td>East</td>
+</tr>
+<tr>
+<td>SouthEast</td>
+</tr>
+<tr>
+<td>South</td>
+</tr>
+<tr>
+<td>SouthWest</td>
+</tr>
+<tr>
+<td>West</td>
+</tr>
+<tr>
+<td>NorthWest</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-csharp">using SpriteAnimations; // &lt;- Important so you can use the WindroseDirection enum
+
+public class MyClass : MonoBehaviour
+{
+    public SpriteAnimator _animator;
+
+    private void Start()
+    {
+        _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;).SetDirection(WindroseDirection.East);
+    }
+}
+</code></pre>
+<p>or you can pass in a Vector2 and it will resolve wich direction that Vector2 is pointing using the following setup conditions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Direction</th>
+<th style="text-align: center;">Vector Conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">North</td>
+<td style="text-align: center;">x == 0 &amp;&amp; y &gt; 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">NorthEast</td>
+<td style="text-align: center;">x &gt; 0 &amp;&amp; y &gt; 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">East</td>
+<td style="text-align: center;">x &gt; 0 &amp;&amp; y == 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">SouthEast</td>
+<td style="text-align: center;">x &gt; 0 &amp;&amp; y &lt; 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">South</td>
+<td style="text-align: center;">x == 0 &amp;&amp; y &lt; 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">SouthWest</td>
+<td style="text-align: center;">x &lt; 0 &amp;&amp; y &lt; 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">West</td>
+<td style="text-align: center;">x &lt; 0 &amp;&amp; y == 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">NorthWest</td>
+<td style="text-align: center;">x &lt; 0 &amp;&amp; y &gt; 0</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-csharp">using SpriteAnimations;
+
+public class MyClass : MonoBehaviour
+{
+    public SpriteAnimator _animator;
+
+    private void Start()
+    {
+        Vector2 movementInput = new Vector2(0, -1); // A Vector2 representing South. Vector2(0, -0.7f), for example, would also work
+        _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;).SetDirection(_movementInput);
+    }
+}
+</code></pre>
+<p>You might wanna cache the performer to change direction when the player inputs new movement data:</p>
+<pre><code class="lang-csharp">using SpriteAnimations;
+
+public class WalkPlayer : MonoBehaviour
+{
+    public SpriteAnimator _animator;
+
+    private WindroseAnimator _perfomer;
+
+    // This would be called whenever the animator should play the walk animation.
+    public void PlayWalk(Vector2 startingDirection)
+    {
+        _performer = _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;);
+        _perfomer.SetDirection(startingDirection);
+    }
+
+    // This would be called whenenever new input is recognized
+    public void ChangeDirection(Vector2 newDirection)
+    {
+        _performer?.SetDirection(newDirection);
+    }
+}
+</code></pre>
+<p>And if you do not have West animations (NorthWest, West and SouthWest) or simply do not want to craft them because it would just mean to flip the sprite horizontally, you can pass <a href="../../api/SpriteAnimations.WindroseFlipStrategy.html">WindroseFlipStrategy.FlipEastToPlayWest</a> as the second parameter to the <code>SetDirection()</code> method and tell the performer to flip accordingly:</p>
+<pre><code class="lang-csharp">using SpriteAnimations; // &lt;- Important to use the WindroseFlipStrategy enum.
+
+public class WalkPlayer : MonoBehaviour
+{
+    public SpriteAnimator _animator;
+
+    private void Start()
+    {
+        // This will play the East animation flipped horizontally.
+        _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;).SetDirection(WindroseDirection.West, WindroseFlipStrategy.FlipEastToPlayWest);
+    }
+}
+</code></pre>
+<p>The same goes to the Vector2 signature:</p>
+<pre><code class="lang-csharp">using SpriteAnimations; // &lt;- Important to use the WindroseFlipStrategy enum.
+
+public class WalkPlayer : MonoBehaviour
+{
+    public SpriteAnimator _animator;
+
+    private void Start()
+    {
+        Vector2 movementInput = new Vector2(1,0); // A Vector2 representing East.
+
+        // This will play the East animation flipped horizontally.
+        _animator.Play&lt;WindroseAnimation&gt;(&quot;Walk&quot;).SetDirection(movementInput, WindroseFlipStrategy.FlipEastToPlayWest);
+    }
+}
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>These examples should only inform you how to interact with the performer. Since your project has its own peculiar ways, these are not meant to be copy pasted and expected to work out of the box.</p>
+</div>
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

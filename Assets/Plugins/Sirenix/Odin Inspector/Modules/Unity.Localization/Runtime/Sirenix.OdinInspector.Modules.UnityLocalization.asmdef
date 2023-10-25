@@ -1,0 +1,11 @@
+{
+    "name": "Sirenix.OdinInspector.Modules.UnityLocalization",
+    "references": [ "Unity.Localization", "Sirenix.Serialization", "Sirenix.Serialization.Config" ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "autoReferenced": true,
+    "overrideReferences": false,
+    "precompiledReferences": [ "Sirenix.Serialization.dll", "Sirenix.Serialization.Config.dll" ],
+    "defineConstraints": [ "!ODIN_INSPECTOR_EDITOR_ONLY" ]
+}

@@ -1,0 +1,14 @@
+ManifestVersion: 1
+ModuleID: Unity.Localization
+ModuleVersion: 1.1.0.0
+ModuleFiles:
+  Editor.meta
+  Runtime.meta
+  Editor/LocalizationSupport.cs
+  Editor/LocalizationSupport.cs.meta
+  Editor/Sirenix.OdinInspector.Modules.UnityLocalization.Editor.asmdef
+  Editor/Sirenix.OdinInspector.Modules.UnityLocalization.Editor.asmdef.meta
+  Runtime/LocalizedStringFormatter.cs
+  Runtime/LocalizedStringFormatter.cs.meta
+  Runtime/Sirenix.OdinInspector.Modules.UnityLocalization.asmdef
+  Runtime/Sirenix.OdinInspector.Modules.UnityLocalization.asmdef.meta

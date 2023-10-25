@@ -1,0 +1,41 @@
+items:
+  - name: First Steps
+    items:
+      - name: How it works
+        href: how-it-works.md
+
+      - name: Install (2022.3+ only)
+        href: install.md
+
+  - name: Sprite Animator
+    href: sprite-animator/index.md
+    items:
+      - name: Performers
+        href: sprite-animator/performers.md
+        items:
+          - name: Single Animator
+            href: sprite-animator/single-animator.md
+
+          - name: Windrose Animator
+            href: sprite-animator/windrose-animator.md
+
+  - name: Animations Manager
+    href: animations-manager/index.md
+
+  - name: Animations
+    href: animations/index.md
+    items:
+      - name: Single Animation
+        href: animations/single-animation.md
+
+      - name: Windrose Animation
+        href: animations/windrose-animation.md
+
+      - name: Combo Animation
+        href: animations/combo-animation.md
+
+      - name: Composite Animation
+        href: animations/composite-animation.md
+
+  - name: Changelog
+    href: CHANGELOG.md

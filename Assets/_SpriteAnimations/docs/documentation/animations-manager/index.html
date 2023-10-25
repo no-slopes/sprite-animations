@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Animations Manager | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Animations Manager | Sprite Animations ">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/feature/structure/docfx_project/documentation/animations-manager/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+
+    <meta property="og:title" content="Sprite Animations">
+    <meta property="og:description" content="A smooth and intuitive way to work with spritesheets in Unity.">
+    
+    <meta property="og:image" content="https://no-slopes.github.io/sprite-animations/images/banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta property="og:url" content="https://no-slopes.github.io/sprite-animations">
+    
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="animations-manager">Animations Manager</h1>
+
+<p>Where you prepare animations to be played using the <a href="../sprite-animator/index.html">Sprite Animator</a>.</p>
+<p><img src="../../images/animations-manager-window.png" alt="Animations Manager Window"></p>
+<p>There are 2 ways of acessing the Animations Manager window:</p>
+<ol>
+<li>By clicking the <code>Open Animations Manager</code> present on the <a href="../sprite-animator/index.html">Sprite Animator</a> component's inspector</li>
+</ol>
+<p><img src="../../images/open-manager-button.png" alt="Open Manager Button"></p>
+<ol start="2">
+<li>Accessing <code>Tools &gt; Sprite Animations &gt; Animations Manager</code> and providing a sprite Animator to be loaded. You can even click the <code>From Selection</code> button to get the Sprite Animator of the currently selected GameObject.</li>
+</ol>
+<p><img src="../../images/tools-menu.png" alt="Tools Menu"></p>
+<h2 id="creating-an-animation">Creating an animation</h2>
+<p>Once you have selected a <a href="../sprite-animator/index.html">Sprite Animator</a> you can go ahead and create some animations:</p>
+<p><img src="../../images/creating-animation.png" alt="Creating Animation"></p>
+<p>Provide a name, select the animation type and click create. Now all you have to do is select a folder to save the animation asset (it is a ScriptableObject) and
+we can now start adding frames to that animation.</p>
+<h2 id="basic-fields">Basic fields</h2>
+<p>All animations have these 2 basic fields:</p>
+<ul>
+<li><code>Name</code> - Wich, well... is the name of the animation. This can be used to tell the <a href="../sprite-animator/index.html">Sprite Animator</a> to play the animation.</li>
+<li><code>FPS</code> - Wich is the frames per second rate in wich that animation will play.</li>
+</ul>
+<p>Note that as we have multiple types of animations, we will need different layouts for each of them. But some elements will appear frequently.</p>
+<h2 id="frame-cycle">Frame Cycle</h2>
+<p>The Frame Cycle represents a collection of frames that must be played from the very first index (0) to whatever the last frame is. An animation may have
+a single cycle, wich is the case of the <a href="../animations/single-animation.html">Single Animation</a> or multiple cycles, wich is the case of the <a href="../animations/windrose-animation.html">Windrose Animation</a>.</p>
+<p><img src="../../images/frames-list.png" alt="Frames List"></p>
+<h2 id="adding-frames-to-a-frame-cycle">Adding Frames to a Frame Cycle</h2>
+<p>Defining frames for animations is really simple:</p>
+<ul>
+<li><strong>By Clicking the &quot;Add Frame&quot; button:</strong></li>
+</ul>
+<p>Clicking the &quot;Add Frame&quot; button will create a new frame for the animation and insert it at the last position of the list.</p>
+<p>Now just add a sprite to that frame and you are good to go.</p>
+<ul>
+<li><strong>Dragging a single sprite to the list</strong></li>
+</ul>
+<p>Just select a sprite in the project window and drag it into the frames list. This you create a new frame, insert it at the last position
+of the list and automatically load the sprite as the frame sprite.</p>
+<ul>
+<li><strong>By dragging a collection of sprites to the list</strong></li>
+</ul>
+<ol>
+<li>Select multiple sprites representing the animation</li>
+<li>Drag them into the list and release</li>
+</ol>
+<p><img src="../../images/dropping-frames.png" alt="Dropping Sprites"></p>
+<p>This will create a Frame Cycle with all those sprites already loaded into its frames.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This will completly override the previous Frames List. There will be a confirmation window, but be carefull.</p>
+</div>
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

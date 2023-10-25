@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Showcase | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Showcase | Sprite Animations ">
+      
+      <link rel="icon" href="images/favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/feature/structure/docfx_project/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+
+    <meta property="og:title" content="Sprite Animations">
+    <meta property="og:description" content="A smooth and intuitive way to work with spritesheets in Unity.">
+    
+    <meta property="og:image" content="https://no-slopes.github.io/sprite-animations/images/banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta property="og:url" content="https://no-slopes.github.io/sprite-animations">
+    
+  </head>
+
+  <script type="module">
+    import options from './public/main.js'
+    import { init } from './public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://unity.com/releases/editor/archive"><img src="https://img.shields.io/badge/-2022.3%2B-11191F?logo=Unity&amp;color=5d5d5d" alt="Compatibility"></a>
+<a href="https://openupm.com/packages/com.no-slopes.sprite-animations/"><img src="https://img.shields.io/npm/v/com.no-slopes.sprite-animations?color=931111&amp;label=openupm&amp;registry_uri=https://package.openupm.com" alt="Version"></a>
+<a href="https://openupm.com/packages/com.no-slopes.sprite-animations/"><img src="https://img.shields.io/badge/dynamic/json?color=931111&amp;label=downloads&amp;query=%24.downloads&amp;suffix=%2Fmonth&amp;url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.no-slopes.sprite-animations" alt="Downloads"></a>
+<img src="https://img.shields.io/github/stars/no-slopes/sprite-animations?label=%E2%AD%90&amp;color=931111" alt="GitHub Repo stars">
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fno-slopes%2Fsprite-animations&amp;count_bg=%23931111&amp;title_bg=%23585858&amp;icon=&amp;icon_color=%23943737&amp;title=views&amp;edge_flat=false" alt="Hits"></a></p>
+<p><img src="images/banner.png" alt="Banner"></p>
+<p><em>by No Slopes</em></p>
+<p><a href="https://no-slopes.github.io/sprite-animations/documentation/install.html"><img src="https://img.shields.io/badge/%F0%9F%93%81%20Install-7393B3?style=for-the-badge&amp;color=26251f" alt="Install"></a><br>
+<a href="https://no-slopes.github.io/sprite-animations"><img src="https://img.shields.io/badge/%F0%9F%93%9A%20Documentation-FFCE00?style=for-the-badge&amp;color=26251f" alt="Docs"></a><br>
+<a href="https://ko-fi.com/indiegabo"><img src="https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&amp;logo=kofi&amp;logoColor=f7404b&amp;color=26251f" alt="Kofi"></a></p>
+<p>A smooth and intuitive way to work with spritesheets in Unity.</p>
+<h2 id="showcase">Showcase</h2>
+<p><a href="https://www.youtube.com/watch?v=jpoCPpwkFnM"><img src="https://github.com/no-slopes/sprite-animations/assets/95456621/21942d35-ca0c-420d-b5cc-7a3c60095ba4" alt="youtube-showcase_640"></a></p>
+<h2 id="why-bother">Why bother?</h2>
+<ul>
+<li>The <a href="documentation/animations-manager/index.html">Animations Manager</a> window provides qualitity of life when managing your animations and frames.</li>
+<li>Better perfomance than the Unity Animator since it only handles changing sprites at the SpriteRenderer and nothing else.</li>
+<li>Coding made easy.</li>
+<li>Perfect for state driven (FSM) characters.</li>
+</ul>
+<p>Checkout <a href="documentation/how-it-works.html">how it works</a> and give it a try!</p>
+<h2 id="key-features">Key features:</h2>
+<ul>
+<li><a href="documentation/sprite-animator/index.html">Sprite Animator</a></li>
+<li><a href="documentation/animations-manager/index.html">Animations Manager</a></li>
+</ul>
+<h2 id="the-author">The author</h2>
+<p><img src="https://github.com/no-slopes/sprite-animations/assets/95456621/2b6523f8-71b4-424c-ae61-5c5d1a3b639e" alt="portraitzinho-fundo-roxo-rounded"></p>
+<p>My name is Gabriel, ppl know me by <a href="https://github.com/indiegabo">Gabo</a> and you can find me as @indiegabo or @indiegabodev in most social networks.</p>
+<p>If you want to buy me a coffee that will be much appreciated.</p>
+<p><a href="https://ko-fi.com/indiegabo"><img src="https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&amp;logo=kofi&amp;logoColor=f7404b&amp;color=26251f" alt="Kofi"></a></p>
+<h2 id="special-thanks-and-credits">Special thanks and credits:</h2>
+<ul>
+<li><a href="https://www.linkedin.com/in/daniel-souz/">DanniBoy</a> for being my No Slopes associate and desining the logo and icons for the project</li>
+<li><a href="https://github.com/Cammin">Cammin</a>, creator of <a href="https://github.com/Cammin/LDtkToUnity">LDtk to Unity</a>, for being such a friendly person and giving me directions on how to craft this docs page. BTW if you do not know <a href="https://github.com/Cammin/LDtkToUnity">LDtk to Unity</a> yet, you should really give it a go if you work with 2D levels in unity. The quality of life this tool provide is insane!</li>
+<li><a href="https://github.com/GabrielBigardi">Gabriel Bigardi</a> for introducing me the concept of changing sprites of a SpriteRenderer directly instead of having Unity's animator to do so.</li>
+</ul>
+<h5 id="assets-used-during-showcase">Assets used during showcase</h5>
+<ul>
+<li><a href="https://luizmelo.itch.io/evil-wizard-2">EVil Wizard 2</a></li>
+<li><a href="https://luizmelo.itch.io/medieval-warrior-pack-2">Medieval Warrior Pack 2</a></li>
+<li><a href="https://gamekrazzy.itch.io/8-direction-top-down-character">8-direction Top Down Character</a></li>
+</ul>
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
