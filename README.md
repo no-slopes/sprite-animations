@@ -16,7 +16,7 @@ _by No Slopes_
 [![Docs](https://img.shields.io/badge/%F0%9F%93%9A%20Documentation-FFCE00?style=for-the-badge&color=26251f)](https://no-slopes.github.io/sprite-animations)  
 [![Kofi](https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&logo=kofi&logoColor=f7404b&color=26251f)](https://ko-fi.com/indiegabo)
 
-A smooth and intuitive way to work with spritesheets in Unity.
+A smooth and intuitive way to work with sprite sheets in Unity.
 
 ## Showcase
 
