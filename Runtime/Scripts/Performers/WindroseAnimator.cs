@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using static SpriteAnimations.SpriteAnimationWindrose;
@@ -12,14 +13,9 @@ namespace SpriteAnimations
         #region Fields
 
         /// <summary>
-        /// The number of Updates before warning dev about no direction set.
+        /// The windrose animation wich is currently associated with this performer
         /// </summary>
-        protected int _directionLessTicks = 0;
-
-        /// <summary>
-        /// If dev is already warned about no direction being set for the animation
-        /// </summary>
-        protected bool _warnedAboutDirectionLess = false;
+        protected SpriteAnimationWindrose _windroseAnimation;
 
         /// <summary>
         /// The current direction in wich the animation is playing.
@@ -27,16 +23,6 @@ namespace SpriteAnimations
         protected WindroseDirection _currentDirection = WindroseDirection.South;
 
         #endregion
-
-        #region Properties 
-
-        /// <summary>
-        /// The current windrose animation being played
-        /// </summary>
-        /// <returns> The animation or null if no animation is being played </returns>
-        protected SpriteAnimationWindrose CurrentWindroseAnimation => _currentAnimation as SpriteAnimationWindrose;
-
-        #endregion     
 
         #region Sprite Animation Logic 
 
@@ -46,13 +32,21 @@ namespace SpriteAnimations
         public override void StartAnimation(SpriteAnimation animation)
         {
             base.StartAnimation(animation);
-            _directionLessTicks = 0;
-            _warnedAboutDirectionLess = false;
-            _currentCycleElapsedTime = 0;
+
             _currentAnimation = animation;
+            _windroseAnimation = _currentAnimation as SpriteAnimationWindrose;
+
+            ResetCycle();
 
             // Try to get the cycle for the specified direction
-            CurrentWindroseAnimation.TryGetCycle(_currentDirection, out _currentCycle);
+            _windroseAnimation.TryGetCycle(_currentDirection, out _currentCycle);
+
+            if (_currentCycle.Size > 0)
+            {
+                _animator.SpriteRenderer.sprite = _currentCycle.Frames.First().Sprite;
+            }
+
+            _isPlaying = true;
         }
 
         /// <summary>
@@ -72,15 +66,16 @@ namespace SpriteAnimations
         /// <returns></returns>
         public override void Tick(float deltaTime)
         {
-            if (!HasCurrentAnimation) return;
+            if (!_isPlaying) return;
 
             _currentCycleElapsedTime += deltaTime;
-            EvaluateEnd();
+            if (_currentCycleElapsedTime >= _currentCycle.CalculateDuration(_windroseAnimation.FPS)) // means cycle passed last frame
+            {
+                EndCycle();
+                return;
+            }
 
-            if (!HasCurrentAnimation || !HasCurrentCycle) return;
-
-            int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
-            Frame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
+            var (frameIndex, evaluatedFrame) = _currentCycle.EvaluateFrame(_windroseAnimation.FPS, _currentCycleElapsedTime);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
@@ -98,6 +93,34 @@ namespace SpriteAnimations
             }
         }
 
+        /// <summary>
+        /// Resets the current animation cycle and starts playing the windrose animation from the start.
+        /// </summary>
+        /// <returns>The updated <see cref="WindroseAnimator"/> instance.</returns>
+        public WindroseAnimator FromStart()
+        {
+            // Check if there is a current animation
+            if (!HasCurrentAnimation)
+            {
+                Logger.LogError($"Trying to play a {nameof(WindroseAnimator)} from start but it has no current animation. Have you called 'Play()' before?", _animator);
+                return this;
+            }
+
+            // Reset the animation cycle
+            ResetCycle();
+
+            // Try to get the cycle for the specified direction
+            _windroseAnimation.TryGetCycle(_currentDirection, out _currentCycle);
+
+            if (_currentCycle.Size > 0)
+            {
+                _animator.SpriteRenderer.sprite = _currentCycle.Frames.First().Sprite;
+            }
+
+            _isPlaying = true;
+            return this;
+        }
+
         #endregion
 
         #region Directions
@@ -107,9 +130,24 @@ namespace SpriteAnimations
         /// </summary>
         /// <param name="direction">The direction to set.</param>
         /// <param name="flipStrategy">The strategy to use when flipping the sprite.</param>
-        /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
+        /// <returns>The updated <see cref="WindroseAnimator"/> instance.</returns>
         public WindroseAnimator SetDirection(WindroseDirection direction, WindroseFlipStrategy flipStrategy = WindroseFlipStrategy.NoFlip)
         {
+            if (!_isPlaying)
+            {
+                // Log an error if the cycle does not exist
+                Logger.LogError($"Trying to set direction for a non playing windrose animator. "
+                + $"Did you call 'Play()' before setting the direction?", _animator);
+                return this;
+            }
+
+            if (!HasCurrentAnimation)
+            {
+                Logger.LogError($"Trying to set direction for a {nameof(WindroseAnimator)} "
+                + $"wich has no current animation. Please, report this issue.", _animator);
+                return this;
+            }
+
             if (flipStrategy.Equals(WindroseFlipStrategy.FlipEastToPlayWest))
             {
                 bool shouldFlip = false;
@@ -136,19 +174,33 @@ namespace SpriteAnimations
                 _animator.SpriteRenderer.flipX = false;
             }
 
-            // Try to get the cycle for the specified direction
-            if (!CurrentWindroseAnimation.TryGetCycle(direction, out _currentCycle))
+            // Tries to get the cycle for the specified direction
+            if (!_windroseAnimation.TryGetCycle(direction, out _currentCycle))
             {
                 // Log an error if the cycle does not exist
-                Logger.LogError($"Animation '{_currentAnimation.AnimationName}' does not have a cycle for direction {direction}.", _animator);
-                EndAnimation();
+                Logger.LogError($"Animation '{_currentAnimation.AnimationName}' does not have a cycle for direction {direction} "
+                + $"using the '{flipStrategy}' strategy. The animation will now be stopped.", _animator);
+                StopAnimation();
                 return this;
             }
 
             // Sets the current direction
             _currentDirection = direction;
 
-            _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
+            if (_currentCycle.Size > 0)
+            {
+                var (index, evaluatedFrame) = _currentCycle.EvaluateFrame(_windroseAnimation.FPS, _currentCycleElapsedTime);
+                if (evaluatedFrame != null)
+                {
+                    _animator.SpriteRenderer.sprite = evaluatedFrame.Sprite;
+                }
+            }
+            else
+            {
+                Logger.LogWarning($"{_windroseAnimation.AnimationName} has no frames to be played for the " +
+                $" the '{direction}' direction using the '{flipStrategy}' strategy.", _animator);
+            }
+
             return this;
         }
 
@@ -157,7 +209,7 @@ namespace SpriteAnimations
         /// </summary>
         /// <param name="direction">The direction to set.</param>
         /// <param name="flipStrategy">The strategy to use when flipping the sprite.</param>
-        /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
+        /// <returns>The updated <see cref="WindroseAnimator"/> instance.</returns>
         public WindroseAnimator SetDirection(Vector2 movementInput, WindroseFlipStrategy flipStrategy = WindroseFlipStrategy.NoFlip)
         {
             // Sets the current direction
@@ -170,24 +222,12 @@ namespace SpriteAnimations
         /// Sets the direction of the animation.
         /// </summary>
         /// <param name="direction">The direction to set.</param>
-        /// <returns>The updated SpriteAnimationPerformerWindrose instance.</returns>
+        /// <returns>The updated <see cref="WindroseAnimator"/> instance.</returns>
         public WindroseAnimator SetDirection(Vector2Int signedMovementInput, WindroseFlipStrategy flipStrategy = WindroseFlipStrategy.NoFlip)
         {
             // Sets the current direction
             WindroseDirection direction = DirectionFromInput(signedMovementInput);
             return SetDirection(direction, flipStrategy);
-        }
-
-        #endregion
-
-        #region End
-
-        protected void EvaluateEnd()
-        {
-            if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
-            {
-                EndCycle();
-            }
         }
 
         #endregion
@@ -198,37 +238,40 @@ namespace SpriteAnimations
         /// Ends the current cycle. In case the animation is loopable, it restarts the cycle.
         /// Case the animation is not a loop, it ends the animation.
         /// </summary>
-        public void EndCycle()
+        protected void EndCycle()
         {
-            if (HasCurrentAnimation && CurrentWindroseAnimation.IsLoopable)
+            if (!HasCurrentAnimation)
+            {
+                Logger.LogWarning($"Windrose Animation cycle ended but it has no current animation. Please report this.", _animator);
+                return;
+            }
+
+            if (_windroseAnimation.IsLoopable)
             {
                 ResetCycle();
             }
-            else if (HasCurrentAnimation)
+            else
             {
                 EndAnimation();
             }
+
+            _onEndAction?.Invoke();
         }
 
         /// <summary>
-        /// Resets the cycle.
+        /// Resets the current cycle.
         /// </summary>
-        public void ResetCycle()
+        protected void ResetCycle()
         {
             _currentCycleElapsedTime = 0f;
             _currentFrame = null;
-            _onEndAction?.Invoke();
         }
 
-        /// <summary>
-        /// Ends the animation at the current frame.
-        /// </summary>
         protected void EndAnimation()
         {
-            _currentAnimation = null;
             _currentCycle = null;
             _currentFrame = null;
-            _onEndAction?.Invoke();
+            _isPlaying = false;
         }
 
         #endregion
