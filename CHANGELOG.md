@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/no-slopes/sprite-animations/compare/v1.2.0...v1.2.1) (2023-10-26)
+
+
+### Bug Fixes
+
+* **metafiles:** add .meta removal for Samples~ folder ([2f016fe](https://github.com/no-slopes/sprite-animations/commit/2f016fe9798e949593c73828b9ef0a9952388758))
+
 # [1.2.0](https://github.com/no-slopes/sprite-animations/compare/v1.1.0...v1.2.0) (2023-10-26)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "com.no-slopes.sprite-animations",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "displayName": "Sprite Animations",
   "description": "A smooth and intuitive way to work with sprite sheets in Unity.",
   "unity": "2022.3",
