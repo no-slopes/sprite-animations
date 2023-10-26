@@ -42,7 +42,7 @@
 }
 
 .sa-field {
-    height: 20px;
+    height: 25px;
     width: 100%;
     -unity-text-align: middle-left;
     padding-top: 2px;
