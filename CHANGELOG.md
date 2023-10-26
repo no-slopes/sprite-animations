@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/no-slopes/sprite-animations/compare/v1.0.2...v1.1.0) (2023-10-26)
+
+
+### Features
+
+* Reorganizing folder structure and CR ([c2f1c7a](https://github.com/no-slopes/sprite-animations/commit/c2f1c7a446e8a27f9229032fa8d02a40816de57b))
+
 ### Changelog
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
