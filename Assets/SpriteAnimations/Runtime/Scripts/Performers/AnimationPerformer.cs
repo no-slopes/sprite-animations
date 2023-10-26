@@ -13,8 +13,22 @@ namespace SpriteAnimations
     {
         #region Fields
 
+        /// <summary>
+        /// The SpriteAnimator related to that performer
+        /// </summary>
         protected SpriteAnimator _animator;
+
+        /// <summary>
+        /// The current animation associated with the performer. Note that
+        /// the performer may have a current animation set but may not be 
+        /// playing it.
+        /// </summary>
         protected SpriteAnimation _currentAnimation;
+
+        /// <summary>
+        /// If the performer is currently playing an animation
+        /// </summary>
+        protected bool _isPlaying = false;
 
         /// <summary>
         /// List of frames used by the current cycle  
@@ -80,6 +94,16 @@ namespace SpriteAnimations
 
         #endregion
 
+        #region Abstract Methods
+
+        /// <summary>
+        /// The method called every time the animator should evaluate if the frame must be changed.
+        /// </summary>
+        /// <param name="deltaTime">The time elapsed since the last tick.</param>
+        public abstract void Tick(float deltaTime);
+
+        #endregion
+
         #region Logic       
 
         /// <summary>
@@ -108,12 +132,6 @@ namespace SpriteAnimations
 
             ClearFramePlayedListeners();
         }
-
-        /// <summary>
-        /// The method called every time the animator should evaluate if the frame must be changed.
-        /// </summary>
-        /// <param name="deltaTime">The time elapsed since the last tick.</param>
-        public abstract void Tick(float deltaTime);
 
         /// <summary>
         /// Validates if the animation should be played.

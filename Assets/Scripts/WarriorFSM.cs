@@ -44,7 +44,7 @@ public class WarriorFSM : StateMachine
 
     public Vector2 MovementInput => _movementInput;
 
-    public Type BaseStateType => typeof(WarriorState);
+    public Type LoadableStateType => typeof(WarriorState);
     public Type DefaultStateType => typeof(WarriorStateIdle);
 
     public InputAction MovementAction => _movementAction;
