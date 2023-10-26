@@ -9,13 +9,9 @@ namespace SpriteAnimations
     {
         #region Fields
 
-        #endregion
+        protected SpriteAnimationSimple _simpleAnimation;
 
-        #region Properties 
-
-        protected SpriteAnimationSimple CurrentSimpleAnimation => _currentAnimation as SpriteAnimationSimple;
-
-        #endregion  
+        #endregion 
 
         #region Sprite Animation Logic 
 
@@ -26,11 +22,24 @@ namespace SpriteAnimations
         {
             base.StartAnimation(animation);
 
-            _currentCycleElapsedTime = 0;
             _currentAnimation = animation;
+            _simpleAnimation = _currentAnimation as SpriteAnimationSimple;
 
-            _currentCycle = CurrentSimpleAnimation.Cycle;
+            _currentCycle = _simpleAnimation.Cycle;
             _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
+
+            _currentCycleElapsedTime = 0;
+
+            if (_currentCycle.Size > 0)
+            {
+                _animator.SpriteRenderer.sprite = _currentCycle.Frames.First().Sprite;
+            }
+            else
+            {
+                Logger.LogWarning($"{animation.AnimationName} has no frames to be played.", _animator);
+            }
+
+            _isPlaying = true;
         }
 
         /// <summary>
@@ -50,12 +59,15 @@ namespace SpriteAnimations
         /// <returns></returns>
         public override void Tick(float deltaTime)
         {
-            if (!HasCurrentAnimation) return;
+            if (!_isPlaying) return;
 
             _currentCycleElapsedTime += deltaTime;
-            EvaluateEnd();
 
-            if (!HasCurrentAnimation) return;
+            if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
+            {
+                EndCycle();
+                return;
+            }
 
             int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
             Frame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
@@ -83,17 +95,23 @@ namespace SpriteAnimations
             }
         }
 
-        #endregion
-
-        #region Simple Sprite Animation Logic
-
-
-        protected void EvaluateEnd()
+        /// <summary>
+        /// Resets the current animation cycle and starts playing the single cycle animation from the start.
+        /// </summary>
+        /// <returns>The updated <see cref="SingleAnimator"/> instance.</returns>
+        public SingleAnimator FromStart()
         {
-            if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
+            _currentCycle = _simpleAnimation.Cycle;
+
+            ResetCycle();
+
+            if (_currentCycle.Size > 0)
             {
-                EndCycle();
+                _animator.SpriteRenderer.sprite = _currentCycle.Frames.First().Sprite;
             }
+
+            _isPlaying = true;
+            return this;
         }
 
         #endregion
@@ -104,37 +122,44 @@ namespace SpriteAnimations
         /// Ends the current cycle. In case the animation is loopable, it restarts the cycle.
         /// Case the animation is not a loop, it ends the animation.
         /// </summary>
-        public void EndCycle()
+        protected void EndCycle()
         {
-            if (HasCurrentAnimation && CurrentSimpleAnimation.IsLoopable)
+            if (!HasCurrentAnimation)
+            {
+                Logger.LogWarning($"Single Cycle Animation cycle ended but it has no current animation. Please report this.", _animator);
+                return;
+            }
+
+            if (_simpleAnimation.IsLoopable)
             {
                 ResetCycle();
             }
-            else if (HasCurrentAnimation)
+            else
             {
                 EndAnimation();
             }
+
+            _onEndAction?.Invoke();
         }
 
         /// <summary>
         /// Resets the cycle.
         /// </summary>
-        public void ResetCycle()
+        protected void ResetCycle()
         {
             _currentCycleElapsedTime = 0f;
             _currentFrame = null;
-            _onEndAction?.Invoke();
         }
 
         /// <summary>
-        /// Ends the animation at the current frame.
+        /// Use this to stop playing the animation. Cannot use StopAnimation() because
+        /// of events being cleared.
         /// </summary>
         protected void EndAnimation()
         {
-            _currentAnimation = null;
             _currentCycle = null;
             _currentFrame = null;
-            _onEndAction?.Invoke();
+            _isPlaying = false;
         }
 
         #endregion
