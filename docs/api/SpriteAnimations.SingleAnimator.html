@@ -157,6 +157,10 @@
                   </div>
             
                   <div>
+                          <xref uid="SpriteAnimations.AnimationPerformer._isPlaying" text="AnimationPerformer._isPlaying" alt="SpriteAnimations.AnimationPerformer._isPlaying"/>
+                  </div>
+            
+                  <div>
                           <xref uid="SpriteAnimations.AnimationPerformer._currentCycle" text="AnimationPerformer._currentCycle" alt="SpriteAnimations.AnimationPerformer._currentCycle"/>
                   </div>
             
@@ -315,33 +319,32 @@
 
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="fields">Fields
 </h2>
 
 
-  <a id="SpriteAnimations_SingleAnimator_CurrentSimpleAnimation_" data-uid="SpriteAnimations.SingleAnimator.CurrentSimpleAnimation*"></a>
 
-  <h3 id="SpriteAnimations_SingleAnimator_CurrentSimpleAnimation" data-uid="SpriteAnimations.SingleAnimator.CurrentSimpleAnimation">
-  CurrentSimpleAnimation
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SpriteAnimations_SingleAnimator__simpleAnimation" data-uid="SpriteAnimations.SingleAnimator._simpleAnimation">
+  _simpleAnimation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected SpriteAnimationSimple CurrentSimpleAnimation { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected SpriteAnimationSimple _simpleAnimation</code></pre>
   </div>
 
 
 
 
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="SpriteAnimations.SpriteAnimationSimple.html">SpriteAnimationSimple</a></dt>
     <dd></dd>
   </dl>
+
 
 
 
@@ -358,10 +361,11 @@
 
   <h3 id="SpriteAnimations_SingleAnimator_EndAnimation" data-uid="SpriteAnimations.SingleAnimator.EndAnimation">
   EndAnimation()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Ends the animation at the current frame.</p>
+  <div class="markdown level1 summary"><p>Use this to stop playing the animation. Cannot use StopAnimation() because
+of events being cleared.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -385,7 +389,7 @@
 
   <h3 id="SpriteAnimations_SingleAnimator_EndCycle" data-uid="SpriteAnimations.SingleAnimator.EndCycle">
   EndCycle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ends the current cycle. In case the animation is loopable, it restarts the cycle.
@@ -394,7 +398,7 @@ Case the animation is not a loop, it ends the animation.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void EndCycle()</code></pre>
+    <pre><code class="lang-csharp hljs">protected void EndCycle()</code></pre>
   </div>
 
 
@@ -409,21 +413,28 @@ Case the animation is not a loop, it ends the animation.</p>
 
 
 
-  <a id="SpriteAnimations_SingleAnimator_EvaluateEnd_" data-uid="SpriteAnimations.SingleAnimator.EvaluateEnd*"></a>
+  <a id="SpriteAnimations_SingleAnimator_FromStart_" data-uid="SpriteAnimations.SingleAnimator.FromStart*"></a>
 
-  <h3 id="SpriteAnimations_SingleAnimator_EvaluateEnd" data-uid="SpriteAnimations.SingleAnimator.EvaluateEnd">
-  EvaluateEnd()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SpriteAnimations_SingleAnimator_FromStart" data-uid="SpriteAnimations.SingleAnimator.FromStart">
+  FromStart()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Resets the current animation cycle and starts playing the single cycle animation from the start.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void EvaluateEnd()</code></pre>
+    <pre><code class="lang-csharp hljs">public SingleAnimator FromStart()</code></pre>
   </div>
 
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SpriteAnimations.SingleAnimator.html">SingleAnimator</a></dt>
+    <dd><p>The updated <a class="xref" href="SpriteAnimations.SingleAnimator.html">SingleAnimator</a> instance.</p>
+</dd>
+  </dl>
 
 
 
@@ -439,7 +450,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_SingleAnimator_ResetCycle" data-uid="SpriteAnimations.SingleAnimator.ResetCycle">
   ResetCycle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L148"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resets the cycle.</p>
@@ -447,7 +458,7 @@ Case the animation is not a loop, it ends the animation.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ResetCycle()</code></pre>
+    <pre><code class="lang-csharp hljs">protected void ResetCycle()</code></pre>
   </div>
 
 
@@ -466,7 +477,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_SingleAnimator_StartAnimation_SpriteAnimations_SpriteAnimation_" data-uid="SpriteAnimations.SingleAnimator.StartAnimation(SpriteAnimations.SpriteAnimation)">
   StartAnimation(SpriteAnimation)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Must be called to start playing an animation</p>
@@ -498,7 +509,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_SingleAnimator_StopAnimation" data-uid="SpriteAnimations.SingleAnimator.StopAnimation">
   StopAnimation()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Must be called every time the animation should be stopped.</p>
@@ -525,7 +536,7 @@ Case the animation is not a loop, it ends the animation.</p>
 
   <h3 id="SpriteAnimations_SingleAnimator_Tick_System_Single_" data-uid="SpriteAnimations.SingleAnimator.Tick(System.Single)">
   Tick(float)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Performers/SingleAnimator.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Evaluates what frame should be displayed based on the current cycle.

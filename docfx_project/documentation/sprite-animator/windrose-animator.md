@@ -124,3 +124,26 @@ public class WalkPlayer : MonoBehaviour
 
 > [!Warning]
 > These examples should only inform you how to interact with the performer. Since your project has its own peculiar ways, these are not meant to be copy pasted and expected to work out of the box.
+
+## Forcing to play from Start
+
+Sometimes you might tell the [SpriteAnimator](./index.md) to play the same animation it has already been playing. This
+will cause the animator to skip animation changing and just return the animation performer. For the case you want the
+animation to be "restarted", just call the `FromStart()` method of the WindroseAnimator.
+
+```csharp
+public SpriteAnimator _animator;
+public Vector2 _movementInput;
+private bool _shouldRepeat;
+
+private IEnumerator PlayRepeatedly()
+{
+    while(_shouldRepeat)
+    {
+        _animator.Play<WindroseAnimator>("MyAnimation").FromStart().SetDirection(_movementInput);
+        yield retun new WaitForSeconds(0.5f);
+    }
+}
+```
+
+Have in mind that if the current animation has not yet come to an end, this will restart the animation.

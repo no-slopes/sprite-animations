@@ -97,7 +97,8 @@
 
 <p>This is the performer for <a href="../animations/single-animation.html">Single Animations</a>.</p>
 <p>As <a href="../animations/single-animation.html">Single Animations</a> are the most basic type of animation we have,
-its performer goes as far as allowing you to use the <code>SetOnFrame()</code> and <code>OnEnd()</code> methods to register Frame Actions.</p>
+its performer is also really simple to interact with.</p>
+<h2 id="registering-frame-actions">Registering Frame Actions</h2>
 <pre><code class="lang-csharp">private SingleAnimator _perfomer;
 
 private void Start()
@@ -120,6 +121,23 @@ private void Start()
     });
 }
 </code></pre>
+<h2 id="forcing-to-play-from-start">Forcing to play from Start</h2>
+<p>Sometimes you might tell the <a href="index.html">SpriteAnimator</a> to play the same animation it has already been playing. This
+will cause the animator to skip animation changing and just return the animation performer. For the case you want the
+animation to be &quot;restarted&quot;, just call the <code>FromStart()</code> method of the SingleAnimator.</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private bool _shouldRepeat;
+
+private IEnumerator PlayRepeatedly()
+{
+    while(_shouldRepeat)
+    {
+        _animator.Play&lt;SingleAnimator&gt;(&quot;MyAnimation&quot;).FromStart();
+        yield retun new WaitForSeconds(0.5f);
+    }
+}
+</code></pre>
+<p>Have in mind that if the current animation has not yet come to an end, this will restart the animation.</p>
 </article>
 
 
