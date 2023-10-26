@@ -425,10 +425,11 @@ protected bool _identifiable</code></pre>
 
   <h3 id="SpriteAnimations_Cycle_CalculateDuration_System_Single_" data-uid="SpriteAnimations.Cycle.CalculateDuration(System.Single)">
   CalculateDuration(float)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Cycle.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Cycle.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Calculate the total duration of the cycle based on the given FPS rate.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -438,13 +439,57 @@ protected bool _identifiable</code></pre>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>fps</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
+    <dd><p>The number of frames per second.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
+    <dd><p>The duration of the sequence of frames.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpriteAnimations_Cycle_EvaluateFrame_" data-uid="SpriteAnimations.Cycle.EvaluateFrame*"></a>
+
+  <h3 id="SpriteAnimations_Cycle_EvaluateFrame_System_Single_System_Single_" data-uid="SpriteAnimations.Cycle.EvaluateFrame(System.Single,System.Single)">
+  EvaluateFrame(float, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/no-slopes/sprite-animations/blob/develop/Assets/SpriteAnimations/Runtime/Scripts/Cycle.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Evaluates the frame at a given elapsed time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int index, Frame frame) EvaluateFrame(float fps, float elapsedTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fps</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The frames per second.</p>
+</dd>
+    <dt><code>elapsedTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The elapsed time in seconds.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,spriteanimations.frame-.index">index</a>, <a class="xref" href="SpriteAnimations.Frame.html">Frame</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,spriteanimations.frame-.frame">frame</a>)</dt>
+    <dd><p>A tuple containing the index of the frame and the evaluated frame.</p>
+</dd>
   </dl>
 
 

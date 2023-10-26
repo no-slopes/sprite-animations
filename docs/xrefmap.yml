@@ -240,12 +240,6 @@ references:
   commentId: F:SpriteAnimations.AnimationPerformer._currentCycle
   fullName: SpriteAnimations.AnimationPerformer._currentCycle
   nameWithType: AnimationPerformer._currentCycle
-- uid: SpriteAnimations.AnimationPerformer._currentCycleDuration
-  name: _currentCycleDuration
-  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer__currentCycleDuration
-  commentId: F:SpriteAnimations.AnimationPerformer._currentCycleDuration
-  fullName: SpriteAnimations.AnimationPerformer._currentCycleDuration
-  nameWithType: AnimationPerformer._currentCycleDuration
 - uid: SpriteAnimations.AnimationPerformer._currentCycleElapsedTime
   name: _currentCycleElapsedTime
   href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer__currentCycleElapsedTime
@@ -371,6 +365,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Cycle.CalculateDuration
   nameWithType: Cycle.CalculateDuration
+- uid: SpriteAnimations.Cycle.EvaluateFrame(System.Single,System.Single)
+  name: EvaluateFrame(float, float)
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_EvaluateFrame_System_Single_System_Single_
+  commentId: M:SpriteAnimations.Cycle.EvaluateFrame(System.Single,System.Single)
+  name.vb: EvaluateFrame(Single, Single)
+  fullName: SpriteAnimations.Cycle.EvaluateFrame(float, float)
+  fullName.vb: SpriteAnimations.Cycle.EvaluateFrame(Single, Single)
+  nameWithType: Cycle.EvaluateFrame(float, float)
+  nameWithType.vb: Cycle.EvaluateFrame(Single, Single)
+- uid: SpriteAnimations.Cycle.EvaluateFrame*
+  name: EvaluateFrame
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_EvaluateFrame_
+  commentId: Overload:SpriteAnimations.Cycle.EvaluateFrame
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.EvaluateFrame
+  nameWithType: Cycle.EvaluateFrame
 - uid: SpriteAnimations.Cycle.Frames
   name: Frames
   href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Frames
@@ -2111,12 +2121,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SingleAnimator.Tick
   nameWithType: SingleAnimator.Tick
-- uid: SpriteAnimations.SingleAnimator._simpleAnimation
-  name: _simpleAnimation
-  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator__simpleAnimation
-  commentId: F:SpriteAnimations.SingleAnimator._simpleAnimation
-  fullName: SpriteAnimations.SingleAnimator._simpleAnimation
-  nameWithType: SingleAnimator._simpleAnimation
+- uid: SpriteAnimations.SingleAnimator._singleAnimation
+  name: _singleAnimation
+  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator__singleAnimation
+  commentId: F:SpriteAnimations.SingleAnimator._singleAnimation
+  fullName: SpriteAnimations.SingleAnimator._singleAnimation
+  nameWithType: SingleAnimator._singleAnimation
 - uid: SpriteAnimations.SpriteAnimation
   name: SpriteAnimation
   href: api/SpriteAnimations.SpriteAnimation.html

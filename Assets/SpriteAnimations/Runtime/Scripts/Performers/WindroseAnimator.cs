@@ -12,6 +12,9 @@ namespace SpriteAnimations
     {
         #region Fields
 
+        /// <summary>
+        /// The windrose animation wich is currently associated with this performer
+        /// </summary>
         protected SpriteAnimationWindrose _windroseAnimation;
 
         /// <summary>
