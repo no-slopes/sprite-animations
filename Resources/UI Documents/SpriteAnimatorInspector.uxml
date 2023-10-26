@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/SpriteAnimatorStyles.uss?fileID=7433441132597879392&amp;guid=339423ba2a8a0c34fafb481770d59829&amp;type=3#SpriteAnimatorStyles" />
+    <Style src="project://database/Assets/SpriteAnimations/Resources/Styles/SpriteAnimatorStyles.uss?fileID=7433441132597879392&amp;guid=339423ba2a8a0c34fafb481770d59829&amp;type=3#SpriteAnimatorStyles" />
     <ui:VisualElement name="container" style="flex-grow: 1; align-items: stretch; background-color: rgba(26, 0, 0, 0);">
         <ui:VisualElement name="field-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
             <uie:ObjectField label="Script" type="UnityEditor.MonoScript, UnityEditor.CoreModule" name="script-field" binding-path="SpriteAnimator" class="w-100 sa-field" />
@@ -25,14 +25,12 @@
         <ui:VisualElement name="default-animation-field-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch;">
             <uie:ObjectField label="Default Animation" name="default-animation-field" binding-path="_defaultAnimation" type="SpriteAnimations.SpriteAnimation, SpriteAnimations" class="w-100 sa-field" />
         </ui:VisualElement>
-        <ui:VisualElement name="field-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch;">
+        <ui:VisualElement name="field-row" class="row" style="width: 100%; justify-content: flex-start; align-items: stretch; height: auto; min-height: 30px;">
             <uie:PropertyField name="animations-list-field" binding-path="_spriteAnimations" label="Animations" class="sa-field" style="width: 100%; height: auto;" />
         </ui:VisualElement>
-        <ui:VisualElement name="field-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch; max-height: none;">
+        <ui:Foldout text="Events" value="false">
             <uie:PropertyField name="animation-changed-event-field" binding-path="_animationChanged" label="Animation Changed" style="width: 100%;" />
-        </ui:VisualElement>
-        <ui:VisualElement name="field-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch; max-height: none;">
             <uie:PropertyField name="state-changed-event-field" binding-path="_stateChanged" label="State Changed" style="width: 100%;" />
-        </ui:VisualElement>
+        </ui:Foldout>
     </ui:VisualElement>
 </ui:UXML>
