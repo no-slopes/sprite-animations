@@ -45,8 +45,6 @@ namespace SpriteAnimations
         /// </summary>
         protected Frame _currentFrame;
 
-        protected float _currentCycleDuration = 0.0f;
-
         protected Dictionary<int, UnityAction<Frame>> _frameIndexActions = new();
         protected Dictionary<string, UnityAction<Frame>> _frameIdActions = new();
         protected UnityAction _onEndAction;
