@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62b2c2d3619abe46a824e3cde55a939, type: 3}
+  m_Name: Walk
+  m_EditorClassIdentifier: 
+  _animationName: Walk
+  _fps: 6
+  _isLoopable: 0
+  _cycles:
+    _keyData: 0400000002000000
+    _valueData:
+    - _frames: []
+      _identifiable: 0
+    - _frames:
+      - _sprite: {fileID: 1228222909, guid: 736d5a855b03b1248a37fc0b951dd1c4, type: 3}
+        _id: 
+      - _sprite: {fileID: -409647049, guid: 736d5a855b03b1248a37fc0b951dd1c4, type: 3}
+        _id: 
+      - _sprite: {fileID: 491547474, guid: 736d5a855b03b1248a37fc0b951dd1c4, type: 3}
+        _id: 
+      - _sprite: {fileID: -1498200597, guid: 736d5a855b03b1248a37fc0b951dd1c4, type: 3}
+        _id: 
+      _identifiable: 0

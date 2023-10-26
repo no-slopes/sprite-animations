@@ -206,6 +206,7 @@ namespace SpriteAnimations
         /// <returns>The AnimationPerformer instance for the played animation, or null if the animation is not found.</returns>
         public TAnimator Play<TAnimator>(string name) where TAnimator : AnimationPerformer
         {
+            Debug.Log($"Playing animation '{name}'");
             // Try to get the animation by name
             if (!TryGetAnimationByName(name, out var animation))
             {

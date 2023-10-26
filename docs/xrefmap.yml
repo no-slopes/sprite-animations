@@ -240,12 +240,6 @@ references:
   commentId: F:SpriteAnimations.AnimationPerformer._currentCycle
   fullName: SpriteAnimations.AnimationPerformer._currentCycle
   nameWithType: AnimationPerformer._currentCycle
-- uid: SpriteAnimations.AnimationPerformer._currentCycleDuration
-  name: _currentCycleDuration
-  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer__currentCycleDuration
-  commentId: F:SpriteAnimations.AnimationPerformer._currentCycleDuration
-  fullName: SpriteAnimations.AnimationPerformer._currentCycleDuration
-  nameWithType: AnimationPerformer._currentCycleDuration
 - uid: SpriteAnimations.AnimationPerformer._currentCycleElapsedTime
   name: _currentCycleElapsedTime
   href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer__currentCycleElapsedTime
@@ -270,6 +264,12 @@ references:
   commentId: F:SpriteAnimations.AnimationPerformer._frameIndexActions
   fullName: SpriteAnimations.AnimationPerformer._frameIndexActions
   nameWithType: AnimationPerformer._frameIndexActions
+- uid: SpriteAnimations.AnimationPerformer._isPlaying
+  name: _isPlaying
+  href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer__isPlaying
+  commentId: F:SpriteAnimations.AnimationPerformer._isPlaying
+  fullName: SpriteAnimations.AnimationPerformer._isPlaying
+  nameWithType: AnimationPerformer._isPlaying
 - uid: SpriteAnimations.AnimationPerformer._onEndAction
   name: _onEndAction
   href: api/SpriteAnimations.AnimationPerformer.html#SpriteAnimations_AnimationPerformer__onEndAction
@@ -282,6 +282,12 @@ references:
   commentId: T:SpriteAnimations.AnimationType
   fullName: SpriteAnimations.AnimationType
   nameWithType: AnimationType
+- uid: SpriteAnimations.AnimationType.Combo
+  name: Combo
+  href: api/SpriteAnimations.AnimationType.html#SpriteAnimations_AnimationType_Combo
+  commentId: F:SpriteAnimations.AnimationType.Combo
+  fullName: SpriteAnimations.AnimationType.Combo
+  nameWithType: AnimationType.Combo
 - uid: SpriteAnimations.AnimationType.Simple
   name: Simple
   href: api/SpriteAnimations.AnimationType.html#SpriteAnimations_AnimationType_Simple
@@ -359,6 +365,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Cycle.CalculateDuration
   nameWithType: Cycle.CalculateDuration
+- uid: SpriteAnimations.Cycle.EvaluateFrame(System.Single,System.Single)
+  name: EvaluateFrame(float, float)
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_EvaluateFrame_System_Single_System_Single_
+  commentId: M:SpriteAnimations.Cycle.EvaluateFrame(System.Single,System.Single)
+  name.vb: EvaluateFrame(Single, Single)
+  fullName: SpriteAnimations.Cycle.EvaluateFrame(float, float)
+  fullName.vb: SpriteAnimations.Cycle.EvaluateFrame(Single, Single)
+  nameWithType: Cycle.EvaluateFrame(float, float)
+  nameWithType.vb: Cycle.EvaluateFrame(Single, Single)
+- uid: SpriteAnimations.Cycle.EvaluateFrame*
+  name: EvaluateFrame
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_EvaluateFrame_
+  commentId: Overload:SpriteAnimations.Cycle.EvaluateFrame
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.EvaluateFrame
+  nameWithType: Cycle.EvaluateFrame
 - uid: SpriteAnimations.Cycle.Frames
   name: Frames
   href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Frames
@@ -2005,19 +2027,6 @@ references:
   commentId: T:SpriteAnimations.SingleAnimator
   fullName: SpriteAnimations.SingleAnimator
   nameWithType: SingleAnimator
-- uid: SpriteAnimations.SingleAnimator.CurrentSimpleAnimation
-  name: CurrentSimpleAnimation
-  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_CurrentSimpleAnimation
-  commentId: P:SpriteAnimations.SingleAnimator.CurrentSimpleAnimation
-  fullName: SpriteAnimations.SingleAnimator.CurrentSimpleAnimation
-  nameWithType: SingleAnimator.CurrentSimpleAnimation
-- uid: SpriteAnimations.SingleAnimator.CurrentSimpleAnimation*
-  name: CurrentSimpleAnimation
-  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_CurrentSimpleAnimation_
-  commentId: Overload:SpriteAnimations.SingleAnimator.CurrentSimpleAnimation
-  isSpec: "True"
-  fullName: SpriteAnimations.SingleAnimator.CurrentSimpleAnimation
-  nameWithType: SingleAnimator.CurrentSimpleAnimation
 - uid: SpriteAnimations.SingleAnimator.EndAnimation
   name: EndAnimation()
   href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_EndAnimation
@@ -2044,19 +2053,19 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SingleAnimator.EndCycle
   nameWithType: SingleAnimator.EndCycle
-- uid: SpriteAnimations.SingleAnimator.EvaluateEnd
-  name: EvaluateEnd()
-  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_EvaluateEnd
-  commentId: M:SpriteAnimations.SingleAnimator.EvaluateEnd
-  fullName: SpriteAnimations.SingleAnimator.EvaluateEnd()
-  nameWithType: SingleAnimator.EvaluateEnd()
-- uid: SpriteAnimations.SingleAnimator.EvaluateEnd*
-  name: EvaluateEnd
-  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_EvaluateEnd_
-  commentId: Overload:SpriteAnimations.SingleAnimator.EvaluateEnd
+- uid: SpriteAnimations.SingleAnimator.FromStart
+  name: FromStart()
+  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_FromStart
+  commentId: M:SpriteAnimations.SingleAnimator.FromStart
+  fullName: SpriteAnimations.SingleAnimator.FromStart()
+  nameWithType: SingleAnimator.FromStart()
+- uid: SpriteAnimations.SingleAnimator.FromStart*
+  name: FromStart
+  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_FromStart_
+  commentId: Overload:SpriteAnimations.SingleAnimator.FromStart
   isSpec: "True"
-  fullName: SpriteAnimations.SingleAnimator.EvaluateEnd
-  nameWithType: SingleAnimator.EvaluateEnd
+  fullName: SpriteAnimations.SingleAnimator.FromStart
+  nameWithType: SingleAnimator.FromStart
 - uid: SpriteAnimations.SingleAnimator.ResetCycle
   name: ResetCycle()
   href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator_ResetCycle
@@ -2112,6 +2121,12 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SingleAnimator.Tick
   nameWithType: SingleAnimator.Tick
+- uid: SpriteAnimations.SingleAnimator._singleAnimation
+  name: _singleAnimation
+  href: api/SpriteAnimations.SingleAnimator.html#SpriteAnimations_SingleAnimator__singleAnimation
+  commentId: F:SpriteAnimations.SingleAnimator._singleAnimation
+  fullName: SpriteAnimations.SingleAnimator._singleAnimation
+  nameWithType: SingleAnimator._singleAnimation
 - uid: SpriteAnimations.SpriteAnimation
   name: SpriteAnimation
   href: api/SpriteAnimations.SpriteAnimation.html
@@ -2961,19 +2976,6 @@ references:
   commentId: T:SpriteAnimations.WindroseAnimator
   fullName: SpriteAnimations.WindroseAnimator
   nameWithType: WindroseAnimator
-- uid: SpriteAnimations.WindroseAnimator.CurrentWindroseAnimation
-  name: CurrentWindroseAnimation
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_CurrentWindroseAnimation
-  commentId: P:SpriteAnimations.WindroseAnimator.CurrentWindroseAnimation
-  fullName: SpriteAnimations.WindroseAnimator.CurrentWindroseAnimation
-  nameWithType: WindroseAnimator.CurrentWindroseAnimation
-- uid: SpriteAnimations.WindroseAnimator.CurrentWindroseAnimation*
-  name: CurrentWindroseAnimation
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_CurrentWindroseAnimation_
-  commentId: Overload:SpriteAnimations.WindroseAnimator.CurrentWindroseAnimation
-  isSpec: "True"
-  fullName: SpriteAnimations.WindroseAnimator.CurrentWindroseAnimation
-  nameWithType: WindroseAnimator.CurrentWindroseAnimation
 - uid: SpriteAnimations.WindroseAnimator.EndAnimation
   name: EndAnimation()
   href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_EndAnimation
@@ -3000,19 +3002,19 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.WindroseAnimator.EndCycle
   nameWithType: WindroseAnimator.EndCycle
-- uid: SpriteAnimations.WindroseAnimator.EvaluateEnd
-  name: EvaluateEnd()
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_EvaluateEnd
-  commentId: M:SpriteAnimations.WindroseAnimator.EvaluateEnd
-  fullName: SpriteAnimations.WindroseAnimator.EvaluateEnd()
-  nameWithType: WindroseAnimator.EvaluateEnd()
-- uid: SpriteAnimations.WindroseAnimator.EvaluateEnd*
-  name: EvaluateEnd
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_EvaluateEnd_
-  commentId: Overload:SpriteAnimations.WindroseAnimator.EvaluateEnd
+- uid: SpriteAnimations.WindroseAnimator.FromStart
+  name: FromStart()
+  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_FromStart
+  commentId: M:SpriteAnimations.WindroseAnimator.FromStart
+  fullName: SpriteAnimations.WindroseAnimator.FromStart()
+  nameWithType: WindroseAnimator.FromStart()
+- uid: SpriteAnimations.WindroseAnimator.FromStart*
+  name: FromStart
+  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_FromStart_
+  commentId: Overload:SpriteAnimations.WindroseAnimator.FromStart
   isSpec: "True"
-  fullName: SpriteAnimations.WindroseAnimator.EvaluateEnd
-  nameWithType: WindroseAnimator.EvaluateEnd
+  fullName: SpriteAnimations.WindroseAnimator.FromStart
+  nameWithType: WindroseAnimator.FromStart
 - uid: SpriteAnimations.WindroseAnimator.ResetCycle
   name: ResetCycle()
   href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator_ResetCycle
@@ -3099,18 +3101,12 @@ references:
   commentId: F:SpriteAnimations.WindroseAnimator._currentDirection
   fullName: SpriteAnimations.WindroseAnimator._currentDirection
   nameWithType: WindroseAnimator._currentDirection
-- uid: SpriteAnimations.WindroseAnimator._directionLessTicks
-  name: _directionLessTicks
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator__directionLessTicks
-  commentId: F:SpriteAnimations.WindroseAnimator._directionLessTicks
-  fullName: SpriteAnimations.WindroseAnimator._directionLessTicks
-  nameWithType: WindroseAnimator._directionLessTicks
-- uid: SpriteAnimations.WindroseAnimator._warnedAboutDirectionLess
-  name: _warnedAboutDirectionLess
-  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator__warnedAboutDirectionLess
-  commentId: F:SpriteAnimations.WindroseAnimator._warnedAboutDirectionLess
-  fullName: SpriteAnimations.WindroseAnimator._warnedAboutDirectionLess
-  nameWithType: WindroseAnimator._warnedAboutDirectionLess
+- uid: SpriteAnimations.WindroseAnimator._windroseAnimation
+  name: _windroseAnimation
+  href: api/SpriteAnimations.WindroseAnimator.html#SpriteAnimations_WindroseAnimator__windroseAnimation
+  commentId: F:SpriteAnimations.WindroseAnimator._windroseAnimation
+  fullName: SpriteAnimations.WindroseAnimator._windroseAnimation
+  nameWithType: WindroseAnimator._windroseAnimation
 - uid: SpriteAnimations.WindroseDirection
   name: WindroseDirection
   href: api/SpriteAnimations.WindroseDirection.html
