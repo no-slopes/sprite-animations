@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/no-slopes/sprite-animations/compare/v1.2.2...v1.2.3) (2023-10-26)
+
+
+### Bug Fixes
+
+* **AnimationType:** add combo animation type ([062fcc0](https://github.com/no-slopes/sprite-animations/commit/062fcc0c0115f6f753b74f280184e93515705c3e))
+
 ## [1.2.2](https://github.com/no-slopes/sprite-animations/compare/v1.2.1...v1.2.2) (2023-10-26)
 
 
