@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/no-slopes/sprite-animations/compare/v1.1.0...v1.2.0) (2023-10-26)
+
+
+### Features
+
+* StateMachine (CR testing purrposes. sorry guys) ([1995808](https://github.com/no-slopes/sprite-animations/commit/1995808e49c988ca31f3baee23ef434d23949376))
+
 # [1.1.0](https://github.com/no-slopes/sprite-animations/compare/v1.0.2...v1.1.0) (2023-10-26)
 
 
