@@ -6,7 +6,7 @@
   "unity": "2022.3",
   "unityRelease": "0f1",
   "documentationUrl": "https://no-slopes.github.io/sprite-animations",
-  "changelogUrl": "https://no-slopes.github.io/sprite-animations/documentation/CHANGELOG.html",
+  "changelogUrl": "https://github.com/no-slopes/sprite-animations/blob/main/CHANGELOG.md",
   "licensesUrl": "https://github.com/no-slopes/sprite-animations/blob/main/LICENSE.md",
   "author": {
     "name": "No Slopes",
@@ -43,7 +43,7 @@
     }
   ],
   "scripts": {
-    "pre-release": "npx auto-changelog -p && mv -f CHANGELOG.md ../../docfx_project/documentation/CHANGELOG.md && docfx ../../docfx_project/docfx.json && echo Go create Unity .meta and the .unitypackage before releasing",
+    "pre-release": "docfx ../../docfx_project/docfx.json && echo Go create Unity .meta and the .unitypackage before releasing",
     "serve-docs": "docfx ../../docfx_project/docfx.json --serve",
     "build-docs": "docfx ../../docfx_project/docfx.json"
   }

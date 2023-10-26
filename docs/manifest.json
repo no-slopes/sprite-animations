@@ -587,16 +587,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/CHANGELOG.md",
-      "output": {
-        ".html": {
-          "relative_path": "documentation/CHANGELOG.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "documentation/animations-manager/index.md",
       "output": {
         ".html": {

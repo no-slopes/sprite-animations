@@ -36,6 +36,3 @@ items:
 
       - name: Composite Animation
         href: animations/composite-animation.md
-
-  - name: Changelog
-    href: CHANGELOG.md
