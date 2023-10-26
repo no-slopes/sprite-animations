@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/no-slopes/sprite-animations/compare/v1.2.1...v1.2.2) (2023-10-26)
+
+
+### Bug Fixes
+
+* **Animator:** SpriteAnimator no longer requires a ([50d6764](https://github.com/no-slopes/sprite-animations/commit/50d6764e9648f357ffc2fce59a5784a4a4727121))
+
 ## [1.2.1](https://github.com/no-slopes/sprite-animations/compare/v1.2.0...v1.2.1) (2023-10-26)
 
 
