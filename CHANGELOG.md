@@ -1,3 +1,15 @@
+## [1.2.4](https://github.com/no-slopes/sprite-animations/compare/v1.2.3...v1.2.4) (2023-10-26)
+
+
+### Bug Fixes
+
+* **Performers:** Fixed a bug related to accessing ([995d225](https://github.com/no-slopes/sprite-animations/commit/995d225ab54bd9f89e3cbbbbdc68f0e5b3163b2d))
+
+
+### Performance Improvements
+
+* **Performers:** now the cycle is responsible for ([f80e8cb](https://github.com/no-slopes/sprite-animations/commit/f80e8cbf364af70b708bfc8a5d5d8998f5cb2a30))
+
 ## [1.2.3](https://github.com/no-slopes/sprite-animations/compare/v1.2.2...v1.2.3) (2023-10-26)
 
 
