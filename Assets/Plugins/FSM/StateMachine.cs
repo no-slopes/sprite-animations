@@ -221,7 +221,6 @@ namespace HandyFSM
                     // Get the default state type and get the state from the state provider
                     _defaultStateType = (Type)defaultStateInfo.GetValue(this);
                     _defaultState = _stateProvider.Get(_defaultStateType);
-                    return;
                 }
             }
 
