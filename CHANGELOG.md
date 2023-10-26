@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/no-slopes/sprite-animations/compare/v1.2.4...v1.2.5) (2023-10-26)
+
+
+### Bug Fixes
+
+* **animator:** remove Debug.Log when playing animations. ([9c75a59](https://github.com/no-slopes/sprite-animations/commit/9c75a5951a649e002fe1612cf9eb6a5e3210bf1a))
+
 ## [1.2.4](https://github.com/no-slopes/sprite-animations/compare/v1.2.3...v1.2.4) (2023-10-26)
 
 
