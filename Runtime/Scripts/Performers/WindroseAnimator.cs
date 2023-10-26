@@ -66,14 +66,13 @@ namespace SpriteAnimations
             if (!_isPlaying) return;
 
             _currentCycleElapsedTime += deltaTime;
-            if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
+            if (_currentCycleElapsedTime >= _currentCycle.CalculateDuration(_windroseAnimation.FPS)) // means cycle passed last frame
             {
                 EndCycle();
                 return;
             }
 
-            int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
-            Frame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
+            var (frameIndex, evaluatedFrame) = _currentCycle.EvaluateFrame(_windroseAnimation.FPS, _currentCycleElapsedTime);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
@@ -185,12 +184,9 @@ namespace SpriteAnimations
             // Sets the current direction
             _currentDirection = direction;
 
-            _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
-
             if (_currentCycle.Size > 0)
             {
-                int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
-                Frame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
+                var (index, evaluatedFrame) = _currentCycle.EvaluateFrame(_windroseAnimation.FPS, _currentCycleElapsedTime);
                 if (evaluatedFrame != null)
                 {
                     _animator.SpriteRenderer.sprite = evaluatedFrame.Sprite;

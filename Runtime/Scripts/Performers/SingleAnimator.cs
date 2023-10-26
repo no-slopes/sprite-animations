@@ -9,7 +9,7 @@ namespace SpriteAnimations
     {
         #region Fields
 
-        protected SpriteAnimationSimple _simpleAnimation;
+        protected SpriteAnimationSimple _singleAnimation;
 
         #endregion 
 
@@ -23,10 +23,9 @@ namespace SpriteAnimations
             base.StartAnimation(animation);
 
             _currentAnimation = animation;
-            _simpleAnimation = _currentAnimation as SpriteAnimationSimple;
+            _singleAnimation = _currentAnimation as SpriteAnimationSimple;
 
-            _currentCycle = _simpleAnimation.Cycle;
-            _currentCycleDuration = _currentCycle.CalculateDuration(_currentAnimation.FPS);
+            _currentCycle = _singleAnimation.Cycle;
 
             _currentCycleElapsedTime = 0;
 
@@ -63,14 +62,13 @@ namespace SpriteAnimations
 
             _currentCycleElapsedTime += deltaTime;
 
-            if (_currentCycleElapsedTime >= _currentCycleDuration) // means cycle passed last frame
+            if (_currentCycleElapsedTime >= _currentCycle.CalculateDuration(_singleAnimation.FPS)) // means cycle passed last frame
             {
                 EndCycle();
                 return;
             }
 
-            int frameIndex = CalculateFrameIndex(_currentCycleElapsedTime, _currentCycle.Size, _currentCycleDuration);
-            Frame evaluatedFrame = _currentCycle.Frames.ElementAtOrDefault(frameIndex);
+            var (index, evaluatedFrame) = _currentCycle.EvaluateFrame(_singleAnimation.FPS, _currentCycleElapsedTime);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
@@ -79,10 +77,10 @@ namespace SpriteAnimations
             _currentFrame = evaluatedFrame;
             _animator.SpriteRenderer.sprite = _currentFrame.Sprite;
 
-            InvokeFramePlayed(frameIndex, _currentFrame);
+            InvokeFramePlayed(index, _currentFrame);
 
             // Calling frame actions
-            if (_frameIndexActions.TryGetValue(frameIndex, out var byIndexAction))
+            if (_frameIndexActions.TryGetValue(index, out var byIndexAction))
             {
                 byIndexAction.Invoke(_currentFrame);
             }
@@ -101,7 +99,7 @@ namespace SpriteAnimations
         /// <returns>The updated <see cref="SingleAnimator"/> instance.</returns>
         public SingleAnimator FromStart()
         {
-            _currentCycle = _simpleAnimation.Cycle;
+            _currentCycle = _singleAnimation.Cycle;
 
             ResetCycle();
 
@@ -130,7 +128,7 @@ namespace SpriteAnimations
                 return;
             }
 
-            if (_simpleAnimation.IsLoopable)
+            if (_singleAnimation.IsLoopable)
             {
                 ResetCycle();
             }
