@@ -116,6 +116,8 @@ namespace SpriteAnimations.Editor
         {
             SpriteAnimationCombo comboAsset = ScriptableObject.CreateInstance<SpriteAnimationCombo>();
             comboAsset.CreateCycle();
+            comboAsset.CreateCycle();
+            comboAsset.CreateCycle();
             AssetDatabase.CreateAsset(comboAsset, $"{path}/{name}.asset");
             return comboAsset;
         }

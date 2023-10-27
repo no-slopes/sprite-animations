@@ -25,7 +25,7 @@ namespace SpriteAnimations.Editor
 
         public SpriteAnimationViewWindrose()
         {
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationViewWindrose");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Animations Views/AnimationViewWindrose");
             TemplateContainer template = tree.Instantiate();
             template.style.flexGrow = 1;
 
@@ -44,8 +44,6 @@ namespace SpriteAnimations.Editor
             animationPreviewContainer.Add(_animationPreview);
 
             VisualElement cycleContainer = template.Q<VisualElement>("content");
-
-            cycleContainer.Add(_viewZoomSlider);
 
             _cycleElement = new CycleElement();
             cycleContainer.Add(_cycleElement);

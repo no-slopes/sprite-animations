@@ -18,7 +18,7 @@ namespace SpriteAnimations.Editor
         private IFPSProvider _fpsProvider;
         private ITickProvider _tickProvider;
         private CycleElement _cycle;
-        private ViewZoomSliderElement _zoomSlider;
+        private Slider _zoomSlider;
         private Frame _currentFrame;
 
         private bool _playing;
@@ -58,15 +58,15 @@ namespace SpriteAnimations.Editor
 
         #region Initialization
 
-        public void Initialize(ITickProvider tickProvider, IFPSProvider fpsProvider, CycleElement cycle, ViewZoomSliderElement zoomSlider)
+        public void Initialize(ITickProvider tickProvider, IFPSProvider fpsProvider, CycleElement cycle, Slider zoomSlider)
         {
             _fpsProvider = fpsProvider;
             _fpsProvider.FPSChanged += OnFPSChanged;
             _fps = _fpsProvider.FPS;
             _zoomSlider = zoomSlider;
 
-            SetImageZoom(_zoomSlider.Value);
-            _zoomSlider.ValueChanged += SetImageZoom;
+            SetImageZoom(_zoomSlider.value);
+            _zoomSlider.RegisterValueChangedCallback(OnZoomChanged);
 
             _tickProvider = tickProvider;
             _cycle = cycle;
@@ -83,7 +83,7 @@ namespace SpriteAnimations.Editor
                 _fpsProvider.FPSChanged -= OnFPSChanged;
 
             if (_zoomSlider != null)
-                _zoomSlider.ValueChanged -= SetImageZoom;
+                _zoomSlider.UnregisterValueChangedCallback(OnZoomChanged);
 
             Stop();
 
@@ -205,6 +205,11 @@ namespace SpriteAnimations.Editor
         private void SetImageZoom(float zoom)
         {
             _image.transform.scale = new Vector3(zoom, zoom, 1);
+        }
+
+        private void OnZoomChanged(ChangeEvent<float> evt)
+        {
+            SetImageZoom(evt.newValue);
         }
 
         #endregion
