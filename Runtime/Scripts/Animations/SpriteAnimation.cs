@@ -57,6 +57,8 @@ namespace SpriteAnimations
 
         /// <summary>
         /// Calculates the duration of the animation in seconds.
+        /// Depending on the type of animation this can have serious perfomance impacts
+        /// as it has to evaluate all frames of all the animation cycles.
         /// </summary>
         /// <returns>The duration of the animation in seconds.</returns>
         public float CalculateDuration()
@@ -73,6 +75,8 @@ namespace SpriteAnimations
 
         /// <summary>
         /// Calculates the total amount of frames in the animation.
+        /// Depending on the type of animation this can have serious perfomance impacts
+        /// as it has to evaluate all frames of all the animation cycles.
         /// </summary>
         /// <returns>The count of frames.</returns>
         public abstract int CalculateFramesCount();
@@ -81,6 +85,9 @@ namespace SpriteAnimations
 
         #region Events
 
+        /// <summary>
+        /// Listen to this event to be notified when the animation name changes
+        /// </summary>
         public event NameChangedEvent NameChanged;
 
         #endregion

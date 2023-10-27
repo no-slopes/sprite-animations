@@ -9,14 +9,14 @@ namespace SpriteAnimations.Editor
 
         private Toggle _loopableField;
         private CycleElement _cycleElement;
-        private SpriteAnimationSimple _simpleSpriteAnimation;
+        private SpriteAnimationSingleCycle _simpleSpriteAnimation;
         private AnimationPreviewElement _animationPreview;
 
         #endregion
 
         #region Getters
 
-        public override AnimationType AnimationType => AnimationType.Simple;
+        public override AnimationType AnimationType => AnimationType.SingleCycle;
 
         #endregion
 
@@ -53,7 +53,7 @@ namespace SpriteAnimations.Editor
         public override void Initialize(SpriteAnimation animation)
         {
             base.Initialize(animation);
-            _simpleSpriteAnimation = animation as SpriteAnimationSimple;
+            _simpleSpriteAnimation = animation as SpriteAnimationSingleCycle;
             _loopableField.value = _simpleSpriteAnimation.IsLoopable;
             _cycleElement.Initialize(_simpleSpriteAnimation.Cycle, this); // Must be initialized before the preview
             _animationPreview.Initialize(this, this, _cycleElement, _viewZoomSlider);

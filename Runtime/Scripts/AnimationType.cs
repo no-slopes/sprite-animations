@@ -3,7 +3,7 @@ namespace SpriteAnimations
 {
     public enum AnimationType
     {
-        Simple,
+        SingleCycle,
         Windrose,
         Combo
     }
