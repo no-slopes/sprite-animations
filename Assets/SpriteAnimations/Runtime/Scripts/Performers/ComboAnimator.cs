@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEngine.Events;
 
 namespace SpriteAnimations
 {
@@ -9,7 +10,16 @@ namespace SpriteAnimations
     {
         #region Fields
 
-        protected SpriteAnimationSingleCycle _singleAnimation;
+        protected SpriteAnimationCombo _comboAnimation;
+
+        protected int _currentCycleIndex = 0;
+
+        protected bool _waiting = false;
+        protected float _currentWaitCounter = 0;
+        protected float _currentCycleWaitOverride = -1;
+
+        protected UnityAction _onCycleEndedAction;
+        protected UnityAction _onInterruptedAction;
 
         #endregion 
 
@@ -23,11 +33,19 @@ namespace SpriteAnimations
             base.StartAnimation(animation);
 
             _currentAnimation = animation;
-            _singleAnimation = _currentAnimation as SpriteAnimationSingleCycle;
+            _comboAnimation = _currentAnimation as SpriteAnimationCombo;
 
-            _currentCycle = _singleAnimation.Cycle;
+            if (_comboAnimation.Cycles.Count <= 0)
+            {
+                Logger.LogError($"{_comboAnimation.AnimationName} has no cycles to be played. Please report this.", _animator);
+                return;
+            }
 
+            _currentCycle = _comboAnimation.FirstCycle;
+
+            _currentCycleIndex = 0;
             _currentCycleElapsedTime = 0;
+            _waiting = false;
 
             if (_currentCycle.Size > 0)
             {
@@ -58,7 +76,27 @@ namespace SpriteAnimations
         /// <returns></returns>
         public override void Tick(float deltaTime)
         {
-            if (!_isPlaying) return;
+            EvaluateWait(deltaTime);
+            EvaluateNewFrame(deltaTime);
+        }
+
+        protected void EvaluateWait(float deltaTime)
+        {
+            if (!_isPlaying || !_waiting) return;
+
+            float waitDuration = _currentCycleWaitOverride >= 0 ? _currentCycleWaitOverride : _comboAnimation.WaitingTime;
+            _currentWaitCounter += deltaTime;
+
+            if (_currentWaitCounter > waitDuration) // Interrupting
+            {
+                EndAnimation();
+                _onInterruptedAction?.Invoke();
+            }
+        }
+
+        protected void EvaluateNewFrame(float deltaTime)
+        {
+            if (!_isPlaying || _waiting) return;
 
             _currentCycleElapsedTime += deltaTime;
 
@@ -87,25 +125,25 @@ namespace SpriteAnimations
 
             if (string.IsNullOrEmpty(evaluatedFrame.Id)) return;
 
-            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
+            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byIDAction))
             {
-                byNameAction.Invoke(_currentFrame);
+                byIDAction.Invoke(_currentFrame);
             }
         }
 
         /// <summary>
         /// Resets the current animation cycle and starts playing the single cycle animation from the start.
         /// </summary>
-        /// <returns>The updated <see cref="SingleAnimator"/> instance.</returns>
+        /// <returns>The updated <see cref="SingleCycleAnimator"/> instance.</returns>
         public ComboAnimator FromStart()
         {
-            _currentCycle = _singleAnimation.Cycle;
-
-            ResetCycle();
+            _currentCycle = _comboAnimation.FirstCycle;
+            _currentCycleIndex = 0;
+            _waiting = false;
 
             if (_currentCycle.Size > 0)
             {
-                _animator.SpriteRenderer.sprite = _currentCycle.Frames.First().Sprite;
+                _animator.SpriteRenderer.sprite = _currentCycle.GetFirstFrame().Sprite;
             }
 
             _isPlaying = true;
@@ -116,37 +154,27 @@ namespace SpriteAnimations
 
         #region Ending
 
-        /// <summary>
-        /// Ends the current cycle. In case the animation is loopable, it restarts the cycle.
-        /// Case the animation is not a loop, it ends the animation.
-        /// </summary>
         protected void EndCycle()
         {
             if (!HasCurrentAnimation)
             {
-                Logger.LogWarning($"Single Cycle Animation cycle ended but it has no current animation. Please report this.", _animator);
+                Logger.LogWarning($"Combo Cycle Animation cycle ended but it has no current animation. Please report this.", _animator);
                 return;
             }
 
-            if (_singleAnimation.IsLoopable)
+            _onCycleEndedAction?.Invoke();
+
+            if (_currentCycleIndex < _comboAnimation.Cycles.Count - 1) // Time to wait for next cycle request
             {
-                ResetCycle();
+                // Starts waiting for the next cycle
+                _currentWaitCounter = 0;
+                _waiting = true;
             }
-            else
+            else // The last cycle has been played
             {
                 EndAnimation();
+                _onEndAction?.Invoke();
             }
-
-            _onEndAction?.Invoke();
-        }
-
-        /// <summary>
-        /// Resets the cycle.
-        /// </summary>
-        protected void ResetCycle()
-        {
-            _currentCycleElapsedTime = 0f;
-            _currentFrame = null;
         }
 
         /// <summary>
@@ -155,9 +183,52 @@ namespace SpriteAnimations
         /// </summary>
         protected void EndAnimation()
         {
+            _onInterruptedAction = null;
+            _onCycleEndedAction = null;
+
             _currentCycle = null;
             _currentFrame = null;
             _isPlaying = false;
+
+            _currentWaitCounter = 0;
+            _currentCycleWaitOverride = -1;
+        }
+
+        #endregion
+
+        #region Cycles Handling
+
+        public ComboAnimator Next()
+        {
+            if (!_comboAnimation.TryGetCycle(_currentCycleIndex + 1, out _currentCycle))
+            {
+                Logger.LogError($"Could not find a next cycle for the current animation. Current index: {_currentCycleIndex} -  "
+                + $"Requested index: {_currentCycleIndex + 1}", _animator);
+                return this;
+            }
+
+            _currentCycleIndex++;
+            _waiting = false;
+
+            return this;
+        }
+
+        public ComboAnimator OverrideInputWait(float maxInputWait)
+        {
+            _currentCycleWaitOverride = maxInputWait;
+            return this;
+        }
+
+        public ComboAnimator SetOnInterrupted(UnityAction onInterrupted)
+        {
+            _onInterruptedAction = onInterrupted;
+            return this;
+        }
+
+        public ComboAnimator SetOnCycleEnded(UnityAction onCycleEnded)
+        {
+            _onCycleEndedAction = onCycleEnded;
+            return this;
         }
 
         #endregion

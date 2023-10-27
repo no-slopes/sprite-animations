@@ -21,6 +21,6 @@ public class SingleCycleOverTime : MonoBehaviour
 
     private void PlayAnimation()
     {
-        _spriteAnimator.Play<SingleAnimator>("Attack").FromStart();
+        _spriteAnimator.Play<SingleCycleAnimator>("Attack").FromStart();
     }
 }

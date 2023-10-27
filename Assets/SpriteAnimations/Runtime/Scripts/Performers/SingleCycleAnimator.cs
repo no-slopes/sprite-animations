@@ -5,7 +5,7 @@ namespace SpriteAnimations
     /// <summary>
     /// The performer responsible for playing single animations.
     /// </summary>
-    public class SingleAnimator : AnimationPerformer
+    public class SingleCycleAnimator : AnimationPerformer
     {
         #region Fields
 
@@ -87,17 +87,17 @@ namespace SpriteAnimations
 
             if (string.IsNullOrEmpty(evaluatedFrame.Id)) return;
 
-            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byNameAction))
+            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byIDAction))
             {
-                byNameAction.Invoke(_currentFrame);
+                byIDAction.Invoke(_currentFrame);
             }
         }
 
         /// <summary>
         /// Resets the current animation cycle and starts playing the single cycle animation from the start.
         /// </summary>
-        /// <returns>The updated <see cref="SingleAnimator"/> instance.</returns>
-        public SingleAnimator FromStart()
+        /// <returns>The updated <see cref="SingleCycleAnimator"/> instance.</returns>
+        public SingleCycleAnimator FromStart()
         {
             _currentCycle = _singleAnimation.Cycle;
 
