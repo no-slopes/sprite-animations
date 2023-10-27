@@ -5,7 +5,7 @@ namespace SpriteAnimations
     /// <summary>
     /// The performer responsible for playing single animations.
     /// </summary>
-    public class SingleAnimator : AnimationPerformer
+    public class ComboAnimator : AnimationPerformer
     {
         #region Fields
 
@@ -97,7 +97,7 @@ namespace SpriteAnimations
         /// Resets the current animation cycle and starts playing the single cycle animation from the start.
         /// </summary>
         /// <returns>The updated <see cref="SingleAnimator"/> instance.</returns>
-        public SingleAnimator FromStart()
+        public ComboAnimator FromStart()
         {
             _currentCycle = _singleAnimation.Cycle;
 

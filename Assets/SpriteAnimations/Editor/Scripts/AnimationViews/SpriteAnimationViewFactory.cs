@@ -21,7 +21,7 @@ namespace SpriteAnimations.Editor
         {
             SpriteAnimationView view = animationType switch
             {
-                AnimationType.Simple => new SpriteAnimationViewSimple(),
+                AnimationType.SingleCycle => new SpriteAnimationViewSimple(),
                 AnimationType.Windrose => new SpriteAnimationViewWindrose(),
                 _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null),
             };

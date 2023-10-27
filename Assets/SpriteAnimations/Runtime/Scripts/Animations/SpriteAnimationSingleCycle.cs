@@ -3,8 +3,8 @@ using System;
 
 namespace SpriteAnimations
 {
-    [CreateAssetMenu(fileName = "Simple Sprite Animation", menuName = "Sprite Animations/Simple Sprite Animation")]
-    public class SpriteAnimationSimple : SpriteAnimation
+    [CreateAssetMenu(fileName = "Single Cycle Animation", menuName = "Sprite Animations/Single Cycle Animation")]
+    public class SpriteAnimationSingleCycle : SpriteAnimation
     {
         #region Editor
 
@@ -15,11 +15,10 @@ namespace SpriteAnimations
         protected bool _isLoopable = false;
 
         /// <summary>
-        /// The animation frames
+        /// The animation Cycle
         /// </summary>
-        /// <typeparam name="SpriteAnimationFrame"></typeparam>
         [SerializeField]
-        protected Cycle _cycle = new();
+        protected Cycle _cycle;
 
         #endregion  
 
@@ -29,7 +28,19 @@ namespace SpriteAnimations
         public Cycle Cycle => _cycle;
 
         public override Type PerformerType => typeof(SingleAnimator);
-        public override AnimationType AnimationType => AnimationType.Simple;
+        public override AnimationType AnimationType => AnimationType.SingleCycle;
+
+        #endregion
+
+        #region Cycle
+
+        /// <summary>
+        /// This must be executed upon the asset creation
+        /// </summary>
+        public void GenerateCycle()
+        {
+            _cycle = new Cycle(this);
+        }
 
         #endregion
 

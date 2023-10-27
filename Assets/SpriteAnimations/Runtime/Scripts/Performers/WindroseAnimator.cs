@@ -43,7 +43,7 @@ namespace SpriteAnimations
 
             if (_currentCycle.Size > 0)
             {
-                _animator.SpriteRenderer.sprite = _currentCycle.Frames.First().Sprite;
+                _animator.SpriteRenderer.sprite = _currentCycle.GetFirstFrame().Sprite;
             }
 
             _isPlaying = true;
@@ -69,13 +69,13 @@ namespace SpriteAnimations
             if (!_isPlaying) return;
 
             _currentCycleElapsedTime += deltaTime;
-            if (_currentCycleElapsedTime >= _currentCycle.CalculateDuration(_windroseAnimation.FPS)) // means cycle passed last frame
+            if (_currentCycleElapsedTime >= _currentCycle.CalculateDuration()) // means cycle passed last frame
             {
                 EndCycle();
                 return;
             }
 
-            var (frameIndex, evaluatedFrame) = _currentCycle.EvaluateFrame(_windroseAnimation.FPS, _currentCycleElapsedTime);
+            var (frameIndex, evaluatedFrame) = _currentCycle.EvaluateIndexAndFrame(_currentCycleElapsedTime);
 
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
@@ -114,7 +114,7 @@ namespace SpriteAnimations
 
             if (_currentCycle.Size > 0)
             {
-                _animator.SpriteRenderer.sprite = _currentCycle.Frames.First().Sprite;
+                _animator.SpriteRenderer.sprite = _currentCycle.GetFirstFrame().Sprite;
             }
 
             _isPlaying = true;
@@ -189,7 +189,7 @@ namespace SpriteAnimations
 
             if (_currentCycle.Size > 0)
             {
-                var (index, evaluatedFrame) = _currentCycle.EvaluateFrame(_windroseAnimation.FPS, _currentCycleElapsedTime);
+                var (index, evaluatedFrame) = _currentCycle.EvaluateIndexAndFrame(_currentCycleElapsedTime);
                 if (evaluatedFrame != null)
                 {
                     _animator.SpriteRenderer.sprite = evaluatedFrame.Sprite;

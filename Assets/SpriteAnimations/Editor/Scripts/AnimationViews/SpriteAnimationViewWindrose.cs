@@ -17,7 +17,7 @@ namespace SpriteAnimations.Editor
 
         #region Getters
 
-        public override AnimationType AnimationType => AnimationType.Simple;
+        public override AnimationType AnimationType => AnimationType.SingleCycle;
 
         #endregion
 

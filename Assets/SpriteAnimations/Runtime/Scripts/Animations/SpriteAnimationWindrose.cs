@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SpriteAnimations
 {
-    [CreateAssetMenu(fileName = "Windrose Sprite Animation", menuName = "Sprite Animations/Windrose Sprite Animation")]
+    [CreateAssetMenu(fileName = "Windrose Animation", menuName = "Sprite Animations/Windrose Animation")]
     public class SpriteAnimationWindrose : SpriteAnimation
     {
         #region Static
@@ -138,7 +138,7 @@ namespace SpriteAnimations
             if (!_cycles.ContainsKey(direction))
             {
                 // Create a new SpriteAnimationCycle
-                Cycle newCycle = new()
+                Cycle newCycle = new(this)
                 {
                     Identifiable = false
                 };
