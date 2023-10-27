@@ -20,6 +20,7 @@ namespace SpriteAnimations.Editor
         private Button _createAnimationButton;
 
         private CreateAnimationWindow _createAnimationWindow;
+        private string _lastPathUsed = "Assets";
 
         #endregion
 
@@ -114,6 +115,9 @@ namespace SpriteAnimations.Editor
 
         private void DismissCreationWindow()
         {
+            if (_createAnimationWindow != null)
+                _lastPathUsed = _createAnimationWindow.UsedPath;
+
             _createAnimationWindow?.Close();
             _createAnimationWindow = null;
         }
@@ -130,6 +134,7 @@ namespace SpriteAnimations.Editor
             if (_createAnimationWindow != null) return;
             _createAnimationWindow = CreateAnimationWindow.OpenEditorWindow();
             Vector2 mousePos = GUIUtility.GUIToScreenPoint(Event.current.mousePosition);
+            _createAnimationWindow.UsedPath = _lastPathUsed;
             _createAnimationWindow.position = new Rect(mousePos.x, mousePos.y, _createAnimationWindow.position.width, _createAnimationWindow.position.height);
             _createAnimationWindow.AnimationCreated += OnAnimationCreated;
         }

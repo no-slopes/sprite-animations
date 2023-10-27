@@ -17,10 +17,9 @@ MonoBehaviour:
   _waitingTime: 0.75
   _cycles:
   - _animation: {fileID: 11400000}
-    _frames: []
-    _identifiable: 1
-  - _animation: {fileID: 11400000}
-    _frames: []
+    _frames:
+    - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+      _id: 
     _identifiable: 1
   - _animation: {fileID: 11400000}
     _frames: []
