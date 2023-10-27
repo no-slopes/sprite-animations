@@ -16,6 +16,7 @@ MonoBehaviour:
   _fps: 10
   _isLoopable: 0
   _cycle:
+    _animation: {fileID: 0}
     _frames:
     - _sprite: {fileID: 1225264995, guid: fd6ffac18617242458d0dca335b82d45, type: 3}
       _id: 

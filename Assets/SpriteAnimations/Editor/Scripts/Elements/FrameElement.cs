@@ -11,7 +11,7 @@ namespace SpriteAnimations.Editor
         private CycleElement _owner;
         private int _index;
         private Frame _frame;
-        private ViewZoomSliderElement _zoomSlider;
+        private Slider _zoomSlider;
 
         private Label _indexLabel;
         private VisualElement _imagePreviewContainer;
@@ -47,13 +47,13 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public FrameElement(CycleElement owner, int index, Frame frame, ViewZoomSliderElement zoomSlider)
+        public FrameElement(CycleElement owner, int index, Frame frame, Slider zoomSlider)
         {
             _owner = owner;
             _frame = frame;
 
             _zoomSlider = zoomSlider;
-            _zoomSlider.ValueChanged += SetImageZoom;
+            _zoomSlider.RegisterValueChangedCallback(OnZoomChanged);
 
             AddToClassList("animation-cycle");
 
@@ -103,7 +103,7 @@ namespace SpriteAnimations.Editor
         public void Dismiss()
         {
             if (_zoomSlider != null)
-                _zoomSlider.ValueChanged -= SetImageZoom;
+                _zoomSlider.UnregisterValueChangedCallback(OnZoomChanged);
         }
 
         #endregion
@@ -115,7 +115,7 @@ namespace SpriteAnimations.Editor
             _index = index;
             _indexLabel.text = index.ToString();
             _previewImage.sprite = frame.Sprite;
-            SetImageZoom(_zoomSlider.Value);
+            SetImageZoom(_zoomSlider.value);
             _spriteField.value = frame.Sprite;
             _idField.value = frame.Id;
 
@@ -176,6 +176,11 @@ namespace SpriteAnimations.Editor
         private void SetImageZoom(float zoomValue)
         {
             _previewImage.transform.scale = new Vector3(zoomValue, zoomValue, 1);
+        }
+
+        private void OnZoomChanged(ChangeEvent<float> evt)
+        {
+            SetImageZoom(evt.newValue);
         }
 
         #endregion

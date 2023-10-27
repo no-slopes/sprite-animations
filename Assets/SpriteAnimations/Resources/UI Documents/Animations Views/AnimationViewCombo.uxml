@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/SpriteAnimations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 1; flex-direction: row; width: 100%; height: 100%; align-items: flex-start;">
+        <ui:VisualElement name="left" style="height: 100%; max-width: 240px; align-items: center; background-color: rgb(31, 4, 9); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+            <ui:VisualElement name="animation-preview-container" style="flex-grow: 0; flex-direction: row; align-items: center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; height: 200px; width: 200px; -unity-background-image-tint-color: rgb(173, 1, 1); background-color: rgb(38, 79, 120);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="content" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 100%;">
+            <ui:VisualElement name="animation-form-container" style="flex-grow: 0;">
+                <ui:VisualElement name="waiting-time-field-container" style="flex-grow: 0; flex-direction: row-reverse; width: 100%; align-items: center; margin-bottom: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; justify-content: flex-start;">
+                    <ui:FloatField label="Waiting Time" value="0.75" name="waiting-time-field" tooltip="The time waited between cycles before interrupting the animation if the next cycle is not asked for" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="cycle-view" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="cycle-container" style="flex-grow: 1;" />
+                <ui:VisualElement name="cycles-list-container" style="flex-grow: 0; height: auto; max-height: none; display: flex; overflow: hidden; width: 140px; background-color: rgb(31, 4, 9);">
+                    <ui:VisualElement name="button-container" style="flex-grow: 0; height: 40px; flex-direction: row-reverse; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                        <ui:Button text="Create Cycle" parse-escape-sequences="true" display-tooltip-when-elided="true" name="create-cycle-button" class="primary" />
+                    </ui:VisualElement>
+                    <ui:ListView focusable="true" name="cycles-list" fixed-item-height="40" reorderable="true" horizontal-scrolling="false" header-title="Cycles" style="height: 100%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

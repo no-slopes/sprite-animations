@@ -18,9 +18,11 @@ MonoBehaviour:
   _cycles:
     _keyData: 0400000002000000
     _valueData:
-    - _frames: []
+    - _animation: {fileID: 0}
+      _frames: []
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 0}
+      _frames:
       - _sprite: {fileID: 1228222909, guid: 736d5a855b03b1248a37fc0b951dd1c4, type: 3}
         _id: 
       - _sprite: {fileID: -409647049, guid: 736d5a855b03b1248a37fc0b951dd1c4, type: 3}

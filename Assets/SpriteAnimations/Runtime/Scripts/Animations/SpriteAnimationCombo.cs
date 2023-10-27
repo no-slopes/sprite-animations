@@ -11,18 +11,36 @@ namespace SpriteAnimations
         #region Editor
 
         /// <summary>
-        /// The animation frames
+        /// The waiting time between cycles before the animation is interrupted
         /// </summary>
-        /// <typeparam name="SpriteAnimationFrame"></typeparam>
+        [SerializeField]
+        protected float _waitingTime = 0.75f;
+
+        /// <summary>
+        /// The animation cycles
+        /// </summary>
         [SerializeField]
         protected List<Cycle> _cycles = new();
 
         #endregion  
 
+        #region Properties
+
+        /// <summary>
+        /// The waiting time between cycles before the animation is interrupted
+        /// </summary>
+        public float WaitingTime { get => _waitingTime; set => _waitingTime = value; }
+
+        public List<Cycle> Cycles { get => _cycles; set => _cycles = value; }
+
+        #endregion
+
         #region Getters
 
         public override Type PerformerType => typeof(ComboAnimator);
         public override AnimationType AnimationType => AnimationType.Combo;
+
+        public Cycle FirstCycle => _cycles.FirstOrDefault();
 
         #endregion
 

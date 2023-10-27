@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 namespace SpriteAnimations.Editor
 {
-    public class SpriteAnimationViewSimple : SpriteAnimationView
+    public class SpriteAnimationViewSingleCycle : SpriteAnimationView
     {
         #region Fields
 
@@ -22,9 +22,9 @@ namespace SpriteAnimations.Editor
 
         #region Constructors
 
-        public SpriteAnimationViewSimple()
+        public SpriteAnimationViewSingleCycle()
         {
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationViewSimple");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Animations Views/AnimationViewSingleCycle");
             TemplateContainer template = tree.Instantiate();
             template.style.flexGrow = 1;
 
@@ -37,8 +37,6 @@ namespace SpriteAnimations.Editor
             animationPreviewContainer.Add(_animationPreview);
 
             VisualElement cycleContainer = template.Q<VisualElement>("content");
-
-            cycleContainer.Add(_viewZoomSlider); // Created at the base class
 
             _cycleElement = new CycleElement();
             cycleContainer.Add(_cycleElement);
