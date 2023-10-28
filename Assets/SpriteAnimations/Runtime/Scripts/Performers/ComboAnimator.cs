@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace SpriteAnimations
 {
     /// <summary>
-    /// The performer responsible for playing single animations.
+    /// The performer responsible for playing combo animations.
     /// </summary>
     public class ComboAnimator : AnimationPerformer
     {

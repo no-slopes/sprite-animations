@@ -33,8 +33,23 @@ Checkout [how it works](https://no-slopes.github.io/sprite-animations/documentat
 
 ## Key features:
 
-- [Sprite Animator](https://no-slopes.github.io/sprite-animations/documentation/sprite-animator/index.html)
-- [Animations Manager](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html)
+##### Sprite Animator
+
+The [Sprite Animator](https://no-slopes.github.io/sprite-animations/documentation/sprite-animator/index.html) allows to play animations
+by simply changing the sprites of a SpriteRenderer.
+
+##### Animations Manager
+
+The [Animations Manager](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html) is an Editor window that gives
+you quality of life when editing your animations.
+
+##### Animations
+
+- [Single Cycle Animations](https://no-slopes.github.io/sprite-animations/documentation/animations/single-cycle-animation.html) are the most basic type of animation. Just define [Frame Cycles](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html#frame-cycle) and you are good to go.
+- [Windrose Animations](https://no-slopes.github.io/sprite-animations/documentation/animations/windrose-animation.html) are meant to help those working with top-dow games. Allows you to create one [Frame Cycle](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html#frame-cycle) for each of the cardinal
+  positions and then it is easy to just change the direction based on the user's input.
+- [Combo Animations](https://no-slopes.github.io/sprite-animations/documentation/animations/combo-animation.html) are a collection of [Frame Cycles](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html#frame-cycle) that can have their execution chained. It plays one cycle, waits for user input, and then
+  plays the next one.
 
 ## Beta Version
 

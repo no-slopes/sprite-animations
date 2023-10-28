@@ -29,8 +29,23 @@ Checkout [how it works](documentation/how-it-works.md) and give it a try!
 
 ## Key features:
 
-- [Sprite Animator](documentation/sprite-animator/index.md)
-- [Animations Manager](documentation/animations-manager/index.md)
+##### Sprite Animator
+
+The [Sprite Animator](documentation/sprite-animator/index.md) allows to play animations
+by simply changing the sprites of a SpriteRenderer.
+
+##### Animations Manager
+
+The [Animations Manager](documentation/animations-manager/index.md) is an Editor window that gives
+you quality of life when editing your animations.
+
+##### Animations
+
+- [Single Cycle Animations](documentation/animations/single-cycle-animation.md) are the most basic type of animation. Just define [Frame Cycles](documentation/animations-manager/index.md#frame-cycle) and you are good to go.
+- [Windrose Animations](documentation/animations/windrose-animation.md) are meant to help those working with top-dow games. Allows you to create one [Frame Cycle](documentation/animations-manager/index.md#frame-cycle) for each of the cardinal
+  positions and then it is easy to just change the direction based on the user's input.
+- [Combo Animations](documentation/animations/combo-animation.md) are a collection of [Frame Cycles](documentation/animations-manager/index.md#frame-cycle) that can have their execution chained. It plays one cycle, waits for user input, and then
+  plays the next one.
 
 ## Beta Version
 
