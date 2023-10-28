@@ -98,7 +98,8 @@ namespace SpriteAnimations.Editor
             Sprite sprite = droppedObject as Sprite;
             if (sprite == null)
             {
-                Debug.LogError("Dropped object is not a Sprite.");
+                Debug.LogWarning("The object dropped is not a sprite. Are you trying to drop a {nameof(Texture2D)}? "
+                + $"Try dropping specifically the {nameof(Sprite)} contained within the {nameof(Texture2D)} instead.");
                 return;
             }
             _cycleElement.AddFrame(droppedObject as Sprite);
@@ -107,6 +108,7 @@ namespace SpriteAnimations.Editor
         private void SetMultipleFrames(Object[] droppedObjects)
         {
             List<Sprite> sprites = new();
+            bool nonSpriteIncluded = false;
 
             foreach (Object droppedObject in droppedObjects)
             {
@@ -114,6 +116,16 @@ namespace SpriteAnimations.Editor
                 {
                     sprites.Add(droppedObject as Sprite);
                 }
+                else
+                {
+                    nonSpriteIncluded = true;
+                }
+            }
+
+            if (nonSpriteIncluded)
+            {
+                Debug.LogWarning("Detected that were non Sprite objects among the dropped objects. Are you trying to "
+                + $"drop a {nameof(Texture2D)}? Try dropping specifically the {nameof(Sprite)} contained within the {nameof(Texture2D)} instead.");
             }
 
             _cycleElement.SetFrames(sprites);

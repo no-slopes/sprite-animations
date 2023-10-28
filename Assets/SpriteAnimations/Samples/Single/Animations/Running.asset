@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0946d8a011141b14ba905342f5c274c0, type: 3}
-  m_Name: Run
+  m_Name: Running
   m_EditorClassIdentifier: 
-  _animationName: Run
+  _animationName: Running
   _fps: 10
   _isLoopable: 1
   _cycle:
+    _animation: {fileID: 11400000}
     _frames:
     - _sprite: {fileID: -1999767962, guid: c3b8cbcc171ca9b40b314e7488b564de, type: 3}
       _id: 

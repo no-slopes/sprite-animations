@@ -500,6 +500,7 @@ MonoBehaviour:
   _spriteAnimations:
   - {fileID: 11400000, guid: f898de7de8b385745b8b270b05ee5e31, type: 2}
   - {fileID: 11400000, guid: 30d212e2b0d9d1645a6d620af24e9f1f, type: 2}
+  - {fileID: 11400000, guid: 1f0f7e505a6dc594da03ffda3ebb3aba, type: 2}
   _animationChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -677,8 +678,8 @@ MonoBehaviour:
   _defaultAnimation: {fileID: 0}
   _spriteAnimations:
   - {fileID: 11400000, guid: a8e49036e0083cb4babd5ed9f49dca2c, type: 2}
-  - {fileID: 11400000, guid: 87b43f191014e3f4abcf7dbfb893acc1, type: 2}
   - {fileID: 11400000, guid: 35eaf23a846182d4fa654b0bbdec5d64, type: 2}
+  - {fileID: 11400000, guid: 87b43f191014e3f4abcf7dbfb893acc1, type: 2}
   _animationChanged:
     m_PersistentCalls:
       m_Calls: []
