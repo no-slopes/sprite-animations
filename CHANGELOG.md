@@ -1,3 +1,27 @@
+# [2.0.0](https://github.com/no-slopes/sprite-animations/compare/v1.2.5...v2.0.0) (2023-10-28)
+
+
+### Bug Fixes
+
+* **AnimationsManager:** the combo animation window ([1870992](https://github.com/no-slopes/sprite-animations/commit/187099218cdc2458b6751e877b9298763e60f153))
+
+
+### Features
+
+* **animation:** created the combo animation structure. ([df4c403](https://github.com/no-slopes/sprite-animations/commit/df4c4037e327982f9ccfd9a5f6cdc069eebe5167))
+* **AnimationManager:** combo animation manager window ([1cada17](https://github.com/no-slopes/sprite-animations/commit/1cada174d2d3105554a476df9748c92170f60cf7))
+* **AnimationsManager:** caches the last location used ([8ba4d1c](https://github.com/no-slopes/sprite-animations/commit/8ba4d1c275dd91ca675e3b2b5652ed151c822dac))
+* **performer:** combo animator is now working. ([ac409ee](https://github.com/no-slopes/sprite-animations/commit/ac409eed989a409f6c75e89b902669c7e0ccfd8c))
+
+
+### BREAKING CHANGES
+
+* **performer:** The simple animations are now called SingleCycle, as well
+as all features related. Animations previously made will need to
+be recreated as the Animations Manager now injects the
+animations into its cycles in order to allow the cycle to
+perform its own frame calculations.
+
 ## [1.2.5](https://github.com/no-slopes/sprite-animations/compare/v1.2.4...v1.2.5) (2023-10-26)
 
 
