@@ -9,7 +9,7 @@
         <ui:VisualElement name="content" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 100%;">
             <ui:VisualElement name="animation-form-container" style="flex-grow: 0;">
                 <ui:VisualElement name="waiting-time-field-container" style="flex-grow: 0; flex-direction: row-reverse; width: 100%; align-items: center; margin-bottom: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; justify-content: flex-start;">
-                    <ui:FloatField label="Waiting Time" value="0.75" name="waiting-time-field" tooltip="The time waited between cycles before interrupting the animation if the next cycle is not asked for" />
+                    <ui:FloatField label="Input Waiting Time" value="0.75" name="waiting-time-field" tooltip="The time waited between cycles before interrupting the animation if the next cycle is not asked for" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="cycle-view" style="flex-grow: 1; flex-direction: row;">
