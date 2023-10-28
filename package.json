@@ -40,6 +40,11 @@
       "displayName": "Windrose Animations",
       "description": "Contains an animated character using Windrose animations. WASD for movement animations and E to perform a roll animation",
       "path": "Samples~/Windrose"
+    },
+    {
+      "displayName": "Combo Animations",
+      "description": "Contains an animated character using Combo animations. Press E to initiate the combo and press again to play the next cycle",
+      "path": "Samples~/Combo"
     }
   ],
   "scripts": {
