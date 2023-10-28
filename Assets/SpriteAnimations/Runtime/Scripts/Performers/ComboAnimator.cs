@@ -11,15 +11,40 @@ namespace SpriteAnimations
     {
         #region Fields
 
+        /// <summary>
+        /// The current <see cref="SpriteAnimationCombo"/> associated to the <see cref="ComboAnimator"/>
+        /// </summary>
         protected SpriteAnimationCombo _comboAnimation;
 
+        /// <summary>
+        /// The currently being played cycle's index
+        /// </summary>
         protected int _currentCycleIndex = 0;
 
+        /// <summary>
+        /// Is the combo animator currently waiting for the <see cref="Next"/> method to be called?
+        /// </summary>
         protected bool _waiting = false;
+
+        /// <summary>
+        /// The current counter for undertanding whe the animation should be interrupted
+        /// </summary>
         protected float _currentWaitCounter = 0;
+
+        /// <summary>
+        /// The amount of time to wait for the next cycle. If higher than 0, it will
+        /// be used instead of the <see cref="SpriteAnimationCombo.WaitingTime"/>
+        /// </summary>
         protected float _currentCycleWaitOverride = -1;
 
+        /// <summary>
+        /// The action to be invoked when the current cycle ends
+        /// </summary>
         protected UnityAction<int> _onCycleEndedAction;
+
+        /// <summary>
+        /// The action to be invoked when the animation is interrupted
+        /// </summary>
         protected UnityAction _onInterruptedAction;
 
         #endregion 
@@ -66,6 +91,8 @@ namespace SpriteAnimations
         public override void StopAnimation()
         {
             base.StopAnimation();
+            _onInterruptedAction = null;
+            _onCycleEndedAction = null;
             EndAnimation();
         }
 
@@ -81,54 +108,83 @@ namespace SpriteAnimations
             EvaluateNewFrame(deltaTime);
         }
 
+        /// <summary>
+        /// Evaluates the wait time for the animation.
+        /// </summary>
+        /// <param name="deltaTime">The time since the last frame.</param>
         protected void EvaluateWait(float deltaTime)
         {
+            // Check if animation is playing and waiting
             if (!_isPlaying || !_waiting) return;
 
+            // Get the wait duration
             float waitDuration = _currentCycleWaitOverride >= 0 ? _currentCycleWaitOverride : _comboAnimation.WaitingTime;
+
+            // Increment the wait counter
             _currentWaitCounter += deltaTime;
 
+            // Check if the wait counter exceeds the wait duration
             if (_currentWaitCounter > waitDuration) // Interrupting
             {
+                // Invoke the interrupted action delegate
                 _onInterruptedAction?.Invoke();
+
+                // End the animation
                 EndAnimation();
             }
         }
 
+        /// <summary>
+        /// Evaluates a new frame based on the given deltaTime.
+        /// </summary>
+        /// <param name="deltaTime">The time elapsed since the last frame.</param>
         protected void EvaluateNewFrame(float deltaTime)
         {
+            // Check if the animation is not playing or waiting
             if (!_isPlaying || _waiting) return;
 
+            // Increment the elapsed time of the current cycle
             _currentCycleElapsedTime += deltaTime;
 
-            if (_currentCycleElapsedTime >= _currentCycle.CalculateDuration()) // means cycle passed last frame
+            // Check if the current cycle has passed the last frame
+            if (_currentCycleElapsedTime >= _currentCycle.CalculateDuration())
             {
+                // End the current cycle
                 EndCycle();
                 return;
             }
 
+            // Evaluate the index and frame for the current elapsed time
             var (index, evaluatedFrame) = _currentCycle.EvaluateIndexAndFrame(_currentCycleElapsedTime);
 
+            // Check if the evaluated frame is null or the same as the current frame
             if (evaluatedFrame == null || evaluatedFrame == _currentFrame) return;
 
             // From here it means the new frame will be displayed
 
+            // Set the current frame to the evaluated frame
             _currentFrame = evaluatedFrame;
+
+            // Update the sprite renderer with the new frame's sprite
             _animator.SpriteRenderer.sprite = _currentFrame.Sprite;
 
+            // Invoke the frame played event
             InvokeFramePlayed(index, _currentFrame);
 
-            // Calling frame actions
+            // Calling frame actions based on the frame index
             if (_frameIndexActions.TryGetValue(index, out var byIndexAction))
             {
                 byIndexAction.Invoke(_currentFrame);
             }
 
-            if (string.IsNullOrEmpty(evaluatedFrame.Id)) return;
-
-            if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byIDAction))
+            // Check if the evaluated frame has a non-empty ID
+            if (!string.IsNullOrEmpty(evaluatedFrame.Id))
             {
-                byIDAction.Invoke(_currentFrame);
+                // Calling frame actions based on the frame ID
+                if (_frameIdActions.TryGetValue(evaluatedFrame.Id, out var byIDAction))
+                {
+                    byIDAction.Invoke(_currentFrame);
+                }
             }
         }
 
@@ -155,27 +211,38 @@ namespace SpriteAnimations
 
         #region Ending
 
+        /// <summary>
+        /// Ends the current cycle of the animation.
+        /// </summary>
         protected void EndCycle()
         {
             if (!HasCurrentAnimation)
             {
+                // Logs a warning if the animation has no current animation
                 Logger.LogWarning($"Combo Cycle Animation cycle ended but it has no current animation. Please report this.", _animator);
                 return;
             }
 
-
-            if (_currentCycleIndex < _comboAnimation.Cycles.Count - 1) // Time to wait for next cycle request
+            if (_currentCycleIndex < _comboAnimation.Cycles.Count - 1)
             {
+                // Time to wait for the next cycle request
+
                 // Starts waiting for the next cycle
                 _currentWaitCounter = 0;
                 _waiting = true;
+
+                // Invokes the onCycleEndedAction with the current cycle index
                 _onCycleEndedAction?.Invoke(_currentCycleIndex);
                 return;
             }
 
             // The last cycle has been played
             EndAnimation();
+
+            // Invokes the onCycleEndedAction with the current cycle index
             _onCycleEndedAction?.Invoke(_currentCycleIndex);
+
+            // Invokes the onEndAction
             _onEndAction?.Invoke();
         }
 
@@ -185,9 +252,6 @@ namespace SpriteAnimations
         /// </summary>
         protected void EndAnimation()
         {
-            _onInterruptedAction = null;
-            _onCycleEndedAction = null;
-
             _currentCycle = null;
             _currentFrame = null;
             _isPlaying = false;
@@ -200,36 +264,63 @@ namespace SpriteAnimations
 
         #region Cycles Handling
 
+        /// <summary>
+        /// Plays the next cycle.
+        /// </summary>
+        /// <returns>The updated <see cref="ComboAnimator"/>.</returns>
         public ComboAnimator Next()
         {
+            // Check if not waiting and return current object if true
             if (!_waiting) return this;
 
+            // Try to get the next cycle of the combo animation
             if (!_comboAnimation.TryGetCycle(_currentCycleIndex + 1, out _currentCycle))
             {
-                Logger.LogError($"Could not find a next cycle for the current animation. Current index: {_currentCycleIndex} -  "
-                + $"Requested index: {_currentCycleIndex + 1}", _animator);
+                // Log an error if the next cycle is not found
+                Logger.LogError($"Could not find a next cycle for the current animation. Current index: {_currentCycleIndex} - Requested index: {_currentCycleIndex + 1}", _animator);
                 return this;
             }
 
+            // Increment the current cycle index
             _currentCycleIndex++;
+
+            // Set waiting flag to false
             _waiting = false;
+
+            // Reset the elapsed time for the current cycle
             _currentCycleElapsedTime = 0;
 
+            // Return the updated ComboAnimator object
             return this;
         }
 
+        /// <summary>
+        /// Overrides the input wait time for the combo animator.
+        /// </summary>
+        /// <param name="maxInputWait">The maximum input wait time.</param>
+        /// <returns>The updated <see cref="ComboAnimator"/>.</returns>
         public ComboAnimator OverrideInputWait(float maxInputWait)
         {
             _currentCycleWaitOverride = maxInputWait;
             return this;
         }
 
+        /// <summary>
+        /// Sets the action to be executed when the animation is interrupted.
+        /// </summary>
+        /// <param name="onInterrupted">The action to be executed.</param>
+        /// <returns>The updated <see cref="ComboAnimator"/>.</returns>
         public ComboAnimator SetOnInterrupted(UnityAction onInterrupted)
         {
             _onInterruptedAction = onInterrupted;
             return this;
         }
 
+        /// <summary>
+        /// Sets the action to be executed when a cycle ends.
+        /// </summary>
+        /// <param name="onCycleEnded">The action to be executed.</param>
+        /// <returns>The updated <see cref="ComboAnimator"/>.</returns>
         public ComboAnimator SetOnCycleEnded(UnityAction<int> onCycleEnded)
         {
             _onCycleEndedAction = onCycleEnded;
