@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/SpriteAnimations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 0; flex-direction: row; align-items: center; height: 40px; flex-shrink: 0; min-height: 40px; border-bottom-width: 0; border-bottom-color: rgb(82, 82, 82); max-width: 140px; border-left-width: 0; border-right-width: 1px;">
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="label" style="flex-grow: 1; color: rgb(255, 255, 255); font-size: 12px; -unity-text-align: middle-left; justify-content: center; align-items: flex-start; -unity-font-style: bold; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px;" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="delete-button" tooltip="Delete this cycle. Irreversible" class="danger" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 30px; width: 30px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; align-items: center; justify-content: center;">
+            <ui:VisualElement name="icon" style="flex-grow: 0; background-image: resource(&apos;Icons/trash-can&apos;); height: 20px; width: 20px;" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

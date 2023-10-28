@@ -6,7 +6,7 @@ public class WarriorStateAttacking : WarriorState
 {
     public override void OnEnter()
     {
-        WarriorMachine.Animator.Play("Attack").SetOnFrame("Slash", OnSlash).OnEnd(OnAnimationEnd);
+        WarriorMachine.Animator.Play("Attack").SetOnFrame("Slash", OnSlash).SetOnEnd(OnAnimationEnd);
     }
 
     private void OnSlash(Frame frame)

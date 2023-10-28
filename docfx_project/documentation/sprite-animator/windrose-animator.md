@@ -2,7 +2,7 @@
 
 This is the performer for [Windrose Animations](../animations/windrose-animation.md).
 
-In addition to allowing the usage of `SetOnFrame()` and `OnEnd()` methods like the [SingleAnimator](single-animator.md), the WindroseAnimator allows you to set the direction in wich you
+In addition to allowing the usage of `SetOnFrame()` and `SetOnEnd()` methods like the [SingleCycleAnimator](single-cycle-animator.md), the WindroseAnimator allows you to set the direction in wich you
 want that animation to played.
 
 You can set direction by telling an specific direction of the [WindroseDirection](../../api/SpriteAnimations.WindroseDirection.yml) enum:

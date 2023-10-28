@@ -13,40 +13,48 @@ MonoBehaviour:
   m_Name: Idle
   m_EditorClassIdentifier: 
   _animationName: Idle
-  _fps: 6
+  _fps: 8
   _isLoopable: 1
   _cycles:
     _keyData: 0400000003000000020000000100000000000000070000000600000005000000
     _valueData:
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: -1737938713, guid: 915c230419ce4a94cbb153c1e0e04727, type: 3}
         _id: 
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: -676635047, guid: fa81ec1354fe408439679c255af3efc2, type: 3}
         _id: 
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: -628159346, guid: e9e9ba5eaabccbb4e85d160f0329903d, type: 3}
         _id: 
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: -1941304534, guid: d97621966c7daf3499dd73e7b85e7e28, type: 3}
         _id: 
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: 1586074012, guid: 2718c15a6c1ee044b8de76ad74b30011, type: 3}
         _id: 
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: -1652713880, guid: 7147b75a18fb090428a79304e88c7b1b, type: 3}
         _id: 
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: 478879114, guid: bdcac6b2e360b8d49bdcce6f5dad0add, type: 3}
         _id: 
       _identifiable: 0
-    - _frames:
+    - _animation: {fileID: 11400000}
+      _frames:
       - _sprite: {fileID: 1828981973, guid: 1eef6ee0aa8c2184cbc830fc53b04e4e, type: 3}
         _id: 
       _identifiable: 0

@@ -178,3 +178,57 @@
     max-width: 100px;
     min-width: 10px;
 }
+
+#waiting-time-field > Label {
+    width: 40px;
+    max-width: 40px;
+    justify-content: center;
+}
+
+#waiting-time-field > #unity-text-input {
+    width: 48px;
+}
+
+#animation-field > VisualElement {
+    height: 30px;
+}
+
+.header-field-container {
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    height: 40px;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.header-field {
+    justify-content: center;
+}
+
+.header-field > #unity-text-input {
+    font-size: 12px;
+}
+
+.header-field > #unity-text-input > TextElement {
+    justify-content: center;
+}
+
+#fps-slider > VisualElement {
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+#view-zoom-slider > Label {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}

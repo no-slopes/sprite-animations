@@ -15,7 +15,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/develop/docfx_project/documentation/sprite-animator/performers.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/feature/combo-animation/docfx_project/documentation/sprite-animator/performers.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -104,7 +104,7 @@ you are telling the <a href="index.html">Sprite Animator</a> to play.</p>
 private void Start()
 {
     _perfomer = _animator.Play(&quot;Idle&quot;);
-    _performer.OnEnd(() =&gt; { Debug.Log(&quot;The animation ended.&quot;); })
+    _performer.SetOnEnd(() =&gt; { Debug.Log(&quot;The animation ended.&quot;); })
 }
 </code></pre>
 <p>Yes. It is because of the performer we can chain methods like this:</p>
@@ -113,7 +113,7 @@ private void Start()
     _animator.Play(&quot;Idle&quot;).SetOnFrame(5, frame =&gt;
     {
         Debug.Log(&quot;Frame indexed as 5 played.&quot;);
-    }).OnEnd(() =&gt;
+    }).SetOnEnd(() =&gt;
     {
         Debug.Log(&quot;The animation ended.&quot;);
     });
@@ -190,10 +190,10 @@ private void OnSwordSlash(Frame frame)
 }
 </code></pre>
 <p><strong>When the animation ends:</strong></p>
-<p>You can define an action to be fired when the animation ends (upon last frame being played) using the <code>OnEnd()</code> method:</p>
+<p>You can define an action to be fired when the animation ends (upon last frame being played) using the <code>SetOnEnd()</code> method:</p>
 <pre><code class="lang-csharp">public void PlayDeath()
 {
-    _animator.Play(&quot;Death&quot;).OnEnd(AnnounceDeath);
+    _animator.Play(&quot;Death&quot;).SetOnEnd(AnnounceDeath);
 }
 
 private void AnnounceDeath()
@@ -206,7 +206,7 @@ private void AnnounceDeath()
 </code></pre>
 <div class="NOTE">
 <h5>Note</h5>
-<p>If the animation is marked as loopable, the <code>OnEnd()</code> action registered will be fired every time the last frame is played.</p>
+<p>If the animation is marked as loopable, the <code>SetOnEnd()</code> action registered will be fired every time the last frame is played.</p>
 </div>
 </article>
 

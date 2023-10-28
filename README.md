@@ -36,6 +36,11 @@ Checkout [how it works](https://no-slopes.github.io/sprite-animations/documentat
 - [Sprite Animator](https://no-slopes.github.io/sprite-animations/documentation/sprite-animator/index.html)
 - [Animations Manager](https://no-slopes.github.io/sprite-animations/documentation/animations-manager/index.html)
 
+## Beta Version
+
+This tool should be carefully tested before integrated in a project that has commercial intentions. Although I really trust
+its capacity, it is still too young to be considered stable.
+
 ## Installing
 
 https://github.com/no-slopes/sprite-animations/assets/95456621/e1ebc0ab-471e-437a-821c-7180749b2e7d

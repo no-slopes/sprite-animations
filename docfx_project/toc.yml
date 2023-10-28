@@ -1,3 +1,6 @@
+- name: Welcome
+  href: index.md
+
 - name: Docs
   href: documentation/
 

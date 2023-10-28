@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The ComboAnimator | Sprite Animations </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The ComboAnimator | Sprite Animations ">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/feature/combo-animation/docfx_project/documentation/sprite-animator/combo-animator.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+
+    <meta property="og:title" content="Sprite Animations">
+    <meta property="og:description" content="A smooth and intuitive way to work with spritesheets in Unity.">
+    
+    <meta property="og:image" content="https://no-slopes.github.io/sprite-animations/images/banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta property="og:url" content="https://no-slopes.github.io/sprite-animations">
+    
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="the-comboanimator">The ComboAnimator</h1>
+
+<p>This is the performer for <a href="../animations/combo-animation.html">Combo Animations</a>.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>When you tell the <a href="index.html">Sprite Animator</a> to play a Combo Animation it will behave as follows:</p>
+<ul>
+<li>First it will play the entire first cycle.</li>
+<li>At the end of the cycle it will fire the <code>OnCycleEnded</code> action (in case you registered one)</li>
+<li>Now the combo animator enters the &quot;waiting state&quot; where it awaits for the <code>Next()</code> method being called.</li>
+<li>From here, if the <code>Next()</code> method doesn't get called within the <code>Input Waiting Time</code> set when configuring the animation
+while using the <a href="../animations-manager/index.html">Animations Manage</a>, the animation is considered interrupted and the
+combo animator will fire the <code>OnInterrupted</code> action (if registered). The common practice here would be getting the animated
+object back to its default animation.</li>
+<li>In the case the <code>Next()</code> method do get called within the <code>Input Waiting Time</code> it will play the next cycle and enter the &quot;waiting state&quot; again.</li>
+<li>This process repeats until the last cycle is played, when the Combo Animator calls the <code>OnEnd</code> action.</li>
+</ul>
+<h2 id="playing-a-combo-animation">Playing a Combo Animation</h2>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private ComboAnimator _comboAnimator;
+
+public void StartCombo()
+{
+    _comboAnimator = _animator.Play&lt;ComboAnimator&gt;(&quot;Attack_Combo&quot;);
+}
+</code></pre>
+<h2 id="registering-the-oninterrupted-action">Registering the OnInterrupted Action</h2>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private ComboAnimator _comboAnimator;
+
+public void StartCombo()
+{
+    _comboAnimator = _animator.Play&lt;ComboAnimator&gt;(&quot;Attack_Combo&quot;);
+    _comboAnimator.SetOnInterrupted(OnAnimationInterrupted)
+}
+
+private void OnAnimationInterrupted()
+{
+    // Go back to the Idle state and / or
+    // apply any needed logic.
+}
+</code></pre>
+<h2 id="registering-the-oncycleended-action">Registering the OnCycleEnded Action</h2>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private ComboAnimator _comboAnimator;
+
+public void StartCombo()
+{
+    _comboAnimator = _animator.Play&lt;ComboAnimator&gt;(&quot;Attack_Combo&quot;);
+    _comboAnimator.SetOnCycleEnded(OnCycleEnded)
+}
+
+private void OnCycleEnded(int cycleIndex)
+{
+    // This is most usefull for cases where a new input
+    // should only be handled if the current cycle if fully played.
+    // The cycle index can be used in favor of your logic.
+}
+</code></pre>
+<h2 id="on-frame-operations">On Frame Operations</h2>
+<p>The <code>SetOnFrame</code> remains as the <a href="single-cycle-animator.html">Single Cycle Animator</a> here. The catch is only
+that you must be carefull wuen setting by index. The index in this scenario would be the index of each cycle.</p>
+<p>So, considering you have an animation with 3 cycles (0, 1 and 2) and do as follows:</p>
+<pre><code class="lang-csharp">_comboAnimator.SetOnFrame(0, frame =&gt; Debug.Log(frame));
+</code></pre>
+<p>this will get fired 3 times throught the complete execution of the animation.</p>
+<p>as this:</p>
+<pre><code class="lang-csharp">_comboAnimator.SetOnFrame(&quot;Shoot&quot;, frame =&gt; Debug.Log(frame));
+</code></pre>
+<p>will only get fired for the frame that has the &quot;Shoot&quot; identification.</p>
+<h2 id="overriding-the-waiting-time">Overriding the waiting time</h2>
+<p>For the cases the waiting time should vary according to some logic of yours, you can use the <code>OverrideInputWait()</code> method and
+tell the Combo Animator how much time it should wait for the <code>Next()</code> method being called before interrupting the animation:</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private ComboAnimator _comboAnimator;
+
+public void StartCombo()
+{
+    _comboAnimator = _animator.Play&lt;ComboAnimator&gt;(&quot;Attack_Combo&quot;);
+    _comboAnimator.OverrideInputWait(3); // Will wait 3 seconds before interrupting.
+}
+</code></pre>
+<h2 id="finally-playing-the-next-cycle">Finally, playing the next cycle</h2>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private ComboAnimator _comboAnimator;
+private bool _canPlayNext;
+
+public void StartCombo()
+{
+    _comboAnimator = _animator.Play&lt;ComboAnimator&gt;(&quot;Attack_Combo&quot;);
+    _comboAnimator.SetOnCycleEnded(OnCycleEnded);
+    _canPlayNext = false;
+}
+
+// This could be called in another script or even called within the same script.
+// As said many times, it is better to setup an FSM scenario for these animations,
+// but you can check Samples to checkout how you can make this work within the same script.
+public void PlayNextCycle()
+{
+    if (!_canPlayNext) return;
+    _comboAnimator?.Next();
+    _canPlayNext = false;
+}
+
+private void OnCycleEnded(int cycleIndex)
+{
+    _canPlayNext = true;
+}
+</code></pre>
+<h2 id="playing-from-start">Playing from start</h2>
+<p>In case you need to reset the animation, just use the <code>FromStart()</code> method:</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private ComboAnimator _comboAnimator;
+
+public void RestartCombo()
+{
+    _comboAnimator = _animator.Play&lt;ComboAnimator&gt;(&quot;Attack_Combo&quot;).FromStart();
+}
+</code></pre>
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -23,7 +23,7 @@ namespace SpriteAnimations.Editor
         protected ObjectField _animationField;
         protected TextField _animationNameField;
         protected SliderInt _fpsSlider;
-        protected ViewZoomSliderElement _viewZoomSlider;
+        protected Slider _viewZoomSlider;
 
 
         #endregion
@@ -39,7 +39,7 @@ namespace SpriteAnimations.Editor
 
         public SpriteAnimation Animation => _animation;
         public abstract AnimationType AnimationType { get; }
-        public ViewZoomSliderElement ViewZoomSlider => _viewZoomSlider;
+        public Slider ViewZoomSlider => _viewZoomSlider;
 
         #endregion
 
@@ -48,9 +48,11 @@ namespace SpriteAnimations.Editor
         public SpriteAnimationView()
         {
             style.flexGrow = 1;
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationView");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Animations Views/AnimationView");
             TemplateContainer template = tree.Instantiate();
             template.style.flexGrow = 1;
+
+            _viewZoomSlider = template.Q<Slider>("view-zoom-slider");
 
             _deleteAnimationButton = template.Q<Button>("delete-animation-button");
             _deleteAnimationButton.clicked += () => DestroyAnimationRequested?.Invoke();
@@ -62,8 +64,6 @@ namespace SpriteAnimations.Editor
             _animationField.SetEnabled(false);
             _animationNameField = template.Q<TextField>("animation-name-field");
             _fpsSlider = template.Q<SliderInt>("fps-slider");
-
-            _viewZoomSlider = new ViewZoomSliderElement();
 
             Add(template);
         }

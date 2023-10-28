@@ -21,11 +21,6 @@ namespace SpriteAnimations.Editor
             return window;
         }
 
-        public static CreateAnimationWindow OpenEditorWindow(Vector2 position)
-        {
-            return OpenEditorWindow();
-        }
-
         #endregion
 
         #region Fields
@@ -34,6 +29,14 @@ namespace SpriteAnimations.Editor
         private TextField _nameField;
         private EnumField _typeField;
         private Button _createButton;
+
+        private string _usedPath = "Assets";
+
+        #endregion
+
+        #region Properties
+
+        public string UsedPath { get => _usedPath; set => _usedPath = value; }
 
         #endregion
 
@@ -73,7 +76,7 @@ namespace SpriteAnimations.Editor
                 return;
             }
 
-            string path = EditorUtility.OpenFolderPanel("Select Folder", "Assets", "");
+            string path = EditorUtility.OpenFolderPanel("Select Folder", _usedPath, "");
 
             if (string.IsNullOrEmpty(path))
             {
@@ -83,10 +86,13 @@ namespace SpriteAnimations.Editor
             string[] parts = path.Split("/Assets");
             path = "Assets" + parts[^1];
 
+            _usedPath = path;
+
             SpriteAnimation animation = _typeField.value switch
             {
-                AnimationType.Simple => CreateSingleSpriteAnimation(path, name),
-                AnimationType.Windrose => CreateWindroseSpriteAnimation(path, name),
+                AnimationType.SingleCycle => CreateSingleCycleAnimation(path, name),
+                AnimationType.Windrose => CreateWindroseAnimation(path, name),
+                AnimationType.Combo => CreateComboAnimation(path, name),
                 _ => throw new ArgumentOutOfRangeException(nameof(_typeField.value), null, null)
             };
 
@@ -96,18 +102,27 @@ namespace SpriteAnimations.Editor
             AnimationCreated?.Invoke(animation);
         }
 
-        private SpriteAnimationSimple CreateSingleSpriteAnimation(string path, string name)
+        private SpriteAnimationSingleCycle CreateSingleCycleAnimation(string path, string name)
         {
-            SpriteAnimationSimple sriteAnimationAsset = ScriptableObject.CreateInstance<SpriteAnimationSimple>();
-            AssetDatabase.CreateAsset(sriteAnimationAsset, $"{path}/{name}.asset");
-            return sriteAnimationAsset;
+            SpriteAnimationSingleCycle singleCycleAsset = ScriptableObject.CreateInstance<SpriteAnimationSingleCycle>();
+            singleCycleAsset.GenerateCycle();
+            AssetDatabase.CreateAsset(singleCycleAsset, $"{path}/{name}.asset");
+            return singleCycleAsset;
         }
 
-        private SpriteAnimationWindrose CreateWindroseSpriteAnimation(string path, string name)
+        private SpriteAnimationWindrose CreateWindroseAnimation(string path, string name)
         {
-            SpriteAnimationWindrose sriteAnimationAsset = ScriptableObject.CreateInstance<SpriteAnimationWindrose>();
-            AssetDatabase.CreateAsset(sriteAnimationAsset, $"{path}/{name}.asset");
-            return sriteAnimationAsset;
+            SpriteAnimationWindrose windroseAsset = ScriptableObject.CreateInstance<SpriteAnimationWindrose>();
+            AssetDatabase.CreateAsset(windroseAsset, $"{path}/{name}.asset");
+            return windroseAsset;
+        }
+
+        private SpriteAnimationCombo CreateComboAnimation(string path, string name)
+        {
+            SpriteAnimationCombo comboAsset = ScriptableObject.CreateInstance<SpriteAnimationCombo>();
+            comboAsset.CreateCycle();
+            AssetDatabase.CreateAsset(comboAsset, $"{path}/{name}.asset");
+            return comboAsset;
         }
 
         #endregion

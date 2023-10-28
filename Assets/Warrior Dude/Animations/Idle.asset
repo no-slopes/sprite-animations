@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Idle
   m_EditorClassIdentifier: 
   _animationName: Idle
-  _fps: 10
+  _fps: 9
   _isLoopable: 1
   _cycle:
+    _animation: {fileID: 11400000}
     _frames:
     - _sprite: {fileID: -472867392, guid: 026f958a15f64df4ebd14a71674284ba, type: 3}
       _id: 

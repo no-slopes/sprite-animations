@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0946d8a011141b14ba905342f5c274c0, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  _animationName: Idle
+  _fps: 7
+  _isLoopable: 1
+  _cycle:
+    _animation: {fileID: 11400000}
+    _frames:
+    - _sprite: {fileID: 21300000, guid: 449f3d6eea025394c89803e27478ed0c, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 352027bacfcad2a4aab3a5a02e991f58, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 1b4f213584f83bd4fa737bdd55e863fe, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 1ca9a90796c53af4aa48f18ed8c27059, type: 3}
+      _id: 
+    _identifiable: 1

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd05db3ee11025f42aeebcb575b7cc49, type: 3}
+  m_Name: Attack_Combo
+  m_EditorClassIdentifier: 
+  _animationName: Attack_Combo
+  _fps: 8
+  _waitingTime: 1.25
+  _cycles:
+  - _animation: {fileID: 11400000}
+    _frames:
+    - _sprite: {fileID: 21300000, guid: a6e4ae343ed1ab54eaf93004baa0f72e, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: bcb67b20f51e1224ba907722527f3323, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 4c853000eedc59246bff613ce58d498b, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: ea9722af67c4d4149a18bd15585d91dc, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: c02f115beb5c282409806f3fd4d8a808, type: 3}
+      _id: 
+    _identifiable: 1
+  - _animation: {fileID: 11400000}
+    _frames:
+    - _sprite: {fileID: 21300000, guid: df5a6a0db43fa2e4e9547cb588583af7, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 4e9c8f51298c9c94487c6ff55ea6cfbe, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 9a869c9a5056cbb45893bce733568987, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 2ff79c5df21296a43a3fbbb5af79bea9, type: 3}
+      _id: 
+    _identifiable: 1
+  - _animation: {fileID: 11400000}
+    _frames:
+    - _sprite: {fileID: 21300000, guid: 65ecc3f68006cfc44ba4309cfc63aa9d, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: d4c2e9b999d75504c8f4b06287430f09, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: 9ecfd8608d7d4a44397ca09c0e944c8c, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: f2f12107a4a8cea4681e9c5ed80e92ff, type: 3}
+      _id: 
+    - _sprite: {fileID: 21300000, guid: f3b94e80bfe079048b553577fcc1136e, type: 3}
+      _id: 
+    _identifiable: 1

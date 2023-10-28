@@ -29,7 +29,7 @@ namespace SpriteAnimations.Editor
         {
             _spriteAnimator = target as SpriteAnimator;
 
-            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/SpriteAnimatorInspector");
+            VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Inspectors/SpriteAnimatorInspector");
             TemplateContainer inspector = tree.Instantiate();
 
             ObjectField scriptField = inspector.Query<ObjectField>("script-field");

@@ -1,6 +1,8 @@
 # Windrose animation
 
-The windrose is a collection of [Frame Cycles](../animations-manager/index.md#frame-cycle) each representing one of the 8-directional cardinal windrose system directions. Perfect for top-down games.
+![Winrose Animation Window](../../images/animator-manager-windrose-animation.png)
+
+The windrose animation is a collection of [Frame Cycles](../animations-manager/index.md#frame-cycle) each representing one of the 8-directional cardinal windrose system directions. Perfect for top-down games.
 
 The main feature of this type of animation is that you will tell the animator to play just one animation and then tell it for wich direction it should set the sprites while animating. Super easy!
 
