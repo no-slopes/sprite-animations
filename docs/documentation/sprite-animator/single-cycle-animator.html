@@ -104,7 +104,7 @@ its performer is also really simple to interact with.</p>
 private void Start()
 {
     _perfomer = _animator.Play&lt;SingleCycleAnimator&gt;(&quot;Idle&quot;);
-    _performer.OnEnd(() =&gt; { Debug.Log(&quot;The animation ended.&quot;); })
+    _performer.SetOnEnd(() =&gt; { Debug.Log(&quot;The animation ended.&quot;); })
 }
 </code></pre>
 <pre><code class="lang-csharp">private SingleCycleAnimator _perfomer;
@@ -115,7 +115,7 @@ private void Start()
     _performer.SetOnFrame(3, frame =&gt;
     {
         Debug.Log(&quot;Frame indexed as 3 played.&quot;);
-    }).OnEnd(() =&gt;
+    }).SetOnEnd(() =&gt;
     {
         Debug.Log(&quot;The animation ended.&quot;);
     });

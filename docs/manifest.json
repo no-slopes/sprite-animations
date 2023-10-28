@@ -730,6 +730,36 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/animator-manager-combo-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/animator-manager-combo-animation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/animator-manager-single-cycle-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/animator-manager-single-cycle-animation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/animator-manager-windrose-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/animator-manager-windrose-animation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/banner.png",
       "output": {
         "resource": {

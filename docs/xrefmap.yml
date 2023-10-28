@@ -430,12 +430,15 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.ComboAnimator.OverrideInputWait
   nameWithType: ComboAnimator.OverrideInputWait
-- uid: SpriteAnimations.ComboAnimator.SetOnCycleEnded(UnityEngine.Events.UnityAction)
-  name: SetOnCycleEnded(UnityAction)
-  href: api/SpriteAnimations.ComboAnimator.html#SpriteAnimations_ComboAnimator_SetOnCycleEnded_UnityEngine_Events_UnityAction_
-  commentId: M:SpriteAnimations.ComboAnimator.SetOnCycleEnded(UnityEngine.Events.UnityAction)
-  fullName: SpriteAnimations.ComboAnimator.SetOnCycleEnded(UnityEngine.Events.UnityAction)
-  nameWithType: ComboAnimator.SetOnCycleEnded(UnityAction)
+- uid: SpriteAnimations.ComboAnimator.SetOnCycleEnded(UnityEngine.Events.UnityAction{System.Int32})
+  name: SetOnCycleEnded(UnityAction<int>)
+  href: api/SpriteAnimations.ComboAnimator.html#SpriteAnimations_ComboAnimator_SetOnCycleEnded_UnityEngine_Events_UnityAction_System_Int32__
+  commentId: M:SpriteAnimations.ComboAnimator.SetOnCycleEnded(UnityEngine.Events.UnityAction{System.Int32})
+  name.vb: SetOnCycleEnded(UnityAction(Of Integer))
+  fullName: SpriteAnimations.ComboAnimator.SetOnCycleEnded(UnityEngine.Events.UnityAction<int>)
+  fullName.vb: SpriteAnimations.ComboAnimator.SetOnCycleEnded(UnityEngine.Events.UnityAction(Of Integer))
+  nameWithType: ComboAnimator.SetOnCycleEnded(UnityAction<int>)
+  nameWithType.vb: ComboAnimator.SetOnCycleEnded(UnityAction(Of Integer))
 - uid: SpriteAnimations.ComboAnimator.SetOnCycleEnded*
   name: SetOnCycleEnded
   href: api/SpriteAnimations.ComboAnimator.html#SpriteAnimations_ComboAnimator_SetOnCycleEnded_
