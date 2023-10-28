@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SpriteAnimations
 {
     /// <summary>
-    /// The performer responsible for playing single animations.
+    /// The performer responsible for playing single cycle animations.
     /// </summary>
     public class SingleCycleAnimator : AnimationPerformer
     {
