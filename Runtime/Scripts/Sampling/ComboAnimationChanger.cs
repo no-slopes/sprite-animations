@@ -49,7 +49,7 @@ namespace SpriteAnimations.Sampling
             _waitingForInput = false;
         }
 
-        private void OnCycleEnded()
+        private void OnCycleEnded(int cycleIndex)
         {
             _waitingForInput = true;
         }

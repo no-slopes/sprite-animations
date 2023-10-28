@@ -19,7 +19,7 @@ namespace SpriteAnimations
         protected float _currentWaitCounter = 0;
         protected float _currentCycleWaitOverride = -1;
 
-        protected UnityAction _onCycleEndedAction;
+        protected UnityAction<int> _onCycleEndedAction;
         protected UnityAction _onInterruptedAction;
 
         #endregion 
@@ -169,13 +169,13 @@ namespace SpriteAnimations
                 // Starts waiting for the next cycle
                 _currentWaitCounter = 0;
                 _waiting = true;
-                _onCycleEndedAction?.Invoke();
+                _onCycleEndedAction?.Invoke(_currentCycleIndex);
                 return;
             }
 
             // The last cycle has been played
             EndAnimation();
-            _onCycleEndedAction?.Invoke();
+            _onCycleEndedAction?.Invoke(_currentCycleIndex);
             _onEndAction?.Invoke();
         }
 
@@ -230,7 +230,7 @@ namespace SpriteAnimations
             return this;
         }
 
-        public ComboAnimator SetOnCycleEnded(UnityAction onCycleEnded)
+        public ComboAnimator SetOnCycleEnded(UnityAction<int> onCycleEnded)
         {
             _onCycleEndedAction = onCycleEnded;
             return this;

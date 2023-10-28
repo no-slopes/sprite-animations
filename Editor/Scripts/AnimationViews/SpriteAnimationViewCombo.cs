@@ -66,6 +66,7 @@ namespace SpriteAnimations.Editor
             _comboAnimation = animation as SpriteAnimationCombo;
             _waitingTimeField.value = _comboAnimation.WaitingTime;
             _cyclesListHandler.Initialize(_comboAnimation);
+            LoadCycle(_comboAnimation.FirstCycle);
         }
 
         public override void Dismiss()
@@ -90,16 +91,21 @@ namespace SpriteAnimations.Editor
 
         #region Cycle
 
-        private void OnCycleSelected(IEnumerable<int> selectedIndexes)
+        private void LoadCycle(Cycle cycle)
         {
-            if (selectedIndexes.Count() <= 0) return;
-
             _animationPreview?.Dismiss();
             _cycleElement?.Dismiss();
 
-            Cycle selectedCycle = _comboAnimation.Cycles[selectedIndexes.First()];
-            _cycleElement.Initialize(selectedCycle, this);
+            _cycleElement.Initialize(cycle, this);
             _animationPreview.Initialize(this, this, _cycleElement, _viewZoomSlider);
+
+        }
+
+        private void OnCycleSelected(IEnumerable<int> selectedIndexes)
+        {
+            if (selectedIndexes.Count() <= 0) return;
+            Cycle selectedCycle = _comboAnimation.Cycles[selectedIndexes.First()];
+            LoadCycle(selectedCycle);
         }
 
         #endregion
