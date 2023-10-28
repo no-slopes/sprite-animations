@@ -1,28 +1,28 @@
-# The SingleAnimator
+# The SingleCycleAnimator
 
-This is the performer for [Single Animations](../animations/single-animation.md).
+This is the performer for [Single Animations](../animations/single-cycle-animation.md).
 
-As [Single Animations](../animations/single-animation.md) are the most basic type of animation we have,
+As [Single Animations](../animations/single-cycle-animation.md) are the most basic type of animation we have,
 its performer is also really simple to interact with.
 
 ## Registering Frame Actions
 
 ```csharp
-private SingleAnimator _perfomer;
+private SingleCycleAnimator _perfomer;
 
 private void Start()
 {
-    _perfomer = _animator.Play<SingleAnimator>("Idle");
+    _perfomer = _animator.Play<SingleCycleAnimator>("Idle");
     _performer.OnEnd(() => { Debug.Log("The animation ended."); })
 }
 ```
 
 ```csharp
-private SingleAnimator _perfomer;
+private SingleCycleAnimator _perfomer;
 
 private void Start()
 {
-    _perfomer = _animator.Play<SingleAnimator>("Idle");
+    _perfomer = _animator.Play<SingleCycleAnimator>("Idle");
     _performer.SetOnFrame(3, frame =>
     {
         Debug.Log("Frame indexed as 3 played.");
@@ -37,7 +37,7 @@ private void Start()
 
 Sometimes you might tell the [SpriteAnimator](./index.md) to play the same animation it has already been playing. This
 will cause the animator to skip animation changing and just return the animation performer. For the case you want the
-animation to be "restarted", just call the `FromStart()` method of the SingleAnimator.
+animation to be "restarted", just call the `FromStart()` method of the SingleCycleAnimator.
 
 ```csharp
 public SpriteAnimator _animator;
@@ -47,7 +47,7 @@ private IEnumerator PlayRepeatedly()
 {
     while(_shouldRepeat)
     {
-        _animator.Play<SingleAnimator>("MyAnimation").FromStart();
+        _animator.Play<SingleCycleAnimator>("MyAnimation").FromStart();
         yield retun new WaitForSeconds(0.5f);
     }
 }

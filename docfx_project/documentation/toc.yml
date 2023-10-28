@@ -1,5 +1,6 @@
 items:
   - name: First Steps
+    expanded: true
     items:
       - name: How it works
         href: how-it-works.md
@@ -9,12 +10,14 @@ items:
 
   - name: Sprite Animator
     href: sprite-animator/index.md
+    expanded: true
     items:
       - name: Performers
         href: sprite-animator/performers.md
+        expanded: true
         items:
-          - name: Single Animator
-            href: sprite-animator/single-animator.md
+          - name: Single Cycle Animator
+            href: sprite-animator/single-cycle-animator.md
 
           - name: Windrose Animator
             href: sprite-animator/windrose-animator.md
@@ -24,9 +27,10 @@ items:
 
   - name: Animations
     href: animations/index.md
+    expanded: true
     items:
-      - name: Single Animation
-        href: animations/single-animation.md
+      - name: Single Cycle Animation
+        href: animations/single-cycle-animation.md
 
       - name: Windrose Animation
         href: animations/windrose-animation.md

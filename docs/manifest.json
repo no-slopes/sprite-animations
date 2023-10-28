@@ -34,6 +34,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.ComboAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.ComboAnimator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Cycle.yml",
       "output": {
         ".html": {
@@ -104,20 +114,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Editor.ContentElement.yml",
+      "source_relative_path": "api/SpriteAnimations.Editor.ComboCyclesHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SpriteAnimations.Editor.ContentElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Editor.CreateAnimationOptionsMenu.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Editor.CreateAnimationOptionsMenu.html"
+          "relative_path": "api/SpriteAnimations.Editor.ComboCyclesHandler.html"
         }
       },
       "version": ""
@@ -254,6 +254,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewCombo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewCombo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewFactory.yml",
       "output": {
         ".html": {
@@ -264,10 +274,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewSimple.yml",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewSingleCycle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewSimple.html"
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewSingleCycle.html"
         }
       },
       "version": ""
@@ -304,30 +314,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Editor.ViewZoomSliderElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Editor.ViewZoomSliderElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.WindroseSelectorElement.yml",
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.Editor.WindroseSelectorElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.Editor.ZoomValueChangedEvent.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.Editor.ZoomValueChangedEvent.html"
         }
       },
       "version": ""
@@ -394,6 +384,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.ComboAnimationChanger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.ComboAnimationChanger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Sampling.MovementInputDetector.yml",
       "output": {
         ".html": {
@@ -434,10 +434,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.SingleAnimator.yml",
+      "source_relative_path": "api/SpriteAnimations.SingleCycleAnimator.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SpriteAnimations.SingleAnimator.html"
+          "relative_path": "api/SpriteAnimations.SingleCycleAnimator.html"
         }
       },
       "version": ""
@@ -454,20 +454,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.SpriteAnimationSimple.yml",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationCombo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SpriteAnimations.SpriteAnimationSimple.html"
+          "relative_path": "api/SpriteAnimations.SpriteAnimationCombo.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.SpriteAnimationType.yml",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationSingleCycle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SpriteAnimations.SpriteAnimationType.html"
+          "relative_path": "api/SpriteAnimations.SpriteAnimationSingleCycle.html"
         }
       },
       "version": ""
@@ -488,16 +488,6 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.SpriteAnimationWindrose.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SpriteAnimations.SpriteAnimator.SpriteAnimatorState.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SpriteAnimations.SpriteAnimator.SpriteAnimatorState.html"
         }
       },
       "version": ""
@@ -627,10 +617,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/animations/single-animation.md",
+      "source_relative_path": "documentation/animations/single-cycle-animation.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/animations/single-animation.html"
+          "relative_path": "documentation/animations/single-cycle-animation.html"
         }
       },
       "version": ""
@@ -667,6 +657,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "documentation/sprite-animator/combo-animator.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/sprite-animator/combo-animator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "documentation/sprite-animator/index.md",
       "output": {
         ".html": {
@@ -687,10 +687,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/sprite-animator/single-animator.md",
+      "source_relative_path": "documentation/sprite-animator/single-cycle-animator.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/sprite-animator/single-animator.html"
+          "relative_path": "documentation/sprite-animator/single-cycle-animator.html"
         }
       },
       "version": ""
@@ -850,10 +850,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/single-animation.png",
+      "source_relative_path": "images/single-cycle-animation.png",
       "output": {
         "resource": {
-          "relative_path": "images/single-animation.png"
+          "relative_path": "images/single-cycle-animation.png"
         }
       },
       "version": ""

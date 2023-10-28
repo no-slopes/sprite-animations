@@ -35,7 +35,7 @@ Note that as we have multiple types of animations, we will need different layout
 ## Frame Cycle
 
 The Frame Cycle represents a collection of frames that must be played from the very first index (0) to whatever the last frame is. An animation may have
-a single cycle, wich is the case of the [Single Animation](../animations/single-animation.md) or multiple cycles, wich is the case of the [Windrose Animation](../animations/windrose-animation.md).
+a single cycle, wich is the case of the [Single Animation](../animations/single-cycle-animation.md) or multiple cycles, wich is the case of the [Windrose Animation](../animations/windrose-animation.md).
 
 ![Frames List](../../images/frames-list.png)
 
