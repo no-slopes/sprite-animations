@@ -2,7 +2,7 @@
 
 ![Single Cycle Animation Window](../../images/animator-manager-single-cycle-animation.png)
 
-The Single Animation is just a single [Frame Cycle](../animations-manager/index.md#frame-cycle).
+The Single Cycle Animation is just a single [Frame Cycle](../animations-manager/index.md#frame-cycle).
 
 ![Single Animation](../../images/single-cycle-animation.png)
 

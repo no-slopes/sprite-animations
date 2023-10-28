@@ -1,8 +1,8 @@
 # The SingleCycleAnimator
 
-This is the performer for [Single Animations](../animations/single-cycle-animation.md).
+This is the performer for [Single Cycle Animations](../animations/single-cycle-animation.md).
 
-As [Single Animations](../animations/single-cycle-animation.md) are the most basic type of animation we have,
+As [Single Cycle Animations](../animations/single-cycle-animation.md) are the most basic type of animation we have,
 its performer is also really simple to interact with.
 
 ## Registering Frame Actions
