@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/no-slopes/sprite-animations/compare/v2.0.0...v2.0.1) (2023-10-28)
+
+
+### Bug Fixes
+
+* **CR:** Correcting samples folder problem with continuous ([75a04e5](https://github.com/no-slopes/sprite-animations/commit/75a04e554075738da7fe507637caf6c89424fe14))
+
 # [2.0.0](https://github.com/no-slopes/sprite-animations/compare/v1.2.5...v2.0.0) (2023-10-28)
 
 ### We now have Combo Animations! 
