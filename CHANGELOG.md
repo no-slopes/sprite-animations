@@ -1,3 +1,10 @@
+We now have Combo Animations! 
+
+**BREAKING CHANGES:** 
+
+- The animations made in previous versions will not work due to a change in how cycles calculate their own stuff (frames, duration and etc). For that they need their animation to be injected when they are created and previous animation did not do that.
+- SingleAnimation is now called SingleCycleAnimation in order to stablish a more clear understanding of how it works upon reading its name.
+
 # [2.0.0](https://github.com/no-slopes/sprite-animations/compare/v1.2.5...v2.0.0) (2023-10-28)
 
 
