@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEngine;
 
 namespace SpriteAnimations
 {

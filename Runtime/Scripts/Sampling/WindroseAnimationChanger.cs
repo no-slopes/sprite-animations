@@ -49,7 +49,7 @@ namespace SpriteAnimations.Sampling
             // Now we play the roll animation setting the direction to the current facing direction
             // and register an action to evaluate the movement animation (if idle or walking) at the end
             // of the roll animation.
-            _animator.Play<WindroseAnimator>("Roll").SetDirection(_facingDirection).OnEnd(() =>
+            _animator.Play<WindroseAnimator>("Roll").SetDirection(_facingDirection).SetOnEnd(() =>
             {
                 _rolling = false;
                 Debug.Log("Roll animation ended. Evaluating movement animation.");

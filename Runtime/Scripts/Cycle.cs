@@ -66,7 +66,8 @@ namespace SpriteAnimations
         /// <returns>The duration of the sequence of frames.</returns>
         public float CalculateDuration()
         {
-            return _frames.Count * (1 / _animation.FPS);
+            float duration = _frames.Count * (1f / _animation.FPS);
+            return duration;
         }
 
         #endregion

@@ -187,7 +187,7 @@ namespace SpriteAnimations
         /// </summary>
         /// <param name="action">The UnityAction to be invoked.</param>
         /// <returns>The updated SpriteAnimationPerformer instance.</returns>
-        public AnimationPerformer OnEnd(UnityAction action)
+        public AnimationPerformer SetOnEnd(UnityAction action)
         {
             _onEndAction = action;
             return this;

@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace SpriteAnimations
@@ -89,8 +90,8 @@ namespace SpriteAnimations
 
             if (_currentWaitCounter > waitDuration) // Interrupting
             {
-                EndAnimation();
                 _onInterruptedAction?.Invoke();
+                EndAnimation();
             }
         }
 
@@ -162,19 +163,20 @@ namespace SpriteAnimations
                 return;
             }
 
-            _onCycleEndedAction?.Invoke();
 
             if (_currentCycleIndex < _comboAnimation.Cycles.Count - 1) // Time to wait for next cycle request
             {
                 // Starts waiting for the next cycle
                 _currentWaitCounter = 0;
                 _waiting = true;
+                _onCycleEndedAction?.Invoke();
+                return;
             }
-            else // The last cycle has been played
-            {
-                EndAnimation();
-                _onEndAction?.Invoke();
-            }
+
+            // The last cycle has been played
+            EndAnimation();
+            _onCycleEndedAction?.Invoke();
+            _onEndAction?.Invoke();
         }
 
         /// <summary>
@@ -200,6 +202,8 @@ namespace SpriteAnimations
 
         public ComboAnimator Next()
         {
+            if (!_waiting) return this;
+
             if (!_comboAnimation.TryGetCycle(_currentCycleIndex + 1, out _currentCycle))
             {
                 Logger.LogError($"Could not find a next cycle for the current animation. Current index: {_currentCycleIndex} -  "
@@ -209,6 +213,7 @@ namespace SpriteAnimations
 
             _currentCycleIndex++;
             _waiting = false;
+            _currentCycleElapsedTime = 0;
 
             return this;
         }

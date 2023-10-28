@@ -145,11 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 0}
   _updateMode: 0
-  _playOnStart: 1
+  _playOnStart: 0
   _defaultAnimation: {fileID: 0}
   _spriteAnimations:
   - {fileID: 11400000, guid: d65750d052d7a0a46afe7a13675f751a, type: 2}
-  - {fileID: 11400000, guid: e3dafdcfbca787d4fb5b3be0d0a119b1, type: 2}
+  - {fileID: 11400000, guid: 2a64614d7ad1ddf48af23bf7ce0177f2, type: 2}
   - {fileID: 11400000, guid: 6aa243f11da8c8842be5a780257e694d, type: 2}
   _animationChanged:
     m_PersistentCalls:

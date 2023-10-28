@@ -47,7 +47,7 @@ namespace SpriteAnimations.Sampling
             _animator.Play("Attack").SetOnFrame("Slash", frame =>
             {
                 Debug.Log("Slash frame played");
-            }).OnEnd(() =>
+            }).SetOnEnd(() =>
             {
                 _attacking = false;
                 EvaluateMovementAnimation(_detector.Movement);
@@ -79,7 +79,7 @@ namespace SpriteAnimations.Sampling
             }
             else
             {
-                _animator.Play("Run");
+                _animator.Play("Running");
             }
         }
 
