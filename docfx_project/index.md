@@ -32,6 +32,15 @@ Checkout [how it works](documentation/how-it-works.md) and give it a try!
 - [Sprite Animator](documentation/sprite-animator/index.md)
 - [Animations Manager](documentation/animations-manager/index.md)
 
+## Beta Version
+
+This tool should be carefully tested before integrated in a project that has commercial intentions. Although I really trust
+its capacity, it is still too young to be considered stable.
+
+## Unity tested versions
+
+[![Compatibility](https://img.shields.io/badge/-2022.3%2B-11191F?logo=Unity&color=5d5d5d)](https://unity.com/releases/editor/archive)
+
 ## The author
 
 ![portraitzinho-fundo-roxo-rounded](https://github.com/no-slopes/sprite-animations/assets/95456621/2b6523f8-71b4-424c-ae61-5c5d1a3b639e)

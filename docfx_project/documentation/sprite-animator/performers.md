@@ -13,7 +13,7 @@ private AnimationPerformer _perfomer;
 private void Start()
 {
     _perfomer = _animator.Play("Idle");
-    _performer.OnEnd(() => { Debug.Log("The animation ended."); })
+    _performer.SetOnEnd(() => { Debug.Log("The animation ended."); })
 }
 ```
 
@@ -25,7 +25,7 @@ private void Start()
     _animator.Play("Idle").SetOnFrame(5, frame =>
     {
         Debug.Log("Frame indexed as 5 played.");
-    }).OnEnd(() =>
+    }).SetOnEnd(() =>
     {
         Debug.Log("The animation ended.");
     });
@@ -132,12 +132,12 @@ private void OnSwordSlash(Frame frame)
 
 **When the animation ends:**
 
-You can define an action to be fired when the animation ends (upon last frame being played) using the `OnEnd()` method:
+You can define an action to be fired when the animation ends (upon last frame being played) using the `SetOnEnd()` method:
 
 ```csharp
 public void PlayDeath()
 {
-    _animator.Play("Death").OnEnd(AnnounceDeath);
+    _animator.Play("Death").SetOnEnd(AnnounceDeath);
 }
 
 private void AnnounceDeath()
@@ -150,4 +150,4 @@ private void AnnounceDeath()
 ```
 
 > [!NOTE]
-> If the animation is marked as loopable, the `OnEnd()` action registered will be fired every time the last frame is played.
+> If the animation is marked as loopable, the `SetOnEnd()` action registered will be fired every time the last frame is played.

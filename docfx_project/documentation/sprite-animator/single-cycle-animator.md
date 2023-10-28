@@ -13,7 +13,7 @@ private SingleCycleAnimator _perfomer;
 private void Start()
 {
     _perfomer = _animator.Play<SingleCycleAnimator>("Idle");
-    _performer.OnEnd(() => { Debug.Log("The animation ended."); })
+    _performer.SetOnEnd(() => { Debug.Log("The animation ended."); })
 }
 ```
 
@@ -26,7 +26,7 @@ private void Start()
     _performer.SetOnFrame(3, frame =>
     {
         Debug.Log("Frame indexed as 3 played.");
-    }).OnEnd(() =>
+    }).SetOnEnd(() =>
     {
         Debug.Log("The animation ended.");
     });
