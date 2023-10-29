@@ -20,7 +20,6 @@ A smooth and intuitive way to work with sprite sheets in Unity.
 
 ## Showcase
 
-[<img src="https://user-images.githubusercontent.com/95456621/278848179-f99d8ecc-e337-4a99-8cd2-897e16e5d004.jpg">](https://www.youtube.com/watch?v=jpoCPpwkFnM)
 [![youtube_showcase](https://user-images.githubusercontent.com/95456621/278848179-f99d8ecc-e337-4a99-8cd2-897e16e5d004.jpg)](https://www.youtube.com/watch?v=jpoCPpwkFnM)
 
 ## Why bother?
