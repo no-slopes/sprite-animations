@@ -1,7 +1,6 @@
 [![Compatibility](https://img.shields.io/badge/-2022.3%2B-11191F?logo=Unity&color=5d5d5d)](https://unity.com/releases/editor/archive)
 [![Version](https://img.shields.io/npm/v/com.no-slopes.sprite-animations?color=931111&label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
-[![Downloads](https://img.shields.io/badge/dynamic/json?color=931111&label=downloads&query=%24.downloads&suffix=%2Fmonth&url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.no-slopes.sprite-animations)](https://openupm.com/packages/com.no-slopes.sprite-animations/)
-![GitHub Repo stars](https://img.shields.io/github/stars/no-slopes/sprite-animations?label=%E2%AD%90&color=931111)
+[![Downloads](https://img.shields.io/badge/dynamic/json?color=931111&label=downloads&query=%24.downloads&suffix=%2Fmonth&url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.no-slopes.sprite-animations)](https://openupm.com/packages/com.no-slopes.sprite-animations/)[![GitHub Repo stars](https://img.shields.io/github/stars/no-slopes/sprite-animations?label=%E2%AD%90&color=931111)](https://github.com/no-slopes/sprite-animations/stargazers)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fno-slopes%2Fsprite-animations&count_bg=%23931111&title_bg=%23585858&icon=&icon_color=%23943737&title=views&edge_flat=false)](https://hits.seeyoufarm.com)
 
 ![Banner](images/banner.png)
