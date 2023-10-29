@@ -22,6 +22,9 @@ items:
           - name: Windrose Animator
             href: sprite-animator/windrose-animator.md
 
+          - name: Combo Animator
+            href: sprite-animator/combo-animator.md
+
   - name: Animations Manager
     href: animations-manager/index.md
 
