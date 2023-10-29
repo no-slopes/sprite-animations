@@ -20,7 +20,7 @@ A smooth and intuitive way to work with sprite sheets in Unity.
 
 ## Showcase
 
-[![youtube-showcase_640](https://github.com/no-slopes/sprite-animations/assets/95456621/21942d35-ca0c-420d-b5cc-7a3c60095ba4)](https://www.youtube.com/watch?v=jpoCPpwkFnM)
+[<img src="https://github.com/no-slopes/sprite-animations/assets/95456621/21942d35-ca0c-420d-b5cc-7a3c60095ba4">](https://www.youtube.com/watch?v=jpoCPpwkFnM)
 
 ## Why bother?
 
