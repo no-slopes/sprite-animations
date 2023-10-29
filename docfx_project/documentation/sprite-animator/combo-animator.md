@@ -13,7 +13,7 @@ When you tell the [Sprite Animator](index.md) to play a Combo Animation it will 
   while using the [Animations Manage](../animations-manager/index.md), the animation is considered interrupted and the
   combo animator will fire the `OnInterrupted` action (if registered). The common practice here would be getting the animated
   object back to its default animation.
-- In the case the `Next()` method do get called within the `Input Waiting Time` it will play the next cycle and enter the "waiting state" again.
+- In the case of the `Next()` method getting called within the `Input Waiting Time` it will play the next cycle and enter the "waiting state" again.
 - This process repeats until the last cycle is played, when the Combo Animator calls the `OnEnd` action.
 
 ## Playing a Combo Animation
@@ -70,7 +70,7 @@ private void OnCycleEnded(int cycleIndex)
 ## On Frame Operations
 
 The `SetOnFrame` remains as the [Single Cycle Animator](./single-cycle-animator.md) here. The catch is only
-that you must be carefull wuen setting by index. The index in this scenario would be the index of each cycle.
+that you must be carefull when setting by index. The index in this scenario would be the index of each cycle.
 
 So, considering you have an animation with 3 cycles (0, 1 and 2) and do as follows:
 
@@ -78,7 +78,7 @@ So, considering you have an animation with 3 cycles (0, 1 and 2) and do as follo
 _comboAnimator.SetOnFrame(0, frame => Debug.Log(frame));
 ```
 
-this will get fired 3 times throught the complete execution of the animation.
+this will get fired 3 times throughout the complete execution of the animation.
 
 as this:
 
