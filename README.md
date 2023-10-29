@@ -20,8 +20,6 @@ A smooth and intuitive way to work with sprite sheets in Unity.
 
 ## Showcase
 
-![youtube-showcase_640](https://github.com/no-slopes/sprite-animations/assets/95456621/f99d8ecc-e337-4a99-8cd2-897e16e5d004)
-
 [<img src="https://user-images.githubusercontent.com/95456621/278848179-f99d8ecc-e337-4a99-8cd2-897e16e5d004.jpg">](https://www.youtube.com/watch?v=jpoCPpwkFnM)
 
 ## Why bother?
