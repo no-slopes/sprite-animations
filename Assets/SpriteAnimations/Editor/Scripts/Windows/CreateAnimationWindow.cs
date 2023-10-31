@@ -45,7 +45,7 @@ namespace SpriteAnimations.Editor
         private void OnEnable()
         {
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/CreateAnimationForm");
-            TemplateContainer template = tree.Instantiate();
+            TemplateContainer template = tree.CloneTree();
             _container = template.Q<VisualElement>("container");
 
             _nameField = template.Q<TextField>("name-field");
