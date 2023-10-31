@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -25,7 +26,7 @@ namespace SpriteAnimations.Editor
         public static AnimationsManagerWindow OpenEditorWindow(SpriteAnimator spriteAnimator)
         {
             var window = OpenEditorWindow();
-            window.AnimatorSelectorField.value = spriteAnimator;
+            window.SetAnimatorAndLoad(spriteAnimator);
             return window;
         }
 
@@ -44,7 +45,6 @@ namespace SpriteAnimations.Editor
 
         private SidebarElement _sidebarElement;
 
-        private SpriteAnimator _spriteAnimator;
         private SpriteAnimation _selectedAnimation;
 
         private VisualElement _viewContainer;
@@ -55,18 +55,7 @@ namespace SpriteAnimations.Editor
 
         #region Getters
 
-        public ObjectField AnimatorSelectorField
-        {
-            get
-            {
-                if (_animatorSelectorField == null)
-                {
-                    _animatorSelectorField = rootVisualElement.Q<ObjectField>("animator-selector");
-                }
-
-                return _animatorSelectorField;
-            }
-        }
+        public AnimationsManagerWindowData Data => AnimationsManagerWindowData.instance;
 
         #endregion
 
@@ -78,16 +67,16 @@ namespace SpriteAnimations.Editor
             _viewsFactory = new SpriteAnimationViewFactory();
 
             VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("UI Documents/Main");
-            TemplateContainer templateContainer = visualTree.Instantiate();
+            TemplateContainer templateContainer = visualTree.CloneTree();
             rootVisualElement.Add(templateContainer);
-            templateContainer.StretchToParentSize();
+            templateContainer.style.flexGrow = 1;
 
-            LoadVisualElements(rootVisualElement);
+            LoadVisualElements(rootVisualElement); // Can only load animations
 
-            AnimatorSelectorField.RegisterValueChangedCallback((e) =>
+            _animatorSelectorField.RegisterValueChangedCallback((e) =>
             {
                 SpriteAnimator spriteAnimator = e.newValue as SpriteAnimator;
-                EvaluateSpriteAnimator(spriteAnimator);
+                SetAnimatorAndLoad(spriteAnimator);
             });
 
             _fromSelectionButton.clicked += () =>
@@ -96,21 +85,18 @@ namespace SpriteAnimations.Editor
                 if (selectedObject == null) return;
                 SpriteAnimator spriteAnimator = selectedObject.GetComponent<SpriteAnimator>();
                 if (spriteAnimator == null) return;
-                AnimatorSelectorField.value = spriteAnimator;
+                SetAnimatorAndLoad(spriteAnimator);
             };
 
-            if (AnimatorSelectorField.value == null)
-            {
-                EvaluateSpriteAnimator(null);
-                return;
-            }
+            LoadAnimatorFromData();
 
-            EvaluateSpriteAnimator(AnimatorSelectorField.value as SpriteAnimator);
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
         }
 
         private void OnDisable()
         {
             _view?.Dismiss();
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
         }
 
         private void Update()
@@ -122,18 +108,60 @@ namespace SpriteAnimations.Editor
             _view.PerformTick(deltaTime);
         }
 
-        public void EvaluateSpriteAnimator(SpriteAnimator spriteAnimator)
+        public void EvaluateDisplay()
         {
-            if (spriteAnimator == null)
+            if (Data.Animator == null)
             {
-                _spriteAnimator = null;
                 DisplayNoAnimatorSelectedContainer();
+            }
+            else
+            {
+                DisplaySelectedAnimatorContainer();
+            }
+        }
+
+        private void LoadAnimatorFromData()
+        {
+            if (Data.Animator != null)
+            {
+                _animatorSelectorField.SetValueWithoutNotify(Data.Animator);
+                LoadAnimations(Data.Animator);
+                EvaluateDisplay();
                 return;
             }
 
-            _spriteAnimator = spriteAnimator;
-            LoadAnimations(_spriteAnimator);
-            DisplaySelectedAnimatorContainer();
+            if (Data.AnimatorObj == null)
+            {
+                EvaluateDisplay();
+                return;
+            }
+
+            if (!Data.AnimatorObj.TryGetComponent(out SpriteAnimator animator))
+            {
+                EvaluateDisplay();
+                return;
+            }
+
+            SetAnimatorAndLoad(animator);
+        }
+
+        public void SetAnimator(SpriteAnimator animator)
+        {
+            Data.SetAnimator(animator);
+            _animatorSelectorField?.SetValueWithoutNotify(animator);
+        }
+
+        public void SetAnimatorAndLoad(SpriteAnimator animator)
+        {
+            SetAnimator(animator);
+            LoadAnimations(animator);
+            EvaluateDisplay();
+        }
+
+        private void OnPlayModeStateChanged(PlayModeStateChange change)
+        {
+            if (!change.Equals(PlayModeStateChange.EnteredEditMode)) return;
+            LoadAnimatorFromData();
         }
 
         private void LoadVisualElements(VisualElement root)
@@ -171,6 +199,7 @@ namespace SpriteAnimations.Editor
 
         private void LoadAnimations(SpriteAnimator spriteAnimator)
         {
+            if (spriteAnimator == null) return;
             spriteAnimator.AnimationsList.RemoveAll(animation => animation == null);
             _sidebarElement.Initialize(spriteAnimator.AnimationsList);
         }
@@ -218,13 +247,13 @@ namespace SpriteAnimations.Editor
 
             if (!confirmed) return;
 
-            _spriteAnimator.AnimationsList.Remove(_selectedAnimation);
+            Data.Animator.AnimationsList.Remove(_selectedAnimation);
 
             string path = AssetDatabase.GetAssetPath(_selectedAnimation);
 
             if (!AssetDatabase.DeleteAsset(path))
             {
-                Debug.LogWarning("Could not delete animation.");
+                Logger.LogWarning("Could not delete animation.");
                 return;
             }
 
