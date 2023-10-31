@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/no-slopes/sprite-animations/compare/v2.0.1...v2.0.2) (2023-10-31)
+
+
+### Bug Fixes
+
+* animations manager losing reference ([8c0ddfd](https://github.com/no-slopes/sprite-animations/commit/8c0ddfddb06039c936583bab456dde9107ecd271))
+
 ## [2.0.1](https://github.com/no-slopes/sprite-animations/compare/v2.0.0...v2.0.1) (2023-10-28)
 
 
