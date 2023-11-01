@@ -5,10 +5,57 @@ using System.Linq;
 
 namespace SpriteAnimations
 {
+    /// <summary>
+    /// The Windrose Animation. This animation has multiple cycles, each referring to a cardinal
+    /// position.
+    /// </summary>
     [CreateAssetMenu(fileName = "Windrose Animation", menuName = "Sprite Animations/Windrose Animation")]
     public class SpriteAnimationWindrose : SpriteAnimation
     {
         #region Static
+
+        /// <summary>
+        /// Creates a new <see cref="SpriteAnimationWindrose"/> on demand.
+        /// 
+        /// Remember that all the sprites lists in the dictionary should have the same length 
+        /// so the animation stay consistent.
+        /// </summary>
+        /// <param name="cycles"></param>
+        /// <param name="isLoopable"></param>
+        /// <returns></returns>
+        public static SpriteAnimationWindrose OnDemand(Dictionary<WindroseDirection, List<Sprite>> cycles, bool isLoopable = false)
+        {
+            var animation = CreateInstance<SpriteAnimationWindrose>();
+            animation.IsLoopable = isLoopable;
+
+            bool lengthAlreadyWarned = false;
+            int previousLength = -1;
+
+            foreach (var pair in cycles)
+            {
+                LengthCheck(pair.Value.Count, previousLength);
+                Cycle newCycle = new();
+                foreach (Sprite sprite in pair.Value)
+                {
+                    newCycle.AddFrame(sprite);
+                }
+                animation.Cycles[pair.Key] = newCycle;
+            }
+
+            void LengthCheck(int length, int previousLength)
+            {
+                if (previousLength < 0 || lengthAlreadyWarned) return;
+
+                if (length != previousLength)
+                {
+                    Logger.LogWarning($"It was detected that the amount of sprites is not consinstent among all cycles. "
+                        + $"Remember that this might cause the animation to not work as expected");
+                    lengthAlreadyWarned = true;
+                }
+            }
+
+            return animation;
+        }
 
         /// <summary>
         /// Returns the windrose direction based on the signed input.
@@ -100,6 +147,8 @@ namespace SpriteAnimations
         /// </summary>
         public bool IsLoopable { get => _isLoopable; set => _isLoopable = value; }
 
+        public WindroseCycles Cycles => _cycles;
+
         /// <summary>
         /// The type of the performer.
         /// </summary>
@@ -164,10 +213,78 @@ namespace SpriteAnimations
 
         #endregion
 
+        #region Templating
+
+        /// <summary>
+        /// Creates a new <see cref="SpriteAnimationWindrose"/> using the provided cycles as a template.
+        /// </summary>
+        /// <param name="cycles">A dictionary of WindroseDirection and lists of Sprites representing the cycles.</param>
+        /// <returns>A new <see cref="SpriteAnimationWindrose"/> instance.</returns>
+        public SpriteAnimationWindrose UseAsTemplate(Dictionary<WindroseDirection, List<Sprite>> cycles)
+        {
+            // Create a clone of this SpriteAnimationWindrose instance
+            SpriteAnimationWindrose clone = Instantiate(this);
+
+            // Iterate through each pair in the provided cycles dictionary
+            foreach (var pair in cycles)
+            {
+                // Check if the cycle for the windrose direction exists in the original animation
+                if (!_cycles.TryGetValue(pair.Key, out Cycle originalCycle))
+                {
+                    // Log a warning if the cycle for the windrose direction was not found
+                    Logger.LogWarning($"The cycle for the windrose direction {pair.Key} was not found. The animation might not work as expected.", this);
+                    continue;
+                }
+
+                // Transfer the sprites from the provided cycle to the clone cycle
+                TransferCycle(pair.Key, pair.Value, originalCycle);
+            }
+
+            // Transfers sprites from the provided cycle to the clone cycle
+            void TransferCycle(WindroseDirection direction, List<Sprite> sprites, Cycle originalCycle)
+            {
+                // Check if the number of sprites matches the template's cycle size
+                if (originalCycle.Size != sprites.Count)
+                {
+                    // Log a warning if the number of sprites does not match the template's cycle size
+                    Logger.LogWarning($"The amount of sprites ({sprites.Count}) for the windrose direction {direction} " +
+                        $"does not match the template's cycle size ({originalCycle.Size}). The animation might not work as expected.", this);
+                }
+
+                // Check if the clone has the cycle for the windrose direction
+                if (!clone.TryGetCycle(direction, out Cycle cloneCycle))
+                {
+                    // Log a warning if the cycle for the windrose direction was not found in the clone
+                    Logger.LogWarning($"The cycle for the windrose direction {direction} was not found. The animation might not work as expected.", this);
+                    return;
+                }
+
+                // Transfer each sprite to the corresponding frame in the clone cycle
+                for (int i = 0; i < sprites.Count; i++)
+                {
+                    // Check if the frame at the current index exists in the clone cycle
+                    if (!cloneCycle.TryGetFrame(i, out Frame frame))
+                    {
+                        // Log a warning if the frame at the current index was not found in the clone cycle
+                        Logger.LogWarning($"The frame at index {i} for the windrose direction {direction} was not found. The animation might not work as expected.", this);
+                        continue;
+                    }
+
+                    // Assign the sprite to the frame in the clone cycle
+                    frame.Sprite = sprites[i];
+                }
+            }
+
+            // Return the clone of the SpriteAnimationWindrose instance
+            return clone;
+        }
+
+        #endregion
+
         #region Subclasses
 
         [Serializable]
-        protected class WindroseCycles : Dictionary<WindroseDirection, Cycle>, ISerializationCallbackReceiver
+        public class WindroseCycles : Dictionary<WindroseDirection, Cycle>, ISerializationCallbackReceiver
         {
             [SerializeField, HideInInspector]
             private List<WindroseDirection> _keyData = new();

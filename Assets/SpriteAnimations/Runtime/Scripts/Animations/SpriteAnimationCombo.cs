@@ -5,16 +5,48 @@ using System.Linq;
 
 namespace SpriteAnimations
 {
+    /// <summary>
+    /// The Combo animation. This animation can have multiple cycles
+    /// and they can be executed sequentially. Awesome for waiting for input
+    /// from the player.
+    /// </summary>
     [CreateAssetMenu(fileName = "Combo Animation", menuName = "Sprite Animations/Combo Animation")]
     public class SpriteAnimationCombo : SpriteAnimation
     {
+        #region Static
+
+        /// <summary>
+        /// Creates a sprite <see cref="SpriteAnimationCombo"> on demand.
+        /// </summary>
+        /// <param name="cycles">A list of cycles, where each cycle is a list of sprites.</param>
+        /// <param name="waitingTime">Optional waiting time between cycles. Default value is 1.25 seconds.</param>
+        /// <returns>The created sprite <see cref="SpriteAnimationCombo">.</returns>
+        public static SpriteAnimationCombo OnDemand(List<List<Sprite>> cycles, float waitingTime = 1.25f)
+        {
+            var animation = CreateInstance<SpriteAnimationCombo>();
+            animation.WaitingTime = waitingTime;
+
+            foreach (List<Sprite> sprites in cycles)
+            {
+                Cycle cycle = animation.CreateCycle();
+                foreach (Sprite sprite in sprites)
+                {
+                    cycle.AddFrame(sprite);
+                }
+            }
+
+            return animation;
+        }
+
+        #endregion
+
         #region Editor
 
         /// <summary>
         /// The waiting time between cycles before the animation is interrupted
         /// </summary>
         [SerializeField]
-        protected float _waitingTime = 0.75f;
+        protected float _waitingTime = 1.25f;
 
         /// <summary>
         /// The animation cycles
@@ -130,6 +162,55 @@ namespace SpriteAnimations
         public override int CalculateFramesCount()
         {
             return _cycles.Sum(cycle => cycle.Size);
+        }
+
+        #endregion
+
+        #region Templating
+
+        /// <summary>
+        /// Creates a new <see cref="SpriteAnimationCombo"/> using the provided cycles as a template.
+        /// </summary>
+        /// <param name="cycles">The list of cycles to use as a template.</param>
+        /// <returns>A new <see cref="SpriteAnimationCombo"/> instance.</returns>
+        public SpriteAnimationCombo UseAsTemplate(List<List<Sprite>> cycles)
+        {
+            var clone = Instantiate(this);
+
+            for (int i = 0; i < clone.Cycles.Count; i++)
+            {
+                if (!TryGetCycle(i, out Cycle originalCycle))
+                {
+                    Logger.LogError($"Cycle under index {i} was not found in the template", this);
+                    continue;
+                }
+
+                LengthCheck(i, cycles[i].Count, originalCycle.Size);
+
+                Cycle cloneCycle = clone.GetCycle(i);
+
+                for (int frameIndex = 0; frameIndex < cloneCycle.Size; frameIndex++)
+                {
+                    if (!cloneCycle.TryGetFrame(frameIndex, out Frame frame))
+                    {
+                        Logger.LogError($"Frame under index {frameIndex} for cycle {i} was not found", this);
+                        continue;
+                    }
+
+                    frame.Sprite = cycles[i][frameIndex];
+                }
+            }
+
+            // Check if the length of the cycle matches the template's cycle length
+            void LengthCheck(int index, int length, int originalLength)
+            {
+                if (length == originalLength) return;
+
+                Logger.LogWarning($"The length of the cycle under index {index} does not match the template's cycle length ({originalLength}). "
+                + $"The animation might not work as expected.", this);
+            }
+
+            return clone;
         }
 
         #endregion
