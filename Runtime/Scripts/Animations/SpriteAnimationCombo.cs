@@ -18,17 +18,20 @@ namespace SpriteAnimations
         /// <summary>
         /// Creates a sprite <see cref="SpriteAnimationCombo"> on demand.
         /// </summary>
+        /// <param name="fps">The fps rate of the animation.</param>
         /// <param name="cycles">A list of cycles, where each cycle is a list of sprites.</param>
         /// <param name="waitingTime">Optional waiting time between cycles. Default value is 1.25 seconds.</param>
         /// <returns>The created sprite <see cref="SpriteAnimationCombo">.</returns>
-        public static SpriteAnimationCombo OnDemand(List<List<Sprite>> cycles, float waitingTime = 1.25f)
+        public static SpriteAnimationCombo OnDemand(int fps, List<List<Sprite>> cycles, float waitingTime = 1.25f)
         {
             var animation = CreateInstance<SpriteAnimationCombo>();
             animation.WaitingTime = waitingTime;
+            animation.FPS = fps;
 
             foreach (List<Sprite> sprites in cycles)
             {
                 Cycle cycle = animation.CreateCycle();
+                cycle.Animation = animation;
                 foreach (Sprite sprite in sprites)
                 {
                     cycle.AddFrame(sprite);

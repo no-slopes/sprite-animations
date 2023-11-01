@@ -16,14 +16,19 @@ namespace SpriteAnimations
         /// <summary>
         /// Creates a new <see cref="SpriteAnimationSingleCycle"/> on demand.
         /// </summary>
+        /// <param name="fps"></param>
         /// <param name="cycle"></param>
         /// <param name="isLoopable"></param>
         /// <returns></returns>
-        public static SpriteAnimationSingleCycle OnDemand(List<Sprite> cycle, bool isLoopable = false)
+        public static SpriteAnimationSingleCycle OnDemand(int fps, List<Sprite> cycle, bool isLoopable = false)
         {
             var animation = CreateInstance<SpriteAnimationSingleCycle>();
+            animation.FPS = fps;
+
             animation.IsLoopable = isLoopable;
             animation.GenerateCycle();
+            animation.Cycle.Animation = animation;
+
             foreach (Sprite sprite in cycle)
             {
                 animation.Cycle.AddFrame(sprite);
