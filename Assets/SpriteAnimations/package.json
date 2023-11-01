@@ -33,17 +33,17 @@
   "samples": [
     {
       "displayName": "Single Cycle Animations",
-      "description": "Contains an animated character using Single Cycle animations. WASD for movement animations and E to perform an attack animation",
+      "description": "Contains prefabs exemplifying the use of single cycle animations",
       "path": "Samples~/Single"
     },
     {
       "displayName": "Windrose Animations",
-      "description": "Contains an animated character using Windrose animations. WASD for movement animations and E to perform a roll animation",
+      "description": "Contains prefabs exemplifying the use of windrose animations",
       "path": "Samples~/Windrose"
     },
     {
       "displayName": "Combo Animations",
-      "description": "Contains an animated character using Combo animations. Press E to initiate the combo and press again to play the next cycle",
+      "description": "Contains prefabs exemplifying the use of combo animations",
       "path": "Samples~/Combo"
     }
   ],

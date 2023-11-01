@@ -23,9 +23,10 @@ namespace SpriteAnimations
         /// <param name="cycles"></param>
         /// <param name="isLoopable"></param>
         /// <returns></returns>
-        public static SpriteAnimationWindrose OnDemand(Dictionary<WindroseDirection, List<Sprite>> cycles, bool isLoopable = false)
+        public static SpriteAnimationWindrose OnDemand(int fps, Dictionary<WindroseDirection, List<Sprite>> cycles, bool isLoopable = false)
         {
             var animation = CreateInstance<SpriteAnimationWindrose>();
+            animation.FPS = fps;
             animation.IsLoopable = isLoopable;
 
             bool lengthAlreadyWarned = false;
@@ -34,7 +35,12 @@ namespace SpriteAnimations
             foreach (var pair in cycles)
             {
                 LengthCheck(pair.Value.Count, previousLength);
-                Cycle newCycle = new();
+
+                Cycle newCycle = new()
+                {
+                    Animation = animation
+                };
+
                 foreach (Sprite sprite in pair.Value)
                 {
                     newCycle.AddFrame(sprite);

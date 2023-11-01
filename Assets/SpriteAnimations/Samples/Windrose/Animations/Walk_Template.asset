@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62b2c2d3619abe46a824e3cde55a939, type: 3}
+  m_Name: Walk_Template
+  m_EditorClassIdentifier: 
+  _animationName: Walk_Template
+  _fps: 6
+  _isLoopable: 1
+  _cycles:
+    _keyData: 04000000000000000200000006000000
+    _valueData:
+    - _animation: {fileID: 11400000}
+      _frames:
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      _identifiable: 0
+    - _animation: {fileID: 11400000}
+      _frames:
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      _identifiable: 0
+    - _animation: {fileID: 11400000}
+      _frames:
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      _identifiable: 0
+    - _animation: {fileID: 11400000}
+      _frames:
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      - _sprite: {fileID: 21300000, guid: d107f48ed94e4f44a87ace124b74a53d, type: 3}
+        _id: 
+      _identifiable: 0

@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using SpriteAnimations;
 using UnityEngine;
 
 namespace SpriteAnimations.Sampling
 {
-    public class SingleAnimationChanger : MonoBehaviour
+    public class SingleCycleAnimationChanger : MonoBehaviour
     {
         [SerializeField]
         private Transform _characterTransform;
