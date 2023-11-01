@@ -1,3 +1,13 @@
+# [2.1.0](https://github.com/no-slopes/sprite-animations/compare/v2.0.2...v2.1.0) (2023-11-01)
+
+
+### Features
+
+* **animations:** Templates and OnDemand ([048dc67](https://github.com/no-slopes/sprite-animations/commit/048dc6704f6e94dfafb18db28839297fd7bfd8ed))
+* **SingleCycle:** Single Cycle as Template ([1dd82d6](https://github.com/no-slopes/sprite-animations/commit/1dd82d616902a5b119e35688af29c67ffbff7821))
+* **SpriteAnimation:** open manager button ([3647720](https://github.com/no-slopes/sprite-animations/commit/3647720413ac8ffd016de95fe2cd4ff54806b11c))
+* **SpriteAnimation:** single animation manager ([f37cfc4](https://github.com/no-slopes/sprite-animations/commit/f37cfc464c343eb400bdfb0f746c7d6b129344c9))
+
 ## [2.0.2](https://github.com/no-slopes/sprite-animations/compare/v2.0.1...v2.0.2) (2023-10-31)
 
 
