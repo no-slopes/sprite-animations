@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Attack_Combo
   m_EditorClassIdentifier: 
   _animationName: Attack_Combo
-  _fps: 8
-  _waitingTime: 1.25
+  _fps: 10
+  _waitingTime: 1.75
   _cycles:
   - _animation: {fileID: 11400000}
     _frames:

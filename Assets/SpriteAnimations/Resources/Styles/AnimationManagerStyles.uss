@@ -175,18 +175,6 @@
 }
 
 #loopable-field > Label {
-    max-width: 100px;
-    min-width: 10px;
-}
-
-#waiting-time-field > Label {
-    width: 40px;
-    max-width: 40px;
-    justify-content: center;
-}
-
-#waiting-time-field > #unity-text-input {
-    width: 48px;
 }
 
 #animation-field > VisualElement {
@@ -231,4 +219,7 @@
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
+}
+
+#waiting-time-field > Label {
 }

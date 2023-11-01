@@ -66,7 +66,7 @@ namespace SpriteAnimations.Editor
             _timeTracker = (float)EditorApplication.timeSinceStartup;
             _viewsFactory = new SpriteAnimationViewFactory();
 
-            VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("UI Documents/Main");
+            VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("UI Documents/AnimationsManagerUI");
             TemplateContainer templateContainer = visualTree.CloneTree();
             rootVisualElement.Add(templateContainer);
             templateContainer.style.flexGrow = 1;

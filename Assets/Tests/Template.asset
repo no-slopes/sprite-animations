@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Template
   m_EditorClassIdentifier: 
   _animationName: Template
-  _fps: 6
-  _isLoopable: 0
+  _fps: 7
+  _isLoopable: 1
   _cycle:
     _animation: {fileID: 11400000}
     _frames: []
