@@ -1,13 +1,42 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 using System;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace SpriteAnimations
 {
     public delegate void NameChangedEvent(string newName);
     public abstract class SpriteAnimation : ScriptableObject
     {
+        #region Menus
+
+#if UNITY_EDITOR
+        [MenuItem("Assets/Sprite Animations/Manage Animation", priority = 5)]
+        private static void ManageAnimation()
+        {
+            SpriteAnimation selectedAnimation = Selection.activeObject as SpriteAnimation;
+            if (!selectedAnimation)
+            {
+                Logger.LogError($"Selected object is not an {nameof(SpriteAnimation)}");
+                return;
+            }
+
+            Debug.Log($"Selected {nameof(SpriteAnimation)}: {selectedAnimation.name}");
+        }
+        [MenuItem("Assets/Sprite Animations/Manage Animation", true)]
+        static bool CheckIfMainMethodIsValid()
+        {
+            return Selection.activeObject is SpriteAnimation;
+        }
+#endif
+
+        #endregion
+
         #region Inspector
+
+        [SerializeField]
+        private SpriteAnimationManageButton _manageButton;
 
         /// <summary>
         /// The animation name to be used by the SpriteAnimator
@@ -91,6 +120,12 @@ namespace SpriteAnimations
         public event NameChangedEvent NameChanged;
 
         #endregion
+
+    }
+
+    [System.Serializable]
+    public class SpriteAnimationManageButton
+    {
 
     }
 }

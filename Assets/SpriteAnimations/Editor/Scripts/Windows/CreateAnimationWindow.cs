@@ -100,6 +100,7 @@ namespace SpriteAnimations.Editor
             EditorUtility.SetDirty(animation);
             AssetDatabase.SaveAssetIfDirty(animation);
             AnimationCreated?.Invoke(animation);
+            Close();
         }
 
         private SpriteAnimationSingleCycle CreateSingleCycleAnimation(string path, string name)
