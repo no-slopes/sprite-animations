@@ -79,6 +79,19 @@ namespace SpriteAnimations
             return _frames.First();
         }
 
+        public bool TryGetFrame(int index, out Frame frame)
+        {
+            if (index >= _frames.Count)
+            {
+                Logger.LogWarning($"Trying to get frame at {index} but index is out of range.");
+                frame = null;
+                return false;
+            }
+
+            frame = _frames[index];
+            return true;
+        }
+
         /// <summary>
         /// Evaluates the frame based on the elapsed time.
         /// </summary>
