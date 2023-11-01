@@ -9,6 +9,9 @@ using SpriteAnimations.Editor;
 namespace SpriteAnimations
 {
     public delegate void NameChangedEvent(string newName);
+    /// <summary>
+    /// The base class for all Animations
+    /// </summary>
     public abstract class SpriteAnimation : ScriptableObject
     {
         #region Menus

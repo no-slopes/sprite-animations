@@ -74,6 +74,32 @@ namespace SpriteAnimations
 
         #region Frames
 
+        public void AddFrame(Frame frame)
+        {
+            _frames.Add(frame);
+        }
+
+        public void AddFrame(Sprite sprite, string id)
+        {
+            Frame frame = new()
+            {
+                Sprite = sprite,
+                Id = id
+            };
+
+            AddFrame(frame);
+        }
+
+        public void AddFrame(Sprite sprite)
+        {
+            Frame frame = new()
+            {
+                Sprite = sprite
+            };
+
+            AddFrame(frame);
+        }
+
         public Frame GetFirstFrame()
         {
             return _frames.First();
