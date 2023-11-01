@@ -30,7 +30,7 @@ namespace SpriteAnimations.Editor
         public SpriteAnimationViewCombo()
         {
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Animations Views/AnimationViewCombo");
-            TemplateContainer template = tree.Instantiate();
+            TemplateContainer template = tree.CloneTree();
             template.style.flexGrow = 1;
 
             _waitingTimeField = template.Q<FloatField>("waiting-time-field");

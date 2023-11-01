@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System;
+
 #if UNITY_EDITOR
 using UnityEditor;
+using SpriteAnimations.Editor;
 #endif
 
 namespace SpriteAnimations
@@ -12,7 +14,7 @@ namespace SpriteAnimations
         #region Menus
 
 #if UNITY_EDITOR
-        [MenuItem("Assets/Sprite Animations/Manage Animation", priority = 5)]
+        [MenuItem("Assets/Sprite Animations/Manage Animation")]
         private static void ManageAnimation()
         {
             SpriteAnimation selectedAnimation = Selection.activeObject as SpriteAnimation;
@@ -22,7 +24,7 @@ namespace SpriteAnimations
                 return;
             }
 
-            Debug.Log($"Selected {nameof(SpriteAnimation)}: {selectedAnimation.name}");
+            SingleManagerWindow.OpenEditorWindow(selectedAnimation);
         }
         [MenuItem("Assets/Sprite Animations/Manage Animation", true)]
         static bool CheckIfMainMethodIsValid()

@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/SpriteAnimations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 1; height: 100px; width: 100%; background-color: rgb(12, 0, 2); flex-basis: auto; flex-shrink: 1; flex-wrap: nowrap; justify-content: flex-start; align-self: auto; align-items: flex-start; -unity-background-scale-mode: stretch-to-fill; flex-direction: row;" />
+</ui:UXML>

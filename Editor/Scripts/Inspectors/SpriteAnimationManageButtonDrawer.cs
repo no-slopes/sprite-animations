@@ -20,7 +20,7 @@ namespace SpriteAnimations.Editor
             Button openButton = container.Q<Button>("open-manager-button");
             openButton.clicked += () =>
             {
-                Debug.Log($"Selected {nameof(SpriteAnimation)}: {animation.name}");
+                SingleManagerWindow.OpenEditorWindow(animation);
             };
 
             return container;

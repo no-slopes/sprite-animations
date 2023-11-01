@@ -25,7 +25,7 @@ namespace SpriteAnimations.Editor
         public SpriteAnimationViewSingleCycle()
         {
             VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("UI Documents/Animations Views/AnimationViewSingleCycle");
-            TemplateContainer template = tree.Instantiate();
+            TemplateContainer template = tree.CloneTree();
             template.style.flexGrow = 1;
 
             _loopableField = template.Q<Toggle>("loopable-field");
