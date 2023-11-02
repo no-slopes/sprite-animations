@@ -114,6 +114,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.AnimationsManagerWindowData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.AnimationsManagerWindowData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.ComboCyclesHandler.yml",
       "output": {
         ".html": {
@@ -238,6 +248,36 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.Editor.SidebarElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SingleManagerWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SingleManagerWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationInspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationInspector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.html"
         }
       },
       "version": ""
@@ -394,6 +434,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.ComboAnimationOnDemand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.ComboAnimationOnDemand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.ComboAnimationTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.ComboAnimationTemplate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Sampling.MovementInputDetector.yml",
       "output": {
         ".html": {
@@ -414,10 +474,60 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.SingleCycleAnimationChanger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.SingleCycleAnimationChanger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.SingleCycleAnimationOnDemand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.SingleCycleAnimationOnDemand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.SingleCycleAnimationTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.SingleCycleAnimationTemplate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Sampling.WindroseAnimationChanger.yml",
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.Sampling.WindroseAnimationChanger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.WindroseAnimationTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html"
         }
       },
       "version": ""
@@ -458,6 +568,16 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.SpriteAnimationCombo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationManageButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationManageButton.html"
         }
       },
       "version": ""

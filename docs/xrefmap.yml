@@ -577,6 +577,34 @@ references:
   fullName.vb: SpriteAnimations.Cycle.New
   nameWithType: Cycle.Cycle
   nameWithType.vb: Cycle.New
+- uid: SpriteAnimations.Cycle.AddFrame(SpriteAnimations.Frame)
+  name: AddFrame(Frame)
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_AddFrame_SpriteAnimations_Frame_
+  commentId: M:SpriteAnimations.Cycle.AddFrame(SpriteAnimations.Frame)
+  fullName: SpriteAnimations.Cycle.AddFrame(SpriteAnimations.Frame)
+  nameWithType: Cycle.AddFrame(Frame)
+- uid: SpriteAnimations.Cycle.AddFrame(UnityEngine.Sprite)
+  name: AddFrame(Sprite)
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_AddFrame_UnityEngine_Sprite_
+  commentId: M:SpriteAnimations.Cycle.AddFrame(UnityEngine.Sprite)
+  fullName: SpriteAnimations.Cycle.AddFrame(UnityEngine.Sprite)
+  nameWithType: Cycle.AddFrame(Sprite)
+- uid: SpriteAnimations.Cycle.AddFrame(UnityEngine.Sprite,System.String)
+  name: AddFrame(Sprite, string)
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_AddFrame_UnityEngine_Sprite_System_String_
+  commentId: M:SpriteAnimations.Cycle.AddFrame(UnityEngine.Sprite,System.String)
+  name.vb: AddFrame(Sprite, String)
+  fullName: SpriteAnimations.Cycle.AddFrame(UnityEngine.Sprite, string)
+  fullName.vb: SpriteAnimations.Cycle.AddFrame(UnityEngine.Sprite, String)
+  nameWithType: Cycle.AddFrame(Sprite, string)
+  nameWithType.vb: Cycle.AddFrame(Sprite, String)
+- uid: SpriteAnimations.Cycle.AddFrame*
+  name: AddFrame
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_AddFrame_
+  commentId: Overload:SpriteAnimations.Cycle.AddFrame
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.AddFrame
+  nameWithType: Cycle.AddFrame
 - uid: SpriteAnimations.Cycle.Animation
   name: Animation
   href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_Animation
@@ -687,6 +715,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Cycle.Size
   nameWithType: Cycle.Size
+- uid: SpriteAnimations.Cycle.TryGetFrame(System.Int32,SpriteAnimations.Frame@)
+  name: TryGetFrame(int, out Frame)
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_TryGetFrame_System_Int32_SpriteAnimations_Frame__
+  commentId: M:SpriteAnimations.Cycle.TryGetFrame(System.Int32,SpriteAnimations.Frame@)
+  name.vb: TryGetFrame(Integer, Frame)
+  fullName: SpriteAnimations.Cycle.TryGetFrame(int, out SpriteAnimations.Frame)
+  fullName.vb: SpriteAnimations.Cycle.TryGetFrame(Integer, SpriteAnimations.Frame)
+  nameWithType: Cycle.TryGetFrame(int, out Frame)
+  nameWithType.vb: Cycle.TryGetFrame(Integer, Frame)
+- uid: SpriteAnimations.Cycle.TryGetFrame*
+  name: TryGetFrame
+  href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle_TryGetFrame_
+  commentId: Overload:SpriteAnimations.Cycle.TryGetFrame
+  isSpec: "True"
+  fullName: SpriteAnimations.Cycle.TryGetFrame
+  nameWithType: Cycle.TryGetFrame
 - uid: SpriteAnimations.Cycle._animation
   name: _animation
   href: api/SpriteAnimations.Cycle.html#SpriteAnimations_Cycle__animation
@@ -863,19 +907,19 @@ references:
   commentId: T:SpriteAnimations.Editor.AnimationsManagerWindow
   fullName: SpriteAnimations.Editor.AnimationsManagerWindow
   nameWithType: AnimationsManagerWindow
-- uid: SpriteAnimations.Editor.AnimationsManagerWindow.AnimatorSelectorField
-  name: AnimatorSelectorField
-  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_AnimatorSelectorField
-  commentId: P:SpriteAnimations.Editor.AnimationsManagerWindow.AnimatorSelectorField
-  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.AnimatorSelectorField
-  nameWithType: AnimationsManagerWindow.AnimatorSelectorField
-- uid: SpriteAnimations.Editor.AnimationsManagerWindow.AnimatorSelectorField*
-  name: AnimatorSelectorField
-  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_AnimatorSelectorField_
-  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindow.AnimatorSelectorField
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.Data
+  name: Data
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_Data
+  commentId: P:SpriteAnimations.Editor.AnimationsManagerWindow.Data
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.Data
+  nameWithType: AnimationsManagerWindow.Data
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.Data*
+  name: Data
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_Data_
+  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindow.Data
   isSpec: "True"
-  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.AnimatorSelectorField
-  nameWithType: AnimationsManagerWindow.AnimatorSelectorField
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.Data
+  nameWithType: AnimationsManagerWindow.Data
 - uid: SpriteAnimations.Editor.AnimationsManagerWindow.DestroySelectedAnimation
   name: DestroySelectedAnimation()
   href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_DestroySelectedAnimation
@@ -889,19 +933,19 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.AnimationsManagerWindow.DestroySelectedAnimation
   nameWithType: AnimationsManagerWindow.DestroySelectedAnimation
-- uid: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateSpriteAnimator(SpriteAnimations.SpriteAnimator)
-  name: EvaluateSpriteAnimator(SpriteAnimator)
-  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_EvaluateSpriteAnimator_SpriteAnimations_SpriteAnimator_
-  commentId: M:SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateSpriteAnimator(SpriteAnimations.SpriteAnimator)
-  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateSpriteAnimator(SpriteAnimations.SpriteAnimator)
-  nameWithType: AnimationsManagerWindow.EvaluateSpriteAnimator(SpriteAnimator)
-- uid: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateSpriteAnimator*
-  name: EvaluateSpriteAnimator
-  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_EvaluateSpriteAnimator_
-  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateSpriteAnimator
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateDisplay
+  name: EvaluateDisplay()
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_EvaluateDisplay
+  commentId: M:SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateDisplay
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateDisplay()
+  nameWithType: AnimationsManagerWindow.EvaluateDisplay()
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateDisplay*
+  name: EvaluateDisplay
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_EvaluateDisplay_
+  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateDisplay
   isSpec: "True"
-  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateSpriteAnimator
-  nameWithType: AnimationsManagerWindow.EvaluateSpriteAnimator
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.EvaluateDisplay
+  nameWithType: AnimationsManagerWindow.EvaluateDisplay
 - uid: SpriteAnimations.Editor.AnimationsManagerWindow.OpenEditorWindow
   name: OpenEditorWindow()
   href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_OpenEditorWindow
@@ -921,6 +965,77 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.AnimationsManagerWindow.OpenEditorWindow
   nameWithType: AnimationsManagerWindow.OpenEditorWindow
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimator(SpriteAnimations.SpriteAnimator)
+  name: SetAnimator(SpriteAnimator)
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_SetAnimator_SpriteAnimations_SpriteAnimator_
+  commentId: M:SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimator(SpriteAnimations.SpriteAnimator)
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimator(SpriteAnimations.SpriteAnimator)
+  nameWithType: AnimationsManagerWindow.SetAnimator(SpriteAnimator)
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimator*
+  name: SetAnimator
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_SetAnimator_
+  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimator
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimator
+  nameWithType: AnimationsManagerWindow.SetAnimator
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimatorAndLoad(SpriteAnimations.SpriteAnimator)
+  name: SetAnimatorAndLoad(SpriteAnimator)
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_SetAnimatorAndLoad_SpriteAnimations_SpriteAnimator_
+  commentId: M:SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimatorAndLoad(SpriteAnimations.SpriteAnimator)
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimatorAndLoad(SpriteAnimations.SpriteAnimator)
+  nameWithType: AnimationsManagerWindow.SetAnimatorAndLoad(SpriteAnimator)
+- uid: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimatorAndLoad*
+  name: SetAnimatorAndLoad
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindow.html#SpriteAnimations_Editor_AnimationsManagerWindow_SetAnimatorAndLoad_
+  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimatorAndLoad
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindow.SetAnimatorAndLoad
+  nameWithType: AnimationsManagerWindow.SetAnimatorAndLoad
+- uid: SpriteAnimations.Editor.AnimationsManagerWindowData
+  name: AnimationsManagerWindowData
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindowData.html
+  commentId: T:SpriteAnimations.Editor.AnimationsManagerWindowData
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindowData
+  nameWithType: AnimationsManagerWindowData
+- uid: SpriteAnimations.Editor.AnimationsManagerWindowData.Animator
+  name: Animator
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindowData.html#SpriteAnimations_Editor_AnimationsManagerWindowData_Animator
+  commentId: P:SpriteAnimations.Editor.AnimationsManagerWindowData.Animator
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindowData.Animator
+  nameWithType: AnimationsManagerWindowData.Animator
+- uid: SpriteAnimations.Editor.AnimationsManagerWindowData.Animator*
+  name: Animator
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindowData.html#SpriteAnimations_Editor_AnimationsManagerWindowData_Animator_
+  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindowData.Animator
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindowData.Animator
+  nameWithType: AnimationsManagerWindowData.Animator
+- uid: SpriteAnimations.Editor.AnimationsManagerWindowData.AnimatorObj
+  name: AnimatorObj
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindowData.html#SpriteAnimations_Editor_AnimationsManagerWindowData_AnimatorObj
+  commentId: P:SpriteAnimations.Editor.AnimationsManagerWindowData.AnimatorObj
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindowData.AnimatorObj
+  nameWithType: AnimationsManagerWindowData.AnimatorObj
+- uid: SpriteAnimations.Editor.AnimationsManagerWindowData.AnimatorObj*
+  name: AnimatorObj
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindowData.html#SpriteAnimations_Editor_AnimationsManagerWindowData_AnimatorObj_
+  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindowData.AnimatorObj
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindowData.AnimatorObj
+  nameWithType: AnimationsManagerWindowData.AnimatorObj
+- uid: SpriteAnimations.Editor.AnimationsManagerWindowData.SetAnimator(SpriteAnimations.SpriteAnimator)
+  name: SetAnimator(SpriteAnimator)
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindowData.html#SpriteAnimations_Editor_AnimationsManagerWindowData_SetAnimator_SpriteAnimations_SpriteAnimator_
+  commentId: M:SpriteAnimations.Editor.AnimationsManagerWindowData.SetAnimator(SpriteAnimations.SpriteAnimator)
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindowData.SetAnimator(SpriteAnimations.SpriteAnimator)
+  nameWithType: AnimationsManagerWindowData.SetAnimator(SpriteAnimator)
+- uid: SpriteAnimations.Editor.AnimationsManagerWindowData.SetAnimator*
+  name: SetAnimator
+  href: api/SpriteAnimations.Editor.AnimationsManagerWindowData.html#SpriteAnimations_Editor_AnimationsManagerWindowData_SetAnimator_
+  commentId: Overload:SpriteAnimations.Editor.AnimationsManagerWindowData.SetAnimator
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.AnimationsManagerWindowData.SetAnimator
+  nameWithType: AnimationsManagerWindowData.SetAnimator
 - uid: SpriteAnimations.Editor.ComboCyclesHandler
   name: ComboCyclesHandler
   href: api/SpriteAnimations.Editor.ComboCyclesHandler.html
@@ -1526,6 +1641,89 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.Editor.SidebarElement.Reload
   nameWithType: SidebarElement.Reload
+- uid: SpriteAnimations.Editor.SingleManagerWindow
+  name: SingleManagerWindow
+  href: api/SpriteAnimations.Editor.SingleManagerWindow.html
+  commentId: T:SpriteAnimations.Editor.SingleManagerWindow
+  fullName: SpriteAnimations.Editor.SingleManagerWindow
+  nameWithType: SingleManagerWindow
+- uid: SpriteAnimations.Editor.SingleManagerWindow.Data
+  name: Data
+  href: api/SpriteAnimations.Editor.SingleManagerWindow.html#SpriteAnimations_Editor_SingleManagerWindow_Data
+  commentId: P:SpriteAnimations.Editor.SingleManagerWindow.Data
+  fullName: SpriteAnimations.Editor.SingleManagerWindow.Data
+  nameWithType: SingleManagerWindow.Data
+- uid: SpriteAnimations.Editor.SingleManagerWindow.Data*
+  name: Data
+  href: api/SpriteAnimations.Editor.SingleManagerWindow.html#SpriteAnimations_Editor_SingleManagerWindow_Data_
+  commentId: Overload:SpriteAnimations.Editor.SingleManagerWindow.Data
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.SingleManagerWindow.Data
+  nameWithType: SingleManagerWindow.Data
+- uid: SpriteAnimations.Editor.SingleManagerWindow.OpenEditorWindow(SpriteAnimations.SpriteAnimation)
+  name: OpenEditorWindow(SpriteAnimation)
+  href: api/SpriteAnimations.Editor.SingleManagerWindow.html#SpriteAnimations_Editor_SingleManagerWindow_OpenEditorWindow_SpriteAnimations_SpriteAnimation_
+  commentId: M:SpriteAnimations.Editor.SingleManagerWindow.OpenEditorWindow(SpriteAnimations.SpriteAnimation)
+  fullName: SpriteAnimations.Editor.SingleManagerWindow.OpenEditorWindow(SpriteAnimations.SpriteAnimation)
+  nameWithType: SingleManagerWindow.OpenEditorWindow(SpriteAnimation)
+- uid: SpriteAnimations.Editor.SingleManagerWindow.OpenEditorWindow*
+  name: OpenEditorWindow
+  href: api/SpriteAnimations.Editor.SingleManagerWindow.html#SpriteAnimations_Editor_SingleManagerWindow_OpenEditorWindow_
+  commentId: Overload:SpriteAnimations.Editor.SingleManagerWindow.OpenEditorWindow
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.SingleManagerWindow.OpenEditorWindow
+  nameWithType: SingleManagerWindow.OpenEditorWindow
+- uid: SpriteAnimations.Editor.SingleManagerWindow.SetAnimationAndInitialize(SpriteAnimations.SpriteAnimation)
+  name: SetAnimationAndInitialize(SpriteAnimation)
+  href: api/SpriteAnimations.Editor.SingleManagerWindow.html#SpriteAnimations_Editor_SingleManagerWindow_SetAnimationAndInitialize_SpriteAnimations_SpriteAnimation_
+  commentId: M:SpriteAnimations.Editor.SingleManagerWindow.SetAnimationAndInitialize(SpriteAnimations.SpriteAnimation)
+  fullName: SpriteAnimations.Editor.SingleManagerWindow.SetAnimationAndInitialize(SpriteAnimations.SpriteAnimation)
+  nameWithType: SingleManagerWindow.SetAnimationAndInitialize(SpriteAnimation)
+- uid: SpriteAnimations.Editor.SingleManagerWindow.SetAnimationAndInitialize*
+  name: SetAnimationAndInitialize
+  href: api/SpriteAnimations.Editor.SingleManagerWindow.html#SpriteAnimations_Editor_SingleManagerWindow_SetAnimationAndInitialize_
+  commentId: Overload:SpriteAnimations.Editor.SingleManagerWindow.SetAnimationAndInitialize
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.SingleManagerWindow.SetAnimationAndInitialize
+  nameWithType: SingleManagerWindow.SetAnimationAndInitialize
+- uid: SpriteAnimations.Editor.SpriteAnimationInspector
+  name: SpriteAnimationInspector
+  href: api/SpriteAnimations.Editor.SpriteAnimationInspector.html
+  commentId: T:SpriteAnimations.Editor.SpriteAnimationInspector
+  fullName: SpriteAnimations.Editor.SpriteAnimationInspector
+  nameWithType: SpriteAnimationInspector
+- uid: SpriteAnimations.Editor.SpriteAnimationInspector.CreateInspectorGUI
+  name: CreateInspectorGUI()
+  href: api/SpriteAnimations.Editor.SpriteAnimationInspector.html#SpriteAnimations_Editor_SpriteAnimationInspector_CreateInspectorGUI
+  commentId: M:SpriteAnimations.Editor.SpriteAnimationInspector.CreateInspectorGUI
+  fullName: SpriteAnimations.Editor.SpriteAnimationInspector.CreateInspectorGUI()
+  nameWithType: SpriteAnimationInspector.CreateInspectorGUI()
+- uid: SpriteAnimations.Editor.SpriteAnimationInspector.CreateInspectorGUI*
+  name: CreateInspectorGUI
+  href: api/SpriteAnimations.Editor.SpriteAnimationInspector.html#SpriteAnimations_Editor_SpriteAnimationInspector_CreateInspectorGUI_
+  commentId: Overload:SpriteAnimations.Editor.SpriteAnimationInspector.CreateInspectorGUI
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.SpriteAnimationInspector.CreateInspectorGUI
+  nameWithType: SpriteAnimationInspector.CreateInspectorGUI
+- uid: SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer
+  name: SpriteAnimationManageButtonDrawer
+  href: api/SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.html
+  commentId: T:SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer
+  fullName: SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer
+  nameWithType: SpriteAnimationManageButtonDrawer
+- uid: SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+  name: CreatePropertyGUI(SerializedProperty)
+  href: api/SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.html#SpriteAnimations_Editor_SpriteAnimationManageButtonDrawer_CreatePropertyGUI_UnityEditor_SerializedProperty_
+  commentId: M:SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+  fullName: SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.CreatePropertyGUI(UnityEditor.SerializedProperty)
+  nameWithType: SpriteAnimationManageButtonDrawer.CreatePropertyGUI(SerializedProperty)
+- uid: SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.CreatePropertyGUI*
+  name: CreatePropertyGUI
+  href: api/SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.html#SpriteAnimations_Editor_SpriteAnimationManageButtonDrawer_CreatePropertyGUI_
+  commentId: Overload:SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.CreatePropertyGUI
+  isSpec: "True"
+  fullName: SpriteAnimations.Editor.SpriteAnimationManageButtonDrawer.CreatePropertyGUI
+  nameWithType: SpriteAnimationManageButtonDrawer.CreatePropertyGUI
 - uid: SpriteAnimations.Editor.SpriteAnimationView
   name: SpriteAnimationView
   href: api/SpriteAnimations.Editor.SpriteAnimationView.html
@@ -2212,6 +2410,78 @@ references:
   commentId: F:SpriteAnimations.Sampling.ComboAnimationChanger._animator
   fullName: SpriteAnimations.Sampling.ComboAnimationChanger._animator
   nameWithType: ComboAnimationChanger._animator
+- uid: SpriteAnimations.Sampling.ComboAnimationOnDemand
+  name: ComboAnimationOnDemand
+  href: api/SpriteAnimations.Sampling.ComboAnimationOnDemand.html
+  commentId: T:SpriteAnimations.Sampling.ComboAnimationOnDemand
+  fullName: SpriteAnimations.Sampling.ComboAnimationOnDemand
+  nameWithType: ComboAnimationOnDemand
+- uid: SpriteAnimations.Sampling.ComboAnimationOnDemand._animator
+  name: _animator
+  href: api/SpriteAnimations.Sampling.ComboAnimationOnDemand.html#SpriteAnimations_Sampling_ComboAnimationOnDemand__animator
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationOnDemand._animator
+  fullName: SpriteAnimations.Sampling.ComboAnimationOnDemand._animator
+  nameWithType: ComboAnimationOnDemand._animator
+- uid: SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle0
+  name: _cycle0
+  href: api/SpriteAnimations.Sampling.ComboAnimationOnDemand.html#SpriteAnimations_Sampling_ComboAnimationOnDemand__cycle0
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle0
+  fullName: SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle0
+  nameWithType: ComboAnimationOnDemand._cycle0
+- uid: SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle1
+  name: _cycle1
+  href: api/SpriteAnimations.Sampling.ComboAnimationOnDemand.html#SpriteAnimations_Sampling_ComboAnimationOnDemand__cycle1
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle1
+  fullName: SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle1
+  nameWithType: ComboAnimationOnDemand._cycle1
+- uid: SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle2
+  name: _cycle2
+  href: api/SpriteAnimations.Sampling.ComboAnimationOnDemand.html#SpriteAnimations_Sampling_ComboAnimationOnDemand__cycle2
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle2
+  fullName: SpriteAnimations.Sampling.ComboAnimationOnDemand._cycle2
+  nameWithType: ComboAnimationOnDemand._cycle2
+- uid: SpriteAnimations.Sampling.ComboAnimationOnDemand._fps
+  name: _fps
+  href: api/SpriteAnimations.Sampling.ComboAnimationOnDemand.html#SpriteAnimations_Sampling_ComboAnimationOnDemand__fps
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationOnDemand._fps
+  fullName: SpriteAnimations.Sampling.ComboAnimationOnDemand._fps
+  nameWithType: ComboAnimationOnDemand._fps
+- uid: SpriteAnimations.Sampling.ComboAnimationTemplate
+  name: ComboAnimationTemplate
+  href: api/SpriteAnimations.Sampling.ComboAnimationTemplate.html
+  commentId: T:SpriteAnimations.Sampling.ComboAnimationTemplate
+  fullName: SpriteAnimations.Sampling.ComboAnimationTemplate
+  nameWithType: ComboAnimationTemplate
+- uid: SpriteAnimations.Sampling.ComboAnimationTemplate._animator
+  name: _animator
+  href: api/SpriteAnimations.Sampling.ComboAnimationTemplate.html#SpriteAnimations_Sampling_ComboAnimationTemplate__animator
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationTemplate._animator
+  fullName: SpriteAnimations.Sampling.ComboAnimationTemplate._animator
+  nameWithType: ComboAnimationTemplate._animator
+- uid: SpriteAnimations.Sampling.ComboAnimationTemplate._cycle0
+  name: _cycle0
+  href: api/SpriteAnimations.Sampling.ComboAnimationTemplate.html#SpriteAnimations_Sampling_ComboAnimationTemplate__cycle0
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationTemplate._cycle0
+  fullName: SpriteAnimations.Sampling.ComboAnimationTemplate._cycle0
+  nameWithType: ComboAnimationTemplate._cycle0
+- uid: SpriteAnimations.Sampling.ComboAnimationTemplate._cycle1
+  name: _cycle1
+  href: api/SpriteAnimations.Sampling.ComboAnimationTemplate.html#SpriteAnimations_Sampling_ComboAnimationTemplate__cycle1
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationTemplate._cycle1
+  fullName: SpriteAnimations.Sampling.ComboAnimationTemplate._cycle1
+  nameWithType: ComboAnimationTemplate._cycle1
+- uid: SpriteAnimations.Sampling.ComboAnimationTemplate._cycle2
+  name: _cycle2
+  href: api/SpriteAnimations.Sampling.ComboAnimationTemplate.html#SpriteAnimations_Sampling_ComboAnimationTemplate__cycle2
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationTemplate._cycle2
+  fullName: SpriteAnimations.Sampling.ComboAnimationTemplate._cycle2
+  nameWithType: ComboAnimationTemplate._cycle2
+- uid: SpriteAnimations.Sampling.ComboAnimationTemplate._template
+  name: _template
+  href: api/SpriteAnimations.Sampling.ComboAnimationTemplate.html#SpriteAnimations_Sampling_ComboAnimationTemplate__template
+  commentId: F:SpriteAnimations.Sampling.ComboAnimationTemplate._template
+  fullName: SpriteAnimations.Sampling.ComboAnimationTemplate._template
+  nameWithType: ComboAnimationTemplate._template
 - uid: SpriteAnimations.Sampling.MovementInputDetector
   name: MovementInputDetector
   href: api/SpriteAnimations.Sampling.MovementInputDetector.html
@@ -2263,12 +2533,150 @@ references:
   commentId: T:SpriteAnimations.Sampling.SingleAnimationChanger
   fullName: SpriteAnimations.Sampling.SingleAnimationChanger
   nameWithType: SingleAnimationChanger
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationChanger
+  name: SingleCycleAnimationChanger
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationChanger.html
+  commentId: T:SpriteAnimations.Sampling.SingleCycleAnimationChanger
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationChanger
+  nameWithType: SingleCycleAnimationChanger
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand
+  name: SingleCycleAnimationOnDemand
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationOnDemand.html
+  commentId: T:SpriteAnimations.Sampling.SingleCycleAnimationOnDemand
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand
+  nameWithType: SingleCycleAnimationOnDemand
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._animator
+  name: _animator
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationOnDemand.html#SpriteAnimations_Sampling_SingleCycleAnimationOnDemand__animator
+  commentId: F:SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._animator
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._animator
+  nameWithType: SingleCycleAnimationOnDemand._animator
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._cycle
+  name: _cycle
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationOnDemand.html#SpriteAnimations_Sampling_SingleCycleAnimationOnDemand__cycle
+  commentId: F:SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._cycle
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._cycle
+  nameWithType: SingleCycleAnimationOnDemand._cycle
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._fps
+  name: _fps
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationOnDemand.html#SpriteAnimations_Sampling_SingleCycleAnimationOnDemand__fps
+  commentId: F:SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._fps
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationOnDemand._fps
+  nameWithType: SingleCycleAnimationOnDemand._fps
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationTemplate
+  name: SingleCycleAnimationTemplate
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationTemplate.html
+  commentId: T:SpriteAnimations.Sampling.SingleCycleAnimationTemplate
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationTemplate
+  nameWithType: SingleCycleAnimationTemplate
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationTemplate._animator
+  name: _animator
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationTemplate.html#SpriteAnimations_Sampling_SingleCycleAnimationTemplate__animator
+  commentId: F:SpriteAnimations.Sampling.SingleCycleAnimationTemplate._animator
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationTemplate._animator
+  nameWithType: SingleCycleAnimationTemplate._animator
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationTemplate._cycle
+  name: _cycle
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationTemplate.html#SpriteAnimations_Sampling_SingleCycleAnimationTemplate__cycle
+  commentId: F:SpriteAnimations.Sampling.SingleCycleAnimationTemplate._cycle
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationTemplate._cycle
+  nameWithType: SingleCycleAnimationTemplate._cycle
+- uid: SpriteAnimations.Sampling.SingleCycleAnimationTemplate._template
+  name: _template
+  href: api/SpriteAnimations.Sampling.SingleCycleAnimationTemplate.html#SpriteAnimations_Sampling_SingleCycleAnimationTemplate__template
+  commentId: F:SpriteAnimations.Sampling.SingleCycleAnimationTemplate._template
+  fullName: SpriteAnimations.Sampling.SingleCycleAnimationTemplate._template
+  nameWithType: SingleCycleAnimationTemplate._template
 - uid: SpriteAnimations.Sampling.WindroseAnimationChanger
   name: WindroseAnimationChanger
   href: api/SpriteAnimations.Sampling.WindroseAnimationChanger.html
   commentId: T:SpriteAnimations.Sampling.WindroseAnimationChanger
   fullName: SpriteAnimations.Sampling.WindroseAnimationChanger
   nameWithType: WindroseAnimationChanger
+- uid: SpriteAnimations.Sampling.WindroseAnimationTemplate
+  name: WindroseAnimationTemplate
+  href: api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html
+  commentId: T:SpriteAnimations.Sampling.WindroseAnimationTemplate
+  fullName: SpriteAnimations.Sampling.WindroseAnimationTemplate
+  nameWithType: WindroseAnimationTemplate
+- uid: SpriteAnimations.Sampling.WindroseAnimationTemplate._animator
+  name: _animator
+  href: api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html#SpriteAnimations_Sampling_WindroseAnimationTemplate__animator
+  commentId: F:SpriteAnimations.Sampling.WindroseAnimationTemplate._animator
+  fullName: SpriteAnimations.Sampling.WindroseAnimationTemplate._animator
+  nameWithType: WindroseAnimationTemplate._animator
+- uid: SpriteAnimations.Sampling.WindroseAnimationTemplate._eastCycle
+  name: _eastCycle
+  href: api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html#SpriteAnimations_Sampling_WindroseAnimationTemplate__eastCycle
+  commentId: F:SpriteAnimations.Sampling.WindroseAnimationTemplate._eastCycle
+  fullName: SpriteAnimations.Sampling.WindroseAnimationTemplate._eastCycle
+  nameWithType: WindroseAnimationTemplate._eastCycle
+- uid: SpriteAnimations.Sampling.WindroseAnimationTemplate._northCycle
+  name: _northCycle
+  href: api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html#SpriteAnimations_Sampling_WindroseAnimationTemplate__northCycle
+  commentId: F:SpriteAnimations.Sampling.WindroseAnimationTemplate._northCycle
+  fullName: SpriteAnimations.Sampling.WindroseAnimationTemplate._northCycle
+  nameWithType: WindroseAnimationTemplate._northCycle
+- uid: SpriteAnimations.Sampling.WindroseAnimationTemplate._southCycle
+  name: _southCycle
+  href: api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html#SpriteAnimations_Sampling_WindroseAnimationTemplate__southCycle
+  commentId: F:SpriteAnimations.Sampling.WindroseAnimationTemplate._southCycle
+  fullName: SpriteAnimations.Sampling.WindroseAnimationTemplate._southCycle
+  nameWithType: WindroseAnimationTemplate._southCycle
+- uid: SpriteAnimations.Sampling.WindroseAnimationTemplate._template
+  name: _template
+  href: api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html#SpriteAnimations_Sampling_WindroseAnimationTemplate__template
+  commentId: F:SpriteAnimations.Sampling.WindroseAnimationTemplate._template
+  fullName: SpriteAnimations.Sampling.WindroseAnimationTemplate._template
+  nameWithType: WindroseAnimationTemplate._template
+- uid: SpriteAnimations.Sampling.WindroseAnimationTemplate._westCycle
+  name: _westCycle
+  href: api/SpriteAnimations.Sampling.WindroseAnimationTemplate.html#SpriteAnimations_Sampling_WindroseAnimationTemplate__westCycle
+  commentId: F:SpriteAnimations.Sampling.WindroseAnimationTemplate._westCycle
+  fullName: SpriteAnimations.Sampling.WindroseAnimationTemplate._westCycle
+  nameWithType: WindroseAnimationTemplate._westCycle
+- uid: SpriteAnimations.Sampling.WinroseAnimationOnDemand
+  name: WinroseAnimationOnDemand
+  href: api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html
+  commentId: T:SpriteAnimations.Sampling.WinroseAnimationOnDemand
+  fullName: SpriteAnimations.Sampling.WinroseAnimationOnDemand
+  nameWithType: WinroseAnimationOnDemand
+- uid: SpriteAnimations.Sampling.WinroseAnimationOnDemand._animator
+  name: _animator
+  href: api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html#SpriteAnimations_Sampling_WinroseAnimationOnDemand__animator
+  commentId: F:SpriteAnimations.Sampling.WinroseAnimationOnDemand._animator
+  fullName: SpriteAnimations.Sampling.WinroseAnimationOnDemand._animator
+  nameWithType: WinroseAnimationOnDemand._animator
+- uid: SpriteAnimations.Sampling.WinroseAnimationOnDemand._eastCycle
+  name: _eastCycle
+  href: api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html#SpriteAnimations_Sampling_WinroseAnimationOnDemand__eastCycle
+  commentId: F:SpriteAnimations.Sampling.WinroseAnimationOnDemand._eastCycle
+  fullName: SpriteAnimations.Sampling.WinroseAnimationOnDemand._eastCycle
+  nameWithType: WinroseAnimationOnDemand._eastCycle
+- uid: SpriteAnimations.Sampling.WinroseAnimationOnDemand._fps
+  name: _fps
+  href: api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html#SpriteAnimations_Sampling_WinroseAnimationOnDemand__fps
+  commentId: F:SpriteAnimations.Sampling.WinroseAnimationOnDemand._fps
+  fullName: SpriteAnimations.Sampling.WinroseAnimationOnDemand._fps
+  nameWithType: WinroseAnimationOnDemand._fps
+- uid: SpriteAnimations.Sampling.WinroseAnimationOnDemand._northCycle
+  name: _northCycle
+  href: api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html#SpriteAnimations_Sampling_WinroseAnimationOnDemand__northCycle
+  commentId: F:SpriteAnimations.Sampling.WinroseAnimationOnDemand._northCycle
+  fullName: SpriteAnimations.Sampling.WinroseAnimationOnDemand._northCycle
+  nameWithType: WinroseAnimationOnDemand._northCycle
+- uid: SpriteAnimations.Sampling.WinroseAnimationOnDemand._southCycle
+  name: _southCycle
+  href: api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html#SpriteAnimations_Sampling_WinroseAnimationOnDemand__southCycle
+  commentId: F:SpriteAnimations.Sampling.WinroseAnimationOnDemand._southCycle
+  fullName: SpriteAnimations.Sampling.WinroseAnimationOnDemand._southCycle
+  nameWithType: WinroseAnimationOnDemand._southCycle
+- uid: SpriteAnimations.Sampling.WinroseAnimationOnDemand._westCycle
+  name: _westCycle
+  href: api/SpriteAnimations.Sampling.WinroseAnimationOnDemand.html#SpriteAnimations_Sampling_WinroseAnimationOnDemand__westCycle
+  commentId: F:SpriteAnimations.Sampling.WinroseAnimationOnDemand._westCycle
+  fullName: SpriteAnimations.Sampling.WinroseAnimationOnDemand._westCycle
+  nameWithType: WinroseAnimationOnDemand._westCycle
 - uid: SpriteAnimations.SingleCycleAnimator
   name: SingleCycleAnimator
   href: api/SpriteAnimations.SingleCycleAnimator.html
@@ -2564,6 +2972,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationCombo.GetCycle
   nameWithType: SpriteAnimationCombo.GetCycle
+- uid: SpriteAnimations.SpriteAnimationCombo.OnDemand(System.Int32,System.Collections.Generic.List{System.Collections.Generic.List{UnityEngine.Sprite}},System.Single)
+  name: OnDemand(int, List<List<Sprite>>, float)
+  href: api/SpriteAnimations.SpriteAnimationCombo.html#SpriteAnimations_SpriteAnimationCombo_OnDemand_System_Int32_System_Collections_Generic_List_System_Collections_Generic_List_UnityEngine_Sprite___System_Single_
+  commentId: M:SpriteAnimations.SpriteAnimationCombo.OnDemand(System.Int32,System.Collections.Generic.List{System.Collections.Generic.List{UnityEngine.Sprite}},System.Single)
+  name.vb: OnDemand(Integer, List(Of List(Of Sprite)), Single)
+  fullName: SpriteAnimations.SpriteAnimationCombo.OnDemand(int, System.Collections.Generic.List<System.Collections.Generic.List<UnityEngine.Sprite>>, float)
+  fullName.vb: SpriteAnimations.SpriteAnimationCombo.OnDemand(Integer, System.Collections.Generic.List(Of System.Collections.Generic.List(Of UnityEngine.Sprite)), Single)
+  nameWithType: SpriteAnimationCombo.OnDemand(int, List<List<Sprite>>, float)
+  nameWithType.vb: SpriteAnimationCombo.OnDemand(Integer, List(Of List(Of Sprite)), Single)
+- uid: SpriteAnimations.SpriteAnimationCombo.OnDemand*
+  name: OnDemand
+  href: api/SpriteAnimations.SpriteAnimationCombo.html#SpriteAnimations_SpriteAnimationCombo_OnDemand_
+  commentId: Overload:SpriteAnimations.SpriteAnimationCombo.OnDemand
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationCombo.OnDemand
+  nameWithType: SpriteAnimationCombo.OnDemand
 - uid: SpriteAnimations.SpriteAnimationCombo.PerformerType
   name: PerformerType
   href: api/SpriteAnimations.SpriteAnimationCombo.html#SpriteAnimations_SpriteAnimationCombo_PerformerType
@@ -2615,6 +3039,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationCombo.TryGetCycle
   nameWithType: SpriteAnimationCombo.TryGetCycle
+- uid: SpriteAnimations.SpriteAnimationCombo.UseAsTemplate(System.Collections.Generic.List{System.Collections.Generic.List{UnityEngine.Sprite}})
+  name: UseAsTemplate(List<List<Sprite>>)
+  href: api/SpriteAnimations.SpriteAnimationCombo.html#SpriteAnimations_SpriteAnimationCombo_UseAsTemplate_System_Collections_Generic_List_System_Collections_Generic_List_UnityEngine_Sprite___
+  commentId: M:SpriteAnimations.SpriteAnimationCombo.UseAsTemplate(System.Collections.Generic.List{System.Collections.Generic.List{UnityEngine.Sprite}})
+  name.vb: UseAsTemplate(List(Of List(Of Sprite)))
+  fullName: SpriteAnimations.SpriteAnimationCombo.UseAsTemplate(System.Collections.Generic.List<System.Collections.Generic.List<UnityEngine.Sprite>>)
+  fullName.vb: SpriteAnimations.SpriteAnimationCombo.UseAsTemplate(System.Collections.Generic.List(Of System.Collections.Generic.List(Of UnityEngine.Sprite)))
+  nameWithType: SpriteAnimationCombo.UseAsTemplate(List<List<Sprite>>)
+  nameWithType.vb: SpriteAnimationCombo.UseAsTemplate(List(Of List(Of Sprite)))
+- uid: SpriteAnimations.SpriteAnimationCombo.UseAsTemplate*
+  name: UseAsTemplate
+  href: api/SpriteAnimations.SpriteAnimationCombo.html#SpriteAnimations_SpriteAnimationCombo_UseAsTemplate_
+  commentId: Overload:SpriteAnimations.SpriteAnimationCombo.UseAsTemplate
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationCombo.UseAsTemplate
+  nameWithType: SpriteAnimationCombo.UseAsTemplate
 - uid: SpriteAnimations.SpriteAnimationCombo.WaitingTime
   name: WaitingTime
   href: api/SpriteAnimations.SpriteAnimationCombo.html#SpriteAnimations_SpriteAnimationCombo_WaitingTime
@@ -2640,6 +3080,12 @@ references:
   commentId: F:SpriteAnimations.SpriteAnimationCombo._waitingTime
   fullName: SpriteAnimations.SpriteAnimationCombo._waitingTime
   nameWithType: SpriteAnimationCombo._waitingTime
+- uid: SpriteAnimations.SpriteAnimationManageButton
+  name: SpriteAnimationManageButton
+  href: api/SpriteAnimations.SpriteAnimationManageButton.html
+  commentId: T:SpriteAnimations.SpriteAnimationManageButton
+  fullName: SpriteAnimations.SpriteAnimationManageButton
+  nameWithType: SpriteAnimationManageButton
 - uid: SpriteAnimations.SpriteAnimationSingleCycle
   name: SpriteAnimationSingleCycle
   href: api/SpriteAnimations.SpriteAnimationSingleCycle.html
@@ -2711,6 +3157,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationSingleCycle.IsLoopable
   nameWithType: SpriteAnimationSingleCycle.IsLoopable
+- uid: SpriteAnimations.SpriteAnimationSingleCycle.OnDemand(System.Int32,System.Collections.Generic.List{UnityEngine.Sprite},System.Boolean)
+  name: OnDemand(int, List<Sprite>, bool)
+  href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle_OnDemand_System_Int32_System_Collections_Generic_List_UnityEngine_Sprite__System_Boolean_
+  commentId: M:SpriteAnimations.SpriteAnimationSingleCycle.OnDemand(System.Int32,System.Collections.Generic.List{UnityEngine.Sprite},System.Boolean)
+  name.vb: OnDemand(Integer, List(Of Sprite), Boolean)
+  fullName: SpriteAnimations.SpriteAnimationSingleCycle.OnDemand(int, System.Collections.Generic.List<UnityEngine.Sprite>, bool)
+  fullName.vb: SpriteAnimations.SpriteAnimationSingleCycle.OnDemand(Integer, System.Collections.Generic.List(Of UnityEngine.Sprite), Boolean)
+  nameWithType: SpriteAnimationSingleCycle.OnDemand(int, List<Sprite>, bool)
+  nameWithType.vb: SpriteAnimationSingleCycle.OnDemand(Integer, List(Of Sprite), Boolean)
+- uid: SpriteAnimations.SpriteAnimationSingleCycle.OnDemand*
+  name: OnDemand
+  href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle_OnDemand_
+  commentId: Overload:SpriteAnimations.SpriteAnimationSingleCycle.OnDemand
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationSingleCycle.OnDemand
+  nameWithType: SpriteAnimationSingleCycle.OnDemand
 - uid: SpriteAnimations.SpriteAnimationSingleCycle.PerformerType
   name: PerformerType
   href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle_PerformerType
@@ -2724,6 +3186,38 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationSingleCycle.PerformerType
   nameWithType: SpriteAnimationSingleCycle.PerformerType
+- uid: SpriteAnimations.SpriteAnimationSingleCycle.SetFrameID(System.Int32,System.String)
+  name: SetFrameID(int, string)
+  href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle_SetFrameID_System_Int32_System_String_
+  commentId: M:SpriteAnimations.SpriteAnimationSingleCycle.SetFrameID(System.Int32,System.String)
+  name.vb: SetFrameID(Integer, String)
+  fullName: SpriteAnimations.SpriteAnimationSingleCycle.SetFrameID(int, string)
+  fullName.vb: SpriteAnimations.SpriteAnimationSingleCycle.SetFrameID(Integer, String)
+  nameWithType: SpriteAnimationSingleCycle.SetFrameID(int, string)
+  nameWithType.vb: SpriteAnimationSingleCycle.SetFrameID(Integer, String)
+- uid: SpriteAnimations.SpriteAnimationSingleCycle.SetFrameID*
+  name: SetFrameID
+  href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle_SetFrameID_
+  commentId: Overload:SpriteAnimations.SpriteAnimationSingleCycle.SetFrameID
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationSingleCycle.SetFrameID
+  nameWithType: SpriteAnimationSingleCycle.SetFrameID
+- uid: SpriteAnimations.SpriteAnimationSingleCycle.UseAsTemplate(System.Collections.Generic.List{UnityEngine.Sprite})
+  name: UseAsTemplate(List<Sprite>)
+  href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle_UseAsTemplate_System_Collections_Generic_List_UnityEngine_Sprite__
+  commentId: M:SpriteAnimations.SpriteAnimationSingleCycle.UseAsTemplate(System.Collections.Generic.List{UnityEngine.Sprite})
+  name.vb: UseAsTemplate(List(Of Sprite))
+  fullName: SpriteAnimations.SpriteAnimationSingleCycle.UseAsTemplate(System.Collections.Generic.List<UnityEngine.Sprite>)
+  fullName.vb: SpriteAnimations.SpriteAnimationSingleCycle.UseAsTemplate(System.Collections.Generic.List(Of UnityEngine.Sprite))
+  nameWithType: SpriteAnimationSingleCycle.UseAsTemplate(List<Sprite>)
+  nameWithType.vb: SpriteAnimationSingleCycle.UseAsTemplate(List(Of Sprite))
+- uid: SpriteAnimations.SpriteAnimationSingleCycle.UseAsTemplate*
+  name: UseAsTemplate
+  href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle_UseAsTemplate_
+  commentId: Overload:SpriteAnimations.SpriteAnimationSingleCycle.UseAsTemplate
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationSingleCycle.UseAsTemplate
+  nameWithType: SpriteAnimationSingleCycle.UseAsTemplate
 - uid: SpriteAnimations.SpriteAnimationSingleCycle._cycle
   name: _cycle
   href: api/SpriteAnimations.SpriteAnimationSingleCycle.html#SpriteAnimations_SpriteAnimationSingleCycle__cycle
@@ -2768,6 +3262,19 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationWindrose.CalculateFramesCount
   nameWithType: SpriteAnimationWindrose.CalculateFramesCount
+- uid: SpriteAnimations.SpriteAnimationWindrose.Cycles
+  name: Cycles
+  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_Cycles
+  commentId: P:SpriteAnimations.SpriteAnimationWindrose.Cycles
+  fullName: SpriteAnimations.SpriteAnimationWindrose.Cycles
+  nameWithType: SpriteAnimationWindrose.Cycles
+- uid: SpriteAnimations.SpriteAnimationWindrose.Cycles*
+  name: Cycles
+  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_Cycles_
+  commentId: Overload:SpriteAnimations.SpriteAnimationWindrose.Cycles
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationWindrose.Cycles
+  nameWithType: SpriteAnimationWindrose.Cycles
 - uid: SpriteAnimations.SpriteAnimationWindrose.DirectionFromInput(UnityEngine.Vector2Int)
   name: DirectionFromInput(Vector2Int)
   href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_DirectionFromInput_UnityEngine_Vector2Int_
@@ -2833,6 +3340,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationWindrose.IsLoopable
   nameWithType: SpriteAnimationWindrose.IsLoopable
+- uid: SpriteAnimations.SpriteAnimationWindrose.OnDemand(System.Int32,System.Collections.Generic.Dictionary{SpriteAnimations.WindroseDirection,System.Collections.Generic.List{UnityEngine.Sprite}},System.Boolean)
+  name: OnDemand(int, Dictionary<WindroseDirection, List<Sprite>>, bool)
+  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_OnDemand_System_Int32_System_Collections_Generic_Dictionary_SpriteAnimations_WindroseDirection_System_Collections_Generic_List_UnityEngine_Sprite___System_Boolean_
+  commentId: M:SpriteAnimations.SpriteAnimationWindrose.OnDemand(System.Int32,System.Collections.Generic.Dictionary{SpriteAnimations.WindroseDirection,System.Collections.Generic.List{UnityEngine.Sprite}},System.Boolean)
+  name.vb: OnDemand(Integer, Dictionary(Of WindroseDirection, List(Of Sprite)), Boolean)
+  fullName: SpriteAnimations.SpriteAnimationWindrose.OnDemand(int, System.Collections.Generic.Dictionary<SpriteAnimations.WindroseDirection, System.Collections.Generic.List<UnityEngine.Sprite>>, bool)
+  fullName.vb: SpriteAnimations.SpriteAnimationWindrose.OnDemand(Integer, System.Collections.Generic.Dictionary(Of SpriteAnimations.WindroseDirection, System.Collections.Generic.List(Of UnityEngine.Sprite)), Boolean)
+  nameWithType: SpriteAnimationWindrose.OnDemand(int, Dictionary<WindroseDirection, List<Sprite>>, bool)
+  nameWithType.vb: SpriteAnimationWindrose.OnDemand(Integer, Dictionary(Of WindroseDirection, List(Of Sprite)), Boolean)
+- uid: SpriteAnimations.SpriteAnimationWindrose.OnDemand*
+  name: OnDemand
+  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_OnDemand_
+  commentId: Overload:SpriteAnimations.SpriteAnimationWindrose.OnDemand
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationWindrose.OnDemand
+  nameWithType: SpriteAnimationWindrose.OnDemand
 - uid: SpriteAnimations.SpriteAnimationWindrose.PerformerType
   name: PerformerType
   href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_PerformerType
@@ -2862,6 +3385,22 @@ references:
   isSpec: "True"
   fullName: SpriteAnimations.SpriteAnimationWindrose.TryGetCycle
   nameWithType: SpriteAnimationWindrose.TryGetCycle
+- uid: SpriteAnimations.SpriteAnimationWindrose.UseAsTemplate(System.Collections.Generic.Dictionary{SpriteAnimations.WindroseDirection,System.Collections.Generic.List{UnityEngine.Sprite}})
+  name: UseAsTemplate(Dictionary<WindroseDirection, List<Sprite>>)
+  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_UseAsTemplate_System_Collections_Generic_Dictionary_SpriteAnimations_WindroseDirection_System_Collections_Generic_List_UnityEngine_Sprite___
+  commentId: M:SpriteAnimations.SpriteAnimationWindrose.UseAsTemplate(System.Collections.Generic.Dictionary{SpriteAnimations.WindroseDirection,System.Collections.Generic.List{UnityEngine.Sprite}})
+  name.vb: UseAsTemplate(Dictionary(Of WindroseDirection, List(Of Sprite)))
+  fullName: SpriteAnimations.SpriteAnimationWindrose.UseAsTemplate(System.Collections.Generic.Dictionary<SpriteAnimations.WindroseDirection, System.Collections.Generic.List<UnityEngine.Sprite>>)
+  fullName.vb: SpriteAnimations.SpriteAnimationWindrose.UseAsTemplate(System.Collections.Generic.Dictionary(Of SpriteAnimations.WindroseDirection, System.Collections.Generic.List(Of UnityEngine.Sprite)))
+  nameWithType: SpriteAnimationWindrose.UseAsTemplate(Dictionary<WindroseDirection, List<Sprite>>)
+  nameWithType.vb: SpriteAnimationWindrose.UseAsTemplate(Dictionary(Of WindroseDirection, List(Of Sprite)))
+- uid: SpriteAnimations.SpriteAnimationWindrose.UseAsTemplate*
+  name: UseAsTemplate
+  href: api/SpriteAnimations.SpriteAnimationWindrose.html#SpriteAnimations_SpriteAnimationWindrose_UseAsTemplate_
+  commentId: Overload:SpriteAnimations.SpriteAnimationWindrose.UseAsTemplate
+  isSpec: "True"
+  fullName: SpriteAnimations.SpriteAnimationWindrose.UseAsTemplate
+  nameWithType: SpriteAnimationWindrose.UseAsTemplate
 - uid: SpriteAnimations.SpriteAnimationWindrose.WindroseCycles
   name: SpriteAnimationWindrose.WindroseCycles
   href: api/SpriteAnimations.SpriteAnimationWindrose.WindroseCycles.html

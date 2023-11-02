@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Enum SpriteAnimator.SpriteAnimatorState
+      <title>Class SpriteAnimationManageButton
  | Sprite Animations </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Enum SpriteAnimator.SpriteAnimatorState
+      <meta name="title" content="Class SpriteAnimationManageButton
  | Sprite Animations ">
       
       <link rel="icon" href="../images/favicon.ico">
@@ -17,7 +17,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimator_SpriteAnimatorState.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimator.SpriteAnimatorState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/new/develop/apiSpec/new?filename=SpriteAnimations_SpriteAnimationManageButton.md&amp;value=---%0Auid%3A%20SpriteAnimations.SpriteAnimationManageButton%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -94,18 +94,16 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="SpriteAnimations.SpriteAnimator.SpriteAnimatorState">
+        <article data-uid="SpriteAnimations.SpriteAnimationManageButton">
 
 
 
-
-  <h1 id="SpriteAnimations_SpriteAnimator_SpriteAnimatorState" data-uid="SpriteAnimations.SpriteAnimator.SpriteAnimatorState" class="text-break">
-      Enum SpriteAnimator.SpriteAnimatorState
+  <h1 id="SpriteAnimations_SpriteAnimationManageButton" data-uid="SpriteAnimations.SpriteAnimationManageButton" class="text-break">
+      Class SpriteAnimationManageButton
   </h1>
 
   <div class="markdown level0 summary">
-    <p>The state of the animator</p>
-
+    
   </div>
 
   <div class="markdown level0 conceptual">
@@ -115,12 +113,65 @@
                                   <! -- CLASS  -->
                                 
   <!-- 
+
+      <div class="inheritance">
+    
+      <h5>
+        Inheritance
+      </h5>
+      
+            <div class="level0">
+            <xref uid="System.Object" text="object"/>
+            </div>
+      
+        <div class="level1">
+          <span class="xref">
+            SpriteAnimationManageButton
+          </span>
+        </div>
+      
+      </div>
+
   -->
 
                                                    <! -- IMPLEMENTS  -->
 
                                                       <! -- INHERITED MEMBERS  -->
   <!-- 
+      <div class="inheritedMembers">
+          <h5>
+            Inherited Members
+          </h5>
+        
+            
+                  <div>
+                          <xref uid="System.Object.Equals(System.Object)" text="object.Equals(object)" alt="object.Equals(object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.Equals(System.Object,System.Object)" text="object.Equals(object, object)" alt="object.Equals(object, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.GetHashCode" text="object.GetHashCode()" alt="object.GetHashCode()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.GetType" text="object.GetType()" alt="object.GetType()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.MemberwiseClone" text="object.MemberwiseClone()" alt="object.MemberwiseClone()"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.ReferenceEquals(System.Object,System.Object)" text="object.ReferenceEquals(object, object)" alt="object.ReferenceEquals(object, object)"/>
+                  </div>
+            
+                  <div>
+                          <xref uid="System.Object.ToString" text="object.ToString()" alt="object.ToString()"/>
+                  </div>
+      </div>
   -->
 
                                                       <! -- NAMESPACE  -->
@@ -143,7 +194,7 @@
     
                                                                   <! -- SYNTAX  -->
   <!-- 
-  <h5 id="SpriteAnimations_SpriteAnimator_SpriteAnimatorState_syntax">
+  <h5 id="SpriteAnimations_SpriteAnimationManageButton_syntax">
     Syntax
   </h5>
   -->
@@ -152,7 +203,8 @@
   <div class="codewrapper">
       <pre>
           <code class="lang- hljs">
-            public enum SpriteAnimator.SpriteAnimatorState
+            [Serializable]
+public class SpriteAnimationManageButton
           </code>
       </pre>
   </div>
@@ -170,34 +222,9 @@
 
 
 
-  <h3 id="fields">Fields
-</h3>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    <thead>
-    <tbody>
-      <tr>
-        <td id="SpriteAnimations_SpriteAnimator_SpriteAnimatorState_Paused">Paused</td>
-        <td><p>The animator is paused, meaning it will not change frames of the current
-animation untill it is resumed</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SpriteAnimations_SpriteAnimator_SpriteAnimatorState_Playing">Playing</td>
-        <td><p>The animator is playing the last defined animation</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SpriteAnimations_SpriteAnimator_SpriteAnimatorState_Stopped">Stopped</td>
-        <td><p>The animator is stopped, meaning no animation is currently defined.</p>
-</td>
-      </tr>
-    </tbody>
-  </thead></thead></table>
+
+
+
 </article>
 
 

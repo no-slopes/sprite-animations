@@ -103,6 +103,117 @@ tell the <a href="../sprite-animator/combo-animator.html">Combo Animator</a> whe
 an end or the waiting time expires and the animation is considered interrupted.</p>
 <p>Refer to the <a href="../sprite-animator/combo-animator.html">Combo Animator</a> documentation in order to have a better understanding on how you can
 operate a Combo Animation through code.</p>
+<h2 id="creating-on-demand">Creating on demand</h2>
+<p>You can create Combo animations on demand by acessing the static method <code>SpriteAnimationCombo.OnDemand</code>. Just provide the fps, a list of <a href="../animations-manager/index.html#frame-cycle">cycles</a> being each item of the list a list of Sprites.</p>
+<p>Example:</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+public int _fps;
+
+public List&lt;Sprite&gt; _cycle0;
+public List&lt;Sprite&gt; _cycle1;
+public List&lt;Sprite&gt; _cycle2;
+
+private SpriteAnimationCombo _animation;
+private ComboAnimator _performer;
+
+private void Awake()
+{
+    List&lt;List&lt;Sprite&gt;&gt; cycles = new()
+    {
+        _cycle0,
+        _cycle1,
+        _cycle2
+    };
+
+    _animation = SpriteAnimationCombo.OnDemand(_fps, cycles);
+}
+
+private void Start()
+{
+    StartAnimation();
+}
+
+private void StartAnimation()
+{
+    _performer = _animator.Play&lt;ComboAnimator&gt;(_animation).FromStart();
+    _performer.SetOnCycleEnded(CycleEnded);
+
+}
+
+private void CycleEnded(int cycleIndex)
+{
+    if (cycleIndex &lt; 2)
+    {
+        StartCoroutine(WaitAndPlayNext());
+    }
+    else
+    {
+        StartAnimation();
+    }
+}
+
+private IEnumerator WaitAndPlayNext()
+{
+    yield return new WaitForSeconds(0.45f);
+    _performer?.Next();
+}
+</code></pre>
+<h2 id="creating-from-a-template">Creating from a template</h2>
+<p>You can use any other Combo Animation as template for creating another Combo Animation. Just use the <code>UseAsTemplate</code> method providing
+a list of <a href="../animations-manager/index.html#frame-cycle">cycles</a> being each item of the list a list of Sprites</p>
+<p>Example:</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+public SpriteAnimationCombo _template;
+
+public List&lt;Sprite&gt; _cycle0;
+public List&lt;Sprite&gt; _cycle1;
+public List&lt;Sprite&gt; _cycle2;
+
+private SpriteAnimationCombo _animation;
+private ComboAnimator _performer;
+
+private void Awake()
+{
+    List&lt;List&lt;Sprite&gt;&gt; cycles = new()
+    {
+        _cycle0,
+        _cycle1,
+        _cycle2
+    };
+
+    _animation = _template.UseAsTemplate(cycles);
+}
+
+private void Start()
+{
+    StartAnimation();
+}
+
+private void StartAnimation()
+{
+    _performer = _animator.Play&lt;ComboAnimator&gt;(_animation).FromStart();
+    _performer.SetOnCycleEnded(CycleEnded);
+
+}
+
+private void CycleEnded(int cycleIndex)
+{
+    if (cycleIndex &lt; 2)
+    {
+        StartCoroutine(WaitAndPlayNext());
+    }
+    else
+    {
+        StartAnimation();
+    }
+}
+
+private IEnumerator WaitAndPlayNext()
+{
+    yield return new WaitForSeconds(0.45f);
+    _performer?.Next();
+}
+</code></pre>
 </article>
 
 

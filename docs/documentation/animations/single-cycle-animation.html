@@ -99,6 +99,45 @@
 <p>The Single Cycle Animation is just a single <a href="../animations-manager/index.html#frame-cycle">Frame Cycle</a>.</p>
 <p><img src="../../images/single-cycle-animation.png" alt="Single Animation"></p>
 <p>Refer to <a href="../sprite-animator/single-cycle-animator.html">SingleCycleAnimator</a> in order to understand how you can interact with it through code.</p>
+<h2 id="creating-on-demand">Creating on demand</h2>
+<p>You can create Single Cycle animations on demand by acessing the static method <code>SpriteAnimationSingleCycle.OnDemand</code>. Just provide the fps, a <a href="../animations-manager/index.html#frame-cycle">cycle</a> as a list of Sprites, and a boolean telling if it should be loopable or not.</p>
+<p>Example:</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+public int _fps;
+public List&lt;Sprite&gt; _cycle;
+
+private SpriteAnimationSingleCycle _animation;
+
+private void Awake()
+{
+    _animation = SpriteAnimationSingleCycle.OnDemand(_fps, _cycle, true);
+}
+
+private void Start()
+{
+    _animator.Play(_animation);
+}
+</code></pre>
+<h2 id="creating-from-a-template">Creating from a template</h2>
+<p>You can use any other Single Cycle Animation as template for creating another Single Cycle Animation. Just use the <code>UseAsTemplate</code> method providing
+a <a href="../animations-manager/index.html#frame-cycle">cycle</a> as a list of Sprites.</p>
+<p>Example:</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+public SpriteAnimationSingleCycle _template;
+public List&lt;Sprite&gt; _cycle;
+
+private SpriteAnimationSingleCycle _animation;
+
+private void Awake()
+{
+    _animation = _template.UseAsTemplate(_cycle);
+}
+
+private void Start()
+{
+    _animator.Play(_animation).SetOnFrame(&quot;Slash&quot;, frame =&gt; Debug.Log(&quot;Slash frame played&quot;));
+}
+</code></pre>
 </article>
 
 

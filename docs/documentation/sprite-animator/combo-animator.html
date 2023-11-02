@@ -106,7 +106,7 @@
 while using the <a href="../animations-manager/index.html">Animations Manage</a>, the animation is considered interrupted and the
 combo animator will fire the <code>OnInterrupted</code> action (if registered). The common practice here would be getting the animated
 object back to its default animation.</li>
-<li>In the case the <code>Next()</code> method do get called within the <code>Input Waiting Time</code> it will play the next cycle and enter the &quot;waiting state&quot; again.</li>
+<li>In the case of the <code>Next()</code> method getting called within the <code>Input Waiting Time</code> it will play the next cycle and enter the &quot;waiting state&quot; again.</li>
 <li>This process repeats until the last cycle is played, when the Combo Animator calls the <code>OnEnd</code> action.</li>
 </ul>
 <h2 id="playing-a-combo-animation">Playing a Combo Animation</h2>
@@ -153,11 +153,11 @@ private void OnCycleEnded(int cycleIndex)
 </code></pre>
 <h2 id="on-frame-operations">On Frame Operations</h2>
 <p>The <code>SetOnFrame</code> remains as the <a href="single-cycle-animator.html">Single Cycle Animator</a> here. The catch is only
-that you must be carefull wuen setting by index. The index in this scenario would be the index of each cycle.</p>
+that you must be carefull when setting by index. The index in this scenario would be the index of each cycle.</p>
 <p>So, considering you have an animation with 3 cycles (0, 1 and 2) and do as follows:</p>
 <pre><code class="lang-csharp">_comboAnimator.SetOnFrame(0, frame =&gt; Debug.Log(frame));
 </code></pre>
-<p>this will get fired 3 times throught the complete execution of the animation.</p>
+<p>this will get fired 3 times throughout the complete execution of the animation.</p>
 <p>as this:</p>
 <pre><code class="lang-csharp">_comboAnimator.SetOnFrame(&quot;Shoot&quot;, frame =&gt; Debug.Log(frame));
 </code></pre>
