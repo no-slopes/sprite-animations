@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/no-slopes/sprite-animations/compare/v2.2.0...v2.3.0) (2023-11-06)
+
+
+### Features
+
+* **CompositeAnimator:** composite animator works. ([80f8ea5](https://github.com/no-slopes/sprite-animations/commit/80f8ea515a82930e9fab279af0c4b730b422147f))
+
 # [2.2.0](https://github.com/no-slopes/sprite-animations/compare/v2.1.0...v2.2.0) (2023-11-06)
 
 
