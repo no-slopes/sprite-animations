@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bed12526f9ecb043ba63c51bdace746, type: 3}
-  m_Name: Composite_Test
+  m_Name: Slide
   m_EditorClassIdentifier: 
-  _animationName: Composite_Test
+  _animationName: Slide
   _fps: 8
   _antecipationCycle:
     _animation: {fileID: 11400000}

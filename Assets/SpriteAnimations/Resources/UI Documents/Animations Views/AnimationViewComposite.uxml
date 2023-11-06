@@ -7,7 +7,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="content" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 100%;">
-            <ui:VisualElement name="loopable-core-field-container" style="flex-grow: 0; flex-direction: row-reverse; width: 100%; align-items: center; margin-bottom: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+            <ui:VisualElement name="loopable-core-field-container" style="flex-grow: 0; flex-direction: row-reverse; width: 100%; align-items: center; margin-bottom: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; display: none;">
                 <ui:Toggle label="Loopable core?" name="loopable-core-field" value="true" tooltip="If the Sprite Animator should restart the animation automatically upon its cycle end." style="align-items: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-text-align: middle-left;" />
             </ui:VisualElement>
             <ui:VisualElement name="tabs-bar" class="tabs-bar">
