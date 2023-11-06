@@ -5,6 +5,7 @@ namespace SpriteAnimations
     {
         SingleCycle,
         Windrose,
-        Combo
+        Combo,
+        Composite
     }
 }

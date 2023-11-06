@@ -12,6 +12,10 @@
     background-color: rgb(77, 7, 24);
 }
 
+.interactable.active {
+    background-color: rgb(77, 7, 24);
+}
+
 .sa-label {
     font-size: 14px;
     color: rgb(255, 255, 255);
@@ -222,4 +226,27 @@
 }
 
 #waiting-time-field > Label {
+}
+
+.tabs-bar {
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tabs-bar > Button {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 3px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 120px;
+    height: 33px;
 }

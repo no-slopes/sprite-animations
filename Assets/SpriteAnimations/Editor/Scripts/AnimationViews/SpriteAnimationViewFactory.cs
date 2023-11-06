@@ -24,6 +24,7 @@ namespace SpriteAnimations.Editor
                 AnimationType.SingleCycle => new SpriteAnimationViewSingleCycle(),
                 AnimationType.Windrose => new SpriteAnimationViewWindrose(),
                 AnimationType.Combo => new SpriteAnimationViewCombo(),
+                AnimationType.Composite => new SpriteAnimationViewComposite(),
                 _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null),
             };
 

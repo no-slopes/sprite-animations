@@ -722,6 +722,7 @@ MonoBehaviour:
   _defaultAnimation: {fileID: 0}
   _spriteAnimations:
   - {fileID: 11400000, guid: 0c605438a4369e14e93856d7b7899618, type: 2}
+  - {fileID: 11400000, guid: 02fc119d4d99d7f49bf3a855dab25ddd, type: 2}
   _animationChanged:
     m_PersistentCalls:
       m_Calls: []

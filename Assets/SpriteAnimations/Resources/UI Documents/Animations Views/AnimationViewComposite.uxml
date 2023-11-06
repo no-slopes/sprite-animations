@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/SpriteAnimations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <ui:VisualElement name="container" style="flex-grow: 1; flex-direction: row; width: 100%; height: 100%; align-items: flex-start;">
+        <ui:VisualElement name="left" style="height: 100%; max-width: 240px; align-items: center; background-color: rgb(31, 4, 9); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+            <ui:VisualElement name="animation-preview-container" style="flex-grow: 0; flex-direction: row; align-items: center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; height: 200px; width: 200px; -unity-background-image-tint-color: rgb(173, 1, 1); background-color: rgb(38, 79, 120);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="content" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 100%;">
+            <ui:VisualElement name="loopable-core-field-container" style="flex-grow: 0; flex-direction: row-reverse; width: 100%; align-items: center; margin-bottom: 0; margin-top: 0; margin-right: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                <ui:Toggle label="Loopable core?" name="loopable-core-field" value="true" tooltip="If the Sprite Animator should restart the animation automatically upon its cycle end." style="align-items: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-text-align: middle-left;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="tabs-bar" class="tabs-bar">
+                <ui:VisualElement name="expander" style="flex-grow: 1;" />
+                <ui:Button text="Antecipation" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tab-button-antecipation" view-data-key="antecipation" class="interactable tab-button active" />
+                <ui:Button text="Core" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tab-button-core" view-data-key="core" class="interactable tab-button" />
+                <ui:Button text="Recovery" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tab-button-recovery" view-data-key="recovery" class="interactable tab-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="cycle-view" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
