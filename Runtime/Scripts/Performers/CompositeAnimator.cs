@@ -176,7 +176,6 @@ namespace SpriteAnimations
             EndAnimation();
 
             // Invoke the action when the overall cycle ends
-            Debug.Log("End Cycle");
             _onEndAction?.Invoke();
         }
 
@@ -286,12 +285,5 @@ namespace SpriteAnimations
         }
 
         #endregion
-    }
-
-    public enum CompositeCycle
-    {
-        Antecipation,
-        Core,
-        Recovery,
     }
 }
