@@ -93,6 +93,7 @@ namespace SpriteAnimations.Editor
                 AnimationType.SingleCycle => CreateSingleCycleAnimation(path, name),
                 AnimationType.Windrose => CreateWindroseAnimation(path, name),
                 AnimationType.Combo => CreateComboAnimation(path, name),
+                AnimationType.Composite => CreateCompositeAnimation(path, name),
                 _ => throw new ArgumentOutOfRangeException(nameof(_typeField.value), null, null)
             };
 
@@ -124,6 +125,14 @@ namespace SpriteAnimations.Editor
             comboAsset.CreateCycle();
             AssetDatabase.CreateAsset(comboAsset, $"{path}/{name}.asset");
             return comboAsset;
+        }
+
+        private SpriteAnimationComposite CreateCompositeAnimation(string path, string name)
+        {
+            SpriteAnimationComposite compositeAsset = ScriptableObject.CreateInstance<SpriteAnimationComposite>();
+            compositeAsset.GenerateCycles();
+            AssetDatabase.CreateAsset(compositeAsset, $"{path}/{name}.asset");
+            return compositeAsset;
         }
 
         #endregion
