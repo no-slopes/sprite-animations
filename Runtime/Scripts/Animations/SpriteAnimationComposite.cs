@@ -30,7 +30,7 @@ namespace SpriteAnimations
         public Cycle RecoveryCycle { get => _recoveryCycle; set => _recoveryCycle = value; }
         public bool IsLoopableCore { get => _loopableCore; set => _loopableCore = value; }
 
-        public override Type PerformerType => typeof(CompositePerformer);
+        public override Type PerformerType => typeof(CompositeAnimator);
         public override AnimationType AnimationType => AnimationType.Composite;
 
         #endregion

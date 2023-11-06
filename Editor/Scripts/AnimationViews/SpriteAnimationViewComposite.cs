@@ -63,7 +63,7 @@ namespace SpriteAnimations.Editor
             base.Initialize(animation);
             _compositeSpriteAnimation = animation as SpriteAnimationComposite;
             _loopableCoreField.value = _compositeSpriteAnimation.IsLoopableCore;
-            InitializeCycle(_compositeSpriteAnimation.AntecipationCycle);
+            InitializeCycle(_compositeSpriteAnimation.AntecipationCycle); // Must be initialized before the preview
 
             foreach (Button button in _tabButtons)
             {
@@ -90,7 +90,7 @@ namespace SpriteAnimations.Editor
         {
             _cycleElement?.Dismiss();
             _currentCycle = cycle;
-            _cycleElement.Initialize(cycle, this); // Must be initialized before the preview
+            _cycleElement.Initialize(cycle, this);
         }
 
         private void EvaluateCycle(string cycleName)
