@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/no-slopes/sprite-animations/compare/v2.3.0...v2.3.1) (2023-11-06)
+
+
+### Bug Fixes
+
+* samples and unwanted logs ([579abe5](https://github.com/no-slopes/sprite-animations/commit/579abe5a5749d44c8b80612bd86e1cec400e82c5))
+
 # [2.3.0](https://github.com/no-slopes/sprite-animations/compare/v2.2.0...v2.3.0) (2023-11-06)
 
 
