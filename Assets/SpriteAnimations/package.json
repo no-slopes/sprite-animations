@@ -45,6 +45,11 @@
       "displayName": "Combo Animations",
       "description": "Contains prefabs exemplifying the use of combo animations",
       "path": "Samples~/Combo"
+    },
+    {
+      "displayName": "Composite Animations",
+      "description": "Contains prefabs exemplifying the use of composite animations",
+      "path": "Samples~/Composite"
     }
   ],
   "scripts": {
