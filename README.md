@@ -73,7 +73,8 @@ tools along the way.
 
 ## The author
 
-[![rounded-with-mic-outline](https://github.com/no-slopes/sprite-animations/assets/95456621/02f699d7-1396-4d51-ab07-b0e065adc985 | width=100)](https://indiegabo.github.io/portfolio/)
+
+[![rounded-with-mic-outline_250](https://github.com/no-slopes/sprite-animations/assets/95456621/1cd89c95-7ece-449a-8446-4ae58f5797b6)](https://indiegabo.github.io/portfolio/)
 
 My name is Gabriel, ppl know me by Gabo. [Check out my portfolio](https://indiegabo.github.io/portfolio/) if you wanna know more about what I do.
 
