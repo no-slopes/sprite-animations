@@ -44,6 +44,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.CompositeAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.CompositeAnimator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.CompositeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.CompositeCycle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Cycle.yml",
       "output": {
         ".html": {
@@ -304,6 +324,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewComposite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewComposite.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Editor.SpriteAnimationViewFactory.yml",
       "output": {
         ".html": {
@@ -454,6 +484,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.CompositeAnimationOnDemand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.CompositeAnimationOnDemand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.Sampling.CompositeAnimationTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.Sampling.CompositeAnimationTemplate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SpriteAnimations.Sampling.MovementInputDetector.yml",
       "output": {
         ".html": {
@@ -568,6 +618,16 @@
       "output": {
         ".html": {
           "relative_path": "api/SpriteAnimations.SpriteAnimationCombo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteAnimations.SpriteAnimationComposite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteAnimations.SpriteAnimationComposite.html"
         }
       },
       "version": ""
