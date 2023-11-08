@@ -75,9 +75,7 @@ tools along the way.
 
 ![portraitzinho-fundo-roxo-rounded](https://github.com/no-slopes/sprite-animations/assets/95456621/2b6523f8-71b4-424c-ae61-5c5d1a3b639e)
 
-My name is Gabriel, ppl know me by [Gabo](https://github.com/indiegabo) and you can find me as @indiegabo or @indiegabodev in most social networks.
-
-If you want to buy me a coffee that will be much appreciated.
+My name is Gabriel, ppl know me by Gabo. [Check out my portfolio](https://indiegabo.github.io/portfolio/) if you wanna know more about what I do.
 
 [![Kofi](https://img.shields.io/badge/Donate-a73b38?style=for-the-badge&logo=kofi&logoColor=f7404b&color=26251f)](https://ko-fi.com/indiegabo)
 
