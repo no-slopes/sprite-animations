@@ -72,8 +72,7 @@ We are a small group of game devs / artists building an Indie Game Studio and cr
 tools along the way.
 
 ## The author
-
-[![rounded-with-mic-outline_250](https://github.com/no-slopes/sprite-animations/assets/95456621/1cd89c95-7ece-449a-8446-4ae58f5797b6)](https://indiegabo.github.io/portfolio/)
+[<img src="https://github.com/no-slopes/sprite-animations/assets/95456621/1cd89c95-7ece-449a-8446-4ae58f5797b6">]([https://link-to-your-URL/](https://indiegabo.github.io/portfolio))
 
 My name is Gabriel, ppl know me by Gabo. 
 [Check out my portfolio](https://indiegabo.github.io/portfolio/) if you wanna know more about what I do.
