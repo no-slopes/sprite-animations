@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Composite Animation | Sprite Animations </title>
+      <title>The CompositeAnimator | Sprite Animations </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Composite Animation | Sprite Animations ">
+      <meta name="title" content="The CompositeAnimator | Sprite Animations ">
       
       <link rel="icon" href="../../images/favicon.ico">
       <link rel="stylesheet" href="../../public/docfx.min.css">
@@ -15,7 +15,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/develop/docfx_project/documentation/animations/composite-animation.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/no-slopes/sprite-animations/blob/develop/docfx_project/documentation/sprite-animator/composite-animator.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -93,66 +93,57 @@
         </div>
 
         <article data-uid="">
-<h1 id="composite-animation">Composite Animation</h1>
+<h1 id="the-compositeanimator">The CompositeAnimator</h1>
 
-<p><img src="../../images/animator-manager-composite-animation.png" alt="Composite Animation Window"></p>
-<p>The composite animation has 3 <a href="../animations-manager/index.html#frame-cycle">Frame Cycles</a>. One representing the antecipation, one representing the
-core segment of the animation and one representing the recovery of the movement.</p>
-<p>The main use case for Composite Animations is when you need to &quot;warn&quot; players about what that movement will do. Such as in fighting games or when crafting boss
-fights.</p>
-<p>When telling <a href="../sprite-animator/index.html">the animator</a> to play a Composite Animation you will have the oportunity to listen to when each of the cycles has
-ended so you can associate some logic to it.</p>
-<p>Refer to the <a href="../sprite-animator/composite-animator.html">Composite Animator</a> documentation in order to have a better understanding on how you can
-operate a Composite Animation through code.</p>
-<h2 id="creating-on-demand">Creating on demand</h2>
-<p>You can create Composite animations on demand by acessing the static method <code>SpriteAnimationComposite.OnDemand</code>. Just provide the fps, and each of <a href="../animations-manager/index.html#frame-cycle">cycles</a> as lists of Sprites.</p>
-<p>Example:</p>
+<p>This is the performer for <a href="../animations/composite-animation.html">Composite Animations</a>.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>When you tell the <a href="index.html">Sprite Animator</a> to play a Composite Animation it will behave as follows:</p>
+<ul>
+<li>First it will play the entire antecipation cycle and at its end it will fire the <code>OnAntecipationEnd</code> action if you registered one.</li>
+<li>Then it will play the core cycle. If you use the method <code>SetLoopableCore(true)</code> upon the animation start, the core cycle will loop until the
+<code>ExitCoreLoop()</code> method is called. Either way, at the end of the core cycle, the <code>OnCoreEnd</code> action is fired if you registered one.</li>
+<li>At last it will play the recovery cycle and at its end the <code>OnRecoveryEnd</code> action is fired if you registered one. Also, this means the animation has
+come to an end and the <code>OnEnd</code> action is fired in case you registered one.</li>
+</ul>
+<h2 id="playing-a-composite-animation">Playing a Composite Animation</h2>
 <pre><code class="lang-csharp">public SpriteAnimator _animator;
-public int _fps;
+private CompositeAnimator _compositeAnimator;
 
-public List&lt;Sprite&gt; _antecipationCycle;
-public List&lt;Sprite&gt; _coreCycle;
-public List&lt;Sprite&gt; _recoveryCycle;
-
-private SpriteAnimationComposite _animation;
-
-private void Awake()
+public void StartAnimation()
 {
-    _animation = SpriteAnimationComposite.OnDemand(_fps, _antecipationCycle, _coreCycle, _recoveryCycle);
-}
-
-private void Start()
-{
-    _animator.Play&lt;CompositeAnimator&gt;(_animation).SetOnEnd(() =&gt;
-    {
-        _animator.Play&lt;CompositeAnimator&gt;(_animation).FromStart();
-    });
+    _compositeAnimator = _animator.Play&lt;CompositeAnimator&gt;(&quot;Hadouken&quot;);
 }
 </code></pre>
-<h2 id="creating-from-a-template">Creating from a template</h2>
-<p>You can use any other Composite Animation as template for creating another Composite Animation. Just use the <code>UseAsTemplate</code> method providing
-each of the <a href="../animations-manager/index.html#frame-cycle">cycles</a> as lists of Sprites.</p>
-<p>Example:</p>
+<h2 id="registering-the-cycles-actions">Registering the cycles Actions</h2>
 <pre><code class="lang-csharp">public SpriteAnimator _animator;
-public SpriteAnimationComposite _template;
+private CompositeAnimator _compositeAnimator;
 
-public List&lt;Sprite&gt; _antecipationCycle;
-public List&lt;Sprite&gt; _coreCycle;
-public List&lt;Sprite&gt; _recoveryCycle;
-
-private SpriteAnimationComposite _animation;
-
-private void Awake()
+public void StartAnimation()
 {
-    _animation = _template.UseAsTemplate(_antecipationCycle, _coreCycle, _recoveryCycle);
+    _compositeAnimator = _animator.Play&lt;CompositeAnimator&gt;(&quot;Hadouken&quot;);
+    _compositeAnimator.SetOnAntecipationEnd(() =&gt; Debug.Log(&quot;Antecipation Ended&quot;));
+    _compositeAnimator.SetOnCoreEnd(() =&gt; Debug.Log(&quot;Core Ended&quot;));
+    _compositeAnimator.SetOnRecoveryEnd(() =&gt; Debug.Log(&quot;Recovery Ended&quot;));
+}
+</code></pre>
+<h2 id="setting-the-core-cycle-as-loopable">Setting the core cycle as loopable</h2>
+<p>If you do not know when the animation should stop, like when a character is sliding under a platform and you need it to play
+that animation until there is no longer any ceiling above the character, you can tell the CompositeAnimator to loop the core
+until you use its <code>ExitCoreLopp</code> method meaning the CompositeAnimator should now play the recovery cycle and end the animation.</p>
+<pre><code class="lang-csharp">public SpriteAnimator _animator;
+private CompositeAnimator _compositeAnimator;
+
+public void StartAnimation()
+{
+    _compositeAnimator = _animator.Play&lt;CompositeAnimator&gt;(&quot;Slide&quot;);
+    _compositeAnimator.SetLoopableCore(true);
 }
 
-private void Start()
+// Example of method to be called when the core cycle should stop
+public void SlideMustFinish()
 {
-    _animator.Play&lt;CompositeAnimator&gt;(_animation).SetOnEnd(() =&gt;
-    {
-        _animator.Play&lt;CompositeAnimator&gt;(_animation).FromStart();
-    });
+    // This tells the CompositeAnimator to end the core cycle and play the recovery cycle.
+    _compositeAnimator.ExitCoreLoop();
 }
 </code></pre>
 </article>

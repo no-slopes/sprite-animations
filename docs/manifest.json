@@ -847,6 +847,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "documentation/sprite-animator/composite-animator.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/sprite-animator/composite-animator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "documentation/sprite-animator/index.md",
       "output": {
         ".html": {
@@ -914,6 +924,16 @@
       "output": {
         "resource": {
           "relative_path": "images/animator-manager-combo-animation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/animator-manager-composite-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/animator-manager-composite-animation.png"
         }
       },
       "version": ""

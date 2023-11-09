@@ -25,6 +25,9 @@ items:
           - name: Combo Animator
             href: sprite-animator/combo-animator.md
 
+          - name: Composite Animator
+            href: sprite-animator/composite-animator.md
+
   - name: Animations Manager
     href: animations-manager/index.md
 
