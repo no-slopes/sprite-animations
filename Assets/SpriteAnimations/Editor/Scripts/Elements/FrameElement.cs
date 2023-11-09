@@ -52,6 +52,8 @@ namespace SpriteAnimations.Editor
             _owner = owner;
             _frame = frame;
 
+            _frame.SpriteChanged += OnFrameSpriteChanged;
+
             _zoomSlider = zoomSlider;
             _zoomSlider.RegisterValueChangedCallback(OnZoomChanged);
 
@@ -66,6 +68,7 @@ namespace SpriteAnimations.Editor
             _indexLabel = template.Q<Label>("index-label");
 
             _imagePreviewContainer = template.Q<VisualElement>("image-preview-container");
+            _imagePreviewContainer.AddManipulator(new Clickable(OpenFrameManagerWindow));
 
             _previewImage = new Image();
             _previewImage.style.width = 40;
@@ -139,9 +142,19 @@ namespace SpriteAnimations.Editor
             _owner.RemoveFrame(_index);
         }
 
+        private void OpenFrameManagerWindow()
+        {
+            FrameManagerWindow.Open(_frame);
+        }
+
         #endregion
 
         #region Sprite
+
+        private void OnFrameSpriteChanged(Sprite sprite)
+        {
+            _spriteField.value = sprite;
+        }
 
         private void OnSpriteObjectChanged(ChangeEvent<Object> changeEvent)
         {

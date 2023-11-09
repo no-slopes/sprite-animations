@@ -3,6 +3,7 @@ using System;
 
 namespace SpriteAnimations
 {
+    public delegate void SpriteChangedEvent(Sprite sprite);
     [Serializable]
     public class Frame
     {
@@ -21,12 +22,26 @@ namespace SpriteAnimations
         /// <summary>
         /// The sprite that will be displayed when the frame is played
         /// </summary>
-        public Sprite Sprite { get => _sprite; set => _sprite = value; }
+        public Sprite Sprite
+        {
+            get => _sprite;
+            set
+            {
+                _sprite = value;
+                SpriteChanged?.Invoke(_sprite);
+            }
+        }
 
         /// <summary>
         /// The ID of the frame
         /// </summary>
         public string Id { get => _id; set => _id = value; }
+
+        #endregion
+
+        #region Events
+
+        public event SpriteChangedEvent SpriteChanged;
 
         #endregion
     }
