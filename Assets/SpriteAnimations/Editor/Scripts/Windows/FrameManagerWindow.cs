@@ -5,6 +5,13 @@ using UnityEngine.UIElements;
 
 namespace SpriteAnimations.Editor
 {
+    /// <summary>
+    /// TODO:
+    /// - Arrastar elementos na tela
+    /// - Redimensionar retangulos e circulos
+    /// - Criar shapes
+    /// - Editar shapes
+    /// </summary>
     public class FrameManagerWindow : EditorWindow
     {
         #region Static
