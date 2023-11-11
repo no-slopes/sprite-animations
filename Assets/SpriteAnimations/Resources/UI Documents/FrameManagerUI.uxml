@@ -6,6 +6,6 @@
         <uie:ObjectField label="Sprite" name="sprite-selector-field" type="UnityEngine.Sprite, UnityEngine.CoreModule" allow-scene-objects="true" style="flex-grow: 1; width: 70%; align-items: center; flex-basis: auto; justify-content: flex-start; flex-direction: row; height: 40px; background-color: rgba(255, 255, 255, 0); color: rgb(243, 243, 243); flex-shrink: 1;" />
     </ui:VisualElement>
     <ui:VisualElement name="body" style="flex-grow: 1; height: 100px; width: 100%; background-color: rgb(12, 0, 2); flex-basis: auto; flex-shrink: 1; flex-wrap: nowrap; justify-content: flex-start; align-self: auto; align-items: flex-start; -unity-background-scale-mode: stretch-to-fill; flex-direction: column;">
-        <ui:VisualElement name="image-container" style="flex-grow: 1; width: 100%;" />
+        <ui:VisualElement name="image-container" style="flex-grow: 1; width: 100%; align-items: center; justify-content: center;" />
     </ui:VisualElement>
 </ui:UXML>

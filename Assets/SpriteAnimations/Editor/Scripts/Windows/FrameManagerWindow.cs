@@ -20,7 +20,8 @@ namespace SpriteAnimations.Editor
         {
             var window = GetWindow<FrameManagerWindow>();
             window.titleContent = new GUIContent("Frame Manager");
-            window.minSize = new Vector2(500, 300);
+            window.minSize = new Vector2(500, 400);
+            window.maxSize = new Vector2(500, 400);
             window.Initialize(frame);
             window.Show();
             return window;
@@ -37,6 +38,7 @@ namespace SpriteAnimations.Editor
         private ObjectField _spriteSelectorField;
 
         private Image _image;
+        private RectShapeElement _rectElement;
         private VisualElement _imageContainer;
 
         #endregion
@@ -70,7 +72,6 @@ namespace SpriteAnimations.Editor
         private void OnEnable()
         {
             _timeTracker = (float)EditorApplication.timeSinceStartup;
-
             VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("UI Documents/FrameManagerUI");
             TemplateContainer templateContainer = visualTree.CloneTree();
             templateContainer.style.flexGrow = 1;
@@ -85,6 +86,9 @@ namespace SpriteAnimations.Editor
             {
                 _spriteSelectorField.SetValueWithoutNotify(_frame.Sprite);
             }
+
+            _rectElement = new RectShapeElement();
+            _imageContainer.Add(_rectElement);
 
             rootVisualElement.Add(templateContainer);
         }
@@ -113,6 +117,7 @@ namespace SpriteAnimations.Editor
         {
             _frame = frame;
             _frame.SpriteChanged += OnFrameSpriteChanged;
+            _frame.Shape = new RectShape();
             _spriteSelectorField?.SetValueWithoutNotify(_frame.Sprite);
         }
 
