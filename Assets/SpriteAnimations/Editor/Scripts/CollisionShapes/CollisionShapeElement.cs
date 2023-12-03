@@ -7,13 +7,14 @@ namespace SpriteAnimations.Editor
     {
         public abstract CollisionShape Shape { get; }
         public abstract Image Image { get; }
+        public abstract void Reposition(Vector2 delta, Vector2 origin);
 
         private ShapeDragManipulator _dragManipulator;
 
         public CollisionShapeElement()
         {
             _dragManipulator = new(this);
-            this.AddManipulator(_dragManipulator);
+            Image.AddManipulator(_dragManipulator);
         }
     }
 
@@ -21,17 +22,15 @@ namespace SpriteAnimations.Editor
     {
         private bool _enabled = false;
         private CollisionShapeElement _targetShape;
-        private VisualElement Root { get; }
-        private Vector2 TargetStartPosition { get; set; }
+        private Vector2 StartingPosition { get; set; }
         private Vector3 PointerStartPosition { get; set; }
 
         // Write a constructor to set target and store a reference to the
         // root of the visual tree.
-        public ShapeDragManipulator(CollisionShapeElement target)
+        public ShapeDragManipulator(CollisionShapeElement shape)
         {
-            this.target = target;
-            Root = target.parent;
-            _targetShape = target;
+            target = shape.Image;
+            _targetShape = shape;
         }
 
         protected override void RegisterCallbacksOnTarget()
@@ -54,33 +53,25 @@ namespace SpriteAnimations.Editor
         // makes target capture the pointer, and denotes that a drag is now in progress.
         private void PointerDownHandler(PointerDownEvent evt)
         {
-            TargetStartPosition = _targetShape.transform.position;
+            StartingPosition = target.transform.position;
             PointerStartPosition = evt.position;
-            _targetShape.CapturePointer(evt.pointerId);
+            target.CapturePointer(evt.pointerId);
             _enabled = true;
         }
 
         private void PointerUpHandler(PointerUpEvent evt)
         {
-            _targetShape.ReleasePointer(evt.pointerId);
+            target.ReleasePointer(evt.pointerId);
             _enabled = false;
         }
 
         private void PointerMoveHandler(PointerMoveEvent evt)
         {
-            if (!_enabled || !_targetShape.HasPointerCapture(evt.pointerId)) return;
+            if (!_enabled || !target.HasPointerCapture(evt.pointerId)) return;
 
             Vector3 pointerDelta = evt.position - PointerStartPosition;
 
-            float minX = 0 - _targetShape.parent.worldBound.width / 2 + _targetShape.worldBound.width / 2;
-            float maxX = _targetShape.parent.worldBound.width / 2 - _targetShape.worldBound.width / 2;
-            float minY = 0 - _targetShape.parent.worldBound.height / 2 + _targetShape.worldBound.height / 2;
-            float maxY = _targetShape.parent.worldBound.height / 2 - _targetShape.worldBound.height / 2;
-
-            target.transform.position = new Vector2(
-                Mathf.Clamp(TargetStartPosition.x + pointerDelta.x, minX, maxX),
-                Mathf.Clamp(TargetStartPosition.y + pointerDelta.y, minY, maxY)
-            );
+            _targetShape.Reposition(pointerDelta, StartingPosition);
         }
 
         private void PointerCaptureOutHandler(PointerCaptureOutEvent evt)

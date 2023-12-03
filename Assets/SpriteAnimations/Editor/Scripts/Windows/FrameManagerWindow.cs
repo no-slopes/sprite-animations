@@ -37,7 +37,7 @@ namespace SpriteAnimations.Editor
         // UI Elements
         private ObjectField _spriteSelectorField;
 
-        private Image _image;
+        private Image _previewImage;
         private RectShapeElement _rectElement;
         private VisualElement _imageContainer;
 
@@ -47,21 +47,21 @@ namespace SpriteAnimations.Editor
 
         public AnimationsManagerWindowData Data => AnimationsManagerWindowData.instance;
 
-        private Image Image
+        private Image PreviewImage
         {
             get
             {
-                if (_image == null)
+                if (_previewImage == null)
                 {
-                    _image = new Image();
+                    _previewImage = new Image();
 
-                    _image.style.width = 300;
-                    _image.style.height = 300;
-                    _image.style.alignContent = Align.Center;
-                    _image.style.justifyContent = Justify.Center;
+                    _previewImage.style.width = 300;
+                    _previewImage.style.height = 300;
+                    _previewImage.style.alignContent = Align.Center;
+                    _previewImage.style.justifyContent = Justify.Center;
                 }
 
-                return _image;
+                return _previewImage;
             }
         }
 
@@ -80,7 +80,7 @@ namespace SpriteAnimations.Editor
             _spriteSelectorField.RegisterValueChangedCallback(OnSpriteChanged);
 
             _imageContainer = templateContainer.Q<VisualElement>("image-container");
-            _imageContainer.Add(Image);
+            _imageContainer.Add(PreviewImage);
 
             if (_frame != null)
             {
@@ -89,6 +89,7 @@ namespace SpriteAnimations.Editor
 
             _rectElement = new RectShapeElement();
             _imageContainer.Add(_rectElement);
+            _rectElement.Initialize();
 
             rootVisualElement.Add(templateContainer);
         }
@@ -127,7 +128,7 @@ namespace SpriteAnimations.Editor
 
         private void SetImage(Sprite sprite)
         {
-            Image.sprite = sprite;
+            PreviewImage.sprite = sprite;
         }
 
         #endregion
