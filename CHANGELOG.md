@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/no-slopes/sprite-animations/compare/v2.3.1...v2.3.2) (2023-12-04)
+
+
+### Bug Fixes
+
+* Impeditive bug when building ([7fa3353](https://github.com/no-slopes/sprite-animations/commit/7fa33538cb7fc30ec529ecc7a1d8dff9b3a7a2ce))
+
 ## [2.3.1](https://github.com/no-slopes/sprite-animations/compare/v2.3.0...v2.3.1) (2023-11-06)
 
 
