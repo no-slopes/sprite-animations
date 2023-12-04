@@ -5,25 +5,25 @@
             <uie:ObjectField label="Script" type="UnityEditor.MonoScript, UnityEditor.CoreModule" name="script-field" binding-path="SpriteAnimator" class="w-100 sa-field" />
         </ui:VisualElement>
         <ui:VisualElement name="logo-container" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: center; padding-top: 0; padding-right: 5px; padding-bottom: 0; padding-left: 5px; flex-grow: 0; display: none;">
-            <ui:VisualElement name="logo" style="flex-grow: 0; flex-shrink: 0; align-items: center; justify-content: center; height: 40px; width: 200px; background-image: url(&apos;project://database/Assets/SpriteAnimations/Assets/Images/logo-horizontal-40h.png?fileID=2800000&amp;guid=31ef32b89f86b804e8a9217a8d77542d&amp;type=3#logo-horizontal-40h&apos;);" />
+            <ui:VisualElement name="logo" style="flex-grow: 0; flex-shrink: 0; align-items: center; justify-content: center; height: 40px; width: 200px; background-image: url(&apos;project://database/Assets/SpriteAnimations/Editor/Resources/Images/logo-horizontal-40h.png?fileID=2800000&amp;guid=31ef32b89f86b804e8a9217a8d77542d&amp;type=3#logo-horizontal-40h&apos;);" />
         </ui:VisualElement>
         <ui:VisualElement name="buttons" class="row" style="width: 100%; justify-content: flex-start; align-items: center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
             <ui:Button text="Open Animations Manager" parse-escape-sequences="true" display-tooltip-when-elided="true" name="open-manager-button" class="open-button" style="width: auto; height: 40px; margin-top: 0; margin-right: 5px; margin-bottom: 0; margin-left: 0; color: rgb(243, 243, 243); font-size: 16px; -unity-font-style: bold; -unity-text-align: middle-center; align-items: center; justify-content: center; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; flex-grow: 1;" />
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="open-docs-button" tooltip="Open documentation" class="open-docs-button" style="width: 40px; height: 40px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; color: rgb(243, 243, 243); font-size: 16px; -unity-font-style: bold; -unity-text-align: middle-center; align-items: center; justify-content: center; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; flex-grow: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-                <ui:VisualElement name="docs-icon" style="width: 35px; height: 35px; background-image: url(&apos;project://database/Assets/SpriteAnimations/Assets/Icons/docs.png?fileID=2800000&amp;guid=92d46373e8d588547b5264e65595f9f1&amp;type=3#docs&apos;); align-items: center; justify-content: center;" />
+                <ui:VisualElement name="docs-icon" style="width: 35px; height: 35px; background-image: url(&apos;project://database/Assets/SpriteAnimations/Editor/Resources/Icons/docs.png?fileID=2800000&amp;guid=92d46373e8d588547b5264e65595f9f1&amp;type=3#docs&apos;); align-items: center; justify-content: center;" />
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement name="sprite-renderer-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch;">
             <uie:ObjectField label="Sprite Renderer" type="UnityEngine.SpriteRenderer, UnityEngine.CoreModule" name="sprite-renderer-field" binding-path="_spriteRenderer" class="w-100 sa-field" />
         </ui:VisualElement>
         <ui:VisualElement name="update-mode-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch;">
-            <ui:EnumField label="Update Mode" type="SpriteAnimations.UpdateMode, SpriteAnimations" name="update-mode-field" binding-path="_updateMode" class="sa-field" style="justify-content: center; flex-shrink: 1;" />
+            <ui:EnumField label="Update Mode" type="SpriteAnimations.UpdateMode, SpriteAnimations.Runtime" name="update-mode-field" binding-path="_updateMode" class="sa-field" style="justify-content: center; flex-shrink: 1;" />
         </ui:VisualElement>
         <ui:VisualElement name="play-on-start-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch;">
             <ui:Toggle label="Play on start?" binding-path="_playOnStart" name="play-on-start-field" class="sa-field" />
         </ui:VisualElement>
         <ui:VisualElement name="default-animation-field-row" class="row field-row" style="width: 100%; justify-content: flex-start; align-items: stretch;">
-            <uie:ObjectField label="Default Animation" name="default-animation-field" binding-path="_defaultAnimation" type="SpriteAnimations.SpriteAnimation, SpriteAnimations" class="w-100 sa-field" />
+            <uie:ObjectField label="Default Animation" name="default-animation-field" binding-path="_defaultAnimation" type="SpriteAnimations.SpriteAnimation, SpriteAnimations.Runtime" class="w-100 sa-field" />
         </ui:VisualElement>
         <ui:VisualElement name="field-row" class="row" style="width: 100%; justify-content: flex-start; align-items: stretch; height: auto; min-height: 30px;">
             <uie:PropertyField name="animations-list-field" binding-path="_spriteAnimations" label="Animations" class="sa-field" style="width: 100%; height: auto;" />
