@@ -1,9 +1,7 @@
 {
-    "name": "SpriteAnimations",
+    "name": "SpriteAnimations.Runtime",
     "rootNamespace": "",
-    "references": [
-        "GUID:2c573e6b271651846a79655161004c5b"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

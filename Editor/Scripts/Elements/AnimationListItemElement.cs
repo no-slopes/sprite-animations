@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static SpriteAnimations.SpriteAnimation;
+using SpriteAnimations;
 
 namespace SpriteAnimations.Editor
 {

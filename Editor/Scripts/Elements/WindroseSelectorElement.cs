@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
-using static SpriteAnimations.SpriteAnimationWindrose;
+using SpriteAnimations;
 
 namespace SpriteAnimations.Editor
 {
