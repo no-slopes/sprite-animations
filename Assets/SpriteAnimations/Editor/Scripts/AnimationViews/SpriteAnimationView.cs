@@ -1,9 +1,6 @@
 using UnityEngine;
-using UnityEditor.PackageManager.UI;
 using UnityEngine.UIElements;
-using static SpriteAnimations.SpriteAnimation;
 using UnityEditor;
-using UnityEditor.Playables;
 using UnityEditor.UIElements;
 
 namespace SpriteAnimations.Editor

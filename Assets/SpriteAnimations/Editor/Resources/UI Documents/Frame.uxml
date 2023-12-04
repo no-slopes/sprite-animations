@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Packages/com.no-slopes.sprite-animations/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
+    <Style src="project://database/Assets/SpriteAnimations/Editor/Resources/Styles/AnimationManagerStyles.uss?fileID=7433441132597879392&amp;guid=a292484cf1ed97c4e9a9a18c4bde1c46&amp;type=3#AnimationManagerStyles" />
     <ui:VisualElement name="container" class="frame-container" style="flex-grow: 1; flex-direction: row; align-items: center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 70px; max-height: 70px; justify-content: space-between;">
         <ui:VisualElement name="index-container" class="sa-label" style="flex-grow: 0; flex-shrink: 0; max-width: 20px; margin-right: 5px; margin-left: 5px;">
             <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="index-label" style="color: rgb(255, 255, 255); -unity-font-style: bold;" />
@@ -17,15 +17,15 @@
         </ui:VisualElement>
         <ui:VisualElement name="arrows-container" style="flex-grow: 0; height: 50px; width: 50px; align-items: center; justify-content: center;">
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="up-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(233, 233, 233);">
-                <ui:VisualElement name="up-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/Navigation Up&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41);" />
+                <ui:VisualElement name="up-icon" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/SpriteAnimations/Assets/Icons/Navigation%20Up.png?fileID=2800000&amp;guid=f8a7b65e9374fc54db3b8a27749ca4d1&amp;type=3#Navigation Up&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41);" />
             </ui:Button>
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="down-button" style="height: 25px; width: 25px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: rgb(233, 233, 233);">
-                <ui:VisualElement name="down-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/Navigation Down&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41); background-color: rgba(0, 0, 0, 0);" />
+                <ui:VisualElement name="down-icon" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/SpriteAnimations/Assets/Icons/Navigation%20Down.png?fileID=2800000&amp;guid=3025fbb93ec304242b1ae8c051249b9a&amp;type=3#Navigation Down&apos;); height: 15px; width: 15px; flex-shrink: 0; -unity-background-image-tint-color: rgb(41, 41, 41); background-color: rgba(0, 0, 0, 0);" />
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement name="delete-button-container" style="flex-grow: 0; height: 50px; width: 50px; align-items: center; justify-content: center;">
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="delete-button" class="danger" style="height: 50px; width: 50px; align-items: center; justify-content: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-                <ui:VisualElement name="trash-can-icon" style="flex-grow: 0; background-image: resource(&apos;Icons/trash-can&apos;); height: 20px; width: 20px; flex-shrink: 0;" />
+                <ui:VisualElement name="trash-can-icon" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/SpriteAnimations/Assets/Icons/trash-can.png?fileID=2800000&amp;guid=aedac6fd69c936d448d43b8e1b06988d&amp;type=3#trash-can&apos;); height: 20px; width: 20px; flex-shrink: 0;" />
             </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>

@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System;
 
-#if UNITY_EDITOR
-using UnityEditor;
-using SpriteAnimations.Editor;
-#endif
+// #if UNITY_EDITOR
+// using UnityEditor;
+// using SpriteAnimations.Editor;
+// #endif
 
 namespace SpriteAnimations
 {
@@ -16,25 +16,25 @@ namespace SpriteAnimations
     {
         #region Menus
 
-#if UNITY_EDITOR
-        [MenuItem("Assets/Sprite Animations/Manage Animation")]
-        private static void ManageAnimation()
-        {
-            SpriteAnimation selectedAnimation = Selection.activeObject as SpriteAnimation;
-            if (!selectedAnimation)
-            {
-                Logger.LogError($"Selected object is not an {nameof(SpriteAnimation)}");
-                return;
-            }
+        // #if UNITY_EDITOR
+        //         [MenuItem("Assets/Sprite Animations/Manage Animation")]
+        //         private static void ManageAnimation()
+        //         {
+        //             SpriteAnimation selectedAnimation = Selection.activeObject as SpriteAnimation;
+        //             if (!selectedAnimation)
+        //             {
+        //                 Logger.LogError($"Selected object is not an {nameof(SpriteAnimation)}");
+        //                 return;
+        //             }
 
-            SingleManagerWindow.OpenEditorWindow(selectedAnimation);
-        }
-        [MenuItem("Assets/Sprite Animations/Manage Animation", true)]
-        static bool CheckIfMainMethodIsValid()
-        {
-            return Selection.activeObject is SpriteAnimation;
-        }
-#endif
+        //             SingleManagerWindow.OpenEditorWindow(selectedAnimation);
+        //         }
+        //         [MenuItem("Assets/Sprite Animations/Manage Animation", true)]
+        //         static bool CheckIfMainMethodIsValid()
+        //         {
+        //             return Selection.activeObject is SpriteAnimation;
+        //         }
+        // #endif
 
         #endregion
 
