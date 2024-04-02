@@ -58,10 +58,12 @@ namespace SpriteAnimations.Editor
             rootVisualElement.Add(template);
         }
 
+#if !UNITY_2023_2
         void OnLostFocus()
         {
             Close();
         }
+#endif
 
         #endregion
 
