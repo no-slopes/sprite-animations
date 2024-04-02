@@ -46,7 +46,7 @@ namespace SpriteAnimations.Editor
             _animationsListView.reorderable = true;
 
             _createAnimationButton = _root.Q<Button>("create-animation-button");
-            _createAnimationButton.clicked += OnAnimationButtonClicked;
+            _createAnimationButton.clicked += OnCreateAnimationButtonClicked;
 
             Add(_root);
         }
@@ -129,9 +129,14 @@ namespace SpriteAnimations.Editor
 
         public event AnimationSelectedEvent AnimationSelected;
 
-        private void OnAnimationButtonClicked()
+        private void OnCreateAnimationButtonClicked()
         {
-            if (_createAnimationWindow != null) return;
+            if (_createAnimationWindow != null)
+            {
+                _createAnimationWindow.Focus();
+                return;
+            }
+
             _createAnimationWindow = CreateAnimationWindow.OpenEditorWindow();
             Vector2 mousePos = GUIUtility.GUIToScreenPoint(Event.current.mousePosition);
             _createAnimationWindow.UsedPath = _lastPathUsed;
