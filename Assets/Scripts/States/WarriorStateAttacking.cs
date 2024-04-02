@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WarriorStateAttacking : WarriorState
 {
-    public override void OnEnter()
+    public void OnEnter()
     {
         WarriorMachine.Animator.Play("Attack").SetOnFrame("Slash", OnSlash).SetOnEnd(OnAnimationEnd);
     }

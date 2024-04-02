@@ -7,7 +7,7 @@ using SpriteAnimations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class WarriorFSM : StateMachine
+public class WarriorFSM : HandyMachine
 {
     #region Inspector
 

@@ -7,7 +7,7 @@ public class WarriorStateIdle : WarriorState
 {
     private Func<bool> IsRunning => () => WarriorMachine.MovementInput.x != 0;
 
-    protected override void OnInit()
+    protected void OnInit()
     {
         SetInterruptible(true);
 
@@ -15,14 +15,14 @@ public class WarriorStateIdle : WarriorState
         AddTransition(IsRunning, runningState);
     }
 
-    public override void OnEnter()
+    public void OnEnter()
     {
         WarriorMachine.Animator.Play("Idle");
 
         WarriorMachine.AttackAction.performed += OnAttackPerformed;
     }
 
-    public override void OnExit()
+    public void OnExit()
     {
         WarriorMachine.AttackAction.performed -= OnAttackPerformed;
     }
