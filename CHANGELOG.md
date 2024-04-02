@@ -1,3 +1,10 @@
+## [2.3.4](https://github.com/no-slopes/sprite-animations/compare/v2.3.3...v2.3.4) (2024-04-02)
+
+
+### Bug Fixes
+
+* Fix bug [#4](https://github.com/no-slopes/sprite-animations/issues/4) ([77b88dd](https://github.com/no-slopes/sprite-animations/commit/77b88dd6135571596d7751c734526633bc555968))
+
 ## [2.3.3](https://github.com/no-slopes/sprite-animations/compare/v2.3.2...v2.3.3) (2023-12-04)
 
 
