@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using HandyFSM;
-using Sirenix.OdinInspector;
 using SpriteAnimations;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,19 +8,15 @@ public class WarriorFSM : HandyMachine
 {
     #region Inspector
 
-    [BoxGroup("WarriorFSM")]
     [SerializeField]
     private SpriteAnimator _animator;
 
-    [BoxGroup("WarriorFSM")]
     [SerializeField]
     private PlayerInput _playerInput;
 
-    [BoxGroup("WarriorFSM")]
     [SerializeField]
     private InputActionReference _movementReference;
 
-    [BoxGroup("WarriorFSM")]
     [SerializeField]
     private InputActionReference _attackReference;
 

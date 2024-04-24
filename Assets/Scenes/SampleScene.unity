@@ -212,18 +212,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6ab28ae122b9c46b178572701c9d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _status: 2
-  _currentStateName: 
-  _initalizationMode: 0
-  _scriptableStates: []
-  _defaultScriptableState: {fileID: 0}
-  _statusChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  _stateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  _stateAnnouncer: {fileID: 0}
+  _info:
+    _status: 2
+    _currentStateName: None
+  _config:
+    _owner: {fileID: 0}
+    _initalizationMode: 1
+    _scriptableStates: []
+    _defaultScriptableState: {fileID: 0}
+    _triggerItems: []
+    _statusChanged:
+      m_PersistentCalls:
+        m_Calls: []
+    _stateChanged:
+      m_PersistentCalls:
+        m_Calls: []
   _animator: {fileID: 823617521}
   _playerInput: {fileID: 1368404132}
   _movementReference: {fileID: 470494585195924857, guid: 1c84b72cc681f2d4ea69e420bf898ed9, type: 3}
@@ -589,7 +592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &823617519
 Transform:
   m_ObjectHideFlags: 0
@@ -686,6 +689,63 @@ MonoBehaviour:
   _stateChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1087746865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344200812349972501, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347254310739435412, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
+      propertyPath: m_Name
+      value: Windrose - WASD and E
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98b01c11d0fb88a49a546d4759eb6011, type: 3}
 --- !u!1 &1278784448
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,3 +885,4 @@ SceneRoots:
   - {fileID: 1278784451}
   - {fileID: 823617519}
   - {fileID: 637582957}
+  - {fileID: 1087746865}
