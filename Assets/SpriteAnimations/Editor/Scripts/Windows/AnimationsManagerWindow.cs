@@ -157,7 +157,7 @@ namespace SpriteAnimations.Editor
 
         private void OnPlayModeStateChanged(PlayModeStateChange change)
         {
-            if (!change.Equals(PlayModeStateChange.EnteredEditMode)) return;
+            if (change != PlayModeStateChange.EnteredEditMode) return;
             LoadAnimatorFromData();
         }
 

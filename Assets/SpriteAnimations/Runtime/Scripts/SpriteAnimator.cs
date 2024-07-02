@@ -158,19 +158,19 @@ namespace SpriteAnimations
 
         protected virtual void Update()
         {
-            if (!IsPlaying || !_updateMode.Equals(UpdateMode.Update)) return;
+            if (!IsPlaying || _updateMode != UpdateMode.Update) return;
             _currentPerformer?.Tick(Time.deltaTime);
         }
 
         protected virtual void LateUpdate()
         {
-            if (!IsPlaying || !_updateMode.Equals(UpdateMode.LateUpdate)) return;
+            if (!IsPlaying || _updateMode != UpdateMode.LateUpdate) return;
             _currentPerformer?.Tick(Time.deltaTime);
         }
 
         protected virtual void FixedUpdate()
         {
-            if (!IsPlaying || !_updateMode.Equals(UpdateMode.FixedUpdate)) return;
+            if (!IsPlaying || _updateMode != UpdateMode.FixedUpdate) return;
             _currentPerformer?.Tick(Time.deltaTime);
         }
 

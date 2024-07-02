@@ -149,7 +149,7 @@ namespace SpriteAnimations.Editor
             string unityFolderPath = Path.GetDirectoryName(assetPath);
             string projectRootPath = Path.GetFullPath(Path.Combine(Application.dataPath, @"..\"));
 
-            if (orientation.Equals(ExtractionOrientation.Horizontal))
+            if (orientation == ExtractionOrientation.Horizontal)
             {
                 if (!HorizontalExtraction(originalSprite, from, amount, numberOfAnimations, unityFolderPath, projectRootPath))
                 {
@@ -415,8 +415,8 @@ namespace SpriteAnimations.Editor
 
         private void SetOrientation(ExtractionOrientation orientation)
         {
-            _columnsField.style.display = orientation.Equals(ExtractionOrientation.Horizontal) ? DisplayStyle.Flex : DisplayStyle.None;
-            _rowsField.style.display = orientation.Equals(ExtractionOrientation.Vertical) ? DisplayStyle.Flex : DisplayStyle.None;
+            _columnsField.style.display = orientation == ExtractionOrientation.Horizontal ? DisplayStyle.Flex : DisplayStyle.None;
+            _rowsField.style.display = orientation == ExtractionOrientation.Vertical ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
         #endregion
