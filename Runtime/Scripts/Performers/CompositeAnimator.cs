@@ -144,7 +144,7 @@ namespace SpriteAnimations
             ResetCycle();
 
             // Check if the current cycle is Antecipation
-            if (_currentCompositeCycle.Equals(CompositeCycle.Antecipation))
+            if (_currentCompositeCycle == CompositeCycle.Antecipation)
             {
                 // Change the cycle to Core
                 ChangeCycle(CompositeCycle.Core);
@@ -155,7 +155,7 @@ namespace SpriteAnimations
             }
 
             // Check if the current cycle is Core
-            if (_currentCompositeCycle.Equals(CompositeCycle.Core))
+            if (_currentCompositeCycle == CompositeCycle.Core)
             {
                 // Check if the Core cycle is not loopable
                 if (!_shouldLoopCore)
