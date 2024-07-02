@@ -148,7 +148,7 @@ namespace SpriteAnimations
                 return this;
             }
 
-            if (flipStrategy.Equals(WindroseFlipStrategy.FlipEastToPlayWest))
+            if (flipStrategy == WindroseFlipStrategy.FlipEastToPlayWest)
             {
                 bool shouldFlip = false;
                 switch (direction)
