@@ -1,3 +1,10 @@
+## [2.3.5](https://github.com/no-slopes/sprite-animations/compare/v2.3.4...v2.3.5) (2024-07-28)
+
+
+### Bug Fixes
+
+* Eliminate multiple GC.Alloc caused by Enum.Equals ([c107a1a](https://github.com/no-slopes/sprite-animations/commit/c107a1aa9493518cd8e56f04b5746ba25e4ed4c0))
+
 ## [2.3.4](https://github.com/no-slopes/sprite-animations/compare/v2.3.3...v2.3.4) (2024-04-02)
 
 
